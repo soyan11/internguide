@@ -14,68 +14,93 @@
 </head>
 
 <body>
-    <header class="site-header sticky top-0 z-50 bg-white">
-        <div class="site-container flex justify-between items-center">
-            <!-- Logo -->
-            <a href="../index.html" class="logo">
-                <img src="../src/assets/images/logo.png" alt="InternGuide Logo">
+    <header class="site-header px-5 py-2 lg:px-12 sticky top-0 z-50 bg-white">
+        <div class="site-header-inner flex items-center justify-between gap-4">
+            <a href="/" class="logo flex-shrink-0">
+                <img src="/src/assets/images/logo.png" alt="InternGuide Logo">
             </a>
-            <!-- Navigation -->
-            <nav class="gap-8 items-center hidden lg:flex text-gray-500 ">
-                <a href="../index.html" class="nav-link hover:text-gray-700">Home</a>
-                <a href="internships.html" class="hover:text-gray-700">Internships</a>
-                <a href="career-guide.html" class="nav-link active ">Career Guide</a>
-                <a href="cv-interview.html" class="nav-link hover:text-gray-700">CV & Interview</a>
-                <a href="about-contact.html" class="nav-link hover:text-gray-700 ">About</a>
+
+            <nav class="site-nav hidden items-center justify-center gap-1.5 lg:flex">
+                <a href="/" class="nav-link hover:text-gray-700">Home</a>
+                <a href="/pages/internships.html" class="nav-link hover:text-gray-700">Internships</a>
+                <a href="/pages/career-guide.html" class="nav-link active">Career Guide</a>
+                <a href="/pages/cv-interview.html" class="nav-link hover:text-gray-700">CV & Interview</a>
+                <a href="/pages/about-contact.html" class="nav-link hover:text-gray-700">About</a>
             </nav>
-            <!-- Header Buttons -->
-            <div class="header-actions hidden md:flex flex-none items-center gap-4">
-                <a href="auth/login.html" class="btn btn-login bg-white border rounded-xl p-3 px-4">Log In</a>
-                <a href="auth/signup.html" class="btn btn-primary bg-blue-600 text-white p-3 px-4 rounded-xl">Sign Up</a>
+
+            <div class="site-header-actions flex items-center justify-end gap-3">
+                <div id="authGuestActions" class="site-auth flex items-center gap-3">
+                    <a href="/pages/auth/login.html"
+                        class="site-login border border-[#DEE2E6] rounded-xl px-4 py-2 font-medium">
+                        Log In
+                    </a>
+
+                    <a href="/pages/auth/signup.html"
+                        class="site-signup bg-[#3B5BDB] text-white rounded-xl px-4 py-2 font-medium">
+                        Sign Up
+                    </a>
+                </div>
+
+                <div id="authUserActions" class="site-auth hidden items-center gap-3">
+                    <a href="/pages/profile/profile.html" class="text-gray-600 hover:text-gray-800">
+                        My Profile
+                    </a>
+
+                    <a href="/pages/profile/profile.html" id="homeNavbarAvatar"
+                        class="w-11 h-11 rounded-full bg-[#EDF2FF] flex items-center justify-center overflow-hidden">
+                        <span id="homeNavbarAvatarInitials" class="text-[#3B5BDB] font-semibold">
+                            IG
+                        </span>
+
+                        <img id="homeNavbarAvatarImage" src="" alt="Profile" class="hidden w-full h-full object-cover">
+                    </a>
+
+                    <button id="homeLogoutBtn" type="button"
+                        class="site-logout border border-red-200 text-red-600 hover:bg-red-50 rounded-xl px-4 py-2 font-medium">
+                        Logout
+                    </button>
+                </div>
+
+                <!-- Language Switcher with Flag Icon -->
+                <button id="langToggleBtn"
+                    class="lang-toggle-btn flex items-center justify-center p-1.5 rounded-full hover:bg-gray-100 transition-colors"
+                    title="Switch Language">
+                    <span id="currentLangIcon" class="text-xl">🇺🇸</span>
+                </button>
             </div>
-            <!-- Mobile Menu -->
-            <div class="flex md:hidden ">
-                <button id="toggle-btn"
-                    class="h-10 w-10 items-center justify-center rounded-full text-xl text-gray-800 transition hover:bg-gray-100"
-                    aria-label="Toggle menu">
+
+            <div class="site-mobile-wrap">
+                <button id="toggle-btn" class="site-mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
                     ☰
                 </button>
-                <!-- Dropdown Menu -->
-                <div id="mobile-menu" class="absolute left-0 top-full hidden w-full flex-col bg-[#f8f9ff] shadow-lg">
-                    <a href="../index.html"
+                <div id="mobile-menu" class="site-mobile-menu hidden flex-col">
+                    <a href="/"
                         class="flex h-10 items-center justify-center gap-2 border-b border-gray-200 text-sm font-medium text-[#3f5ddd] hover:bg-gray-100">
                         Home
                     </a>
-                    <a href="internships.html"
+                    <a href="/pages/internships.html"
                         class="flex h-10 items-center justify-center gap-2 border-b border-gray-200 text-sm font-medium text-[#3f5ddd] hover:bg-gray-100">
                         Internship
                     </a>
-                    <a href="career-guide.html"
+                    <a href="/pages/career-guide.html"
                         class="active-mobile flex h-10 items-center justify-center gap-2 border-b border-gray-200 text-sm font-medium">
                         Career Guide
                     </a>
-                    <a href="cv-interview.html"
+                    <a href="/pages/cv-interview.html"
                         class="flex h-10 items-center justify-center gap-2 border-b border-gray-200 text-sm font-medium text-[#3f5ddd] hover:bg-gray-100">
                         CV & Interview
                     </a>
-                    <a href="about-contact.html"
+                    <a href="/pages/about-contact.html"
                         class="flex h-10 items-center justify-center gap-2 border-b border-gray-200 text-sm font-medium text-[#3f5ddd] hover:bg-gray-100">
                         About & Contact
                     </a>
-                    <a href="auth/login.html"
-                        class="flex h-10 items-center justify-center gap-2 rounded-b-xl bg-[#3f5ddd] text-sm font-semibold text-white hover:bg-[#304fc8]">
-                        Register or Login
-                    </a>
+                    <div class="site-mobile-auth">
+                        <a href="/pages/auth/login.html" class="border border-slate-200 text-slate-700">Log In</a>
+                        <a href="/pages/auth/signup.html" class="bg-blue-600 text-white">Sign Up</a>
+                    </div>
                 </div>
             </div>
         </div>
-        <nav class="gap-12 py-4 items-center lg:hidden md:flex hidden text-gray-500 justify-center">
-            <a href="../index.html" class="nav-link hover:text-gray-700">Home</a>
-            <a href="internships.html" class=" nav-link hover:text-gray-700">Internships</a>
-            <a href="career-guide.html" class="nav-link active ">Career Guide</a>
-            <a href="cv-interview.html" class="nav-link hover:text-gray-700">CV & Interview</a>
-            <a href="about-contact.html" class="nav-link hover:text-gray-700">About</a>
-        </nav>
     </header>
     <main>
         <section class="py-12 bg-blue-50">
@@ -113,7 +138,8 @@
                             </button>
                         </div>
                     </form>
-                    <div id="careerGuideCategories" class="flex flex-wrap items-center justify-center gap-2 mt-3 text-sm text-gray-500">
+                    <div id="careerGuideCategories"
+                        class="flex flex-wrap items-center justify-center gap-2 mt-3 text-sm text-gray-500">
                         <span class="font-medium text-gray-400 mr-1">Popular:</span>
                         <button
                             class="px-4 py-1.5 rounded-full bg-white border border-gray-200 text-gray-700 text-xs font-semibold hover:border-gray-300 transition-colors hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Software
@@ -168,8 +194,7 @@
             </div>
         </section>
     </main>
-    <section
-        class="bg-[#f8fafd] min-h-screen py-12 text-slate-900 flex flex-col justify-center items-center">
+    <section class="bg-[#f8fafd] min-h-screen py-12 text-slate-900 flex flex-col justify-center items-center">
         <div class="site-container w-full">
             <div class="mb-8">
                 <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
@@ -179,7 +204,8 @@
                     Learn what each career involves and what skills you need to get started.
                 </p>
             </div>
-            <p id="careerGuidesStatus" class="mb-6 text-sm text-slate-500" role="status" aria-live="polite">Loading career guides...</p>
+            <p id="careerGuidesStatus" class="mb-6 text-sm text-slate-500" role="status" aria-live="polite">Loading
+                career guides...</p>
             <div id="careerGuidesGrid" class="gap-6 lg:gap-8" aria-busy="true" aria-hidden="true" style="display: none">
 
                 <article
@@ -417,126 +443,136 @@
                 </article>
 
             </div>
-            <nav id="careerGuidesPagination" class="mt-8 hidden w-full flex-wrap items-center justify-center gap-2" aria-label="Career guide pages"></nav>
+            <nav id="careerGuidesPagination" class="mt-8 hidden w-full flex-wrap items-center justify-center gap-2"
+                aria-label="Career guide pages"></nav>
     </section>
     <section class="py-12 bg-slate-50">
         <div class="site-container">
             <div
                 class="relative overflow-hidden rounded-3xl bg-gradient-to-b from-[#eef4ff] via-[#eef3fe] to-[#e8f0fe] border border-blue-100/60 p-8 sm:p-12 md:p-16 text-center shadow-sm">
 
-            <!-- Title & Subtitle -->
-            <div class="relative z-10 max-w-2xl mx-auto flex flex-col items-center mb-10">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                    Build the Skills Employers Look For
-                </h2>
-                <p class="mt-4 text-sm sm:text-base text-slate-600 font-normal leading-relaxed max-w-xl">
-                    Understand the technical and professional skills you need to prepare for your future career.
-                </p>
-            </div>
-
-            <!-- Cards Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left relative z-10 ">
-
-                <!-- Card 1: Technical Skills -->
-                <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-100 flex flex-col justify-between hover:shadow-[0_0_16px_rgba(10,100,246,0.5)]">
-                    <div>
-                        <!-- Card Header -->
-                        <div class="flex items-center gap-3 pb-6 mb-6 border-b border-slate-100">
-                            <div
-                                class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-lg">
-                                &lt;/&gt;
-                            </div>
-                            <h3 class="text-base font-bold text-slate-900 tracking-wider uppercase">
-                                TECHNICAL SKILLS
-                            </h3>
-                        </div>
-
-                        <!-- List Items -->
-                        <ul class="space-y-5 text-sm">
-                            <li class="flex items-start gap-3">
-                                <span class="w-2 h-2 rounded-full bg-blue-600 mt-1.5 shrink-0"></span>
-                                <p class="text-slate-500">
-                                    <strong class="font-bold text-slate-900">Programming:</strong> Python, JavaScript,
-                                    C++, Git version control
-                                </p>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="w-2 h-2 rounded-full bg-blue-600 mt-1.5 shrink-0"></span>
-                                <p class="text-slate-500">
-                                    <strong class="font-bold text-slate-900">Data Analysis:</strong> SQL, Pandas, Excel,
-                                    Tableau &amp; PowerBI
-                                </p>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="w-2 h-2 rounded-full bg-blue-600 mt-1.5 shrink-0"></span>
-                                <p class="text-slate-500">
-                                    <strong class="font-bold text-slate-900">UI/UX Design:</strong> Figma, Wireframing,
-                                    User Testing, Design Systems
-                                </p>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="w-2 h-2 rounded-full bg-blue-600 mt-1.5 shrink-0"></span>
-                                <p class="text-slate-500">
-                                    <strong class="font-bold text-slate-900">Digital Marketing:</strong> Technical SEO,
-                                    Content Architecture, Google Ads
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
+                <!-- Title & Subtitle -->
+                <div class="relative z-10 max-w-2xl mx-auto flex flex-col items-center mb-10">
+                    <h2
+                        class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                        Build the Skills Employers Look For
+                    </h2>
+                    <p class="mt-4 text-sm sm:text-base text-slate-600 font-normal leading-relaxed max-w-xl">
+                        Understand the technical and professional skills you need to prepare for your future career.
+                    </p>
                 </div>
 
-                <!-- Card 2: Professional Skills -->
-                <div  class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-100 flex flex-col justify-between hover:shadow-[0_0_16px_rgba(10,100,246,0.5)]">
-                    <div>
-                        <!-- Card Header -->
-                        <div class="flex items-center gap-3 pb-6 mb-6 border-b border-slate-100">
-                            <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path
-                                        d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
-                                </svg>
+                <!-- Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left relative z-10 ">
+
+                    <!-- Card 1: Technical Skills -->
+                    <div
+                        class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-100 flex flex-col justify-between hover:shadow-[0_0_16px_rgba(10,100,246,0.5)]">
+                        <div>
+                            <!-- Card Header -->
+                            <div class="flex items-center gap-3 pb-6 mb-6 border-b border-slate-100">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-lg">
+                                    &lt;/&gt;
+                                </div>
+                                <h3 class="text-base font-bold text-slate-900 tracking-wider uppercase">
+                                    TECHNICAL SKILLS
+                                </h3>
                             </div>
-                            <h3 class="text-base font-bold text-slate-900 tracking-wider uppercase">
-                                PROFESSIONAL SKILLS
-                            </h3>
+
+                            <!-- List Items -->
+                            <ul class="space-y-5 text-sm">
+                                <li class="flex items-start gap-3">
+                                    <span class="w-2 h-2 rounded-full bg-blue-600 mt-1.5 shrink-0"></span>
+                                    <p class="text-slate-500">
+                                        <strong class="font-bold text-slate-900">Programming:</strong> Python,
+                                        JavaScript,
+                                        C++, Git version control
+                                    </p>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="w-2 h-2 rounded-full bg-blue-600 mt-1.5 shrink-0"></span>
+                                    <p class="text-slate-500">
+                                        <strong class="font-bold text-slate-900">Data Analysis:</strong> SQL, Pandas,
+                                        Excel,
+                                        Tableau &amp; PowerBI
+                                    </p>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="w-2 h-2 rounded-full bg-blue-600 mt-1.5 shrink-0"></span>
+                                    <p class="text-slate-500">
+                                        <strong class="font-bold text-slate-900">UI/UX Design:</strong> Figma,
+                                        Wireframing,
+                                        User Testing, Design Systems
+                                    </p>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="w-2 h-2 rounded-full bg-blue-600 mt-1.5 shrink-0"></span>
+                                    <p class="text-slate-500">
+                                        <strong class="font-bold text-slate-900">Digital Marketing:</strong> Technical
+                                        SEO,
+                                        Content Architecture, Google Ads
+                                    </p>
+                                </li>
+                            </ul>
                         </div>
-
-                        <!-- List Items -->
-                        <ul class="space-y-5 text-sm">
-                            <li class="flex items-start gap-3">
-                                <span class="w-2 h-2 rounded-full bg-blue-600 mt-1.5 shrink-0"></span>
-                                <p class="text-slate-500">
-                                    <strong class="font-bold text-slate-900">Communication:</strong> Written
-                                    articulation, pitch presentations, stakeholder briefing
-                                </p>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="w-2 h-2 rounded-full bg-blue-600 mt-1.5 shrink-0"></span>
-                                <p class="text-slate-500">
-                                    <strong class="font-bold text-slate-900">Teamwork:</strong> Cross-functional
-                                    collaboration, empathy, inclusive mindset
-                                </p>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="w-2 h-2 rounded-full bg-blue-600 mt-1.5 shrink-0"></span>
-                                <p class="text-slate-500">
-                                    <strong class="font-bold text-slate-900">Problem Solving:</strong> Structured
-                                    root-cause diagnosis, lateral critical thinking
-                                </p>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="w-2 h-2 rounded-full bg-blue-600 mt-1.5 shrink-0"></span>
-                                <p class="text-slate-500">
-                                    <strong class="font-bold text-slate-900">Time Management:</strong> Sprint planning,
-                                    priority mapping, agile work delivery
-                                </p>
-                            </li>
-                        </ul>
                     </div>
-                </div>
 
+                    <!-- Card 2: Professional Skills -->
+                    <div
+                        class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-100 flex flex-col justify-between hover:shadow-[0_0_16px_rgba(10,100,246,0.5)]">
+                        <div>
+                            <!-- Card Header -->
+                            <div class="flex items-center gap-3 pb-6 mb-6 border-b border-slate-100">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+                                    </svg>
+                                </div>
+                                <h3 class="text-base font-bold text-slate-900 tracking-wider uppercase">
+                                    PROFESSIONAL SKILLS
+                                </h3>
+                            </div>
+
+                            <!-- List Items -->
+                            <ul class="space-y-5 text-sm">
+                                <li class="flex items-start gap-3">
+                                    <span class="w-2 h-2 rounded-full bg-blue-600 mt-1.5 shrink-0"></span>
+                                    <p class="text-slate-500">
+                                        <strong class="font-bold text-slate-900">Communication:</strong> Written
+                                        articulation, pitch presentations, stakeholder briefing
+                                    </p>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="w-2 h-2 rounded-full bg-blue-600 mt-1.5 shrink-0"></span>
+                                    <p class="text-slate-500">
+                                        <strong class="font-bold text-slate-900">Teamwork:</strong> Cross-functional
+                                        collaboration, empathy, inclusive mindset
+                                    </p>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="w-2 h-2 rounded-full bg-blue-600 mt-1.5 shrink-0"></span>
+                                    <p class="text-slate-500">
+                                        <strong class="font-bold text-slate-900">Problem Solving:</strong> Structured
+                                        root-cause diagnosis, lateral critical thinking
+                                    </p>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="w-2 h-2 rounded-full bg-blue-600 mt-1.5 shrink-0"></span>
+                                    <p class="text-slate-500">
+                                        <strong class="font-bold text-slate-900">Time Management:</strong> Sprint
+                                        planning,
+                                        priority mapping, agile work delivery
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-        </div>
     </section>
     <section class="bg-[#f8f9fe] min-h-screen flex items-center justify-center py-12">
 
@@ -636,20 +672,25 @@
             </div>
         </div>
     </section>
-    <dialog id="careerGuideDialog" aria-labelledby="careerGuideDialogTitle" aria-describedby="careerGuideDialogDescription"
+    <dialog id="careerGuideDialog" aria-labelledby="careerGuideDialogTitle"
+        aria-describedby="careerGuideDialogDescription"
         class="m-auto max-h-[90vh] w-[calc(100%-2rem)] max-w-3xl overflow-hidden rounded-2xl border-0 bg-transparent p-0 shadow-2xl backdrop:bg-slate-950/60">
         <div class="flex max-h-[90vh] flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white">
             <div class="h-1.5 shrink-0 bg-linear-to-r from-blue-600 via-cyan-500 to-emerald-400"></div>
             <header class="flex items-start justify-between gap-5 px-6 pb-5 pt-6 sm:px-8">
                 <div class="min-w-0">
-                    <span id="careerGuideDialogCategory" class="inline-flex rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700"></span>
-                    <h2 id="careerGuideDialogTitle" class="mt-3 text-2xl font-extrabold text-slate-900 sm:text-3xl"></h2>
-                    <p id="careerGuideDialogDescription" class="mt-2 whitespace-pre-line text-sm leading-6 text-slate-600"></p>
+                    <span id="careerGuideDialogCategory"
+                        class="inline-flex rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700"></span>
+                    <h2 id="careerGuideDialogTitle" class="mt-3 text-2xl font-extrabold text-slate-900 sm:text-3xl">
+                    </h2>
+                    <p id="careerGuideDialogDescription"
+                        class="mt-2 whitespace-pre-line text-sm leading-6 text-slate-600"></p>
                 </div>
                 <button type="button" data-close-career-dialog autofocus aria-label="Close career guide" title="Close"
                     class="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-slate-200 text-xl text-slate-500 transition hover:bg-slate-100 hover:text-slate-900">&times;</button>
             </header>
-            <div id="careerGuideDialogContent" class="min-h-0 overflow-y-auto border-t border-slate-100 px-6 py-6 sm:px-8"></div>
+            <div id="careerGuideDialogContent"
+                class="min-h-0 overflow-y-auto border-t border-slate-100 px-6 py-6 sm:px-8"></div>
             <div class="flex justify-end border-t border-slate-100 bg-slate-50 px-6 py-4 sm:px-8">
                 <button type="button" data-close-career-dialog
                     class="rounded-lg bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-700">Close</button>

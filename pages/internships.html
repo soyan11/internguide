@@ -14,68 +14,93 @@
 </head>
 
 <body>
-    <header class="site-header sticky top-0 z-50 bg-white">
-        <div class="site-container flex justify-between items-center">
-            <!-- Logo -->
-            <a href="../index.html" class="logo">
-                <img src="../src/assets/images/logo.png" alt="InternGuide Logo">
+    <header class="site-header px-5 py-2 lg:px-12 sticky top-0 z-50 bg-white">
+        <div class="site-header-inner flex items-center justify-between gap-4">
+            <a href="/" class="logo flex-shrink-0">
+                <img src="/src/assets/images/logo.png" alt="InternGuide Logo">
             </a>
-            <!-- Navigation -->
-            <nav class="gap-8 items-center hidden lg:flex text-gray-500 ">
-                <a href="../index.html" class="nav-link hover:text-gray-700">Home</a>
-                <a href="internships.html" class="nav-link active">Internships</a>
-                <a href="career-guide.html" class="nav-link hover:text-gray-700">Career Guide</a>
-                <a href="cv-interview.html" class="nav-link hover:text-gray-700">CV & Interview</a>
-                <a href="about-contact.html" class="nav-link hover:text-gray-700 ">About</a>
+
+            <nav class="site-nav hidden items-center justify-center gap-1.5 lg:flex">
+                <a href="/" class="nav-link hover:text-gray-700">Home</a>
+                <a href="/pages/internships.html" class="nav-link active">Internships</a>
+                <a href="/pages/career-guide.html" class="nav-link hover:text-gray-700">Career Guide</a>
+                <a href="/pages/cv-interview.html" class="nav-link hover:text-gray-700">CV & Interview</a>
+                <a href="/pages/about-contact.html" class="nav-link hover:text-gray-700">About</a>
             </nav>
-            <!-- Header Buttons -->
-            <div class="header-actions hidden md:flex flex-none items-center gap-4">
-                <a href="auth/login.html" class="btn btn-login bg-white border rounded-xl p-3 px-4">Log In</a>
-                <a href="auth/signup.html" class="btn btn-primary bg-blue-600 text-white p-3 px-4 rounded-xl">Sign Up</a>
+
+            <div class="site-header-actions flex items-center justify-end gap-3">
+                <div id="authGuestActions" class="site-auth flex items-center gap-3">
+                    <a href="/pages/auth/login.html"
+                        class="site-login border border-[#DEE2E6] rounded-xl px-4 py-2 font-medium">
+                        Log In
+                    </a>
+
+                    <a href="/pages/auth/signup.html"
+                        class="site-signup bg-[#3B5BDB] text-white rounded-xl px-4 py-2 font-medium">
+                        Sign Up
+                    </a>
+                </div>
+
+                <div id="authUserActions" class="site-auth hidden items-center gap-3">
+                    <a href="/pages/profile/profile.html" class="text-gray-600 hover:text-gray-800">
+                        My Profile
+                    </a>
+
+                    <a href="/pages/profile/profile.html" id="homeNavbarAvatar"
+                        class="w-11 h-11 rounded-full bg-[#EDF2FF] flex items-center justify-center overflow-hidden">
+                        <span id="homeNavbarAvatarInitials" class="text-[#3B5BDB] font-semibold">
+                            IG
+                        </span>
+
+                        <img id="homeNavbarAvatarImage" src="" alt="Profile" class="hidden w-full h-full object-cover">
+                    </a>
+
+                    <button id="homeLogoutBtn" type="button"
+                        class="site-logout border border-red-200 text-red-600 hover:bg-red-50 rounded-xl px-4 py-2 font-medium">
+                        Logout
+                    </button>
+                </div>
+
+                <!-- Language Switcher with Flag Icon -->
+                <button id="langToggleBtn"
+                    class="lang-toggle-btn flex items-center justify-center p-1.5 rounded-full hover:bg-gray-100 transition-colors"
+                    title="Switch Language">
+                    <span id="currentLangIcon" class="text-xl">🇺🇸</span>
+                </button>
             </div>
-            <!-- Mobile Menu -->
-            <div class="flex md:hidden ">
-                <button id="toggle-btn"
-                    class="h-10 w-10 items-center justify-center rounded-full text-xl text-gray-800 transition hover:bg-gray-100"
-                    aria-label="Toggle menu">
+
+            <div class="site-mobile-wrap">
+                <button id="toggle-btn" class="site-mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
                     ☰
                 </button>
-                <!-- Dropdown Menu -->
-                <div id="mobile-menu" class="absolute left-0 top-full hidden w-full flex-col bg-[#f8f9ff] shadow-lg">
-                    <a href="../index.html"
+                <div id="mobile-menu" class="site-mobile-menu hidden flex-col">
+                    <a href="/"
                         class="flex h-10 items-center justify-center gap-2 border-b border-gray-200 text-sm font-medium text-[#3f5ddd] hover:bg-gray-100">
                         Home
                     </a>
-                    <a href="internships.html"
+                    <a href="/pages/internships.html"
                         class="active-mobile flex h-10 items-center justify-center gap-2 border-b border-gray-200 text-sm font-medium">
                         Internship
                     </a>
-                    <a href="career-guide.html"
+                    <a href="/pages/career-guide.html"
                         class="flex h-10 items-center justify-center gap-2 border-b border-gray-200 text-sm font-medium text-[#3f5ddd] hover:bg-gray-100">
                         Career Guide
                     </a>
-                    <a href="cv-interview.html"
+                    <a href="/pages/cv-interview.html"
                         class="flex h-10 items-center justify-center gap-2 border-b border-gray-200 text-sm font-medium text-[#3f5ddd] hover:bg-gray-100">
                         CV & Interview
                     </a>
-                    <a href="about-contact.html"
+                    <a href="/pages/about-contact.html"
                         class="flex h-10 items-center justify-center gap-2 border-b border-gray-200 text-sm font-medium text-[#3f5ddd] hover:bg-gray-100">
                         About & Contact
                     </a>
-                    <a href="auth/login.html"
-                        class="flex h-10 items-center justify-center gap-2 rounded-b-xl bg-[#3f5ddd] text-sm font-semibold text-white hover:bg-[#304fc8]">
-                        Register or Login
-                    </a>
+                    <div class="site-mobile-auth">
+                        <a href="/pages/auth/login.html" class="border border-slate-200 text-slate-700">Log In</a>
+                        <a href="/pages/auth/signup.html" class="bg-blue-600 text-white">Sign Up</a>
+                    </div>
                 </div>
             </div>
         </div>
-        <nav class="gap-12 py-4 items-center lg:hidden md:flex hidden text-gray-500 justify-center">
-            <a href="../index.html" class="nav-link">Home</a>
-            <a href="internships.html" class="nav-link active">Internships</a>
-            <a href="career-guide.html" class="nav-link hover:text-gray-700">Career Guide</a>
-            <a href="cv-interview.html" class="nav-link hover:text-gray-700">CV & Interview</a>
-            <a href="about-contact.html" class="nav-link hover:text-gray-700">About</a>
-        </nav>
     </header>
     <section class="page-title bg-blue-50 py-12">
         <div class="site-container flex flex-col items-center gap-6 text-center">
@@ -98,7 +123,8 @@
                     class="flex items-center gap-3 px-4 py-2 w-full md:w-1/2 bg-gray-50/60 rounded-xl hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">
                     <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM0ZjVhZjMiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1zZWFyY2ggcHJldmlldy1pY29uIj48cGF0aCBkPSJtMjEgMjEtNC4zNC00LjM0Ii8+PGNpcmNsZSBjeD0iMTEiIGN5PSIxMSIgcj0iOCIvPjwvc3ZnPg=="
                         alt="">
-                    <input id="internshipSearch" type="search" data-i18n-placeholder="common.searchInternships" placeholder="Search internships, companies, or skills..."
+                    <input id="internshipSearch" type="search" data-i18n-placeholder="common.searchInternships"
+                        placeholder="Search internships, companies, or skills..."
                         class="w-full bg-transparent text-sm text-gray-800 placeholder-gray-400 focus:outline-none " />
                 </div>
                 <div class="hidden md:block w-px h-8 bg-gray-200"></div>
@@ -118,16 +144,16 @@
             <!-- Popular Searches Tags -->
             <div class="flex flex-wrap items-center justify-center gap-2 mt-1 text-sm text-gray-500">
                 <span class="font-medium text-gray-400 mr-1">Popular searches:</span>
-                <button
-                    data-popular-search="Technology" class="px-4 py-1.5 rounded-full bg-white border border-gray-200 text-gray-700 text-xs font-semibold hover:border-gray-300 transition-colors hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Technology</button>
-                <button
-                    data-popular-search="Design" class="px-4 py-1.5 rounded-full bg-white border border-gray-200 text-gray-700 text-xs font-semibold hover:border-gray-300 transition-colors hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Design</button>
-                <button
-                    data-popular-search="Marketing" class="px-4 py-1.5 rounded-full bg-white border border-gray-200 text-gray-700 text-xs font-semibold hover:border-gray-300 transition-colors hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Marketing</button>
-                <button
-                    data-popular-search="Business" class="px-4 py-1.5 rounded-full bg-white border border-gray-200 text-gray-700 text-xs font-semibold hover:border-gray-300 transition-colors hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Business</button>
-                <button
-                    data-popular-search="Engineering" class="px-4 py-1.5 rounded-full bg-white border border-gray-200 text-gray-700 text-xs font-semibold hover:border-gray-300 transition-colors hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Engineering</button>
+                <button data-popular-search="Technology"
+                    class="px-4 py-1.5 rounded-full bg-white border border-gray-200 text-gray-700 text-xs font-semibold hover:border-gray-300 transition-colors hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Technology</button>
+                <button data-popular-search="Design"
+                    class="px-4 py-1.5 rounded-full bg-white border border-gray-200 text-gray-700 text-xs font-semibold hover:border-gray-300 transition-colors hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Design</button>
+                <button data-popular-search="Marketing"
+                    class="px-4 py-1.5 rounded-full bg-white border border-gray-200 text-gray-700 text-xs font-semibold hover:border-gray-300 transition-colors hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Marketing</button>
+                <button data-popular-search="Business"
+                    class="px-4 py-1.5 rounded-full bg-white border border-gray-200 text-gray-700 text-xs font-semibold hover:border-gray-300 transition-colors hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Business</button>
+                <button data-popular-search="Engineering"
+                    class="px-4 py-1.5 rounded-full bg-white border border-gray-200 text-gray-700 text-xs font-semibold hover:border-gray-300 transition-colors hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Engineering</button>
             </div>
         </div>
     </section>
@@ -135,25 +161,40 @@
         <div class="site-container grid grid-cols-1 lg:grid-cols-12 gap-8">
 
             <!-- Left Sidebar: Filter Internships -->
-            <aside id="internshipFilterSidebar" class="internship-filter-drawer lg:col-span-3 bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm h-fit" aria-label="Internship filters">
+            <aside id="internshipFilterSidebar"
+                class="internship-filter-drawer lg:col-span-3 bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm h-fit"
+                aria-label="Internship filters">
                 <div class="flex items-center justify-between border-b border-slate-100 pb-5">
-                    <h2 class="text-lg font-bold text-slate-900" data-i18n="common.filterInternships">Filter Internships</h2>
+                    <h2 class="text-lg font-bold text-slate-900" data-i18n="common.filterInternships">Filter Internships
+                    </h2>
                     <div class="flex items-center gap-3">
-                        <button id="clearInternshipFilters" type="button" class="text-sm font-semibold text-blue-600 hover:text-blue-700" data-i18n="common.clearAll">Clear All</button>
-                        <button id="closeMobileFilters" type="button" class="inline-flex h-9 w-9 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100 lg:hidden" aria-label="Close filters">×</button>
+                        <button id="clearInternshipFilters" type="button"
+                            class="text-sm font-semibold text-blue-600 hover:text-blue-700"
+                            data-i18n="common.clearAll">Clear All</button>
+                        <button id="closeMobileFilters" type="button"
+                            class="inline-flex h-9 w-9 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100 lg:hidden"
+                            aria-label="Close filters">×</button>
                     </div>
                 </div>
                 <div class="border-b border-slate-100 py-5">
-                    <label for="internshipSidebarSearch" class="mb-2 block text-sm font-semibold text-slate-800" data-i18n="common.search">Search</label>
-                    <input id="internshipSidebarSearch" type="search" data-i18n-placeholder="common.searchInternships" placeholder="Search internships, companies, or skills..." class="w-full rounded-xl border border-slate-200 px-3 py-2.5 text-sm text-slate-800 placeholder:text-slate-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100">
+                    <label for="internshipSidebarSearch" class="mb-2 block text-sm font-semibold text-slate-800"
+                        data-i18n="common.search">Search</label>
+                    <input id="internshipSidebarSearch" type="search" data-i18n-placeholder="common.searchInternships"
+                        placeholder="Search internships, companies, or skills..."
+                        class="w-full rounded-xl border border-slate-200 px-3 py-2.5 text-sm text-slate-800 placeholder:text-slate-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100">
                 </div>
                 <div id="internship-filters" class="space-y-6 py-6"></div>
                 <div class="internship-filter-actions">
-                    <button id="resetInternshipFilters" type="button" class="rounded-lg border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 lg:hidden" data-i18n="common.clearAll">Clear All</button>
-                    <button id="applyMobileFilters" type="button" class="rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700 lg:hidden" data-i18n="common.applyFilters">Apply Filters</button>
+                    <button id="resetInternshipFilters" type="button"
+                        class="rounded-lg border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 lg:hidden"
+                        data-i18n="common.clearAll">Clear All</button>
+                    <button id="applyMobileFilters" type="button"
+                        class="rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700 lg:hidden"
+                        data-i18n="common.applyFilters">Apply Filters</button>
                 </div>
             </aside>
-            <button id="internshipFilterBackdrop" type="button" class="internship-filter-backdrop" aria-label="Close filters" hidden></button>
+            <button id="internshipFilterBackdrop" type="button" class="internship-filter-backdrop"
+                aria-label="Close filters" hidden></button>
 
             <!-- Right Main Content Area -->
             <main class="lg:col-span-9 space-y-6">
@@ -163,25 +204,30 @@
                     <div>
                         <h1 class="text-2xl font-extrabold text-slate-900 tracking-tight">Featured Internship
                             Opportunities</h1>
-                        <p class="text-slate-500 font-medium text-sm mt-0.5"><span data-i18n="common.showing">Showing</span> <span
-                                id="internshipResultCount" class="font-bold text-slate-800">0</span> <span data-i18n="common.internshipOpportunities">internship opportunities</span></p>
+                        <p class="text-slate-500 font-medium text-sm mt-0.5"><span
+                                data-i18n="common.showing">Showing</span> <span id="internshipResultCount"
+                                class="font-bold text-slate-800">0</span> <span
+                                data-i18n="common.internshipOpportunities">internship opportunities</span></p>
                     </div>
                     <div class="flex items-center gap-2">
-                        <button id="mobileFilterToggle" type="button" class="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm font-semibold text-slate-700 shadow-sm lg:hidden" aria-expanded="false" aria-controls="internshipFilterSidebar">
+                        <button id="mobileFilterToggle" type="button"
+                            class="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm font-semibold text-slate-700 shadow-sm lg:hidden"
+                            aria-expanded="false" aria-controls="internshipFilterSidebar">
                             <i class="fa-solid fa-sliders" aria-hidden="true"></i>
                             <span data-i18n="common.filters">Filters</span>
-                            <span id="activeFilterCount" class="hidden rounded-full bg-blue-600 px-1.5 py-0.5 text-xs text-white"></span>
+                            <span id="activeFilterCount"
+                                class="hidden rounded-full bg-blue-600 px-1.5 py-0.5 text-xs text-white"></span>
                         </button>
                         <div class="relative min-w-[150px] sm:min-w-[200px]">
-                        <select id="internshipSort"
-                            class="w-full appearance-none bg-white border border-slate-200 text-slate-800 text-sm font-medium py-2.5 px-4 pr-10 rounded-xl cursor-pointer shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
-                            <option value="relevant">Sort by: Most Relevant</option>
-                            <option value="newest">Sort by: Newest First</option>
-                        </select>
-                        <div
-                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-slate-500">
-                            <i class="fa-solid fa-chevron-down text-xs"></i>
-                        </div>
+                            <select id="internshipSort"
+                                class="w-full appearance-none bg-white border border-slate-200 text-slate-800 text-sm font-medium py-2.5 px-4 pr-10 rounded-xl cursor-pointer shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="relevant">Sort by: Most Relevant</option>
+                                <option value="newest">Sort by: Newest First</option>
+                            </select>
+                            <div
+                                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-slate-500">
+                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -969,15 +1015,18 @@
                         our Work with an engineering team to build and improve web applications while gaining practical
                         software development experience</p>
                     <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto">
-                        <button class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-blue-600 text-white hover:text-blue-600 hover:bg-white font-semibold text-sm shadow-md shadow-blue-500/20 duration-200">Explore Career Guide</button>
-                        <a href="profile/cv-builder.html" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-white text-blue-600 hover:bg-blue-600 hover:text-white border border-slate-200/80 text-slate-800 font-semibold text-sm shadow-sm hover:shadow transition-all duration-200">
+                        <button
+                            class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-blue-600 text-white hover:text-blue-600 hover:bg-white font-semibold text-sm shadow-md shadow-blue-500/20 duration-200">Explore
+                            Career Guide</button>
+                        <a href="profile/cv-builder.html"
+                            class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-white text-blue-600 hover:bg-blue-600 hover:text-white border border-slate-200/80 text-slate-800 font-semibold text-sm shadow-sm hover:shadow transition-all duration-200">
                             Learn To Create CV</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-     <footer class="site-footer footer py-8" id="about">
+    <footer class="site-footer footer py-8" id="about">
         <div class="site-container flex flex-col justify-between">
             <div class="footer-top flex flex-col lg:flex-row items-center justify-between mb-8 border-b-2 pb-4">
                 <a href="../index.html" class="footer-logo">
@@ -1026,74 +1075,151 @@
             </div>
         </div>
     </footer>
-    <div id="applicationDialog" class="fixed inset-0 z-[100] hidden overflow-y-auto bg-slate-950/55 p-3 sm:p-5" role="dialog" aria-modal="true" aria-labelledby="applicationDialogTitle" aria-hidden="true">
+    <div id="applicationDialog" class="fixed inset-0 z-[100] hidden overflow-y-auto bg-slate-950/55 p-3 sm:p-5"
+        role="dialog" aria-modal="true" aria-labelledby="applicationDialogTitle" aria-hidden="true">
         <div class="mx-auto my-3 w-full max-w-2xl rounded-xl bg-white shadow-2xl sm:my-8">
             <div class="flex items-start justify-between gap-4 border-b border-slate-100 p-5 sm:p-6">
                 <div>
-                    <h2 id="applicationDialogTitle" class="text-xl font-bold text-slate-900" data-i18n="applications.formTitle">Application Form</h2>
-                    <p class="mt-1 text-sm text-slate-500" data-i18n="applications.formHint">Review the internship details and submit your application.</p>
+                    <h2 id="applicationDialogTitle" class="text-xl font-bold text-slate-900"
+                        data-i18n="applications.formTitle">Application Form</h2>
+                    <p class="mt-1 text-sm text-slate-500" data-i18n="applications.formHint">Review the internship
+                        details and submit your application.</p>
                 </div>
-                <button id="closeApplicationDialog" type="button" class="grid h-9 w-9 shrink-0 place-items-center rounded-lg text-slate-500 hover:bg-slate-100" aria-label="Close application"><i class="fa-solid fa-xmark"></i></button>
+                <button id="closeApplicationDialog" type="button"
+                    class="grid h-9 w-9 shrink-0 place-items-center rounded-lg text-slate-500 hover:bg-slate-100"
+                    aria-label="Close application"><i class="fa-solid fa-xmark"></i></button>
             </div>
 
             <div class="p-5 sm:p-6">
-                <div id="applicationLoginNotice" class="hidden rounded-lg border border-blue-100 bg-blue-50 p-4 text-sm text-slate-700" role="status">
+                <div id="applicationLoginNotice"
+                    class="hidden rounded-lg border border-blue-100 bg-blue-50 p-4 text-sm text-slate-700"
+                    role="status">
                     <p data-i18n="applications.loginRequired">Please log in to apply for this internship.</p>
-                    <a id="applicationLoginLink" href="auth/login.html" class="mt-3 inline-flex min-h-10 items-center justify-center rounded-lg bg-blue-600 px-4 py-2 font-semibold text-white hover:bg-blue-700" data-i18n="nav.login">Log In</a>
+                    <a id="applicationLoginLink" href="auth/login.html"
+                        class="mt-3 inline-flex min-h-10 items-center justify-center rounded-lg bg-blue-600 px-4 py-2 font-semibold text-white hover:bg-blue-700"
+                        data-i18n="nav.login">Log In</a>
                 </div>
 
-                <p id="applicationLoading" class="hidden py-6 text-center text-sm text-slate-500" role="status" data-i18n="applications.loading">Loading application information...</p>
+                <p id="applicationLoading" class="hidden py-6 text-center text-sm text-slate-500" role="status"
+                    data-i18n="applications.loading">Loading application information...</p>
 
                 <form id="applicationForm" class="hidden space-y-5">
                     <section class="rounded-lg bg-slate-50 p-4" aria-labelledby="applicationInternshipHeading">
-                        <h3 id="applicationInternshipHeading" class="mb-3 text-sm font-bold text-slate-800" data-i18n="applications.internshipInfo">Internship Information</h3>
+                        <h3 id="applicationInternshipHeading" class="mb-3 text-sm font-bold text-slate-800"
+                            data-i18n="applications.internshipInfo">Internship Information</h3>
                         <dl class="grid grid-cols-1 gap-x-5 gap-y-3 text-sm sm:grid-cols-2">
-                            <div><dt class="text-xs font-medium text-slate-500" data-i18n="applications.internshipTitle">Internship Title</dt><dd id="applicationInternshipTitle" class="mt-0.5 font-semibold text-slate-800"></dd></div>
-                            <div><dt class="text-xs font-medium text-slate-500" data-i18n="applications.company">Company</dt><dd id="applicationCompany" class="mt-0.5 font-semibold text-slate-800"></dd></div>
-                            <div><dt class="text-xs font-medium text-slate-500" data-i18n="applications.location">Location</dt><dd id="applicationLocation" class="mt-0.5 text-slate-700"></dd></div>
-                            <div><dt class="text-xs font-medium text-slate-500" data-i18n="applications.workType">Work Type</dt><dd id="applicationWorkType" class="mt-0.5 text-slate-700"></dd></div>
-                            <div><dt class="text-xs font-medium text-slate-500" data-i18n="applications.duration">Duration</dt><dd id="applicationDuration" class="mt-0.5 text-slate-700"></dd></div>
+                            <div>
+                                <dt class="text-xs font-medium text-slate-500" data-i18n="applications.internshipTitle">
+                                    Internship Title</dt>
+                                <dd id="applicationInternshipTitle" class="mt-0.5 font-semibold text-slate-800"></dd>
+                            </div>
+                            <div>
+                                <dt class="text-xs font-medium text-slate-500" data-i18n="applications.company">Company
+                                </dt>
+                                <dd id="applicationCompany" class="mt-0.5 font-semibold text-slate-800"></dd>
+                            </div>
+                            <div>
+                                <dt class="text-xs font-medium text-slate-500" data-i18n="applications.location">
+                                    Location</dt>
+                                <dd id="applicationLocation" class="mt-0.5 text-slate-700"></dd>
+                            </div>
+                            <div>
+                                <dt class="text-xs font-medium text-slate-500" data-i18n="applications.workType">Work
+                                    Type</dt>
+                                <dd id="applicationWorkType" class="mt-0.5 text-slate-700"></dd>
+                            </div>
+                            <div>
+                                <dt class="text-xs font-medium text-slate-500" data-i18n="applications.duration">
+                                    Duration</dt>
+                                <dd id="applicationDuration" class="mt-0.5 text-slate-700"></dd>
+                            </div>
                         </dl>
                     </section>
 
                     <section aria-labelledby="applicationApplicantHeading">
-                        <h3 id="applicationApplicantHeading" class="mb-3 text-sm font-bold text-slate-800" data-i18n="applications.applicantInfo">Applicant Information</h3>
+                        <h3 id="applicationApplicantHeading" class="mb-3 text-sm font-bold text-slate-800"
+                            data-i18n="applications.applicantInfo">Applicant Information</h3>
                         <dl class="grid grid-cols-1 gap-x-5 gap-y-3 text-sm sm:grid-cols-2">
-                            <div><dt class="text-xs font-medium text-slate-500" data-i18n="applications.fullName">Full Name</dt><dd id="applicationApplicantName" class="mt-0.5 font-medium text-slate-800"></dd></div>
-                            <div><dt class="text-xs font-medium text-slate-500" data-i18n="applications.email">Email</dt><dd id="applicationApplicantEmail" class="mt-0.5 break-all text-slate-700"></dd></div>
-                            <div><dt class="text-xs font-medium text-slate-500" data-i18n="applications.phone">Phone</dt><dd id="applicationApplicantPhone" class="mt-0.5 text-slate-700"></dd></div>
-                            <div><dt class="text-xs font-medium text-slate-500" data-i18n="applications.university">University</dt><dd id="applicationApplicantUniversity" class="mt-0.5 text-slate-700"></dd></div>
-                            <div><dt class="text-xs font-medium text-slate-500" data-i18n="applications.major">Major</dt><dd id="applicationApplicantMajor" class="mt-0.5 text-slate-700"></dd></div>
+                            <div>
+                                <dt class="text-xs font-medium text-slate-500" data-i18n="applications.fullName">Full
+                                    Name</dt>
+                                <dd id="applicationApplicantName" class="mt-0.5 font-medium text-slate-800"></dd>
+                            </div>
+                            <div>
+                                <dt class="text-xs font-medium text-slate-500" data-i18n="applications.email">Email</dt>
+                                <dd id="applicationApplicantEmail" class="mt-0.5 break-all text-slate-700"></dd>
+                            </div>
+                            <div>
+                                <dt class="text-xs font-medium text-slate-500" data-i18n="applications.phone">Phone</dt>
+                                <dd id="applicationApplicantPhone" class="mt-0.5 text-slate-700"></dd>
+                            </div>
+                            <div>
+                                <dt class="text-xs font-medium text-slate-500" data-i18n="applications.university">
+                                    University</dt>
+                                <dd id="applicationApplicantUniversity" class="mt-0.5 text-slate-700"></dd>
+                            </div>
+                            <div>
+                                <dt class="text-xs font-medium text-slate-500" data-i18n="applications.major">Major</dt>
+                                <dd id="applicationApplicantMajor" class="mt-0.5 text-slate-700"></dd>
+                            </div>
                         </dl>
                     </section>
 
                     <label class="block space-y-1.5">
-                        <span class="text-sm font-semibold text-slate-700" data-i18n="applications.selectCv">Select CV</span>
-                        <select id="applicationCv" required class="h-11 w-full rounded-lg border border-slate-200 bg-white px-3 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"><option value="" data-i18n="applications.chooseCv">Choose a CV</option></select>
-                        <span id="applicationNoCv" class="hidden text-sm text-amber-700"><span data-i18n="applications.noCv">You don't have a CV yet.</span> <a href="profile/cv-builder.html" class="font-semibold text-blue-700 underline" data-i18n="applications.createCv">Create CV</a></span>
-                        <a id="applicationCvPreview" class="hidden text-sm font-medium text-blue-700 underline" target="_blank" rel="noopener noreferrer" data-i18n="applications.previewCv">Preview selected CV</a>
+                        <span class="text-sm font-semibold text-slate-700" data-i18n="applications.selectCv">Select
+                            CV</span>
+                        <select id="applicationCv" required
+                            class="h-11 w-full rounded-lg border border-slate-200 bg-white px-3 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100">
+                            <option value="" data-i18n="applications.chooseCv">Choose a CV</option>
+                        </select>
+                        <span id="applicationNoCv" class="hidden text-sm text-amber-700"><span
+                                data-i18n="applications.noCv">You don't have a CV yet.</span> <a
+                                href="profile/cv-builder.html" class="font-semibold text-blue-700 underline"
+                                data-i18n="applications.createCv">Create CV</a></span>
+                        <a id="applicationCvPreview" class="hidden text-sm font-medium text-blue-700 underline"
+                            target="_blank" rel="noopener noreferrer" data-i18n="applications.previewCv">Preview
+                            selected CV</a>
                     </label>
 
                     <label class="block space-y-1.5">
-                        <span class="text-sm font-semibold text-slate-700" data-i18n="applications.coverLetter">Cover Letter</span>
-                        <textarea id="applicationCoverLetter" rows="5" maxlength="3000" required placeholder="Tell the employer why you're a good fit..." data-i18n-placeholder="applications.coverLetterPlaceholder" class="w-full resize-y rounded-lg border border-slate-200 px-3 py-2.5 text-sm leading-6 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"></textarea>
-                        <span class="block text-right text-xs text-slate-400"><span id="applicationCoverLetterCount">0</span> / 3000</span>
+                        <span class="text-sm font-semibold text-slate-700" data-i18n="applications.coverLetter">Cover
+                            Letter</span>
+                        <textarea id="applicationCoverLetter" rows="5" maxlength="3000" required
+                            placeholder="Tell the employer why you're a good fit..."
+                            data-i18n-placeholder="applications.coverLetterPlaceholder"
+                            class="w-full resize-y rounded-lg border border-slate-200 px-3 py-2.5 text-sm leading-6 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"></textarea>
+                        <span class="block text-right text-xs text-slate-400"><span
+                                id="applicationCoverLetterCount">0</span> / 3000</span>
                     </label>
 
-                    <p id="applicationFormMessage" class="hidden rounded-lg p-3 text-sm" role="status" aria-live="polite"></p>
+                    <p id="applicationFormMessage" class="hidden rounded-lg p-3 text-sm" role="status"
+                        aria-live="polite"></p>
                     <div class="flex flex-col-reverse gap-2 border-t border-slate-100 pt-4 sm:flex-row sm:justify-end">
-                        <button id="cancelApplication" type="button" class="min-h-11 rounded-lg border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50" data-i18n="common.cancel">Cancel</button>
-                        <button id="submitApplication" type="submit" class="min-h-11 rounded-lg bg-blue-600 px-5 py-2 text-sm font-semibold text-white hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60" data-i18n="applications.submit">Submit Application</button>
+                        <button id="cancelApplication" type="button"
+                            class="min-h-11 rounded-lg border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50"
+                            data-i18n="common.cancel">Cancel</button>
+                        <button id="submitApplication" type="submit"
+                            class="min-h-11 rounded-lg bg-blue-600 px-5 py-2 text-sm font-semibold text-white hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
+                            data-i18n="applications.submit">Submit Application</button>
                     </div>
                 </form>
 
                 <section id="applicationSuccess" class="hidden py-5 text-center" aria-live="polite">
-                    <span class="mx-auto grid h-14 w-14 place-items-center rounded-full bg-emerald-50 text-emerald-600"><i class="fa-solid fa-check text-xl"></i></span>
-                    <h3 class="mt-4 text-xl font-bold text-slate-900" data-i18n="applications.submittedTitle">Application Submitted</h3>
-                    <p class="mt-2 text-sm text-slate-600"><span data-i18n="applications.submittedFor">Your application for</span> <strong id="applicationSuccessTitle"></strong> <span data-i18n="applications.submittedSuccessfully">has been submitted successfully.</span></p>
+                    <span
+                        class="mx-auto grid h-14 w-14 place-items-center rounded-full bg-emerald-50 text-emerald-600"><i
+                            class="fa-solid fa-check text-xl"></i></span>
+                    <h3 class="mt-4 text-xl font-bold text-slate-900" data-i18n="applications.submittedTitle">
+                        Application Submitted</h3>
+                    <p class="mt-2 text-sm text-slate-600"><span data-i18n="applications.submittedFor">Your application
+                            for</span> <strong id="applicationSuccessTitle"></strong> <span
+                            data-i18n="applications.submittedSuccessfully">has been submitted successfully.</span></p>
                     <div class="mt-6 flex flex-col justify-center gap-2 sm:flex-row">
-                        <a href="profile/applications.html" class="inline-flex min-h-11 items-center justify-center rounded-lg bg-blue-600 px-5 py-2 text-sm font-semibold text-white hover:bg-blue-700" data-i18n="applications.myApplications">View My Applications</a>
-                        <button id="closeApplicationSuccess" type="button" class="min-h-11 rounded-lg border border-slate-200 px-5 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50" data-i18n="common.close">Close</button>
+                        <a href="profile/applications.html"
+                            class="inline-flex min-h-11 items-center justify-center rounded-lg bg-blue-600 px-5 py-2 text-sm font-semibold text-white hover:bg-blue-700"
+                            data-i18n="applications.myApplications">View My Applications</a>
+                        <button id="closeApplicationSuccess" type="button"
+                            class="min-h-11 rounded-lg border border-slate-200 px-5 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50"
+                            data-i18n="common.close">Close</button>
                     </div>
                 </section>
             </div>
