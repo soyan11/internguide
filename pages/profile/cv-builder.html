@@ -1,0 +1,5935 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create CV | InternGuide</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../src/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <script
+    src="https://kit.fontawesome.com/ec8f2e5552.js"
+    crossorigin="anonymous">
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      font-family: Poppins, sans-serif;
+      background: #F8F9FF;
+      color: #343A40;
+    }
+
+    .brand {
+      color: #3B5BDB;
+    }
+
+    .bg-brand {
+      background: #3B5BDB;
+    }
+
+    .soft {
+      background: #EDF2FF;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #DEE2E6;
+      border-radius: 12px;
+    }
+
+    input,
+    textarea,
+    select {
+      outline: none;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: #748FFC;
+      box-shadow: 0 0 0 3px rgba(59, 91, 219, .10);
+    }
+
+    /* =====================================================
+       PROFESSIONAL ATS-FRIENDLY CV
+       A4 PORTRAIT / SINGLE COLUMN
+    ===================================================== */
+
+    /* =========================================================
+       PROFESSIONAL RECRUITER / ATS CV
+       A4 portrait • single column • one page
+    ========================================================= */
+
+    .cv-paper {
+      width: 210mm;
+      height: 297mm;
+      min-height: 297mm;
+      max-width: 100%;
+      background: #fff;
+      color: #20242b;
+      box-shadow: 0 4px 24px rgba(28, 31, 38, .10);
+      overflow: hidden;
+    }
+
+    .cv-page {
+      width: 210mm;
+      height: 297mm;
+      min-height: 297mm;
+      box-sizing: border-box;
+      padding: 14mm 16mm 12mm;
+      font-family: Inter, Aptos, Calibri, Arial, Helvetica, sans-serif;
+    }
+
+    .pro-header {
+      padding-bottom: 4.5mm;
+      border-bottom: 1px solid #CBD5E1;
+    }
+
+    .pro-name {
+      margin: 0;
+      color: #111827;
+      font-size: 31px;
+      line-height: 1.05;
+      font-weight: 750;
+      letter-spacing: -.02em;
+    }
+
+    .pro-title {
+      margin-top: 3px;
+      color: #334155;
+      font-size: 14px;
+      line-height: 1.35;
+      font-weight: 600;
+    }
+
+    .pro-contact {
+      margin-top: 5px;
+      color: #475569;
+      font-size: 13.5px;
+      line-height: 1.4;
+      overflow-wrap: anywhere;
+    }
+
+    .pro-content {
+      padding-top: 4mm;
+    }
+
+    .pro-section {
+      margin: 0 0 5.5mm;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .pro-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .pro-section.hidden {
+      display: none !important;
+    }
+
+    .pro-heading {
+      margin: 0 0 2mm;
+      padding-bottom: 1.2mm;
+      border-bottom: 1px solid #D6DDE7;
+      color: #1F2937;
+      font-size: 13.5px;
+      line-height: 1.15;
+      font-weight: 750;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+
+    .pro-summary {
+      color: #303945;
+      font-size: 11.5px;
+      line-height: 1.42;
+    }
+
+    .pro-summary p {
+      margin: 0;
+    }
+
+    .pro-entries {
+      color: #303945;
+      font-size: 11.5px;
+      line-height: 1.4;
+    }
+
+    .pro-entry {
+      margin: 0 0 4mm;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .pro-entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .pro-entry-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .pro-entry-title {
+      color: #111827;
+      font-size: 12.5px;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+    .pro-entry-date {
+      flex: 0 0 auto;
+      color: #64748B;
+      font-size: 10.5px;
+      line-height: 1.25;
+      white-space: nowrap;
+      text-align: right;
+    }
+
+    .pro-entry-subtitle {
+      margin-top: 1px;
+      color: #475569;
+      font-size: 13.5px;
+      line-height: 1.3;
+      font-weight: 600;
+    }
+
+    .pro-entry-description {
+      margin-top: 1.5px;
+    }
+
+    .pro-bullets {
+      margin: 2px 0 0;
+      padding-left: 15px;
+    }
+
+    .pro-bullets li {
+      margin: 0 0 2px;
+      padding-left: 1px;
+    }
+
+    .pro-bullets li:last-child {
+      margin-bottom: 0;
+    }
+
+    .pro-skills {
+      display: grid;
+      grid-template-columns: 125px 1fr;
+      column-gap: 10px;
+      row-gap: 2.5px;
+      font-size: 11.5px;
+      line-height: 1.35;
+    }
+
+    .pro-skill-label {
+      color: #1F2937;
+      font-weight: 700;
+    }
+
+    .pro-skill-value {
+      color: #303945;
+    }
+
+    .pro-languages {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 30px;
+      row-gap: 2px;
+      font-size: 11.5px;
+      line-height: 1.35;
+    }
+
+    .pro-language {
+      color: #303945;
+    }
+
+    .pro-header-content {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 26mm;
+      gap: 8mm;
+      align-items: center;
+    }
+
+    .pro-header-text {
+      min-width: 0;
+    }
+
+    .pro-photo-wrap {
+      width: 24mm;
+      height: 30mm;
+      justify-self: end;
+      border: 1px solid #CBD5E1;
+      border-radius: 2px;
+      overflow: hidden;
+      background: #F8FAFC;
+    }
+
+    .pro-photo {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .pro-photo-wrap.hidden {
+      display: none !important;
+    }
+
+    .cv-template-photo-hidden {
+      display: none !important;
+    }
+
+    .cv-template-section {
+      margin-top: 2rem;
+    }
+
+    .cv-template-progress {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: .5rem;
+      margin-bottom: 1rem;
+    }
+
+    .cv-template-progress button {
+      min-width: 0;
+      padding: .65rem .5rem;
+      border: 1px solid #DEE2E6;
+      border-radius: 8px;
+      background: #fff;
+      color: #475569;
+      font-size: .75rem;
+      font-weight: 600;
+      text-align: center;
+      transition: border-color .16s ease, color .16s ease, background .16s ease;
+    }
+
+    .cv-template-progress button:hover,
+    .cv-template-progress button:focus-visible {
+      border-color: #3B5BDB;
+      color: #3B5BDB;
+      outline: none;
+    }
+
+    .cv-template-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .cv-template-card {
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid #DEE2E6;
+      border-radius: 10px;
+      background: #fff;
+      transition: border-color .16s ease, box-shadow .16s ease, transform .16s ease;
+    }
+
+    .cv-template-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(28, 31, 38, .09);
+    }
+
+    .cv-template-card.is-selected {
+      border: 2px solid var(--cv-accent, #3B5BDB);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--cv-accent, #3B5BDB) 12%, transparent);
+    }
+
+    .cv-template-thumb {
+      width: 100%;
+      aspect-ratio: 210 / 128;
+      overflow: hidden;
+      padding: 1rem 1.25rem;
+      background: #F1F5F9;
+    }
+
+    .cv-thumb-header {
+      height: 30%;
+      padding: .35rem .45rem;
+      border-bottom: 2px solid #3B5BDB;
+      background: #fff;
+    }
+
+    .cv-thumb-header i,
+    .cv-thumb-header b,
+    .cv-thumb-header span,
+    .cv-thumb-body i,
+    .cv-thumb-main b {
+      display: block;
+      height: 4px;
+      margin-bottom: 4px;
+      border-radius: 3px;
+      background: #94A3B8;
+    }
+
+    .cv-thumb-header i { width: 34%; height: 7px; background: #1E293B; }
+    .cv-thumb-header b { width: 23%; }
+    .cv-thumb-header span { width: 48%; height: 3px; }
+
+    .cv-thumb-body {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: .5rem;
+      height: 70%;
+      padding: .5rem .45rem;
+      background: #fff;
+    }
+
+    .cv-thumb-sidebar { display: none; }
+    .cv-thumb-main b { width: 28%; height: 4px; margin-top: 5px; background: #3B5BDB; }
+    .cv-thumb-main i:nth-of-type(odd) { width: 92%; }
+    .cv-thumb-main i:nth-of-type(even) { width: 78%; }
+
+    .cv-template-thumb[data-template="minimal-professional"] .cv-thumb-header { text-align: center; border-bottom-color: #475569; }
+    .cv-template-thumb[data-template="minimal-professional"] .cv-thumb-header i,
+    .cv-template-thumb[data-template="minimal-professional"] .cv-thumb-header b,
+    .cv-template-thumb[data-template="minimal-professional"] .cv-thumb-header span { margin-left: auto; margin-right: auto; }
+    .cv-template-thumb[data-template="creative-it"] .cv-thumb-body { grid-template-columns: 32% 1fr; }
+    .cv-template-thumb[data-template="creative-it"] .cv-thumb-sidebar { display: block; padding: .4rem; background: #E2E8F0; }
+    .cv-template-thumb[data-template="creative-it"] .cv-thumb-sidebar i { width: 90%; height: 3px; margin-bottom: 7px; background: #3B5BDB; }
+    .cv-template-thumb[data-template="project-focus"] .cv-thumb-main b:first-child { width: 40%; height: 7px; background: #1E293B; }
+    .cv-template-thumb[data-template="project-focus"] .cv-thumb-main b:nth-of-type(2) { width: 85%; height: 5px; background: #3B5BDB; }
+    .cv-template-thumb[data-template="premium-one-page"] .cv-thumb-header { height: 36%; border-bottom-width: 3px; }
+    .cv-template-thumb[data-template="premium-one-page"] .cv-thumb-body { height: 64%; }
+
+    .cv-template-copy { padding: 1rem; }
+    .cv-template-topline { display: flex; justify-content: space-between; align-items: center; gap: .5rem; }
+    .cv-template-number { color: #64748B; font-size: .65rem; font-weight: 700; letter-spacing: .08em; }
+    .cv-template-selected { padding: .2rem .5rem; border-radius: 999px; background: #E8EDFF; color: #304FC8; font-size: .65rem; font-weight: 700; }
+    .cv-template-copy h3 { margin-top: .45rem; color: #1C1F26; font-size: 1rem; font-weight: 700; }
+    .cv-template-category { margin-top: .15rem; color: #64748B; font-size: .7rem; }
+    .cv-template-description { min-height: 2.8rem; margin-top: .65rem; color: #475569; font-size: .78rem; line-height: 1.45; }
+    .cv-template-best { margin-top: .55rem; color: #64748B; font-size: .7rem; line-height: 1.45; }
+    .cv-template-best strong { color: #334155; }
+    .cv-template-actions { display: flex; gap: .5rem; margin-top: .9rem; }
+    .cv-template-actions button { min-height: 2.4rem; padding: .45rem .65rem; border: 1px solid #CBD5E1; border-radius: 7px; font-size: .72rem; font-weight: 650; }
+    .cv-template-preview { flex: 0 0 auto; background: #fff; color: #334155; }
+    .cv-template-use { flex: 1; border-color: #3B5BDB !important; background: #3B5BDB; color: #fff; }
+    .cv-template-actions button:hover { filter: brightness(.96); }
+
+    .cv-customize-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; }
+    .cv-accent-options { display: flex; flex-wrap: wrap; gap: .6rem; }
+    .cv-accent-swatch { display: inline-grid; width: 2rem; height: 2rem; place-items: center; border: 2px solid transparent; border-radius: 50%; color: #fff; font-size: .8rem; }
+    .cv-accent-swatch.is-selected { outline: 2px solid #1E293B; outline-offset: 2px; }
+
+    #cvTemplateDialog {
+      width: min(96vw, 1000px);
+      max-width: none;
+      max-height: 94vh;
+      margin: auto;
+      padding: 0;
+      overflow: hidden;
+      border: 1px solid #CBD5E1;
+      border-radius: 12px;
+      background: #F1F5F9;
+      color: #1C1F26;
+    }
+
+    #cvTemplateDialog::backdrop { background: rgba(15, 23, 42, .65); }
+    .cv-dialog-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; padding: 1rem 1.25rem; background: #fff; border-bottom: 1px solid #DEE2E6; }
+    .cv-dialog-content { max-height: calc(94vh - 145px); overflow: auto; padding: 1rem; }
+    .cv-dialog-stage { position: relative; width: 100%; overflow: hidden; }
+    .cv-dialog-paper { position: absolute; top: 0; left: 50%; width: 210mm !important; max-width: none !important; transform-origin: top center; }
+    .cv-dialog-footer { display: flex; justify-content: flex-end; gap: .6rem; padding: .85rem 1.25rem; border-top: 1px solid #DEE2E6; background: #fff; }
+
+    .cv-paper { --cv-accent: #3B5BDB; width: 210mm; max-width: none; height: auto; min-height: 297mm; overflow: visible; }
+    .cv-page { height: auto; min-height: 297mm; }
+    .cv-paper .pro-heading { color: var(--cv-accent); border-bottom-color: color-mix(in srgb, var(--cv-accent) 32%, white); }
+    .cv-paper .pro-name { color: var(--cv-accent); }
+
+    .cv-paper[data-template="modern-it-student"] .pro-header { border-bottom: 2px solid var(--cv-accent); }
+    .cv-paper[data-template="modern-it-student"] .pro-section { margin-bottom: 5mm; }
+    .cv-paper[data-template="modern-it-student"] .pro-heading { font-size: 13px; letter-spacing: .08em; }
+
+    .cv-paper[data-template="minimal-professional"] .pro-header { border-bottom: 1px solid #475569; }
+    .cv-paper[data-template="minimal-professional"] .pro-header-content { display: block; }
+    .cv-paper[data-template="minimal-professional"] .pro-name,
+    .cv-paper[data-template="minimal-professional"] .pro-title,
+    .cv-paper[data-template="minimal-professional"] .pro-contact { color: #111827; }
+    .cv-paper[data-template="minimal-professional"] .pro-heading { color: #1F2937; border-bottom-color: #CBD5E1; }
+    .cv-paper[data-template="minimal-professional"] .pro-photo-wrap { display: none !important; }
+    .cv-paper[data-template="minimal-professional"] .pro-section { margin-bottom: 4.5mm; }
+
+    .cv-paper[data-template="creative-it"] .cv-page { display: grid; grid-template-columns: 32% minmax(0, 1fr); grid-auto-flow: row dense; align-content: start; column-gap: 7mm; }
+    .cv-paper[data-template="creative-it"] .pro-header { grid-column: 1 / -1; margin-bottom: 5mm; }
+    .cv-paper[data-template="creative-it"] .pro-header-content { display: block; }
+    .cv-paper[data-template="creative-it"] .pro-photo-wrap { display: none !important; }
+    .cv-paper[data-template="creative-it"] .pro-section { min-width: 0; margin-bottom: 4mm; }
+    .cv-paper[data-template="creative-it"] #skillsSection,
+    .cv-paper[data-template="creative-it"] #languagesSection,
+    .cv-paper[data-template="creative-it"] #certificatesSection { grid-column: 1; padding: 3mm; background: #F1F5F9; border-radius: 2mm; }
+    .cv-paper[data-template="creative-it"] #profileSection,
+    .cv-paper[data-template="creative-it"] #educationSection,
+    .cv-paper[data-template="creative-it"] #projectsSection,
+    .cv-paper[data-template="creative-it"] #experienceSection,
+    .cv-paper[data-template="creative-it"] #leadershipSection { grid-column: 2; }
+    .cv-paper[data-template="creative-it"] .pro-skills { grid-template-columns: 1fr; row-gap: 1px; }
+    .cv-paper[data-template="creative-it"] .pro-skill-value { margin-bottom: 2mm; }
+
+    .cv-paper[data-template="project-focus"] .pro-header { border-bottom: 2px solid var(--cv-accent); }
+    .cv-paper[data-template="project-focus"] #projectsSection { padding: 3mm 4mm; border-left: 2px solid var(--cv-accent); background: #F8FAFC; }
+    .cv-paper[data-template="project-focus"] #projectsSection .pro-entry { margin-bottom: 5mm; }
+    .cv-paper[data-template="project-focus"] #projectsSection .pro-entry-title { color: var(--cv-accent); font-size: 13px; }
+
+    .cv-paper[data-template="premium-one-page"] .cv-page { padding: 11mm 13mm 9mm; }
+    .cv-paper[data-template="premium-one-page"] .pro-header { padding-bottom: 3mm; border-bottom: 3px solid var(--cv-accent); }
+    .cv-paper[data-template="premium-one-page"] .pro-name { font-size: 29px; }
+    .cv-paper[data-template="premium-one-page"] .pro-section { margin-bottom: 3.5mm; }
+    .cv-paper[data-template="premium-one-page"] .pro-heading { margin-bottom: 1.2mm; padding-bottom: .7mm; font-size: 11px; }
+    .cv-paper[data-template="premium-one-page"] .pro-summary,
+    .cv-paper[data-template="premium-one-page"] .pro-entries,
+    .cv-paper[data-template="premium-one-page"] .pro-skills,
+    .cv-paper[data-template="premium-one-page"] .pro-languages { font-size: 10px; line-height: 1.32; }
+    .cv-paper[data-template="premium-one-page"] .pro-entry { margin-bottom: 2.5mm; }
+
+    @media (max-width: 1023px) {
+      .cv-template-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 639px) {
+      .cv-template-grid { grid-template-columns: 1fr; }
+      .cv-template-progress { gap: .25rem; }
+      .cv-template-progress button { padding: .55rem .2rem; font-size: .62rem; }
+      .cv-template-description { min-height: 0; }
+      .cv-dialog-header { padding: .85rem; }
+      .cv-dialog-content { padding: .5rem; }
+      .cv-dialog-footer { padding: .75rem; }
+    }
+
+    @media print {
+      .cv-paper, .cv-page { height: auto !important; min-height: 297mm !important; }
+      .cv-paper { overflow: visible !important; }
+      .cv-page { break-after: auto; }
+      .cv-template-photo-hidden { display: none !important; }
+      .cv-paper[data-template="creative-it"] .cv-page { display: grid !important; grid-template-columns: 32% minmax(0, 1fr) !important; }
+      .cv-paper[data-template="creative-it"] .pro-content { display: contents !important; }
+      .cv-paper[data-template="minimal-professional"] .pro-photo-wrap,
+      .cv-paper[data-template="creative-it"] .pro-photo-wrap { display: none !important; }
+      .cv-paper[data-template="premium-one-page"] .pro-summary,
+      .cv-paper[data-template="premium-one-page"] .pro-entries,
+      .cv-paper[data-template="premium-one-page"] .pro-skills,
+      .cv-paper[data-template="premium-one-page"] .pro-languages { font-size: 9.6px !important; }
+      .pro-section, .pro-entry { break-inside: avoid; page-break-inside: avoid; }
+      @page { size: A4 portrait; margin: 0; }
+    }
+
+    @media print {
+      html, body {
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #fff !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .no-print {
+        display: none !important;
+      }
+
+      main {
+        margin: 0 !important;
+        padding: 0 !important;
+        max-width: none !important;
+      }
+
+      .cv-paper {
+        width: 210mm !important;
+        height: 297mm !important;
+        min-height: 297mm !important;
+        max-width: none !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+        overflow: hidden !important;
+      }
+
+      .cv-page {
+        width: 210mm !important;
+        height: 297mm !important;
+        min-height: 297mm !important;
+        padding: 15mm 17mm 13mm !important;
+      }
+
+
+      .pro-header-content {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) 26mm !important;
+        gap: 8mm !important;
+        align-items: center !important;
+      }
+
+      .pro-photo-wrap {
+        display: block !important;
+        width: 24mm !important;
+        height: 30mm !important;
+        justify-self: end !important;
+      }
+
+      .pro-photo {
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+      }
+
+      .pro-name { font-size: 27px !important; }
+      .pro-title { font-size: 12px !important; }
+      .pro-contact { font-size: 9.5px !important; }
+      .pro-heading { font-size: 11.5px !important; }
+      .pro-summary,
+      .pro-entries,
+      .pro-skills,
+      .pro-languages { font-size: 9.7px !important; }
+
+      .pro-entry-title { font-size: 10.8px !important; }
+      .pro-entry-subtitle { font-size: 9.5px !important; }
+      .pro-entry-date { font-size: 9px !important; }
+
+      @page {
+        size: A4 portrait;
+        margin: 0;
+      }
+    }
+
+    .certificate-file {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 9px;
+      border: 1px solid #DEE2E6;
+      border-radius: 8px;
+      background: #fff;
+      font-size: 11px;
+    }
+
+    .ai-example {
+      background: #fff;
+      border: 1px dashed #B8C5F5;
+      border-radius: 10px;
+      padding: 10px;
+      font-size: 14px;
+      line-height: 1.55;
+      color: #475569;
+    }
+
+    .ai-textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .ai-card {
+      background: linear-gradient(135deg, #EDF2FF, #fff);
+      border: 1px solid #C9D4FF;
+    }
+
+    .ai-button {
+      transition: .15s ease;
+    }
+
+    .ai-button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(59, 91, 219, .12);
+    }
+  
+    .cv-section.hidden {
+      display: none !important;
+    }
+
+    .cv-body p {
+      margin: 0 0 2px;
+    }
+
+    .cv-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .cv-list {
+      margin-top: 2px;
+      margin-bottom: 0;
+    }
+
+    .cv-interest-list {
+      line-height: 1.45;
+    }
+
+    .cv-interest-list li {
+      margin-bottom: 1px;
+    }
+
+    .cv-photo {
+      flex-shrink: 0;
+    }
+
+    @media print {
+      .cv-section.hidden {
+        display: none !important;
+      }
+
+      .cv-body {
+        font-size: 10.8px !important;
+        line-height: 1.5 !important;
+      }
+
+      .cv-section-title {
+        margin-bottom: 4px !important;
+      }
+
+      .cv-pill {
+        padding: 2.5px 6px !important;
+        font-size: 9.2px !important;
+      }
+
+      .language-preview-row {
+        margin-bottom: 6px !important;
+      }
+    }
+
+    /* Balanced live preview: do not show a giant empty A4 canvas. */
+    /* Slightly stronger hierarchy for sparse student CVs. */
+    .cv-section-title {
+      font-size: 11px;
+    }
+
+    .cv-body {
+      font-size: 11.2px;
+      line-height: 1.55;
+    }
+
+    .cv-interest-list {
+      font-size: 11.2px;
+      line-height: 1.55;
+    }
+
+    .cv-language-row,
+    .language-preview-head {
+      font-size: 10px;
+    }
+
+    .cv-pill {
+      font-size: 11px;
+      padding: 4px 8px;
+    }
+
+    .cv-layout > * {
+      align-self: start;
+    }
+
+    .cv-section + .cv-section {
+      margin-top: 0;
+    }
+
+    .cv-footer {
+      clear: both;
+    }
+
+    @media print {
+      .cv-layout > * {
+        align-self: start !important;
+      }
+    }
+
+    /* Final A4 typography: use the page, do not stretch empty sections. */
+    @media print {
+      .cv-paper,
+      .cv-page {
+        width: 210mm !important;
+        height: 297mm !important;
+        min-height: 297mm !important;
+      }
+
+      .cv-page {
+        padding: 9mm 11mm 6mm !important;
+      }
+
+      .cv-name { font-size: 38px !important; }
+      .cv-title { font-size: 15px !important; }
+      .cv-contact { font-size: 11px !important; }
+      .cv-section-title { font-size: 14px !important; }
+      .cv-body { font-size: 13px !important; line-height: 1.58 !important; }
+      .cv-education-title,
+      .cv-experience-title,
+      .cv-item-title { font-size: 14px !important; }
+      .cv-item-meta { font-size: 10.5px !important; }
+      .cv-interest-list { font-size: 12px !important; line-height: 1.55 !important; }
+      .cv-pill { font-size: 11px !important; padding: 4px 8px !important; }
+    }
+
+    /* LARGE A4 CV MODE */
+    @media print {
+      .cv-paper,
+      .cv-page {
+        width: 210mm !important;
+        height: 297mm !important;
+        min-height: 297mm !important;
+      }
+
+      .cv-page {
+        padding: 8mm 10mm 5mm !important;
+      }
+
+      .cv-name {
+        font-size: 44px !important;
+        line-height: 1.05 !important;
+      }
+
+      .cv-title {
+        font-size: 17px !important;
+      }
+
+      .cv-contact {
+        font-size: 12.5px !important;
+        line-height: 1.45 !important;
+      }
+
+      .cv-section-title {
+        font-size: 16px !important;
+        line-height: 1.25 !important;
+        margin-bottom: 8px !important;
+      }
+
+      .cv-body {
+        font-size: 14.5px !important;
+        line-height: 1.52 !important;
+      }
+
+      .cv-education-title,
+      .cv-experience-title,
+      .cv-item-title {
+        font-size: 16px !important;
+        line-height: 1.3 !important;
+      }
+
+      .cv-item-meta {
+        font-size: 12px !important;
+        line-height: 1.4 !important;
+      }
+
+      .cv-interest-list {
+        font-size: 13.5px !important;
+        line-height: 1.5 !important;
+      }
+
+      .cv-pill {
+        font-size: 12px !important;
+        padding: 4px 9px !important;
+      }
+
+      .cv-language,
+      .language-preview-row {
+        font-size: 12.5px !important;
+      }
+
+      .cv-section {
+        margin-bottom: 7mm !important;
+      }
+    }
+
+    /* Final readable one-page ATS sizing */
+    @media print {
+      .cv-paper {
+        width: 210mm !important;
+        height: 297mm !important;
+        min-height: 297mm !important;
+      }
+
+      .cv-page {
+        width: 210mm !important;
+        height: 297mm !important;
+        min-height: 297mm !important;
+        padding: 15mm 16mm 12mm !important;
+      }
+
+      .ats-name {
+        font-size: 31px !important;
+        line-height: 1.05 !important;
+      }
+
+      .ats-title {
+        font-size: 14px !important;
+      }
+
+      .ats-contact {
+        font-size: 11px !important;
+        line-height: 1.45 !important;
+      }
+
+      .ats-section-title {
+        font-size: 13px !important;
+        margin-bottom: 2.5mm !important;
+      }
+
+      .ats-body,
+      .ats-skill-value,
+      .ats-language-item {
+        font-size: 11.2px !important;
+        line-height: 1.45 !important;
+      }
+
+      .ats-entry-title {
+        font-size: 12px !important;
+      }
+
+      .ats-entry-subtitle {
+        font-size: 10.8px !important;
+      }
+
+      .ats-entry-date {
+        font-size: 10.5px !important;
+      }
+
+      .ats-skills {
+        font-size: 11px !important;
+        grid-template-columns: 145px 1fr !important;
+      }
+
+      .ats-section {
+        margin-bottom: 6mm !important;
+      }
+
+      @page {
+        size: A4 portrait;
+        margin: 0;
+      }
+    }
+
+    /* Final readable sizing: content-first, no artificial page stretching. */
+    @media print {
+      .cv-paper,
+      .cv-page {
+        width: 210mm !important;
+        height: 297mm !important;
+        min-height: 297mm !important;
+      }
+
+      .cv-page {
+        padding: 14mm 16mm 12mm !important;
+      }
+
+      .pro-name {
+        font-size: 31px !important;
+        line-height: 1.05 !important;
+      }
+
+      .pro-title {
+        font-size: 14px !important;
+      }
+
+      .pro-contact {
+        font-size: 11.5px !important;
+        line-height: 1.45 !important;
+      }
+
+      .pro-heading {
+        font-size: 13.5px !important;
+        line-height: 1.2 !important;
+      }
+
+      .pro-summary,
+      .pro-entries,
+      .pro-skills,
+      .pro-languages {
+        font-size: 11.5px !important;
+        line-height: 1.45 !important;
+      }
+
+      .pro-entry-title {
+        font-size: 12.5px !important;
+      }
+
+      .pro-entry-subtitle {
+        font-size: 11.5px !important;
+      }
+
+      .pro-entry-date {
+        font-size: 10.5px !important;
+      }
+
+      .pro-section {
+        margin-bottom: 5.5mm !important;
+      }
+
+      .pro-skills {
+        grid-template-columns: 125px 1fr !important;
+      }
+    }
+
+    /* Prevent an empty optional section from consuming layout space. */
+    .pro-section.hidden {
+      display: none !important;
+    }
+
+    /* Keep the document readable when only a small amount of data is present. */
+    .pro-summary:empty,
+    .pro-entries:empty,
+    .pro-skills:empty,
+    .pro-languages:empty {
+      display: none;
+    }
+
+    .pro-bullets {
+      list-style: disc !important;
+      list-style-position: outside !important;
+      margin: 2px 0 0 !important;
+      padding-left: 16px !important;
+    }
+
+    .pro-bullets li {
+      display: list-item !important;
+      list-style: disc !important;
+      margin: 0 0 1.8px !important;
+      padding-left: 1px !important;
+    }
+
+    .pro-bullets li::marker {
+      color: #334155 !important;
+      font-size: .8em;
+    }
+
+    .pro-languages {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 28px;
+      row-gap: 3px;
+      font-size: 11.5px;
+      line-height: 1.45;
+    }
+
+    .pro-language {
+      color: #303945;
+      break-inside: avoid;
+    }
+
+    @media print {
+      .pro-languages {
+        font-size: 11.5px !important;
+      }
+    }
+
+    /* Project entries: title → technologies → description → bullet points */
+    #projectsSection .pro-entry {
+      margin-bottom: 4.5mm;
+    }
+
+    #projectsSection .pro-entry:last-child {
+      margin-bottom: 0;
+    }
+
+    #projectsSection .pro-entry-title {
+      font-size: 12.5px;
+      font-weight: 750;
+      color: #111827;
+    }
+
+    #projectsSection .pro-entry-subtitle {
+      margin-top: 1px;
+      color: #475569;
+      font-size: 10.5px;
+      font-weight: 600;
+    }
+
+    #projectsSection .pro-entry-description {
+      margin-top: 2px;
+      color: #303945;
+      font-size: 11.5px;
+      line-height: 1.42;
+    }
+
+    #projectsSection .pro-bullets {
+      margin-top: 2px !important;
+    }
+
+    @media print {
+      #projectsSection .pro-entry-title {
+        font-size: 12.5px !important;
+      }
+
+      #projectsSection .pro-entry-subtitle {
+        font-size: 10.5px !important;
+      }
+
+      #projectsSection .pro-entry-description {
+        font-size: 11.5px !important;
+      }
+    }
+</style>
+  <link rel="stylesheet" href="cv-templates.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     HOMEPAGE-STYLE HEADER
+========================================================= -->
+
+<header class="site-header px-5 py-2 lg:px-12 sticky top-0 z-50 no-print">
+  <div class="flex justify-between items-center">
+
+    <a href="../../index.html" class="logo">
+      <img
+        src="../../src/assets/images/logo.png"
+        alt="InternGuide Logo">
+    </a>
+
+    <nav class="site-nav items-center hidden lg:flex text-gray-500">
+      <a href="../../index.html" class="nav-link hover:text-gray-700">
+        Home
+      </a>
+
+      <a href="../internships.html" class="nav-link hover:text-gray-700">
+        Internships
+      </a>
+
+      <a href="../career-guide.html" class="nav-link hover:text-gray-700">
+        Career Guide
+      </a>
+
+      <a href="../cv-interview.html" class="nav-link hover:text-gray-700">
+        CV & Interview
+      </a>
+
+      <a href="../about-contact.html" class="nav-link hover:text-gray-700">
+        About
+      </a>
+    </nav>
+
+    <div class="header-actions site-auth hidden md:flex items-center">
+
+      <a
+        href="profile.html"
+        class="btn btn-login text-gray-600 hover:text-gray-800">
+        My Profile
+      </a>
+
+      <a
+        href="profile.html"
+        id="navbarAvatar"
+        class="w-11 h-11 rounded-full bg-[#EDF2FF] flex items-center justify-center overflow-hidden">
+
+        <span
+          id="navbarAvatarInitials"
+          class="text-[#3B5BDB] font-semibold">
+          IG
+        </span>
+
+        <img
+          id="navbarAvatarImage"
+          src=""
+          alt="Profile"
+          class="hidden w-full h-full object-cover">
+      </a>
+
+      <button
+        id="logoutBtn"
+        type="button"
+        class="site-logout border border-red-200 text-red-600 hover:bg-red-50 rounded-xl">
+        Logout
+      </button>
+
+    </div>
+
+    <div class="site-mobile-wrap">
+
+      <button
+        id="toggle-btn"
+        class="site-mobile-toggle"
+        aria-label="Open menu"
+        aria-expanded="false">
+        ☰
+      </button>
+
+      <div
+        id="mobile-menu"
+        class="site-mobile-menu hidden flex-col">
+
+        <a
+          href="../../index.html"
+          class="flex h-10 items-center justify-center gap-2 border-b border-gray-200 text-sm font-medium text-[#3f5ddd]">
+          Home
+        </a>
+
+        <a
+          href="../internships.html"
+          class="flex h-10 items-center justify-center gap-2 border-b border-gray-200 text-sm font-medium text-[#3f5ddd]">
+          Internships
+        </a>
+
+        <a
+          href="../career-guide.html"
+          class="flex h-10 items-center justify-center gap-2 border-b border-gray-200 text-sm font-medium text-[#3f5ddd]">
+          Career Guide
+        </a>
+
+        <a
+          href="../cv-interview.html"
+          class="flex h-10 items-center justify-center gap-2 border-b border-gray-200 text-sm font-medium text-[#3f5ddd]">
+          CV & Interview
+        </a>
+
+        <a
+          href="../about-contact.html"
+          class="flex h-10 items-center justify-center gap-2 border-b border-gray-200 text-sm font-medium text-[#3f5ddd]">
+          About & Contact
+        </a>
+
+        <div class="site-mobile-auth">
+
+          <a
+            href="profile.html"
+            class="border border-slate-200 text-slate-700">
+            My Profile
+          </a>
+
+          <button
+            id="mobileLogoutBtn"
+            type="button"
+            class="border border-red-200 bg-white text-red-600">
+            Logout
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="gap-12 py-4 items-center lg:hidden md:flex hidden text-gray-500 justify-center">
+    <a href="../../index.html" class="nav-link">
+      Home
+    </a>
+
+    <a href="../internships.html" class="nav-link">
+      Internships
+    </a>
+
+    <a href="../career-guide.html" class="nav-link">
+      Career Guide
+    </a>
+
+    <a href="../cv-interview.html" class="nav-link">
+      CV & Interview
+    </a>
+
+    <a href="../about-contact.html" class="nav-link">
+      About
+    </a>
+  </nav>
+</header>
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+  <div class="mb-7 no-print">
+
+    <p class="text-sm font-medium brand">
+      CV Builder
+    </p>
+
+    <h1 class="text-3xl font-bold text-[#1C1F26] mt-1">
+      Create Your Professional CV
+    </h1>
+
+    <p class="text-sm text-slate-600 mt-2">
+      Start with your profile, let the AI assistant help write your content,
+      then preview and download your CV.
+    </p>
+
+  </div>
+
+
+  <section id="templateChooser" class="cv-template-section no-print" aria-labelledby="templateChooserTitle">
+    <nav class="cv-template-progress" aria-label="CV creation progress">
+      <button type="button" data-cv-step="template">1. Template</button>
+      <button type="button" data-cv-step="information">2. Information</button>
+      <button type="button" data-cv-step="customize">3. Customize</button>
+      <button type="button" data-cv-step="preview">4. Preview</button>
+      <button type="button" data-cv-step="download">5. Download</button>
+    </nav>
+
+    <div class="card p-5 sm:p-6">
+      <div class="max-w-3xl">
+        <h2 id="templateChooserTitle" class="text-2xl font-bold text-[#1C1F26]">Choose Your CV Template</h2>
+        <p class="mt-2 text-sm leading-6 text-slate-600">Select a professional layout that matches your career goals. You can change your template anytime without losing your information.</p>
+      </div>
+      <div id="cvTemplateGrid" class="cv-template-grid mt-5"></div>
+
+      <div id="cvCustomization" class="mt-6 border-t border-slate-200 pt-5">
+        <div class="cv-customize-row">
+          <div>
+            <h3 class="text-sm font-semibold text-slate-900">Accent color</h3>
+            <p class="mt-1 text-xs text-slate-500">A restrained highlight used for headings and dividers.</p>
+          </div>
+          <div id="cvAccentChoices" class="cv-accent-options" aria-label="Choose an accent color">
+            <button type="button" class="cv-accent-swatch" data-cv-accent="blue" style="background:#3B5BDB" aria-label="Blue accent" title="Blue"></button>
+            <button type="button" class="cv-accent-swatch" data-cv-accent="navy" style="background:#1E3A5F" aria-label="Navy accent" title="Navy"></button>
+            <button type="button" class="cv-accent-swatch" data-cv-accent="green" style="background:#2E6B50" aria-label="Green accent" title="Green"></button>
+            <button type="button" class="cv-accent-swatch" data-cv-accent="purple" style="background:#6B4E8E" aria-label="Purple accent" title="Purple"></button>
+            <button type="button" class="cv-accent-swatch" data-cv-accent="teal" style="background:#167C80" aria-label="Teal accent" title="Teal"></button>
+            <button type="button" class="cv-accent-swatch" data-cv-accent="gray" style="background:#64748B" aria-label="Gray accent" title="Gray"></button>
+          </div>
+        </div>
+        <div class="mt-5 border-t border-slate-100 pt-4">
+          <h3 class="text-sm font-semibold text-slate-900">Show sections</h3>
+          <p class="mt-1 text-xs text-slate-500">Empty sections stay hidden automatically.</p>
+          <div id="cvSectionChoices" class="cv-section-choices"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="grid xl:grid-cols-[430px_1fr] gap-6 items-start mt-6">
+
+
+    <!-- =====================================================
+         LEFT PANEL
+    ====================================================== -->
+
+    <section class="space-y-5 no-print">
+
+
+      <!-- ===================================================
+           SMART AI FULL CV ASSISTANT
+      ==================================================== -->
+
+      <div class="card ai-card p-5">
+
+        <div class="flex items-start gap-3">
+
+          <div class="w-10 h-10 rounded-xl bg-[#3B5BDB] text-white flex items-center justify-center shrink-0">
+            <i data-lucide="sparkles" class="w-5 h-5"></i>
+          </div>
+
+          <div class="min-w-0">
+
+            <h2 class="font-semibold text-[#1C1F26]">
+              ✨ Smart AI CV Builder
+            </h2>
+
+            <p class="text-xs text-slate-600 mt-1">
+              Write one short paragraph about yourself, your studies,
+              projects, skills, goals, and experience. Smart AI will
+              organize it into a clean one-page CV using your InternGuide
+              profile.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- EXAMPLE -->
+
+        <div class="ai-example mt-4">
+
+          <div class="font-semibold text-[#1C1F26] mb-1">
+            Example for students
+          </div>
+
+          <div>
+            “I am a Year 3 IT student at ABC University. I enjoy web
+            development and UI/UX design. I built a student internship
+            website using HTML, CSS, JavaScript, Bootstrap and Tailwind CSS
+            with three teammates. I used Figma for the interface, fixed
+            responsive layout issues, presented our project, and I am
+            looking for a web development internship to gain practical
+            experience.”
+          </div>
+
+        </div>
+
+
+        <!-- AI INPUT -->
+
+        <label
+          class="block text-sm font-medium mt-4 mb-2"
+          for="aiFullCVInput">
+
+          Tell Smart AI about yourself
+
+        </label>
+
+        <textarea
+          id="aiFullCVInput"
+          class="ai-textarea w-full border border-[#C9D4FF] rounded-xl px-4 py-3 text-sm"
+          placeholder="Write naturally. You do not need perfect grammar. Smart AI will organize the information for you."></textarea>
+
+
+        <!-- AI BUTTONS -->
+
+        <div class="flex flex-wrap gap-2 mt-3">
+
+          <button
+            type="button"
+            onclick="fillAIExample()"
+            class="border border-[#C9D4FF] bg-white text-[#3B5BDB] rounded-lg px-3 py-2 text-xs font-medium">
+
+            Use Example
+
+          </button>
+
+          <button
+            type="button"
+            onclick="clearAIInput()"
+            class="border border-[#DEE2E6] bg-white text-slate-600 rounded-lg px-3 py-2 text-xs font-medium">
+
+            Clear
+
+          </button>
+
+          <button
+            type="button"
+            id="buildFullCVBtn"
+            onclick="aiBuildFullCV()"
+            class="ai-button bg-[#3B5BDB] text-white rounded-lg px-4 py-2 text-xs font-semibold">
+
+            ✨ Build My Full CV
+
+          </button>
+
+        </div>
+
+
+        <!-- CERTIFICATES -->
+
+        <div class="mt-4 border-t border-[#C9D4FF] pt-4">
+
+          <div class="flex items-center justify-between gap-3">
+
+            <div>
+
+              <h3 class="text-sm font-semibold text-[#1C1F26]">
+                Optional Certificates
+              </h3>
+
+              <p class="text-xs text-slate-500 mt-1">
+                Upload certificate images or PDFs. Smart AI can use them
+                when building the Certificates section.
+              </p>
+
+            </div>
+
+            <label
+              class="shrink-0 cursor-pointer bg-white border border-[#C9D4FF] text-[#3B5BDB] rounded-lg px-3 py-2 text-xs font-semibold">
+
+              <i
+                data-lucide="upload"
+                class="w-4 h-4 inline-block mr-1 align-middle">
+              </i>
+
+              Upload
+
+              <input
+                id="certificateFiles"
+                type="file"
+                accept="image/png,image/jpeg,image/webp,application/pdf"
+                multiple
+                class="hidden">
+
+            </label>
+
+          </div>
+
+          <div
+            id="certificateFileList"
+            class="mt-3 space-y-2">
+          </div>
+
+        </div>
+
+
+        <p
+          id="aiMessage"
+          class="text-xs text-slate-500 mt-3">
+        </p>
+
+
+        <div
+          id="aiResultBox"
+          class="hidden mt-3 bg-white border border-[#C9D4FF] rounded-xl p-4">
+
+          <div class="text-xs font-semibold text-[#1C1F26]">
+            Smart AI Result
+          </div>
+
+          <pre
+            id="aiResult"
+            class="mt-2 text-xs text-slate-600 whitespace-pre-wrap leading-5 font-[Poppins,sans-serif]">
+          </pre>
+
+        </div>
+
+      </div>
+
+
+      <!-- ===================================================
+           PROFILE IMPORT
+      ==================================================== -->
+
+      <div class="card p-5">
+
+        <div class="flex items-center justify-between">
+
+          <div>
+
+            <h2 class="font-semibold">
+              Quick Start
+            </h2>
+
+            <p class="text-xs text-slate-500 mt-1">
+              Fill the CV using your InternGuide profile.
+            </p>
+
+          </div>
+
+          <div class="flex items-center gap-2">
+            <button
+              type="button"
+              onclick="loadFromProfile()"
+              class="bg-[#EDF2FF] text-[#3B5BDB] rounded-lg px-3 py-2 text-xs font-semibold hover:bg-[#dfe7ff]">
+              Load from My Profile
+            </button>
+
+            <button
+              type="button"
+              onclick="openUpdateProfileModal()"
+              class="border border-[#3B5BDB] text-[#3B5BDB] rounded-lg px-3 py-2 text-xs font-semibold hover:bg-[#EDF2FF]">
+              Update My Profile
+            </button>
+          </div>
+
+        </div>
+
+
+        <div class="flex items-center gap-3 mt-4 p-3 rounded-lg bg-slate-50">
+
+          <div
+            id="quickPhoto"
+            class="w-12 h-12 rounded-full bg-[#EDF2FF] overflow-hidden flex items-center justify-center">
+
+            <span id="quickPhotoInitial">
+              IG
+            </span>
+
+            <img
+              id="quickPhotoImage"
+              class="hidden w-full h-full object-cover"
+              alt="Profile">
+
+          </div>
+
+          <div class="min-w-0">
+
+            <p
+              id="quickProfileName"
+              class="font-medium text-sm truncate">
+              Your profile
+            </p>
+
+            <p
+              id="quickProfileInfo"
+              class="text-xs text-slate-500 truncate">
+              Profile information will appear here.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ===================================================
+           CV FORM
+      ==================================================== -->
+
+      <section id="cvEditor" class="card p-5">
+
+        <div class="flex items-center justify-between mb-5">
+
+          <h2 class="font-semibold">
+            CV Information
+          </h2>
+
+          <span
+            id="draftBadge"
+            class="text-xs soft brand rounded-full px-3 py-1">
+            Draft
+          </span>
+
+        </div>
+
+
+        <form
+          id="cvForm"
+          class="space-y-4">
+
+
+          <!-- NAME -->
+
+          <div>
+
+            <label class="text-sm font-medium">
+              Full Name
+            </label>
+
+            <input
+              id="cvName"
+              class="mt-1 w-full border rounded-lg px-3 py-2.5 text-sm"
+              placeholder="Your Name">
+
+          </div>
+
+
+          <!-- TITLE -->
+
+          <div>
+
+            <label class="text-sm font-medium">
+              Professional Title
+            </label>
+
+            <input
+              id="cvTitle"
+              class="mt-1 w-full border rounded-lg px-3 py-2.5 text-sm"
+              placeholder="Computer Science Student">
+
+          </div>
+
+
+          <!-- EMAIL / PHONE -->
+
+          <div class="grid grid-cols-2 gap-3">
+
+            <div>
+
+              <label class="text-sm font-medium">
+                Email
+              </label>
+
+              <input
+                id="cvEmail"
+                type="email"
+                class="mt-1 w-full border rounded-lg px-3 py-2.5 text-sm"
+                placeholder="you@email.com">
+
+            </div>
+
+
+            <div>
+
+              <label class="text-sm font-medium">
+                Phone
+              </label>
+
+              <input
+                id="cvPhone"
+                class="mt-1 w-full border rounded-lg px-3 py-2.5 text-sm"
+                placeholder="+855 ...">
+
+            </div>
+
+          </div>
+
+
+          <!-- LOCATION -->
+
+          <div>
+
+            <label class="text-sm font-medium">
+              Location
+            </label>
+
+            <input
+              id="cvLocation"
+              class="mt-1 w-full border rounded-lg px-3 py-2.5 text-sm"
+              placeholder="Phnom Penh, Cambodia">
+
+          </div>
+
+          <div class="grid grid-cols-1 gap-3 sm:grid-cols-3">
+            <div>
+              <label class="text-sm font-medium" for="cvGithub">GitHub</label>
+              <input id="cvGithub" type="url" class="mt-1 w-full border rounded-lg px-3 py-2.5 text-sm" placeholder="https://github.com/username">
+            </div>
+            <div>
+              <label class="text-sm font-medium" for="cvLinkedin">LinkedIn</label>
+              <input id="cvLinkedin" type="url" class="mt-1 w-full border rounded-lg px-3 py-2.5 text-sm" placeholder="https://linkedin.com/in/username">
+            </div>
+            <div>
+              <label class="text-sm font-medium" for="cvPortfolio">Portfolio</label>
+              <input id="cvPortfolio" type="url" class="mt-1 w-full border rounded-lg px-3 py-2.5 text-sm" placeholder="https://your-portfolio.com">
+            </div>
+          </div>
+
+
+          <!-- SUMMARY -->
+
+          <div>
+
+            <label class="text-sm font-medium">
+              Professional Summary
+            </label>
+
+            <textarea
+              id="cvSummary"
+              rows="4"
+              class="mt-1 w-full border rounded-lg px-3 py-2.5 text-sm"
+              placeholder="Smart AI will generate your professional summary."></textarea>
+
+          </div>
+
+
+          <!-- EDUCATION -->
+
+          <div>
+
+            <label class="text-sm font-medium">
+              Education
+            </label>
+
+            <textarea
+              id="cvEducation"
+              rows="3"
+              class="mt-1 w-full border rounded-lg px-3 py-2.5 text-sm"
+              placeholder="University — Major&#10;2024–2027"></textarea>
+
+          </div>
+
+
+          <!-- CAREER INTERESTS -->
+
+          <div>
+
+            <label class="text-sm font-medium">
+              Career Interests
+            </label>
+
+            <textarea
+              id="cvCareerInterests"
+              rows="2"
+              class="mt-1 w-full border rounded-lg px-3 py-2.5 text-sm"
+              placeholder="Web development, UI/UX design, software engineering internship"></textarea>
+
+          </div>
+
+
+          <!-- SKILLS -->
+
+          <div>
+
+            <label class="text-sm font-medium">
+              Skills
+            </label>
+
+            <input
+              id="cvSkills"
+              class="mt-1 w-full border rounded-lg px-3 py-2.5 text-sm"
+              placeholder="HTML, CSS, JavaScript, Figma">
+
+          </div>
+
+
+          <!-- EXPERIENCE -->
+
+          <div>
+
+            <label class="text-sm font-medium">
+              Experience
+            </label>
+
+            <textarea
+              id="cvExperience"
+              rows="5"
+              class="mt-1 w-full border rounded-lg px-3 py-2.5 text-sm"
+              placeholder="Role — Company&#10;What you did..."></textarea>
+
+          </div>
+
+
+          <!-- PROJECTS -->
+
+          <div>
+
+            <label class="text-sm font-medium">
+              Projects
+            </label>
+
+            <textarea
+              id="cvProjects"
+              rows="5"
+              class="mt-1 w-full border rounded-lg px-3 py-2.5 text-sm"
+              placeholder="Project Title&#10;Technologies: HTML, CSS, JavaScript&#10;Short project description&#10;• What you built&#10;• What you contributed&#10;• Key functionality or result"></textarea>
+
+          </div>
+
+
+          <!-- LEADERSHIP & ACTIVITIES -->
+
+          <div>
+
+            <label class="text-sm font-medium">
+              Leadership &amp; Activities
+            </label>
+
+            <textarea
+              id="cvLeadership"
+              rows="3"
+              class="mt-1 w-full border rounded-lg px-3 py-2.5 text-sm"
+              placeholder="Club, volunteer activity, leadership role, technology activity..."></textarea>
+
+          </div>
+
+
+          <!-- CERTIFICATES -->
+
+          <div>
+
+            <label class="text-sm font-medium">
+              Certifications &amp; Achievements
+            </label>
+
+            <textarea
+              id="cvCertificates"
+              rows="2"
+              class="mt-1 w-full border rounded-lg px-3 py-2.5 text-sm"
+              placeholder="Certificate name — Issuer (optional)"></textarea>
+
+            <p class="text-xs text-slate-500 mt-1">
+              You can type certificates or upload certificate images/PDFs
+              in Smart AI above.
+            </p>
+
+          </div>
+
+
+          <div>
+            <label class="text-sm font-medium" for="cvReferences">References</label>
+            <textarea id="cvReferences" rows="2" class="mt-1 w-full border rounded-lg px-3 py-2.5 text-sm" placeholder="Reference name — role or organization — contact details"></textarea>
+          </div>
+
+
+          <!-- LANGUAGES -->
+
+          <div>
+            <div class="flex items-center justify-between gap-3">
+              <label class="text-sm font-medium">
+                Languages
+              </label>
+
+              <button
+                type="button"
+                id="addLanguageBtn"
+                class="inline-flex items-center gap-1.5 bg-[#EDF2FF] text-[#3B5BDB] rounded-lg px-3 py-2 text-xs font-semibold hover:bg-[#dfe7ff]">
+                <i data-lucide="plus" class="w-4 h-4"></i>
+                Add Language
+              </button>
+            </div>
+
+            <div id="languageEditor" class="mt-3 space-y-2">
+              <!-- Language rows are created by JavaScript -->
+            </div>
+
+            <!-- Hidden value kept for compatibility with drafts / AI -->
+            <input id="cvLanguages" type="hidden">
+
+            <p class="text-xs text-slate-500 mt-2">
+              Add as many languages as you need and choose a proficiency level for each.
+            </p>
+          </div>
+
+
+          <!-- ACTIONS -->
+
+          <div class="flex flex-wrap gap-2 pt-2">
+
+            <button
+              type="button"
+              onclick="saveDraft()"
+              class="border rounded-lg px-4 py-2.5 text-sm font-medium">
+
+              Save Draft
+
+            </button>
+
+            <button
+              type="button"
+              onclick="printCV()"
+              class="bg-brand text-white rounded-lg px-4 py-2.5 text-sm font-medium">
+
+              Download / Print PDF
+
+            </button>
+
+          </div>
+
+          <p
+            id="saveMessage"
+            class="text-xs text-green-600">
+          </p>
+
+        </form>
+
+      </section>
+
+    </section>
+
+
+    <!-- =====================================================
+         RIGHT: LIVE CV
+    ====================================================== -->
+
+    <section class="xl:sticky xl:top-24" id="previewPanel">
+
+      <div class="flex justify-between items-center mb-3 no-print">
+
+        <div>
+
+          <h2 class="font-semibold">
+            Live CV Preview
+          </h2>
+
+          <p class="text-xs text-slate-500 mt-1">
+            Optional profile photo appears in templates that support it.
+          </p>
+
+        </div>
+
+        <span class="text-xs text-slate-500">
+          A4-style preview
+        </span>
+
+        <button type="button" id="cvPreviewOpen" class="ml-3 rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs font-semibold text-slate-700 hover:border-blue-500 hover:text-blue-700">Preview CV</button>
+
+      </div>
+
+
+      <div id="cvPreviewViewport" class="cv-preview-viewport">
+      <div class="cv-paper mx-auto" id="cvPreview">
+  <div class="cv-page">
+
+    <header class="pro-header">
+      <div class="pro-header-content">
+        <div class="pro-header-text">
+          <h1 id="pName" class="pro-name">Your Name</h1>
+          <div id="pTitle" class="pro-title">IT Student | Web Developer | Frontend Developer</div>
+          <section id="contactSection" class="pro-section cv-sidebar-section">
+            <h2 class="pro-heading">CONTACT</h2>
+            <div id="pContact" class="pro-contact">
+              you@email.com | +855 ... | Phnom Penh, Cambodia
+            </div>
+            <div id="pLinks" class="pro-contact"></div>
+          </section>
+        </div>
+
+        <div id="cvPhotoWrap" class="pro-photo-wrap hidden">
+          <img
+            id="cvPhoto"
+            src=""
+            alt="Profile picture"
+            class="pro-photo"
+          >
+        </div>
+      </div>
+    </header>
+
+    <aside class="cv-sidebar" id="cvSidebar"></aside>
+
+    <div class="cv-main" id="cvMain">
+      <header class="cv-main-header" id="cvMainHeader"></header>
+
+      <main class="pro-content">
+
+      <section class="pro-section" id="profileSection">
+        <h2 class="pro-heading">PROFESSIONAL SUMMARY</h2>
+        <div id="pSummary" class="pro-summary"></div>
+      </section>
+
+      <section class="pro-section" id="skillsSection">
+        <h2 class="pro-heading">TECHNICAL SKILLS</h2>
+        <div id="pSkills" class="pro-skills"></div>
+      </section>
+
+      <section class="pro-section" id="educationSection">
+        <h2 class="pro-heading">EDUCATION</h2>
+        <div id="pEducation" class="pro-entries"></div>
+      </section>
+
+      <section class="pro-section" id="projectsSection">
+        <h2 class="pro-heading">PROJECTS</h2>
+        <div id="pProjects" class="pro-entries"></div>
+      </section>
+
+      <section class="pro-section" id="experienceSection">
+        <h2 class="pro-heading">EXPERIENCE</h2>
+        <div id="pExperience" class="pro-entries"></div>
+      </section>
+
+      <section class="pro-section" id="leadershipSection">
+        <h2 class="pro-heading">LEADERSHIP &amp; ACTIVITIES</h2>
+        <div id="pLeadership" class="pro-entries"></div>
+      </section>
+
+      <section class="pro-section" id="certificatesSection">
+        <h2 class="pro-heading">CERTIFICATIONS &amp; ACHIEVEMENTS</h2>
+        <div id="pCertificates" class="pro-entries"></div>
+      </section>
+
+      <section class="pro-section" id="languagesSection">
+        <h2 class="pro-heading">LANGUAGES</h2>
+        <div id="pLanguages" class="pro-languages"></div>
+      </section>
+
+      <section class="pro-section" id="referencesSection">
+        <h2 class="pro-heading">REFERENCES</h2>
+        <div id="pReferences" class="pro-entries"></div>
+      </section>
+
+      </main>
+    </div>
+  </div>
+</div>
+    </div>
+
+    </section>
+
+  </div>
+
+</main>
+
+<dialog id="cvTemplateDialog" class="no-print" aria-labelledby="cvDialogTitle">
+  <div class="cv-dialog-header">
+    <div>
+      <h2 id="cvDialogTitle" class="text-lg font-bold text-slate-900"></h2>
+      <p id="cvDialogDescription" class="mt-1 max-w-2xl text-sm text-slate-600"></p>
+    </div>
+    <button type="button" id="cvDialogClose" class="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-slate-700">Close</button>
+  </div>
+  <div class="cv-dialog-content">
+    <div id="cvDialogStage" class="cv-dialog-stage"></div>
+  </div>
+  <div class="cv-dialog-footer">
+    <button type="button" id="cvDialogUse" class="rounded-lg bg-[#3B5BDB] px-4 py-2.5 text-sm font-semibold text-white">Use This Template</button>
+  </div>
+</dialog>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer
+  class="footer px-3 lg:px-12 py-8 no-print"
+  id="about">
+
+  <div class="flex flex-col justify-between">
+
+    <div
+      class="footer-top flex flex-col lg:flex-row items-center justify-between mb-8 border-b-2 pb-4">
+
+      <a
+        href="../../index.html"
+        class="footer-logo">
+
+        <img
+          class="logo"
+          src="../../src/assets/images/logo.png"
+          alt="InternGuide Logo">
+
+      </a>
+
+
+      <nav
+        class="footer-nav lg:flex items-center gap-8 text-gray-500 hidden">
+
+        <a href="../../index.html">
+          Home
+        </a>
+
+        <a href="../internships.html">
+          Internships
+        </a>
+
+        <a href="../career-guide.html">
+          Career Guide
+        </a>
+
+        <a href="../cv-interview.html">
+          CV & Interview
+        </a>
+
+        <a href="../about-contact.html">
+          About
+        </a>
+
+      </nav>
+
+
+      <div
+        class="social-links flex items-center gap-4 my-8 lg:my-0 text-3xl lg:text-xl text-blue-600">
+
+        <a
+          class="hover:text-blue-300"
+          href="#"
+          aria-label="Facebook">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+
+        <a
+          class="hover:text-blue-300"
+          href="#"
+          aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a
+          class="hover:text-blue-300"
+          href="#"
+          aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+
+        <a
+          class="hover:text-blue-300"
+          href="#"
+          aria-label="Github">
+          <i class="fa-brands fa-github"></i>
+        </a>
+
+        <a
+          class="hover:text-blue-300"
+          href="#"
+          aria-label="Telegram">
+          <i class="fa-brands fa-telegram"></i>
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom flex flex-col lg:flex-row justify-between">
+
+      <p class="text-gray-400 lg:justify-start justify-center flex">
+        © 2026 InternGuide. All rights reserved.
+      </p>
+
+      <div
+        class="footer-legal flex lg:flex-row items-center justify-center gap-8 text-gray-400">
+
+        <a href="#">
+          Privacy Policy
+        </a>
+
+        <a href="#">
+          Terms of Service
+        </a>
+
+        <a href="../about-contact.html">
+          Contact Us
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- =========================================================
+     SUPABASE + AUTH
+========================================================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../../js/i18n.js"></script>
+<script src="../../js/script.js"></script>
+<script src="../../js/auth.js"></script>
+<script src="../../js/cv-templates.js"></script>
+
+
+<!-- =========================================================
+     CV BUILDER JAVASCRIPT
+========================================================= -->
+
+<script>
+
+let currentUser = null;
+let currentProfile = null;
+let currentAvatarUrl = "";
+
+function cvDraftKey() {
+  return currentUser?.id
+    ? `internGuideCV:${currentUser.id}`
+    : "internGuideCV:guest";
+}
+
+const $ = (id) => document.getElementById(id);
+
+
+/* =========================================================
+   BASIC HELPERS
+========================================================= */
+
+function value(id) {
+  return ($(id)?.value || "").trim();
+}
+
+
+function setValue(id, val) {
+  if ($(id)) {
+    $(id).value = val || "";
+  }
+}
+
+
+function setPreview(id, text, fallback) {
+  if ($(id)) {
+    $(id).textContent = text || fallback;
+  }
+}
+
+
+function showAiMessage(message) {
+
+  const el = $("aiMessage");
+
+  if (el) {
+    el.textContent = message;
+  }
+
+}
+
+
+function showSaveMessage(message, isError = false) {
+
+  const el = $("saveMessage");
+
+  if (!el) return;
+
+  el.textContent = message;
+
+  el.className = isError
+    ? "text-xs text-red-600"
+    : "text-xs text-green-600";
+}
+
+
+/* =========================================================
+   AUTH + PROFILE
+========================================================= */
+
+async function getUserAndProfile() {
+
+  const {
+    data: { user },
+    error
+  } = await supabaseClient.auth.getUser();
+
+
+  if (error || !user) {
+
+    window.location.href = "../auth/login.html";
+
+    return null;
+  }
+
+
+  currentUser = user;
+
+
+  const {
+    data: profile,
+    error: profileError
+  } = await supabaseClient
+    .from("profiles")
+    .select("*")
+    .eq("id", user.id)
+    .maybeSingle();
+
+
+  if (profileError) {
+    console.error("Profile error:", profileError);
+  }
+
+
+  currentProfile = profile || {
+
+    id: user.id,
+
+    full_name:
+      user.user_metadata?.full_name ||
+      user.user_metadata?.name ||
+      "",
+
+    phone: "",
+    university: "",
+    major: "",
+    year_of_study: "",
+    expected_graduation: "",
+    location: "",
+    career_roles: "",
+    preferred_industry: "",
+    preferred_location: "",
+    internship_type: "",
+    skills: "",
+    languages: "",
+    bio: "",
+    avatar_url: ""
+
+  };
+
+
+  return currentProfile;
+}
+
+
+/* =========================================================
+   AVATAR
+========================================================= */
+
+async function getAvatarUrl(path) {
+
+  if (!path) {
+    return "";
+  }
+
+
+  if (path.startsWith("http")) {
+    return path;
+  }
+
+
+  const {
+    data,
+    error
+  } = await supabaseClient.storage
+    .from("avatars")
+    .createSignedUrl(path, 3600);
+
+
+  if (error || !data?.signedUrl) {
+
+    console.error(
+      "Avatar URL error:",
+      error
+    );
+
+    return "";
+  }
+
+
+  return data.signedUrl;
+}
+
+
+async function loadAvatar() {
+
+  const path =
+    currentProfile?.avatar_url || "";
+
+  currentAvatarUrl =
+    await getAvatarUrl(path);
+
+
+  const navImg =
+    $("navbarAvatarImage");
+
+  const navInitial =
+    $("navbarAvatarInitials");
+
+
+  if (currentAvatarUrl) {
+
+    if (navImg) {
+
+      navImg.src =
+        currentAvatarUrl;
+
+      navImg.classList.remove(
+        "hidden"
+      );
+
+    }
+
+    navInitial?.classList.add(
+      "hidden"
+    );
+
+
+    const photo =
+      $("cvPhoto");
+
+    const wrap =
+      $("cvPhotoWrap");
+
+
+    if (photo && wrap) {
+
+      photo.src =
+        currentAvatarUrl;
+
+      wrap.classList.remove(
+        "hidden"
+      );
+
+    }
+
+
+    const quickImg =
+      $("quickPhotoImage");
+
+    const quickInitial =
+      $("quickPhotoInitial");
+
+
+    if (quickImg) {
+
+      quickImg.src =
+        currentAvatarUrl;
+
+      quickImg.classList.remove(
+        "hidden"
+      );
+
+    }
+
+
+    quickInitial?.classList.add(
+      "hidden"
+    );
+
+  } else {
+
+    const initial =
+      (currentProfile?.full_name || "IG")
+        .trim()
+        .charAt(0)
+        .toUpperCase();
+
+
+    if (navInitial) {
+
+      navInitial.textContent =
+        initial || "IG";
+
+      navInitial.classList.remove(
+        "hidden"
+      );
+
+    }
+
+
+    navImg?.classList.add(
+      "hidden"
+    );
+
+
+    $("cvPhotoWrap")
+      ?.classList.add("hidden");
+
+
+    if ($("quickPhotoInitial")) {
+
+      $("quickPhotoInitial").textContent =
+        initial || "IG";
+
+      $("quickPhotoInitial")
+        .classList.remove("hidden");
+
+    }
+
+
+    $("quickPhotoImage")
+      ?.classList.add("hidden");
+
+  }
+
+}
+
+
+/* =========================================================
+   NAVBAR AVATAR
+========================================================= */
+
+async function loadNavbarAvatar() {
+
+  const img =
+    $("navbarAvatarImage");
+
+  const initial =
+    $("navbarAvatarInitials");
+
+
+  if (
+    !img ||
+    !initial ||
+    !currentProfile
+  ) {
+    return;
+  }
+
+
+  const url =
+    await getAvatarUrl(
+      currentProfile.avatar_url
+    );
+
+
+  if (url) {
+
+    img.src = url;
+
+    img.classList.remove(
+      "hidden"
+    );
+
+    initial.classList.add(
+      "hidden"
+    );
+
+  } else {
+
+    initial.textContent =
+      (
+        currentProfile.full_name ||
+        "IG"
+      )
+        .trim()
+        .charAt(0)
+        .toUpperCase() || "IG";
+
+
+    initial.classList.remove(
+      "hidden"
+    );
+
+    img.classList.add(
+      "hidden"
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   PROFILE -> CV
+========================================================= */
+
+async function getProfileExtrasForCV() {
+  const fallback = {
+    experiences: [],
+    certificates: [],
+    cvs: []
+  };
+
+  if (!currentUser) return fallback;
+
+  try {
+    const [experienceResult, certificateResult] = await Promise.all([
+      supabaseClient
+        .from("profile_experiences")
+        .select("*")
+        .eq("user_id", currentUser.id)
+        .order("start_date", { ascending: false }),
+      supabaseClient
+        .from("profile_certificates")
+        .select("*")
+        .eq("user_id", currentUser.id)
+        .order("issue_date", { ascending: false })
+    ]);
+
+    if (!experienceResult.error && !certificateResult.error) {
+      return {
+        experiences: experienceResult.data || [],
+        certificates: certificateResult.data || [],
+        cvs: []
+      };
+    }
+  } catch (error) {
+    console.warn("Profile extras database read failed:", error);
+  }
+
+  // Backward-compatible browser fallback for profiles created before the
+  // Supabase extras tables are enabled.
+  try {
+    const local = JSON.parse(
+      localStorage.getItem(`internGuideProfileExtras:${currentUser.id}`) || "{}"
+    );
+
+    return {
+      experiences: local.experiences || [],
+      certificates: local.certificates || [],
+      cvs: local.cvs || []
+    };
+  } catch {
+    return fallback;
+  }
+}
+
+
+async function loadFromProfile() {
+
+  if (!currentProfile) {
+
+    showAiMessage(
+      "Your profile is still loading. Please wait a moment."
+    );
+
+    return;
+  }
+
+
+  const p =
+    currentProfile;
+
+
+  setValue(
+    "cvName",
+    p.full_name
+  );
+
+
+  setValue(
+    "cvTitle",
+    p.career_roles ||
+    p.major ||
+    "Student"
+  );
+
+
+  setValue(
+    "cvEmail",
+    currentUser?.email || ""
+  );
+
+
+  setValue(
+    "cvPhone",
+    p.phone
+  );
+
+
+  setValue(
+    "cvLocation",
+    p.location
+  );
+
+
+  setValue(
+    "cvEducation",
+
+    [
+      p.university
+        ? `${p.university} — ${p.major || "Student"}`
+        : "",
+
+      p.year_of_study
+        ? `Year of Study: ${p.year_of_study}`
+        : "",
+
+      p.expected_graduation
+        ? `Expected Graduation: ${p.expected_graduation}`
+        : ""
+
+    ]
+      .filter(Boolean)
+      .join("\n")
+  );
+
+
+  setValue(
+    "cvCareerInterests",
+
+    [
+      p.career_roles,
+      p.preferred_industry,
+      p.preferred_location
+
+    ]
+      .filter(Boolean)
+      .join(" · ")
+  );
+
+
+  setValue(
+    "cvSkills",
+    p.skills
+  );
+
+
+  setLanguagesFromText(
+    p.languages || ""
+  );
+
+
+  setValue(
+    "cvSummary",
+    p.bio
+  );
+
+  // Reuse structured internship experience and certificates from My Profile.
+  const extras = await getProfileExtrasForCV();
+
+  if (extras.experiences?.length) {
+    const experienceText = extras.experiences.map(x => [
+      `${x.role || ""}${x.company ? ` — ${x.company}` : ""}`,
+      x.location ? x.location : "",
+      x.start || x.end ? `${x.start || ""} — ${x.end || "Present"}` : "",
+      x.description || ""
+    ].filter(Boolean).join("\n")).join("\n\n");
+
+    if (experienceText) setValue("cvExperience", experienceText);
+  }
+
+  if (extras.certificates?.length) {
+    const certificateText = extras.certificates.map(x => [
+      x.name,
+      x.issuer,
+      x.date,
+      x.credential
+    ].filter(Boolean).join(" — ")).join("\n");
+
+    if (certificateText) setValue("cvCertificates", certificateText);
+  }
+
+  updatePreview();
+
+
+  showAiMessage(
+    "Your profile information has been added to the CV."
+  );
+}
+
+
+/* =========================================================
+   LIVE PREVIEW
+========================================================= */
+
+function setSectionVisible(sectionId, hasContent) {
+  const section = $(sectionId);
+  if (!section) return;
+  section.classList.toggle("hidden", !hasContent);
+}
+
+function renderTextBlock(elementId, text) {
+  const el = $(elementId);
+  if (!el) return;
+
+  const lines = String(text || "")
+    .split(/\n+/)
+    .map(line => line.trim())
+    .filter(Boolean);
+
+  if (!lines.length) {
+    el.innerHTML = "";
+    return;
+  }
+
+  const html = lines.map(line => {
+    const clean = line.replace(/^[-•*]\s*/, "");
+    if (/^[-•*]\s*/.test(line)) {
+      return `<li>${escapeHtml(clean)}</li>`;
+    }
+    return `<p>${escapeHtml(line)}</p>`;
+  });
+
+  const hasBullets = lines.some(line => /^[-•*]\s*/.test(line));
+
+  if (hasBullets) {
+    const bullets = lines
+      .filter(line => /^[-•*]\s*/.test(line))
+      .map(line => `<li>${escapeHtml(line.replace(/^[-•*]\s*/, ""))}</li>`)
+      .join("");
+
+    const paragraphs = lines
+      .filter(line => !/^[-•*]\s*/.test(line))
+      .map(line => `<p>${escapeHtml(line)}</p>`)
+      .join("");
+
+    el.innerHTML =
+      `${paragraphs}${bullets ? `<ul class="cv-list">${bullets}</ul>` : ""}`;
+  } else {
+    el.innerHTML = lines.map(line => `<p>${escapeHtml(line)}</p>`).join("");
+  }
+}
+function renderAtsParagraphs(elementId, text) {
+  const el = $(elementId);
+  if (!el) return;
+
+  const lines = String(text || "")
+    .split(/\n+/)
+    .map(x => x.trim())
+    .filter(Boolean);
+
+  el.innerHTML = lines
+    .map(line => {
+      const clean = line.replace(/^[-•*]\s*/, "");
+      if (/^[-•*]\s*/.test(line)) {
+        return `<ul class="ats-bullets"><li>${escapeHtml(clean)}</li></ul>`;
+      }
+      return `<p>${escapeHtml(line)}</p>`;
+    })
+    .join("");
+}
+
+function renderAtsEntries(elementId, items, kind = "generic") {
+  const el = $(elementId);
+  if (!el) return;
+
+  const entries = Array.isArray(items) ? items : [];
+
+  el.innerHTML = entries
+    .map(item => {
+
+      if (typeof item === "string") {
+        return `
+          <div class="ats-entry">
+            <div class="ats-body">${escapeHtml(item)}</div>
+          </div>
+        `;
+      }
+
+      const title =
+        item.title ||
+        item.position ||
+        item.name ||
+        item.degree ||
+        "";
+
+      const subtitle =
+        item.organization ||
+        item.company ||
+        item.institution ||
+        item.school ||
+        "";
+
+      const date =
+        item.dates ||
+        item.date ||
+        item.year ||
+        item.period ||
+        item.graduation ||
+        "";
+
+      const description =
+        item.description || "";
+
+      const technologies =
+        Array.isArray(item.technologies)
+          ? item.technologies.join(", ")
+          : item.technologies || "";
+
+      const bullets = normalizeArray(
+        item.bullets ||
+        item.responsibilities ||
+        item.achievements
+      );
+
+      const bulletHtml = bullets.length
+        ? `<ul class="ats-bullets">
+            ${bullets
+              .map(b => `<li>${escapeHtml(b)}</li>`)
+              .join("")}
+          </ul>`
+        : "";
+
+      const descHtml = description
+        ? `<div class="ats-body">${escapeHtml(description)}</div>`
+        : "";
+
+      const techHtml = technologies
+        ? `<div class="ats-entry-subtitle">Technologies: ${escapeHtml(technologies)}</div>`
+        : "";
+
+      return `
+        <article class="ats-entry">
+          <div class="ats-entry-head">
+            <div class="ats-entry-title">${escapeHtml(title)}</div>
+            ${date ? `<div class="ats-entry-date">${escapeHtml(date)}</div>` : ""}
+          </div>
+          ${subtitle ? `<div class="ats-entry-subtitle">${escapeHtml(subtitle)}</div>` : ""}
+          ${techHtml}
+          ${descHtml}
+          ${bulletHtml}
+        </article>
+      `;
+    })
+    .join("");
+}
+
+function parseSimpleEntries(text) {
+  return String(text || "")
+    .split(/\n{2,}/)
+    .map(block => block.trim())
+    .filter(Boolean)
+    .map(block => {
+      const lines = block
+        .split(/\n+/)
+        .map(x => x.trim())
+        .filter(Boolean);
+
+      if (!lines.length) return null;
+
+      const title = lines[0].replace(/^[-•*]\s*/, "");
+      const bullets = lines
+        .slice(1)
+        .map(x => x.replace(/^[-•*]\s*/, ""))
+        .filter(Boolean);
+
+      return {
+        title,
+        bullets
+      };
+    })
+    .filter(Boolean);
+}
+
+function renderProText(elementId, text) {
+  const el = $(elementId);
+  if (!el) return;
+
+  const valueText = String(text || "").trim();
+
+  if (!valueText) {
+    el.innerHTML = "";
+    return;
+  }
+
+  const lines = valueText
+    .split(/\n+/)
+    .map(x => x.trim())
+    .filter(Boolean);
+
+  const normal = [];
+  const bullets = [];
+
+  lines.forEach(line => {
+    if (/^[-•*▪◦]\s*/.test(line)) {
+      bullets.push(line.replace(/^[-•*▪◦]\s*/, ""));
+    } else {
+      normal.push(line);
+    }
+  });
+
+  el.innerHTML = [
+    ...normal.map(line => `<p>${escapeHtml(line)}</p>`),
+    bullets.length
+      ? `<ul class="pro-bullets">${bullets.map(x => `<li>${escapeHtml(x)}</li>`).join("")}</ul>`
+      : ""
+  ].join("");
+}
+
+function renderProEntries(elementId, items, fallbackText = "") {
+  const el = $(elementId);
+  if (!el) return;
+
+  const entries = Array.isArray(items) ? items.filter(Boolean) : [];
+
+  if (!entries.length) {
+    renderProText(elementId, fallbackText);
+    return;
+  }
+
+  el.innerHTML = entries.map(item => {
+    if (typeof item === "string") {
+      return `<article class="pro-entry">${escapeHtml(item)}</article>`;
+    }
+
+    const title = firstNonEmpty(
+      item.title,
+      item.name,
+      item.position,
+      item.role,
+      item.degree,
+      item.program
+    );
+
+    const subtitle = firstNonEmpty(
+      item.organization,
+      item.company,
+      item.school,
+      item.university,
+      item.institution
+    );
+
+    const date = firstNonEmpty(
+      item.dates,
+      item.date,
+      item.period,
+      item.year,
+      item.graduation
+    );
+
+    const technologies = normalizeArray(
+      item.technologies ||
+      item.techStack ||
+      item.stack
+    );
+
+    const description = firstNonEmpty(
+      item.description,
+      item.summary,
+      item.overview
+    );
+
+    const bullets = normalizeArray(
+      item.bullets ||
+      item.responsibilities ||
+      item.achievements ||
+      item.contributions ||
+      item.features ||
+      item.tasks
+    );
+
+    const bulletHtml = bullets.length
+      ? `<ul class="pro-bullets">${bullets.map(x => `<li>${escapeHtml(x)}</li>`).join("")}</ul>`
+      : "";
+
+    const techHtml = technologies.length
+      ? `<div class="pro-entry-subtitle">Technologies: ${escapeHtml(technologies.join(", "))}</div>`
+      : "";
+
+    return `
+      <article class="pro-entry">
+        <div class="pro-entry-head">
+          <div class="pro-entry-title">${escapeHtml(title)}</div>
+          ${date ? `<div class="pro-entry-date">${escapeHtml(date)}</div>` : ""}
+        </div>
+
+        ${subtitle ? `<div class="pro-entry-subtitle">${escapeHtml(subtitle)}</div>` : ""}
+        ${techHtml}
+        ${description ? `<div class="pro-entry-description">${escapeHtml(description)}</div>` : ""}
+        ${bulletHtml}
+      </article>
+    `;
+  }).join("");
+}
+
+function parseProTextEntries(text) {
+  return String(text || "")
+    .split(/\n{2,}/)
+    .map(block => block.trim())
+    .filter(Boolean)
+    .map(block => {
+      const lines = block
+        .split(/\n+/)
+        .map(x => x.trim())
+        .filter(Boolean);
+
+      if (!lines.length) return null;
+
+      const title = lines.shift().replace(/^[-•*]\s*/, "");
+
+      let technologies = "";
+      let description = "";
+      const bullets = [];
+
+      lines.forEach(line => {
+        if (/^technologies\s*:/i.test(line)) {
+          technologies = line.replace(/^technologies\s*:\s*/i, "").trim();
+          return;
+        }
+
+        if (/^[-•*▪◦]\s*/.test(line)) {
+          bullets.push(line.replace(/^[-•*▪◦]\s*/, "").trim());
+          return;
+        }
+
+        // A non-bullet line after the title is treated as the project
+        // description instead of incorrectly becoming a bullet.
+        if (!description) {
+          description = line;
+        } else {
+          description += " " + line;
+        }
+      });
+
+      return {
+        title,
+        technologies,
+        description,
+        bullets
+      };
+    })
+    .filter(Boolean);
+}
+
+function updatePreview() {
+  window.cvTemplateSystem?.restorePreviewPages();
+
+  const name = value("cvName");
+  const title = value("cvTitle");
+  const email = value("cvEmail");
+  const phone = value("cvPhone");
+  const location = value("cvLocation");
+  const references = value("cvReferences");
+  const summary = value("cvSummary");
+  const education = value("cvEducation");
+  const projects = value("cvProjects");
+  const experience = value("cvExperience");
+  const leadership = value("cvLeadership");
+  const certificates = value("cvCertificates");
+  const skillsText = value("cvSkills");
+
+  setPreview("pName", name, "Your Name");
+  setPreview("pTitle", title, "IT Student | Web Developer | Frontend Developer");
+
+  setPreview(
+    "pContact",
+    [phone, email, location]
+      .filter(Boolean)
+      .join(" | "),
+    ""
+  );
+
+  const linksBox = $("pLinks");
+  if (linksBox) {
+    linksBox.innerHTML = [
+      ["GitHub", value("cvGithub")],
+      ["LinkedIn", value("cvLinkedin")],
+      ["Portfolio", value("cvPortfolio")]
+    ].filter(([, url]) => url)
+      .map(([label, url]) => formatCVContactLink(label, url))
+      .filter(Boolean)
+      .join(" | ");
+  }
+
+  renderProText("pSummary", summary);
+
+  /* Skills: category-based text, not pills or bars. */
+  const skillTokens = skillsText
+    .split(/[,;•\n]+/)
+    .map(x => x.trim())
+    .filter(Boolean);
+
+  const skillGroups = [
+    ["Programming", ["HTML", "CSS", "JavaScript", "TypeScript", "Python", "Java", "C++", "C#", "SQL"]],
+    ["Frontend", ["Tailwind CSS", "Bootstrap", "Vite", "React", "Vue", "Angular"]],
+    ["Backend", ["Node.js", "Express.js", "Flask", "Django", "PHP"]],
+    ["Database", ["MySQL", "PostgreSQL", "Oracle", "MongoDB", "Supabase"]],
+    ["Tools", ["Git", "GitHub", "Docker", "VS Code", "Figma"]]
+  ];
+
+  const grouped = [];
+  const used = new Set();
+
+  skillGroups.forEach(([label, possible]) => {
+    const found = skillTokens.filter(skill => {
+      const lower = skill.toLowerCase();
+      return possible.some(x => x.toLowerCase() === lower);
+    });
+
+    if (found.length) {
+      found.forEach(x => used.add(x.toLowerCase()));
+      grouped.push([label, found.join(", ")]);
+    }
+  });
+
+  const remaining = skillTokens.filter(x => !used.has(x.toLowerCase()));
+
+  if (remaining.length) {
+    grouped.push(["Additional", remaining.join(", ")]);
+  }
+
+  const skillBox = $("pSkills");
+  if (skillBox) {
+    skillBox.innerHTML = grouped.length
+      ? grouped.map(([label, skills]) => `
+          <div class="pro-skill-label">${escapeHtml(label)}</div>
+          <div class="pro-skill-value">${escapeHtml(skills)}</div>
+        `).join("")
+      : "";
+    skillBox.dataset.cvCanonicalMarkup = skillBox.innerHTML;
+  }
+
+  const educationItems = parseProTextEntries(education);
+
+  renderProEntries(
+    "pEducation",
+    educationItems,
+    education
+  );
+
+  const projectItems =
+    Array.isArray(window.internGuideCvProjects)
+      ? window.internGuideCvProjects
+      : parseProTextEntries(projects);
+
+  renderProEntries(
+    "pProjects",
+    projectItems,
+    projects
+  );
+
+  const experienceItems =
+    Array.isArray(window.internGuideCvExperience)
+      ? window.internGuideCvExperience
+      : parseProTextEntries(experience);
+
+  renderProEntries(
+    "pExperience",
+    experienceItems,
+    experience
+  );
+
+  const leadershipItems = parseProTextEntries(leadership);
+
+  renderProEntries(
+    "pLeadership",
+    leadershipItems,
+    leadership
+  );
+
+  const certificateItems = parseProTextEntries(certificates);
+
+  renderProEntries(
+    "pCertificates",
+    certificateItems,
+    certificates
+  );
+
+  let previewLanguages = Array.isArray(languageItems)
+    ? languageItems.filter(item => item && String(item.name || "").trim())
+    : [];
+
+  /* Fallback to the hidden compatibility field if the editor state has
+     not initialized yet. */
+  if (!previewLanguages.length) {
+    const rawLanguages = value("cvLanguages");
+
+    if (rawLanguages.trim()) {
+      previewLanguages = parseLanguagesText(rawLanguages)
+        .filter(item => item && String(item.name || "").trim());
+    }
+  }
+
+  /* Final fallback to the saved profile. */
+  if (!previewLanguages.length && currentProfile?.languages) {
+    previewLanguages = parseLanguagesText(currentProfile.languages)
+      .filter(item => item && String(item.name || "").trim());
+  }
+
+  window.languageItems = previewLanguages;
+
+  const languageBox = $("pLanguages");
+
+  if (languageBox) {
+    languageBox.innerHTML = previewLanguages.length
+      ? previewLanguages.map(item => `
+          <div class="pro-language">
+            • <strong>${escapeHtml(item.name)}</strong>
+            ${item.level ? ` — ${escapeHtml(item.level)}` : ""}
+          </div>
+        `).join("")
+      : "";
+  }
+
+  setSectionVisible("profileSection", Boolean(summary.trim()));
+  setSectionVisible("skillsSection", grouped.length > 0);
+  setSectionVisible("educationSection", Boolean(education.trim()));
+  setSectionVisible(
+    "projectsSection",
+    projectItems.length > 0 || Boolean(projects.trim())
+  );
+  setSectionVisible(
+    "experienceSection",
+    experienceItems.length > 0 || Boolean(experience.trim())
+  );
+  setSectionVisible("leadershipSection", Boolean(leadership.trim()));
+  setSectionVisible("certificatesSection", Boolean(certificates.trim()));
+  setSectionVisible("languagesSection", previewLanguages.length > 0);
+  renderProEntries("pReferences", parseProTextEntries(references), references);
+  setSectionVisible("referencesSection", Boolean(references.trim()));
+
+  window.cvTemplateSystem?.applyToPreview();
+}
+
+function formatCVContactLink(label, rawUrl) {
+  const input = String(rawUrl || "").trim();
+  if (!input) return "";
+
+  try {
+    const url = new URL(/^https?:\/\//i.test(input) ? input : `https://${input}`);
+    if (!["http:", "https:"].includes(url.protocol)) return "";
+    const displayUrl = `${url.host}${url.pathname.replace(/\/$/, "")}`;
+    return `<a href="${escapeHtml(url.href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(label)}: ${escapeHtml(displayUrl)}</a>`;
+  } catch {
+    return "";
+  }
+}
+
+
+/* =========================================================
+   SMART AI
+========================================================= */
+
+const SMART_AI_BUILD_URL =
+  "http://localhost:3000/api/cv/build";
+
+const SMART_AI_GENERATE_URL =
+  "http://localhost:3000/api/cv/generate";
+
+
+const AI_EXAMPLE =
+`I am a Year 3 IT student at ABC University. I enjoy web development and UI/UX design. I built a student internship website using HTML, CSS, JavaScript, Bootstrap and Tailwind CSS with three teammates. I used Figma for the interface, fixed responsive layout issues, presented our project, and I am looking for a web development internship to gain practical experience.`;
+
+
+let certificateFilesForAI = [];
+
+
+/* =========================================================
+   AI EXAMPLE
+========================================================= */
+
+function fillAIExample() {
+
+  setValue(
+    "aiFullCVInput",
+    AI_EXAMPLE
+  );
+
+
+  showAiMessage(
+    "Example added. Edit it with your own real information before building your CV."
+  );
+
+}
+
+
+function clearAIInput() {
+
+  setValue(
+    "aiFullCVInput",
+    ""
+  );
+
+
+  showAiMessage("");
+
+}
+
+
+/* =========================================================
+   CERTIFICATE FILES
+========================================================= */
+
+function escapeHtml(text) {
+
+  return String(text || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+
+}
+
+
+function renderCertificateFiles() {
+
+  const list =
+    $("certificateFileList");
+
+
+  if (!list) {
+    return;
+  }
+
+
+  if (!certificateFilesForAI.length) {
+
+    list.innerHTML =
+      '<p class="text-xs text-slate-400">No certificate files selected.</p>';
+
+    return;
+  }
+
+
+  list.innerHTML =
+    certificateFilesForAI
+      .map((file, index) => `
+
+        <div class="certificate-file">
+
+          <div class="flex items-center gap-2 min-w-0">
+
+            <i
+              data-lucide="file-text"
+              class="w-4 h-4 text-[#3B5BDB] shrink-0">
+            </i>
+
+            <span class="truncate">
+              ${escapeHtml(file.name)}
+            </span>
+
+          </div>
+
+          <button
+            type="button"
+            onclick="removeCertificateFile(${index})"
+            class="text-red-500 hover:text-red-700 text-xs font-semibold">
+
+            Remove
+
+          </button>
+
+        </div>
+
+      `)
+      .join("");
+
+
+  if (
+    window.lucide &&
+    typeof lucide.createIcons === "function"
+  ) {
+    lucide.createIcons();
+  }
+
+}
+
+
+function removeCertificateFile(index) {
+
+  certificateFilesForAI.splice(
+    index,
+    1
+  );
+
+
+  renderCertificateFiles();
+
+}
+
+
+function readFileAsBase64(file) {
+
+  return new Promise(
+    (resolve, reject) => {
+
+      const reader =
+        new FileReader();
+
+
+      reader.onload = () => {
+
+        const result =
+          String(
+            reader.result || ""
+          );
+
+
+        const comma =
+          result.indexOf(",");
+
+
+        resolve(
+          comma >= 0
+            ? result.slice(comma + 1)
+            : result
+        );
+
+      };
+
+
+      reader.onerror = () => {
+
+        reject(
+          new Error(
+            `Could not read ${file.name}`
+          )
+        );
+
+      };
+
+
+      reader.readAsDataURL(file);
+
+    }
+  );
+
+}
+
+
+async function prepareCertificateFiles() {
+
+  const output = [];
+
+
+  for (
+    const file
+    of certificateFilesForAI
+  ) {
+
+    if (
+      file.size >
+      5 * 1024 * 1024
+    ) {
+
+      throw new Error(
+        `${file.name} is larger than 5 MB.`
+      );
+
+    }
+
+
+    output.push({
+
+      name:
+        file.name,
+
+      mimeType:
+        file.type,
+
+      data:
+        await readFileAsBase64(file)
+
+    });
+
+  }
+
+
+  return output;
+}
+
+
+/* =========================================================
+   BUILD FULL CV
+========================================================= */
+
+function firstNonEmpty(...values) {
+  for (const item of values) {
+    if (item === null || item === undefined) continue;
+    const text = String(item).trim();
+    if (text) return text;
+  }
+  return "";
+}
+
+function normalizeArray(value) {
+  if (Array.isArray(value)) return value.filter(Boolean);
+  if (value === null || value === undefined) return [];
+  return String(value)
+    .split(/[,;\n]+/)
+    .map(x => x.trim())
+    .filter(Boolean);
+}
+
+function looksLikePlaceholder(text) {
+  const value = String(text || "").trim().toLowerCase();
+  return !value ||
+    [
+      "rare",
+      "rero",
+      "n/a",
+      "na",
+      "none",
+      "null",
+      "undefined",
+      "your experience will appear here",
+      "experience and projects will appear here",
+      "your certificates will appear here",
+      "your career interests will appear here"
+    ].includes(value);
+}
+
+async function aiBuildFullCV() {
+
+  const paragraph =
+    value("aiFullCVInput");
+
+
+  if (!paragraph) {
+
+    showAiMessage(
+      "Write a short paragraph about yourself first. You can use the example above as a guide."
+    );
+
+
+    $("aiFullCVInput")
+      ?.focus();
+
+
+    return;
+  }
+
+
+  const button =
+    $("buildFullCVBtn");
+
+
+  if (button) {
+
+    button.disabled = true;
+
+    button.textContent =
+      "✨ Building your CV...";
+
+    button.classList.add(
+      "opacity-60",
+      "cursor-not-allowed"
+    );
+
+  }
+
+
+  showAiMessage(
+    "✨ Smart AI is organizing your information into a clean one-page CV..."
+  );
+
+
+  try {
+
+    const certificates =
+      await prepareCertificateFiles();
+
+
+    const response =
+      await fetch(
+        SMART_AI_BUILD_URL,
+        {
+
+          method: "POST",
+
+          headers: {
+            "Content-Type":
+              "application/json"
+          },
+
+          body: JSON.stringify({
+
+            summaryParagraph:
+              paragraph,
+
+
+            profile: {
+
+              fullName:
+                value("cvName") ||
+                currentProfile?.full_name ||
+                "",
+
+              email:
+                value("cvEmail") ||
+                currentUser?.email ||
+                "",
+
+              phone:
+                value("cvPhone") ||
+                currentProfile?.phone ||
+                "",
+
+              location:
+                value("cvLocation") ||
+                currentProfile?.location ||
+                "",
+
+              university:
+                currentProfile?.university ||
+                "",
+
+              major:
+                currentProfile?.major ||
+                "",
+
+              yearOfStudy:
+                currentProfile?.year_of_study ||
+                "",
+
+              graduation:
+                currentProfile?.expected_graduation ||
+                "",
+
+              careerRoles:
+                currentProfile?.career_roles ||
+                "",
+
+              preferredIndustry:
+                currentProfile?.preferred_industry ||
+                "",
+
+              preferredLocation:
+                currentProfile?.preferred_location ||
+                "",
+
+              internshipType:
+                currentProfile?.internship_type ||
+                "",
+
+              skills:
+                currentProfile?.skills ||
+                "",
+
+              languages:
+                currentProfile?.languages ||
+                "",
+
+              bio:
+                currentProfile?.bio ||
+                ""
+
+            },
+
+
+            existingCertificates:
+              value("cvCertificates"),
+
+
+            certificateFiles:
+              certificates
+
+          })
+
+        }
+      );
+
+
+    const data =
+      await response
+        .json()
+        .catch(() => ({}));
+
+
+    if (!response.ok) {
+
+      throw new Error(
+        data.error ||
+        `Smart AI request failed (${response.status}).`
+      );
+
+    }
+
+
+    const cv =
+      data.cv;
+
+
+    if (!cv) {
+
+      throw new Error(
+        "Smart AI did not return a CV."
+      );
+
+    }
+
+
+    /* ==========================================
+       PERSONAL INFORMATION
+    ========================================== */
+
+    const personal =
+      cv.personalInformation ||
+      cv.personal ||
+      {};
+
+
+    setValue(
+      "cvName",
+      personal.fullName ||
+      value("cvName")
+    );
+
+
+    setValue(
+      "cvTitle",
+      personal.title ||
+      value("cvTitle")
+    );
+
+
+    setValue(
+      "cvEmail",
+      personal.email ||
+      value("cvEmail")
+    );
+
+
+    setValue(
+      "cvPhone",
+      personal.phone ||
+      value("cvPhone")
+    );
+
+
+    setValue(
+      "cvLocation",
+      personal.location ||
+      value("cvLocation")
+    );
+
+
+    /* ==========================================
+       SUMMARY
+    ========================================== */
+
+    const aiSummary = firstNonEmpty(
+      cv.summary,
+      cv.profileSummary,
+      cv.professionalSummary
+    );
+
+    if (!looksLikePlaceholder(aiSummary)) {
+      setValue("cvSummary", aiSummary);
+    }
+
+
+    /* ==========================================
+       EDUCATION
+    ========================================== */
+
+    let educationText = "";
+
+    if (Array.isArray(cv.education)) {
+
+      educationText = cv.education
+        .map(item => {
+
+          if (typeof item === "string") {
+            return item;
+          }
+
+          return [
+            item.institution,
+            item.degree,
+            item.year,
+            item.graduation
+          ]
+            .filter(Boolean)
+            .join(" — ");
+
+        })
+        .filter(Boolean)
+        .join("\n");
+
+    } else {
+
+      educationText =
+        String(cv.education || "").trim();
+
+    }
+
+    // If AI leaves education empty, use the user's saved profile.
+    if (!educationText && currentProfile) {
+
+      educationText = [
+        currentProfile.university
+          ? `${currentProfile.university} — ${currentProfile.major || "Student"}`
+          : "",
+
+        currentProfile.year_of_study
+          ? `Year of Study: ${currentProfile.year_of_study}`
+          : "",
+
+        currentProfile.expected_graduation
+          ? `Expected Graduation: ${currentProfile.expected_graduation}`
+          : ""
+
+      ]
+        .filter(Boolean)
+        .join("\n");
+
+    }
+
+    setValue(
+      "cvEducation",
+      educationText || value("cvEducation")
+    );
+
+
+    /* ==========================================
+       CAREER INTERESTS
+    ========================================== */
+
+    let careerInterests = normalizeArray(
+      cv.careerInterests ||
+      cv.career_interests ||
+      cv.careerGoals ||
+      cv.career_goals
+    ).join(" · ");
+
+    if (!careerInterests && currentProfile) {
+      careerInterests = [
+        currentProfile.career_roles,
+        currentProfile.preferred_industry,
+        currentProfile.preferred_location
+      ]
+        .filter(Boolean)
+        .join(" · ");
+    }
+
+    if (careerInterests) {
+      setValue("cvCareerInterests", careerInterests);
+    }
+
+
+    /* ==========================================
+       SKILLS
+    ========================================== */
+
+    let skills = normalizeArray(
+      cv.skills ||
+      cv.technicalSkills ||
+      cv.technical_skills
+    )
+      .slice(0, 14)
+      .join(", ");
+
+    if (!skills && currentProfile?.skills) {
+      skills = currentProfile.skills;
+    }
+
+    if (skills) {
+      setValue("cvSkills", skills);
+    }
+
+
+    /* ==========================================
+       EXPERIENCE
+    ========================================== */
+
+    let experienceItems =
+      cv.experience ||
+      cv.workExperience ||
+      cv.work_experience ||
+      cv.work ||
+      cv.employment ||
+      cv.internships ||
+      [];
+
+    window.internGuideCvExperience =
+      Array.isArray(experienceItems)
+        ? experienceItems
+        : [];
+
+    let projectItems =
+      cv.projects ||
+      cv.projectExperience ||
+      cv.portfolioProjects ||
+      [];
+
+    window.internGuideCvProjects =
+      Array.isArray(projectItems)
+        ? projectItems
+        : [];
+
+    let experienceText = "";
+
+    if (Array.isArray(experienceItems)) {
+      experienceText = experienceItems
+        .map(item => {
+          if (typeof item === "string") return item;
+
+          const heading = [
+            item.title,
+            item.role,
+            item.position,
+            item.organization,
+            item.company,
+            item.dates,
+            item.period
+          ]
+            .filter(Boolean)
+            .join(" — ");
+
+          const bullets = normalizeArray(
+            item.bullets ||
+            item.responsibilities ||
+            item.achievements ||
+            item.description
+          )
+            .slice(0, 4)
+            .map(bullet => `• ${bullet}`)
+            .join("\n");
+
+          return [heading, bullets]
+            .filter(Boolean)
+            .join("\n");
+        })
+        .filter(Boolean)
+        .join("\n\n");
+    } else {
+      experienceText = String(experienceItems || "").trim();
+    }
+
+    // Never invent experience. Keep existing user-entered content
+    // if the AI did not return any.
+    if (experienceText) {
+      setValue("cvExperience", experienceText);
+    }
+
+    if (projectItems.length) {
+      const projectText = projectItems
+        .map(item => {
+          if (typeof item === "string") return item;
+
+          const heading = firstNonEmpty(
+            item.name,
+            item.title,
+            item.projectName,
+            item.project
+          );
+
+          const technologies = normalizeArray(
+            item.technologies ||
+            item.techStack ||
+            item.stack
+          );
+
+          const description = firstNonEmpty(
+            item.description,
+            item.summary,
+            item.overview
+          );
+
+          const bullets = normalizeArray(
+            item.bullets ||
+            item.achievements ||
+            item.contributions ||
+            item.features ||
+            item.responsibilities
+          );
+
+          return [
+            heading,
+            technologies.length
+              ? `Technologies: ${technologies.join(", ")}`
+              : "",
+            description,
+            ...bullets.map(b => `• ${b}`)
+          ]
+            .filter(Boolean)
+            .join("\n");
+        })
+        .join("\n\n");
+
+      setValue("cvProjects", projectText);
+
+      window.internGuideCvProjects = projectItems.map(item => {
+        if (typeof item === "string") {
+          return parseProTextEntries(item)[0] || {
+            title: item,
+            bullets: []
+          };
+        }
+
+        return {
+          title: firstNonEmpty(
+            item.name,
+            item.title,
+            item.projectName,
+            item.project
+          ),
+          technologies: normalizeArray(
+            item.technologies ||
+            item.techStack ||
+            item.stack
+          ),
+          description: firstNonEmpty(
+            item.description,
+            item.summary,
+            item.overview
+          ),
+          bullets: normalizeArray(
+            item.bullets ||
+            item.achievements ||
+            item.contributions ||
+            item.features ||
+            item.responsibilities
+          )
+        };
+      });
+    }
+
+
+    /* ==========================================
+       LANGUAGES
+    ========================================== */
+
+    let languages = "";
+
+    if (Array.isArray(cv.languages)) {
+      languages = cv.languages
+        .map(item => {
+          if (typeof item === "string") return item;
+          return [
+            item.name || item.language,
+            item.level || item.proficiency || "Intermediate"
+          ]
+            .filter(Boolean)
+            .join(" — ");
+        })
+        .filter(Boolean)
+        .join("; ");
+    } else {
+      languages = String(cv.languages || "").trim();
+    }
+
+    if (!languages && currentProfile?.languages) {
+      languages = currentProfile.languages;
+    }
+
+    if (languages) {
+      setLanguagesFromText(languages);
+    } else {
+      setLanguagesFromText(value("cvLanguages"));
+    }
+
+
+    /* ==========================================
+       LEADERSHIP & ACTIVITIES
+    ========================================== */
+
+    let leadershipItems =
+      cv.leadership ||
+      cv.activities ||
+      cv.leadershipAndActivities ||
+      cv.leadership_activities ||
+      [];
+
+    let leadershipText = "";
+
+    if (Array.isArray(leadershipItems)) {
+      leadershipText = leadershipItems
+        .map(item => {
+          if (typeof item === "string") return item;
+
+          const heading = [
+            item.title,
+            item.role,
+            item.position,
+            item.organization,
+            item.organizationName,
+            item.club,
+            item.activity,
+            item.date,
+            item.dates
+          ]
+            .filter(Boolean)
+            .join(" — ");
+
+          const bullets = normalizeArray(
+            item.bullets ||
+            item.responsibilities ||
+            item.achievements ||
+            item.description
+          )
+            .slice(0, 4)
+            .map(b => `• ${b}`)
+            .join("\n");
+
+          return [heading, bullets]
+            .filter(Boolean)
+            .join("\n");
+        })
+        .filter(Boolean)
+        .join("\n\n");
+    } else {
+      leadershipText = String(leadershipItems || "").trim();
+    }
+
+    if (!leadershipText && currentProfile?.leadership_activities) {
+      leadershipText = currentProfile.leadership_activities;
+    }
+
+    if (leadershipText) {
+      setValue("cvLeadership", leadershipText);
+    }
+
+
+    /* ==========================================
+       CERTIFICATES
+    ========================================== */
+
+    let certificateItems =
+      cv.certificates ||
+      cv.certifications ||
+      cv.achievements ||
+      cv.certificationsAndAchievements ||
+      [];
+
+    let certificatesText = "";
+
+    if (Array.isArray(certificateItems)) {
+      certificatesText = certificateItems
+        .map(item => {
+          if (typeof item === "string") return item;
+
+          return [
+            item.name || item.title,
+            item.issuer || item.organization,
+            item.date || item.year
+          ]
+            .filter(Boolean)
+            .join(" — ");
+        })
+        .filter(Boolean)
+        .join("\n");
+    } else {
+      certificatesText = String(certificateItems || "").trim();
+    }
+
+    if (!certificatesText) {
+      certificatesText = value("cvCertificates");
+    }
+
+    if (certificatesText) {
+      setValue("cvCertificates", certificatesText);
+    }
+
+
+    /* ==========================================
+       UPDATE PREVIEW
+    ========================================== */
+
+    updatePreview();
+
+
+    /* ==========================================
+       SHOW RESULT
+    ========================================== */
+
+    showSmartAIResult(cv);
+
+    updatePreview();
+
+    setTimeout(() => updatePreview(), 0);
+
+    /*
+      IMPORTANT:
+      Smart AI writes the generated CV into the form fields.
+      Persist those fields immediately so a page refresh does not
+      restore the older/partial draft.
+    */
+    saveDraft();
+
+    showAiMessage(
+      "✨ Full CV created successfully and saved. Review the generated content and keep only information that is true."
+    );
+
+
+  } catch (error) {
+
+    console.error(
+      "Smart AI full CV error:",
+      error
+    );
+
+
+    showAiMessage(
+      `Smart AI could not build the CV: ${error.message}`
+    );
+
+
+  } finally {
+
+    if (button) {
+
+      button.disabled = false;
+
+      button.textContent =
+        "✨ Build My Full CV";
+
+      button.classList.remove(
+        "opacity-60",
+        "cursor-not-allowed"
+      );
+
+    }
+
+  }
+
+}
+
+
+/* =========================================================
+   SHOW AI RESULT
+========================================================= */
+
+function showSmartAIResult(cv) {
+
+  const box =
+    $("aiResultBox");
+
+  const result =
+    $("aiResult");
+
+
+  if (
+    !box ||
+    !result
+  ) {
+    return;
+  }
+
+
+  const personal =
+    cv.personalInformation ||
+    cv.personal ||
+    {};
+
+
+  const lines = [
+
+    `Personal Information: ${
+      personal.fullName || ""
+    }`,
+
+    `Education: ${
+      Array.isArray(cv.education)
+        ? cv.education
+            .map(item =>
+              typeof item === "string"
+                ? item
+                : [
+                    item.institution,
+                    item.degree,
+                    item.year
+                  ]
+                    .filter(Boolean)
+                    .join(" — ")
+            )
+            .join("\n")
+        : cv.education || ""
+    }`,
+
+    `Career Interests: ${
+      Array.isArray(cv.careerInterests)
+        ? cv.careerInterests.join(", ")
+        : cv.careerInterests || ""
+    }`,
+
+    `Skills: ${
+      Array.isArray(cv.skills)
+        ? cv.skills.join(", ")
+        : cv.skills || ""
+    }`,
+
+    `Experience: ${
+      Array.isArray(cv.experience)
+        ? cv.experience
+            .map(item =>
+              typeof item === "string"
+                ? item
+                : item.title || ""
+            )
+            .join("\n")
+        : cv.experience || ""
+    }`,
+
+    `Languages: ${
+      Array.isArray(cv.languages)
+        ? cv.languages.join(", ")
+        : cv.languages || ""
+    }`,
+
+    `Certificates: ${
+      Array.isArray(cv.certificates)
+        ? cv.certificates
+            .map(item =>
+              typeof item === "string"
+                ? item
+                : item.name || ""
+            )
+            .join("\n")
+        : cv.certificates || ""
+    }`
+
+  ];
+
+
+  result.textContent =
+    lines.join("\n\n");
+
+
+  box.classList.remove(
+    "hidden"
+  );
+
+}
+
+
+/* =========================================================
+   SINGLE AI GENERATION
+========================================================= */
+
+async function generateSingleAI(type) {
+
+  const keywords =
+    value("aiFullCVInput");
+
+
+  if (!keywords) {
+
+    showAiMessage(
+      "Write a few notes first, or use the Example button."
+    );
+
+    return null;
+  }
+
+
+  const response =
+    await fetch(
+      SMART_AI_GENERATE_URL,
+      {
+
+        method: "POST",
+
+        headers: {
+          "Content-Type":
+            "application/json"
+        },
+
+        body: JSON.stringify({
+
+          type,
+
+          keywords,
+
+          role:
+            value("cvTitle"),
+
+          education:
+            value("cvEducation"),
+
+          skills:
+            value("cvSkills")
+
+        })
+
+      }
+    );
+
+
+  const data =
+    await response
+      .json()
+      .catch(() => ({}));
+
+
+  if (!response.ok) {
+
+    throw new Error(
+      data.error ||
+      "AI generation failed."
+    );
+
+  }
+
+
+  return data.text || "";
+
+}
+
+
+/* =========================================================
+   AI SUMMARY
+========================================================= */
+
+async function aiGenerateSummary() {
+
+  try {
+
+    const result =
+      await generateSingleAI(
+        "professional summary"
+      );
+
+
+    if (result) {
+
+      setValue(
+        "cvSummary",
+        result
+      );
+
+
+      updatePreview();
+
+
+      showAiMessage(
+        "✨ Summary generated by Smart AI."
+      );
+
+    }
+
+  } catch (error) {
+
+    showAiMessage(
+      `Smart AI error: ${error.message}`
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   AI EXPERIENCE
+========================================================= */
+
+async function aiGenerateExperience() {
+
+  try {
+
+    const result =
+      await generateSingleAI(
+        "professional experience"
+      );
+
+
+    if (result) {
+
+      setValue(
+        "cvExperience",
+        result
+      );
+
+
+      updatePreview();
+
+
+      showAiMessage(
+        "✨ Experience generated by Smart AI."
+      );
+
+    }
+
+  } catch (error) {
+
+    showAiMessage(
+      `Smart AI error: ${error.message}`
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   AI SKILLS
+========================================================= */
+
+async function aiSuggestSkills() {
+
+  try {
+
+    const result =
+      await generateSingleAI(
+        "relevant CV skills as a concise comma-separated list"
+      );
+
+
+    if (result) {
+
+      const skills =
+        result
+          .replace(
+            /^skills\s*:/i,
+            ""
+          )
+          .replace(
+            /[•\n]+/g,
+            ","
+          )
+          .split(",")
+          .map(
+            x => x.trim()
+          )
+          .filter(Boolean)
+          .slice(0, 12)
+          .join(", ");
+
+
+      setValue(
+        "cvSkills",
+        skills
+      );
+
+
+      updatePreview();
+
+
+      showAiMessage(
+        "✨ Skills suggested by Smart AI. Keep only skills you genuinely have."
+      );
+
+    }
+
+  } catch (error) {
+
+    showAiMessage(
+      `Smart AI error: ${error.message}`
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   COMPATIBILITY
+========================================================= */
+
+function aiGenerateAll() {
+
+  aiBuildFullCV();
+
+}
+
+
+/* =========================================================
+   DYNAMIC LANGUAGES
+========================================================= */
+
+const LANGUAGE_LEVELS = [
+  { value: "Native", label: "Native", percent: 100 },
+  { value: "Fluent", label: "Fluent", percent: 90 },
+  { value: "Advanced", label: "Advanced", percent: 80 },
+  { value: "Upper-Intermediate", label: "Upper-Intermediate", percent: 70 },
+  { value: "Intermediate", label: "Intermediate", percent: 60 },
+  { value: "Elementary", label: "Elementary", percent: 40 },
+  { value: "Beginner", label: "Beginner", percent: 25 }
+];
+
+let languageItems = [];
+window.languageItems = languageItems;
+
+function normalizeLanguageLevel(level) {
+  const found = LANGUAGE_LEVELS.find(
+    item => item.value.toLowerCase() === String(level || "").trim().toLowerCase()
+  );
+
+  return found ? found.value : "Intermediate";
+}
+
+function parseLanguagesText(text) {
+  if (!text) return [];
+
+  return String(text)
+    .split(/[;\n]+/)
+    .map(item => item.trim())
+    .filter(Boolean)
+    .map(item => {
+      const parts = item.split(/\s*[—–-]\s*/);
+      return {
+        name: (parts[0] || "").trim(),
+        level: normalizeLanguageLevel(parts[1] || "Intermediate")
+      };
+    })
+    .filter(item => item.name);
+}
+
+function languageItemsToText() {
+  return languageItems
+    .filter(item => item.name.trim())
+    .map(item => `${item.name.trim()} — ${item.level}`)
+    .join("; ");
+}
+
+function syncLanguagesValue() {
+  const hidden = $("cvLanguages");
+
+  if (hidden) {
+    hidden.value = languageItemsToText();
+  }
+
+  renderLanguagePreview();
+}
+
+function renderLanguageEditor() {
+  const editor = $("languageEditor");
+  if (!editor) return;
+
+  if (!languageItems.length) {
+    editor.innerHTML = `
+      <div class="text-xs text-slate-400 border border-dashed border-[#C9D4FF] rounded-lg p-3">
+        No languages added yet. Click <strong>Add Language</strong> to add one.
+      </div>
+    `;
+    return;
+  }
+
+  editor.innerHTML = languageItems.map((item, index) => `
+    <div class="language-row">
+      <input
+        type="text"
+        value="${escapeHtml(item.name)}"
+        placeholder="e.g. English"
+        aria-label="Language name"
+        data-language-name="${index}">
+
+      <select
+        aria-label="Language proficiency"
+        data-language-level="${index}">
+        ${LANGUAGE_LEVELS.map(level => `
+          <option
+            value="${escapeHtml(level.value)}"
+            ${level.value === item.level ? "selected" : ""}>
+            ${escapeHtml(level.label)}
+          </option>
+        `).join("")}
+      </select>
+
+      <button
+        type="button"
+        title="Remove language"
+        aria-label="Remove language"
+        data-language-remove="${index}">
+        <i data-lucide="trash-2" class="w-4 h-4"></i>
+      </button>
+    </div>
+  `).join("");
+
+  editor.querySelectorAll("[data-language-name]").forEach(input => {
+    input.addEventListener("input", event => {
+      const index = Number(event.target.dataset.languageName);
+      languageItems[index].name = event.target.value;
+      syncLanguagesValue();
+    });
+  });
+
+  editor.querySelectorAll("[data-language-level]").forEach(select => {
+    select.addEventListener("change", event => {
+      const index = Number(event.target.dataset.languageLevel);
+      languageItems[index].level = event.target.value;
+      syncLanguagesValue();
+    });
+  });
+
+  editor.querySelectorAll("[data-language-remove]").forEach(button => {
+    button.addEventListener("click", () => {
+      const index = Number(button.dataset.languageRemove);
+      languageItems.splice(index, 1);
+      renderLanguageEditor();
+      syncLanguagesValue();
+      if (window.lucide?.createIcons) lucide.createIcons();
+    });
+  });
+
+  if (window.lucide?.createIcons) lucide.createIcons();
+}
+
+function addLanguage(name = "", level = "Intermediate") {
+  languageItems.push({
+    name,
+    level: normalizeLanguageLevel(level)
+  });
+
+  renderLanguageEditor();
+  syncLanguagesValue();
+
+  const editor = $("languageEditor");
+  const inputs = editor?.querySelectorAll("[data-language-name]");
+  inputs?.[inputs.length - 1]?.focus();
+}
+
+function setLanguagesFromText(text) {
+  languageItems = parseLanguagesText(text);
+
+  if (!Array.isArray(languageItems)) {
+    languageItems = [];
+  }
+
+  window.languageItems = languageItems;
+
+  renderLanguageEditor();
+  syncLanguagesValue();
+
+  if (typeof updatePreview === "function") {
+    updatePreview();
+  }
+
+  if (typeof scheduleAutoSave === "function") {
+    scheduleAutoSave();
+  }
+}
+
+function renderLanguagePreview() {
+  const box = $("pLanguages");
+  if (!box) return;
+
+  const items = languageItems.filter(item => item.name.trim());
+
+  if (!items.length) {
+    box.innerHTML = `<span class="cv-muted">Your languages will appear here.</span>`;
+    return;
+  }
+
+  box.innerHTML = items.map(item => {
+    const level = LANGUAGE_LEVELS.find(
+      x => x.value === normalizeLanguageLevel(item.level)
+    ) || LANGUAGE_LEVELS[4];
+
+    return `
+      <div class="language-preview-row">
+        <div class="language-preview-head">
+          <span class="language-preview-name">${escapeHtml(item.name)}</span>
+          <span class="language-preview-level">${escapeHtml(level.label)}</span>
+        </div>
+        <div class="language-preview-bar">
+          <div
+            class="language-preview-fill"
+            style="width:${level.percent}%">
+          </div>
+        </div>
+      </div>
+    `;
+  }).join("");
+}
+
+function initLanguages() {
+  const addButton = $("addLanguageBtn");
+
+  addButton?.addEventListener("click", () => {
+    addLanguage("", "Intermediate");
+  });
+
+  setLanguagesFromText(value("cvLanguages"));
+}
+
+
+/* =========================================================
+   PRINT / SAVE PDF
+========================================================= */
+
+function printCV() {
+
+  window.cvTemplateSystem?.applyToPreview();
+  saveDraft();
+  window.cvTemplateSystem?.prepareForPrint();
+
+  const originalTitle = document.title;
+
+  const name =
+    value("cvName") ||
+    "InternGuide CV";
+
+  document.title =
+    `${name} - InternGuide CV`;
+
+  window.print();
+
+  // Restore the browser tab title after print dialog closes.
+  setTimeout(() => {
+    document.title = originalTitle;
+    window.cvTemplateSystem?.restoreScreenPreview();
+  }, 1000);
+}
+
+
+/* =========================================================
+   SAVE DRAFT
+========================================================= */
+
+function getDraft() {
+  const rawProjects = value("cvProjects");
+
+  const projectEntries =
+    Array.isArray(window.internGuideCvProjects) &&
+    window.internGuideCvProjects.length
+      ? window.internGuideCvProjects
+      : parseProTextEntries(rawProjects);
+
+  return {
+    version: 3,
+    ...(window.cvTemplateSystem?.getDraftState() || {}),
+    name: value("cvName"),
+    title: value("cvTitle"),
+    email: value("cvEmail"),
+    phone: value("cvPhone"),
+    location: value("cvLocation"),
+    github: value("cvGithub"),
+    linkedin: value("cvLinkedin"),
+    portfolio: value("cvPortfolio"),
+    summary: value("cvSummary"),
+    education: value("cvEducation"),
+    careerInterests: value("cvCareerInterests"),
+    skills: value("cvSkills"),
+    experience: value("cvExperience"),
+    projects: rawProjects,
+    projectEntries,
+    leadership: value("cvLeadership"),
+    certificates: value("cvCertificates"),
+    references: value("cvReferences"),
+    languages: languageItemsToText(),
+    savedAt: new Date().toISOString()
+  };
+}
+
+
+function saveDraft() {
+
+  try {
+
+    localStorage.setItem(
+      cvDraftKey(),
+      JSON.stringify(
+        getDraft()
+      )
+    );
+
+
+    $("draftBadge").textContent =
+      "Saved";
+
+
+    showSaveMessage(
+      "Draft saved successfully on this device."
+    );
+
+
+  } catch (error) {
+
+    console.error(error);
+
+
+    showSaveMessage(
+      "Unable to save the draft.",
+      true
+    );
+
+  }
+
+}
+
+
+function loadDraft() {
+
+  try {
+
+    const raw =
+      localStorage.getItem(
+        cvDraftKey()
+      );
+
+
+    if (!raw) {
+      return false;
+    }
+
+
+    const draft =
+      JSON.parse(raw);
+
+    window.cvTemplateSystem?.loadDraftState(draft);
+
+
+    setValue(
+      "cvName",
+      draft.name
+    );
+
+    setValue(
+      "cvTitle",
+      draft.title
+    );
+
+    setValue(
+      "cvEmail",
+      draft.email
+    );
+
+    setValue(
+      "cvPhone",
+      draft.phone
+    );
+
+    setValue(
+      "cvLocation",
+      draft.location
+    );
+
+    setValue("cvGithub", draft.github);
+    setValue("cvLinkedin", draft.linkedin);
+    setValue("cvPortfolio", draft.portfolio);
+    setValue("cvReferences", draft.references);
+
+    setValue(
+      "cvSummary",
+      draft.summary
+    );
+
+    setValue(
+      "cvEducation",
+      draft.education
+    );
+
+    setValue(
+      "cvCareerInterests",
+      draft.careerInterests
+    );
+
+    setValue(
+      "cvSkills",
+      draft.skills
+    );
+
+    window.internGuideCvExperience = [];
+
+    setValue(
+      "cvExperience",
+      draft.experience || ""
+    );
+
+    const savedProjectEntries =
+      Array.isArray(draft.projectEntries)
+        ? draft.projectEntries
+        : [];
+
+    if (savedProjectEntries.length) {
+      window.internGuideCvProjects = savedProjectEntries;
+
+      const projectText = savedProjectEntries
+        .map(project => {
+          if (typeof project === "string") return project;
+
+          const technologies = Array.isArray(project.technologies)
+            ? project.technologies.join(", ")
+            : (project.technologies || "");
+
+          return [
+            project.title || project.name || "",
+            technologies ? `Technologies: ${technologies}` : "",
+            project.description || "",
+            ...normalizeArray(
+              project.bullets ||
+              project.achievements ||
+              project.contributions ||
+              project.features ||
+              project.responsibilities
+            ).map(b => `• ${b}`)
+          ].filter(Boolean).join("\n");
+        })
+        .join("\n\n");
+
+      setValue("cvProjects", projectText);
+    } else {
+      const rawProjects = draft.projects || "";
+      setValue("cvProjects", rawProjects);
+      window.internGuideCvProjects = parseProTextEntries(rawProjects);
+    }
+
+    setValue(
+      "cvLeadership",
+      draft.leadership || ""
+    );
+
+    setValue(
+      "cvCertificates",
+      draft.certificates || ""
+    );
+
+    setLanguagesFromText(
+      draft.languages || ""
+    );
+
+
+    $("draftBadge").textContent =
+      "Saved";
+
+
+    updatePreview();
+
+
+    return true;
+
+  } catch (error) {
+
+    console.error(
+      "Draft load error:",
+      error
+    );
+
+
+    return false;
+
+  }
+
+}
+
+
+/* =========================================================
+   LIVE PREVIEW EVENTS
+========================================================= */
+
+let autoSaveTimer = null;
+
+function scheduleAutoSave() {
+  clearTimeout(autoSaveTimer);
+
+  autoSaveTimer = setTimeout(() => {
+    try {
+      localStorage.setItem(
+        cvDraftKey(),
+        JSON.stringify(getDraft())
+      );
+
+      $("draftBadge")?.replaceChildren(
+        document.createTextNode("Saved")
+      );
+    } catch (error) {
+      console.warn("Auto-save failed:", error);
+    }
+  }, 700);
+}
+
+function bindLivePreview() {
+
+  document
+    .querySelectorAll(
+      "#cvForm input:not(#cvLanguages), #cvForm textarea"
+    )
+    .forEach(input => {
+
+      input.addEventListener(
+        "input",
+        () => {
+          if (input.id === "cvProjects") {
+            window.internGuideCvProjects =
+              parseProTextEntries(input.value);
+          }
+
+          updatePreview();
+          scheduleAutoSave();
+        }
+      );
+
+    });
+
+}
+
+
+
+/* =========================================================
+   CV -> PROFILE SYNC
+========================================================= */
+
+function parseEducationForProfile(text) {
+  const result = {
+    university: "",
+    major: "",
+    year_of_study: "",
+    expected_graduation: ""
+  };
+
+  const lines = String(text || "")
+    .split(/\r?\n/)
+    .map(line => line.trim())
+    .filter(Boolean);
+
+  if (!lines.length) return result;
+
+  const first = lines[0];
+
+  // Example: University Name — Information Technology
+  const parts = first.split(/\s+[—–-]\s+/);
+  if (parts.length >= 2) {
+    result.university = parts[0].trim();
+    result.major = parts.slice(1).join(" — ").trim();
+  } else {
+    result.university = first;
+  }
+
+  for (const line of lines.slice(1)) {
+    const year = line.match(/year\s*(?:of\s*)?study\s*:\s*(.+)/i);
+    const graduation = line.match(
+      /(?:expected\s*)?(?:graduation|graduate)\s*:\s*(.+)/i
+    );
+
+    if (year) result.year_of_study = year[1].trim();
+    if (graduation) result.expected_graduation = graduation[1].trim();
+  }
+
+  return result;
+}
+
+function normalizeProfileExperienceItem(item) {
+  if (!item) return null;
+
+  if (typeof item === "string") {
+    return normalizeProfileExperienceBlock(item);
+  }
+
+  const role =
+    item.role ||
+    item.position ||
+    item.title ||
+    item.jobTitle ||
+    "";
+
+  const company =
+    item.company ||
+    item.organization ||
+    item.employer ||
+    "";
+
+  const location =
+    item.location ||
+    "";
+
+  const start =
+    item.start_date ||
+    item.startDate ||
+    item.start ||
+    "";
+
+  const end =
+    item.end_date ||
+    item.endDate ||
+    item.end ||
+    "";
+
+  const description = normalizeArray(
+    item.bullets ||
+    item.responsibilities ||
+    item.achievements ||
+    item.description ||
+    []
+  )
+    .filter(Boolean)
+    .join("\n");
+
+  if (!role && !company && !description) return null;
+
+  return {
+    role: String(role).trim(),
+    company: String(company).trim(),
+    location: String(location).trim(),
+    start_date: String(start).trim(),
+    end_date: String(end).trim(),
+    description: String(description).trim()
+  };
+}
+
+function normalizeProfileExperienceBlock(block) {
+  const lines = String(block || "")
+    .split(/\r?\n/)
+    .map(line => line.trim())
+    .filter(Boolean);
+
+  if (!lines.length) return null;
+
+  let heading = lines[0]
+    .replace(/^[-•]\s*/, "")
+    .trim();
+
+  const dateMatch = heading.match(
+    /\b((?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s+\d{4}|\d{4})\s*(?:—|-|to)\s*((?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s+\d{4}|\d{4}|Present)?\b/i
+  );
+
+  let start_date = "";
+  let end_date = "";
+
+  if (dateMatch) {
+    start_date = dateMatch[1] || "";
+    end_date = dateMatch[2] || "";
+    heading = heading.replace(dateMatch[0], "").trim();
+  }
+
+  const headingParts = heading.split(/\s+[—–-]\s+/);
+
+  let role = headingParts[0] || "";
+  let company = headingParts[1] || "";
+
+  if (!company && lines[1] && !/^[-•]/.test(lines[1])) {
+    company = lines[1];
+  }
+
+  const descriptionLines = lines
+    .slice(company && lines[1] === company ? 2 : 1)
+    .map(line => line.replace(/^[-•]\s*/, "").trim())
+    .filter(Boolean);
+
+  return {
+    role,
+    company,
+    location: "",
+    start_date,
+    end_date,
+    description: descriptionLines.join("\n")
+  };
+}
+
+function getCVExperienceForProfile() {
+  const structured =
+    Array.isArray(window.internGuideCvExperience)
+      ? window.internGuideCvExperience
+      : [];
+
+  if (structured.length) {
+    return structured
+      .map(normalizeProfileExperienceItem)
+      .filter(Boolean);
+  }
+
+  const raw = value("cvExperience");
+
+  return raw
+    .split(/\n\s*\n/)
+    .map(normalizeProfileExperienceBlock)
+    .filter(Boolean);
+}
+
+function normalizeProfileCertificateItem(item) {
+  if (!item) return null;
+
+  if (typeof item === "string") {
+    const parts = item
+      .split(/\s+—\s+|\s+-\s+/)
+      .map(x => x.trim())
+      .filter(Boolean);
+
+    return {
+      name: parts[0] || "",
+      issuer: parts[1] || "",
+      issue_date: parts[2] || "",
+      credential: parts[3] || ""
+    };
+  }
+
+  return {
+    name: String(
+      item.name ||
+      item.title ||
+      item.certificate ||
+      item.certificateName ||
+      ""
+    ).trim(),
+
+    issuer: String(
+      item.issuer ||
+      item.organization ||
+      item.provider ||
+      ""
+    ).trim(),
+
+    issue_date: String(
+      item.issue_date ||
+      item.issueDate ||
+      item.date ||
+      ""
+    ).trim(),
+
+    credential: String(
+      item.credential ||
+      item.credentialId ||
+      item.url ||
+      ""
+    ).trim()
+  };
+}
+
+function getCVCertificatesForProfile() {
+  const raw = value("cvCertificates");
+
+  return raw
+    .split(/\r?\n/)
+    .map(normalizeProfileCertificateItem)
+    .filter(item => item?.name);
+}
+
+function getCVProfileChanges() {
+  const education = parseEducationForProfile(
+    value("cvEducation")
+  );
+
+  const languages =
+    typeof languageItemsToText === "function"
+      ? languageItemsToText()
+      : "";
+
+  const changes = {
+    full_name: value("cvName"),
+    phone: value("cvPhone"),
+    location: value("cvLocation"),
+    university: education.university,
+    major: education.major,
+    year_of_study: education.year_of_study,
+    expected_graduation: education.expected_graduation,
+    career_roles: value("cvCareerInterests"),
+    skills: value("cvSkills"),
+    languages,
+    bio: value("cvSummary")
+  };
+
+  return {
+    changes,
+    experiences: getCVExperienceForProfile(),
+    certificates: getCVCertificatesForProfile()
+  };
+}
+
+function hasProfileChange(value) {
+  return String(value || "").trim() !== "";
+}
+
+function createProfileSyncModal() {
+  document.getElementById("updateProfileModal")?.remove();
+
+  const { changes, experiences, certificates } =
+    getCVProfileChanges();
+
+  const available = [
+    ["full_name", "Full Name"],
+    ["phone", "Phone"],
+    ["location", "Location"],
+    ["university", "University"],
+    ["major", "Major"],
+    ["year_of_study", "Year of Study"],
+    ["expected_graduation", "Expected Graduation"],
+    ["career_roles", "Career Interests"],
+    ["skills", "Skills"],
+    ["languages", "Languages"],
+    ["bio", "About Me"]
+  ].filter(([key]) => hasProfileChange(changes[key]));
+
+  const modal = document.createElement("div");
+
+  modal.id = "updateProfileModal";
+  modal.className =
+    "fixed inset-0 z-[500] bg-black/40 flex items-center justify-center p-4";
+
+  modal.innerHTML = `
+    <div class="bg-white w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl shadow-xl">
+
+      <div class="flex items-center justify-between px-6 py-4 border-b">
+        <div>
+          <h2 class="text-lg font-semibold text-[#1C1F26]">
+            Update My Profile
+          </h2>
+          <p class="text-xs text-slate-500 mt-1">
+            Choose which CV information should be copied to your profile.
+          </p>
+        </div>
+
+        <button
+          type="button"
+          id="closeUpdateProfileModal"
+          class="text-slate-500 hover:text-slate-800 text-xl"
+          aria-label="Close"
+        >
+          ×
+        </button>
+      </div>
+
+      <div class="p-6 space-y-5">
+
+        ${
+          available.length
+            ? `
+              <div>
+                <h3 class="text-sm font-semibold mb-3">
+                  Profile Information
+                </h3>
+
+                <div class="grid sm:grid-cols-2 gap-2">
+                  ${available.map(([key, label]) => `
+                    <label class="flex items-center gap-3 border border-[#DEE2E6] rounded-lg px-3 py-2.5 cursor-pointer hover:bg-[#F8F9FF]">
+                      <input
+                        type="checkbox"
+                        class="profile-sync-field accent-[#3B5BDB]"
+                        value="${key}"
+                        checked
+                      >
+                      <span class="text-sm">${label}</span>
+                    </label>
+                  `).join("")}
+                </div>
+              </div>
+            `
+            : `
+              <div class="rounded-lg bg-amber-50 border border-amber-200 p-4 text-sm text-amber-800">
+                There is no profile information in the CV to update yet.
+              </div>
+            `
+        }
+
+        <div class="border-t pt-5">
+
+          <h3 class="text-sm font-semibold mb-3">
+            Additional Information
+          </h3>
+
+          <div class="space-y-2">
+
+            ${
+              experiences.length
+                ? `
+                  <label class="flex items-center justify-between gap-3 border border-[#DEE2E6] rounded-lg px-3 py-3 cursor-pointer hover:bg-[#F8F9FF]">
+                    <span>
+                      <span class="block text-sm font-medium">
+                        Internship Experience
+                      </span>
+                      <span class="block text-xs text-slate-500 mt-0.5">
+                        ${experiences.length} experience item${experiences.length === 1 ? "" : "s"} from this CV
+                      </span>
+                    </span>
+
+                    <input
+                      id="syncExperiences"
+                      type="checkbox"
+                      class="accent-[#3B5BDB]"
+                      checked
+                    >
+                  </label>
+                `
+                : `
+                  <div class="text-xs text-slate-500">
+                    No internship experience found in this CV.
+                  </div>
+                `
+            }
+
+            ${
+              certificates.length
+                ? `
+                  <label class="flex items-center justify-between gap-3 border border-[#DEE2E6] rounded-lg px-3 py-3 cursor-pointer hover:bg-[#F8F9FF]">
+                    <span>
+                      <span class="block text-sm font-medium">
+                        Certificates
+                      </span>
+                      <span class="block text-xs text-slate-500 mt-0.5">
+                        ${certificates.length} certificate${certificates.length === 1 ? "" : "s"} from this CV
+                      </span>
+                    </span>
+
+                    <input
+                      id="syncCertificates"
+                      type="checkbox"
+                      class="accent-[#3B5BDB]"
+                      checked
+                    >
+                  </label>
+                `
+                : `
+                  <div class="text-xs text-slate-500">
+                    No certificates found in this CV.
+                  </div>
+                `
+            }
+
+          </div>
+
+        </div>
+
+        <div class="rounded-lg bg-[#EDF2FF] border border-[#C9D4FF] p-3 text-xs text-slate-600">
+          Your CV will not be changed. Only the information you select will be
+          copied to My Profile.
+        </div>
+
+      </div>
+
+      <div class="flex justify-end gap-3 px-6 py-4 border-t bg-slate-50 rounded-b-2xl">
+
+        <button
+          type="button"
+          id="cancelUpdateProfile"
+          class="px-4 py-2 border border-[#DEE2E6] rounded-lg text-sm font-medium hover:bg-white"
+        >
+          Cancel
+        </button>
+
+        <button
+          type="button"
+          id="confirmUpdateProfile"
+          class="px-4 py-2 bg-[#3B5BDB] text-white rounded-lg text-sm font-medium hover:bg-[#2F49B0]"
+        >
+          Update Profile
+        </button>
+
+      </div>
+
+    </div>
+  `;
+
+  document.body.appendChild(modal);
+
+  const close = () => modal.remove();
+
+  document.getElementById("closeUpdateProfileModal")
+    ?.addEventListener("click", close);
+
+  document.getElementById("cancelUpdateProfile")
+    ?.addEventListener("click", close);
+
+  modal.addEventListener("click", event => {
+    if (event.target === modal) close();
+  });
+
+  document.getElementById("confirmUpdateProfile")
+    ?.addEventListener(
+      "click",
+      async () => {
+        await updateProfileFromCV();
+      }
+    );
+}
+
+function openUpdateProfileModal() {
+
+  if (!currentUser || !currentProfile) {
+    showAiMessage(
+      "Your profile is still loading. Please wait a moment."
+    );
+    return;
+  }
+
+  createProfileSyncModal();
+}
+
+async function updateProfileFromCV() {
+
+  const button =
+    document.getElementById("confirmUpdateProfile");
+
+  if (button) {
+    button.disabled = true;
+    button.textContent = "Updating...";
+  }
+
+  try {
+
+    const { changes, experiences, certificates } =
+      getCVProfileChanges();
+
+    const selectedFields =
+      Array.from(
+        document.querySelectorAll(".profile-sync-field:checked")
+      ).map(input => input.value);
+
+    const updates = {
+      updated_at: new Date().toISOString()
+    };
+
+    selectedFields.forEach(key => {
+      if (hasProfileChange(changes[key])) {
+        updates[key] = changes[key];
+      }
+    });
+
+    if (!Object.keys(updates).length) {
+      throw new Error("No profile fields were selected.");
+    }
+
+    const {
+      data: savedProfile,
+      error: profileError
+    } = await supabaseClient
+      .from("profiles")
+      .update(updates)
+      .eq("id", currentUser.id)
+      .select()
+      .single();
+
+    if (profileError) {
+      throw profileError;
+    }
+
+    currentProfile = savedProfile;
+
+    /*
+     * Keep the authenticated user's display name in sync too.
+     */
+    if (selectedFields.includes("full_name")) {
+      await supabaseClient.auth.updateUser({
+        data: {
+          full_name: savedProfile.full_name || ""
+        }
+      });
+    }
+
+    const syncExperiences =
+      document.getElementById("syncExperiences")?.checked;
+
+    const syncCertificates =
+      document.getElementById("syncCertificates")?.checked;
+
+    /*
+     * Experience:
+     * Replace the user's stored experience with the CV version only
+     * when the user explicitly checks the option.
+     */
+    if (syncExperiences && experiences.length) {
+
+      const { error: deleteError } =
+        await supabaseClient
+          .from("profile_experiences")
+          .delete()
+          .eq("user_id", currentUser.id);
+
+      if (deleteError) {
+        console.warn(
+          "Could not replace profile experiences:",
+          deleteError.message
+        );
+      } else {
+
+        const rows =
+          experiences.map(item => ({
+            user_id: currentUser.id,
+            role: item.role || "Experience",
+            company: item.company || "",
+            location: item.location || "",
+            start_date: item.start_date || null,
+            end_date: item.end_date || null,
+            description: item.description || ""
+          }));
+
+        const { error: insertError } =
+          await supabaseClient
+            .from("profile_experiences")
+            .insert(rows);
+
+        if (insertError) {
+          console.warn(
+            "Could not save profile experiences:",
+            insertError.message
+          );
+        }
+      }
+    }
+
+    /*
+     * Certificates:
+     * Same deliberate replace behavior.
+     */
+    if (syncCertificates && certificates.length) {
+
+      const { error: deleteError } =
+        await supabaseClient
+          .from("profile_certificates")
+          .delete()
+          .eq("user_id", currentUser.id);
+
+      if (deleteError) {
+        console.warn(
+          "Could not replace profile certificates:",
+          deleteError.message
+        );
+      } else {
+
+        const rows =
+          certificates.map(item => ({
+            user_id: currentUser.id,
+            name: item.name,
+            issuer: item.issuer || "",
+            issue_date: item.issue_date || null,
+            credential: item.credential || ""
+          }));
+
+        const { error: insertError } =
+          await supabaseClient
+            .from("profile_certificates")
+            .insert(rows);
+
+        if (insertError) {
+          console.warn(
+            "Could not save profile certificates:",
+            insertError.message
+          );
+        }
+      }
+    }
+
+    document.getElementById("updateProfileModal")?.remove();
+
+    showAiMessage(
+      "My Profile was updated from this CV."
+    );
+
+    /*
+     * Reload the profile so the CV and navigation stay synchronized.
+     */
+    const refreshed =
+      await getUserAndProfile();
+
+    if (refreshed) {
+      await loadNavbarAvatar();
+      await loadAvatar();
+    }
+
+  } catch (error) {
+
+    console.error(
+      "CV → Profile update error:",
+      error
+    );
+
+    showAiMessage(
+      error?.message ||
+      "Could not update your profile."
+    );
+
+    if (button) {
+      button.disabled = false;
+      button.textContent = "Update Profile";
+    }
+  }
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+async function logoutFromCV() {
+
+  await supabaseClient.auth.signOut();
+
+  window.location.href =
+    "../../index.html";
+
+}
+
+
+/* =========================================================
+   INITIALIZATION
+========================================================= */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  async () => {
+
+    window.cvTemplateSystem?.initialize();
+
+
+    /* Certificate upload */
+
+    $("certificateFiles")
+      ?.addEventListener(
+        "change",
+        event => {
+
+          certificateFilesForAI =
+            Array.from(
+              event.target.files || []
+            );
+
+
+          renderCertificateFiles();
+
+
+          showAiMessage(
+            certificateFilesForAI.length
+              ? `${certificateFilesForAI.length} certificate file(s) ready for Smart AI.`
+              : ""
+          );
+
+        }
+      );
+
+
+    try {
+
+      const profile =
+        await getUserAndProfile();
+
+
+      if (!profile) {
+        return;
+      }
+
+
+      await loadNavbarAvatar();
+
+      await loadAvatar();
+
+
+      initLanguages();
+
+      const loadedDraft =
+        loadDraft();
+
+
+      if (!loadedDraft) {
+
+        await loadFromProfile();
+
+      } else {
+
+        /*
+          Keep the profile photo even
+          when a draft is loaded.
+        */
+
+        updatePreview();
+
+      }
+
+      window.cvTemplateSystem?.markReady();
+
+
+      bindLivePreview();
+
+
+      $("logoutBtn")
+        ?.addEventListener(
+          "click",
+          logoutFromCV
+        );
+
+
+      $("mobileLogoutBtn")
+        ?.addEventListener(
+          "click",
+          logoutFromCV
+        );
+
+
+      if (
+        window.lucide &&
+        typeof lucide.createIcons === "function"
+      ) {
+
+        lucide.createIcons();
+
+      }
+
+
+    } catch (error) {
+
+      console.error(
+        "CV Builder initialization error:",
+        error
+      );
+
+
+      showAiMessage(
+        "Unable to load your profile. Please refresh the page."
+      );
+
+    }
+
+  }
+);
+
+</script>
+
+<script>
+  window.addEventListener("load", () => {
+    try {
+      if (typeof updatePreview === "function") updatePreview();
+    } catch (error) {
+      console.error("CV preview initialization error:", error);
+    }
+  });
+</script>
+</body>
+</html>

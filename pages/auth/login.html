@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Log In | InternGuide</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../src/style.css">
+
+    <style>
+        :root {
+            --ig-primary: #3B5BDB;
+            --ig-primary-dark: #2F49B0;
+            --ig-border: #E2E8F0;
+            --ig-surface: #FFFFFF;
+            --ig-muted: #64748B;
+            --ig-dark: #0F172A;
+            --ig-soft: #F8FAFC;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(180deg, #F8FAFF 0%, #F8F9FF 100%);
+            color: var(--ig-dark);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+            line-height: 1;
+        }
+
+        .brand-logo {
+            display: block;
+            width: auto;
+            height: 42px;
+            object-fit: contain;
+        }
+
+        .auth-container {
+            width: min(100%, var(--ig-content-max-width));
+            max-width: var(--ig-content-max-width);
+            margin-inline: auto;
+            padding-left: var(--ig-content-pad) !important;
+            padding-right: var(--ig-content-pad) !important;
+            box-sizing: border-box;
+        }
+
+        .auth-header-actions {
+            min-width: 0;
+            margin-left: auto;
+        }
+
+        .auth-header-actions > a {
+            display: inline-flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            max-width: 100%;
+            min-width: 0;
+            white-space: normal;
+            text-align: left;
+        }
+
+        .auth-card {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr);
+            overflow: hidden;
+            border: 1px solid rgba(148, 163, 184, 0.25);
+            border-radius: 22px;
+            background: var(--ig-surface);
+            box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+        }
+
+        .auth-card > section,
+        .auth-card > aside {
+            min-width: 0;
+            width: 100%;
+            max-width: none;
+        }
+
+        .auth-right {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(145deg, #2D4AC4 0%, #3B5BDB 45%, #637DFF 100%);
+        }
+
+        .auth-right::before,
+        .auth-right::after {
+            content: "";
+            position: absolute;
+            border-radius: 9999px;
+            background: rgba(255, 255, 255, 0.12);
+            pointer-events: none;
+        }
+
+        .auth-right::before {
+            width: 260px;
+            height: 260px;
+            right: -80px;
+            top: -70px;
+        }
+
+        .auth-right::after {
+            width: 180px;
+            height: 180px;
+            left: -40px;
+            bottom: -30px;
+        }
+
+        .auth-input-icon {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            pointer-events: none;
+            color: #94A3B8;
+        }
+
+        .auth-input {
+            width: 100%;
+            height: 52px;
+            border: 1px solid var(--ig-border);
+            border-radius: 14px;
+            background: #fff;
+            padding: 0 48px 0 46px;
+            font-size: 0.94rem;
+            color: var(--ig-dark);
+            outline: none;
+            transition: border-color 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+        }
+
+        .auth-input::placeholder {
+            color: #94A3B8;
+        }
+
+        .auth-input:focus {
+            border-color: rgba(59, 91, 219, 0.7);
+            box-shadow: 0 0 0 4px rgba(59, 91, 219, 0.10);
+            background: #fff;
+        }
+
+        .auth-password-toggle {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            color: #94A3B8;
+            transition: background-color 0.18s ease, color 0.18s ease;
+        }
+
+        .auth-password-toggle:hover {
+            background: #EFF6FF;
+            color: var(--ig-primary);
+        }
+
+        .auth-divider {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #94A3B8;
+            font-size: 0.75rem;
+            line-height: 1;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .auth-divider::before,
+        .auth-divider::after {
+            content: "";
+            height: 1px;
+            flex: 1;
+            background: var(--ig-border);
+        }
+
+        .auth-social,
+        .auth-primary-btn,
+        .auth-secondary-btn {
+            width: 100%;
+            min-height: 52px;
+            border-radius: 14px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 0.94rem;
+            font-weight: 600;
+            transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
+        }
+
+        .auth-social {
+            border: 1px solid var(--ig-border);
+            background: #fff;
+            color: #1E293B;
+        }
+
+        .auth-social:hover {
+            transform: translateY(-1px);
+            border-color: rgba(59, 91, 219, 0.35);
+            background: #F8FAFF;
+            box-shadow: 0 10px 20px rgba(59, 91, 219, 0.08);
+        }
+
+        .auth-primary-btn {
+            border: 1px solid var(--ig-primary);
+            background: linear-gradient(180deg, var(--ig-primary) 0%, var(--ig-primary-dark) 100%);
+            color: #fff;
+            box-shadow: 0 10px 22px rgba(59, 91, 219, 0.22);
+        }
+
+        .auth-primary-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 14px 30px rgba(59, 91, 219, 0.26);
+        }
+
+        .auth-primary-btn:disabled {
+            opacity: 0.8;
+            cursor: wait;
+            transform: none;
+        }
+
+        @media (min-width: 1024px) {
+            .auth-card {
+                grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+                border-radius: 28px;
+            }
+        }
+
+        @media (max-width: 1023px) {
+            .auth-card {
+                border-radius: 22px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .auth-container {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+
+            .brand-logo {
+                height: 38px;
+            }
+
+            .auth-header-actions {
+                width: 100%;
+            }
+
+            .auth-header-actions > a {
+                width: 100%;
+                justify-content: center;
+                padding-left: 0.8rem;
+                padding-right: 0.8rem;
+            }
+
+            .auth-card {
+                border-radius: 18px;
+            }
+
+            .auth-input {
+                height: 50px;
+            }
+
+            .auth-primary-btn,
+            .auth-social {
+                width: 100%;
+                min-height: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-[#F8F9FF] text-[#343A40]">
+    <header class="sticky top-0 z-50 border-b border-slate-200/90 bg-white/95 backdrop-blur">
+        <div class="auth-container flex h-auto flex-col items-start gap-3 py-3 sm:h-16 sm:flex-row sm:items-center sm:justify-between sm:py-0">
+            <a href="../../index.html" class="flex items-center" aria-label="InternGuide home">
+                <img src="../../src/assets/images/logo.png" alt="InternGuide" class="brand-logo">
+            </a>
+
+            <div class="auth-header-actions flex items-center gap-3">
+                <a href="../../index.html" class="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition hover:border-blue-200 hover:text-blue-700">
+                    <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+                    Back to InternGuide
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="py-4 sm:py-6 lg:py-12">
+        <div class="auth-container">
+            <div class="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <div class="inline-flex w-fit items-center gap-2 rounded-full bg-[#EDF2FF] px-3 py-1.5 text-xs font-semibold tracking-[0.12em] text-[#3B5BDB] uppercase">
+                    <span class="material-symbols-outlined text-[16px]">verified</span>
+                    Student &amp; Early Talent Portal
+                </div>
+
+                <div class="flex items-center gap-2 text-xs font-medium text-slate-500">
+                    <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+                    Platform Status: Active
+                </div>
+            </div>
+
+            <div class="auth-card grid lg:grid-cols-[1.08fr_0.92fr]">
+                <section class="p-6 sm:p-8 lg:p-10 xl:p-12">
+                    <div class="mx-auto max-w-[500px]">
+                        <div class="mb-6">
+                            <p class="mb-2 text-xs font-bold tracking-[0.18em] text-[#3B5BDB] uppercase" data-i18n="auth.welcomeBackTitle">Welcome back</p>
+                            <h1 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl" data-i18n="auth.welcomeBack">Welcome back</h1>
+                            <p class="mt-3 text-sm leading-6 text-slate-600" data-i18n="auth.loginSubtitle">
+                                Log in to track applications, practice interviews, and discover opportunities built for students.
+                            </p>
+                        </div>
+
+                        <button id="googleLogin" type="button" class="auth-social" aria-label="Continue with Google">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-[#EFF3FF] text-base font-bold text-[#4285F4]">G</span>
+                            <span data-i18n="auth.continueWithGoogle">Continue with Google</span>
+                        </button>
+
+                        <div class="auth-divider my-5" data-i18n="auth.continueWithEmail">or continue with email</div>
+
+                        <form id="loginForm" class="space-y-5" novalidate>
+                            <div>
+                                <label for="email" class="mb-2 block text-sm font-semibold text-slate-700" data-i18n="auth.personalEmail">University or Personal Email</label>
+                                <div class="relative">
+                                    <span class="material-symbols-outlined auth-input-icon" aria-hidden="true">mail</span>
+                                    <input id="email" type="email" placeholder="student@university.edu" autocomplete="email" required class="auth-input">
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="mb-2 flex items-center justify-between gap-3">
+                                    <label for="password" class="text-sm font-semibold text-slate-700" data-i18n="auth.password">Password</label>
+                                    <a href="forgot-password.html" class="text-xs font-medium text-[#3B5BDB] transition hover:text-[#2F49B0] hover:underline" data-i18n="auth.forgotPassword">Forgot password?</a>
+                                </div>
+
+                                <div class="relative">
+                                    <span class="material-symbols-outlined auth-input-icon" aria-hidden="true">lock</span>
+                                    <input id="password" type="password" placeholder="Enter your password" autocomplete="current-password" required class="auth-input">
+                                    <button type="button" data-toggle-password="password" aria-label="Show password" class="auth-password-toggle">
+                                        <span class="material-symbols-outlined text-[21px]">visibility</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center justify-between gap-3">
+                                <label class="flex items-center gap-2 text-sm text-slate-600">
+                                    <input type="checkbox" class="h-4 w-4 rounded border-slate-300 text-[#3B5BDB] focus:ring-[#748FFC]">
+                                    <span data-i18n="auth.keepSignedIn">Keep me signed in</span>
+                                </label>
+
+                                <span class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-400" data-i18n="auth.secureAccess">
+                                    <span class="material-symbols-outlined text-[14px]">lock</span>
+                                    Secure access
+                                </span>
+                            </div>
+
+                            <button type="submit" class="auth-primary-btn">
+                                <span data-i18n="auth.loginToInternGuide">Log In to InternGuide</span>
+                                <span class="material-symbols-outlined text-[21px]">arrow_forward</span>
+                            </button>
+                        </form>
+
+                        <div id="formMessage" class="mt-5 hidden rounded-xl px-4 py-3 text-sm"></div>
+
+                        <p class="mt-6 text-center text-sm text-slate-600">
+                            <span data-i18n="auth.noAccount">Don’t have an account?</span>
+                            <a class="ml-1 font-semibold text-[#3B5BDB] transition hover:text-[#2F49B0] hover:underline" href="signup.html" data-i18n="auth.signUpFree">Sign up for free</a>
+                        </p>
+                    </div>
+                </section>
+
+                <aside class="auth-right hidden p-8 text-white lg:flex lg:flex-col lg:justify-between lg:p-10 xl:p-12">
+                    <div class="relative z-10">
+                        <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.14em] text-white/90">
+                            Career Platform
+                        </div>
+
+                        <h2 class="max-w-md text-3xl font-bold leading-tight xl:text-[2.2rem]">
+                            Build your future, one opportunity at a time.
+                        </h2>
+
+                        <p class="mt-4 max-w-md text-sm leading-7 text-white/80">
+                            Find internships, explore career paths, and prepare for your next step with one student-friendly platform.
+                        </p>
+                    </div>
+
+                    <div class="relative z-10 space-y-4">
+                        <div class="flex items-center gap-3 rounded-2xl border border-white/15 bg-white/5 px-3 py-3 backdrop-blur-sm">
+                            <span class="flex h-8 w-8 items-center justify-center rounded-full bg-white/15 text-base font-bold">✓</span>
+                            <span class="text-sm text-white/90" data-i18n="auth.futureFeature1">Discover internship opportunities</span>
+                        </div>
+
+                        <div class="flex items-center gap-3 rounded-2xl border border-white/15 bg-white/5 px-3 py-3 backdrop-blur-sm">
+                            <span class="flex h-8 w-8 items-center justify-center rounded-full bg-white/15 text-base font-bold">✓</span>
+                            <span class="text-sm text-white/90" data-i18n="auth.futureFeature2">Explore career paths and skills</span>
+                        </div>
+
+                        <div class="flex items-center gap-3 rounded-2xl border border-white/15 bg-white/5 px-3 py-3 backdrop-blur-sm">
+                            <span class="flex h-8 w-8 items-center justify-center rounded-full bg-white/15 text-base font-bold">✓</span>
+                            <span class="text-sm text-white/90" data-i18n="auth.futureFeature3">Prepare your CV and interviews</span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="px-4 py-6 text-center text-xs font-medium text-slate-400">
+        © 2026 InternGuide. Find Opportunities. Build Your Future.
+    </footer>
+
+    <script src="../../js/i18n.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../js/auth.js"></script>
+</body>
+
+</html>

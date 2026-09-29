@@ -1,0 +1,1113 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Internships | InternGuide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/src/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ec8f2e5552.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="site-header sticky top-0 z-50 bg-white">
+        <div class="site-container flex justify-between items-center">
+            <!-- Logo -->
+            <a href="../index.html" class="logo">
+                <img src="../src/assets/images/logo.png" alt="InternGuide Logo">
+            </a>
+            <!-- Navigation -->
+            <nav class="gap-8 items-center hidden lg:flex text-gray-500 ">
+                <a href="../index.html" class="nav-link hover:text-gray-700">Home</a>
+                <a href="internships.html" class="nav-link active">Internships</a>
+                <a href="career-guide.html" class="nav-link hover:text-gray-700">Career Guide</a>
+                <a href="cv-interview.html" class="nav-link hover:text-gray-700">CV & Interview</a>
+                <a href="about-contact.html" class="nav-link hover:text-gray-700 ">About</a>
+            </nav>
+            <!-- Header Buttons -->
+            <div class="header-actions hidden md:flex flex-none items-center gap-4">
+                <a href="auth/login.html" class="btn btn-login bg-white border rounded-xl p-3 px-4">Log In</a>
+                <a href="auth/signup.html" class="btn btn-primary bg-blue-600 text-white p-3 px-4 rounded-xl">Sign Up</a>
+            </div>
+            <!-- Mobile Menu -->
+            <div class="flex md:hidden ">
+                <button id="toggle-btn"
+                    class="h-10 w-10 items-center justify-center rounded-full text-xl text-gray-800 transition hover:bg-gray-100"
+                    aria-label="Toggle menu">
+                    ☰
+                </button>
+                <!-- Dropdown Menu -->
+                <div id="mobile-menu" class="absolute left-0 top-full hidden w-full flex-col bg-[#f8f9ff] shadow-lg">
+                    <a href="../index.html"
+                        class="flex h-10 items-center justify-center gap-2 border-b border-gray-200 text-sm font-medium text-[#3f5ddd] hover:bg-gray-100">
+                        Home
+                    </a>
+                    <a href="internships.html"
+                        class="active-mobile flex h-10 items-center justify-center gap-2 border-b border-gray-200 text-sm font-medium">
+                        Internship
+                    </a>
+                    <a href="career-guide.html"
+                        class="flex h-10 items-center justify-center gap-2 border-b border-gray-200 text-sm font-medium text-[#3f5ddd] hover:bg-gray-100">
+                        Career Guide
+                    </a>
+                    <a href="cv-interview.html"
+                        class="flex h-10 items-center justify-center gap-2 border-b border-gray-200 text-sm font-medium text-[#3f5ddd] hover:bg-gray-100">
+                        CV & Interview
+                    </a>
+                    <a href="about-contact.html"
+                        class="flex h-10 items-center justify-center gap-2 border-b border-gray-200 text-sm font-medium text-[#3f5ddd] hover:bg-gray-100">
+                        About & Contact
+                    </a>
+                    <a href="auth/login.html"
+                        class="flex h-10 items-center justify-center gap-2 rounded-b-xl bg-[#3f5ddd] text-sm font-semibold text-white hover:bg-[#304fc8]">
+                        Register or Login
+                    </a>
+                </div>
+            </div>
+        </div>
+        <nav class="gap-12 py-4 items-center lg:hidden md:flex hidden text-gray-500 justify-center">
+            <a href="../index.html" class="nav-link">Home</a>
+            <a href="internships.html" class="nav-link active">Internships</a>
+            <a href="career-guide.html" class="nav-link hover:text-gray-700">Career Guide</a>
+            <a href="cv-interview.html" class="nav-link hover:text-gray-700">CV & Interview</a>
+            <a href="about-contact.html" class="nav-link hover:text-gray-700">About</a>
+        </nav>
+    </header>
+    <section class="page-title bg-blue-50 py-12">
+        <div class="site-container flex flex-col items-center gap-6 text-center">
+            <div
+                class=" inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-gray-200/80 shadow-sm text-xs font-semibold tracking-wider text-blue-600 uppercase">
+                <span class="w-2 h-2 rounded-full bg-blue-600"></span> Internship Opportunities
+            </div>
+            <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-gray-900 leading-tight"> Find
+                the Right<span class="relative inline-block text-blue-600"> Internship<svg
+                        class="absolute -bottom-2 left-0 w-full h-3 text-blue-500" viewBox="0 0 200 9" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 7C50 2 150 2 198 7" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+                    </svg> </span> for You </h1>
+            <p class="text-base sm:text-lg text-gray-600 leading-relaxed max-w-2xl font-normal"> Explore verified
+                internship opportunities, discover essential skills, and build industry-ready experience tailored to
+                your long-term career ambition. </p>
+            <div
+                class="w-full max-w-3xl mt-2 bg-white rounded-2xl shadow-xl shadow-gray-200/50 border border-gray-100 p-2 sm:p-3 flex flex-col md:flex-row items-center gap-2 hover:shadow-[0_0_8px_rgba(10,100,246,0.5)] ">
+                <div
+                    class="flex items-center gap-3 px-4 py-2 w-full md:w-1/2 bg-gray-50/60 rounded-xl hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM0ZjVhZjMiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1zZWFyY2ggcHJldmlldy1pY29uIj48cGF0aCBkPSJtMjEgMjEtNC4zNC00LjM0Ii8+PGNpcmNsZSBjeD0iMTEiIGN5PSIxMSIgcj0iOCIvPjwvc3ZnPg=="
+                        alt="">
+                    <input id="internshipSearch" type="search" data-i18n-placeholder="common.searchInternships" placeholder="Search internships, companies, or skills..."
+                        class="w-full bg-transparent text-sm text-gray-800 placeholder-gray-400 focus:outline-none " />
+                </div>
+                <div class="hidden md:block w-px h-8 bg-gray-200"></div>
+                <div
+                    class="flex items-center gap-3 px-4 py-2 w-full md:w-1/2 bg-gray-50/60 rounded-xl hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">
+                    <svg class="w-5 h-5 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <input id="internshipLocationSearch" type="search" placeholder="Location (e.g. Kuala Lumpur, R..."
+                        class="w-full bg-transparent text-sm text-gray-800 placeholder-gray-400 focus:outline-none" />
+                </div>
+            </div>
+            <!-- Popular Searches Tags -->
+            <div class="flex flex-wrap items-center justify-center gap-2 mt-1 text-sm text-gray-500">
+                <span class="font-medium text-gray-400 mr-1">Popular searches:</span>
+                <button
+                    data-popular-search="Technology" class="px-4 py-1.5 rounded-full bg-white border border-gray-200 text-gray-700 text-xs font-semibold hover:border-gray-300 transition-colors hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Technology</button>
+                <button
+                    data-popular-search="Design" class="px-4 py-1.5 rounded-full bg-white border border-gray-200 text-gray-700 text-xs font-semibold hover:border-gray-300 transition-colors hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Design</button>
+                <button
+                    data-popular-search="Marketing" class="px-4 py-1.5 rounded-full bg-white border border-gray-200 text-gray-700 text-xs font-semibold hover:border-gray-300 transition-colors hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Marketing</button>
+                <button
+                    data-popular-search="Business" class="px-4 py-1.5 rounded-full bg-white border border-gray-200 text-gray-700 text-xs font-semibold hover:border-gray-300 transition-colors hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Business</button>
+                <button
+                    data-popular-search="Engineering" class="px-4 py-1.5 rounded-full bg-white border border-gray-200 text-gray-700 text-xs font-semibold hover:border-gray-300 transition-colors hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Engineering</button>
+            </div>
+        </div>
+    </section>
+    <section class="py-4">
+        <div class="site-container grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+            <!-- Left Sidebar: Filter Internships -->
+            <aside id="internshipFilterSidebar" class="internship-filter-drawer lg:col-span-3 bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm h-fit" aria-label="Internship filters">
+                <div class="flex items-center justify-between border-b border-slate-100 pb-5">
+                    <h2 class="text-lg font-bold text-slate-900" data-i18n="common.filterInternships">Filter Internships</h2>
+                    <div class="flex items-center gap-3">
+                        <button id="clearInternshipFilters" type="button" class="text-sm font-semibold text-blue-600 hover:text-blue-700" data-i18n="common.clearAll">Clear All</button>
+                        <button id="closeMobileFilters" type="button" class="inline-flex h-9 w-9 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100 lg:hidden" aria-label="Close filters">×</button>
+                    </div>
+                </div>
+                <div class="border-b border-slate-100 py-5">
+                    <label for="internshipSidebarSearch" class="mb-2 block text-sm font-semibold text-slate-800" data-i18n="common.search">Search</label>
+                    <input id="internshipSidebarSearch" type="search" data-i18n-placeholder="common.searchInternships" placeholder="Search internships, companies, or skills..." class="w-full rounded-xl border border-slate-200 px-3 py-2.5 text-sm text-slate-800 placeholder:text-slate-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100">
+                </div>
+                <div id="internship-filters" class="space-y-6 py-6"></div>
+                <div class="internship-filter-actions">
+                    <button id="resetInternshipFilters" type="button" class="rounded-lg border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 lg:hidden" data-i18n="common.clearAll">Clear All</button>
+                    <button id="applyMobileFilters" type="button" class="rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700 lg:hidden" data-i18n="common.applyFilters">Apply Filters</button>
+                </div>
+            </aside>
+            <button id="internshipFilterBackdrop" type="button" class="internship-filter-backdrop" aria-label="Close filters" hidden></button>
+
+            <!-- Right Main Content Area -->
+            <main class="lg:col-span-9 space-y-6">
+
+                <!-- Content Header -->
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-2">
+                    <div>
+                        <h1 class="text-2xl font-extrabold text-slate-900 tracking-tight">Featured Internship
+                            Opportunities</h1>
+                        <p class="text-slate-500 font-medium text-sm mt-0.5"><span data-i18n="common.showing">Showing</span> <span
+                                id="internshipResultCount" class="font-bold text-slate-800">0</span> <span data-i18n="common.internshipOpportunities">internship opportunities</span></p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button id="mobileFilterToggle" type="button" class="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm font-semibold text-slate-700 shadow-sm lg:hidden" aria-expanded="false" aria-controls="internshipFilterSidebar">
+                            <i class="fa-solid fa-sliders" aria-hidden="true"></i>
+                            <span data-i18n="common.filters">Filters</span>
+                            <span id="activeFilterCount" class="hidden rounded-full bg-blue-600 px-1.5 py-0.5 text-xs text-white"></span>
+                        </button>
+                        <div class="relative min-w-[150px] sm:min-w-[200px]">
+                        <select id="internshipSort"
+                            class="w-full appearance-none bg-white border border-slate-200 text-slate-800 text-sm font-medium py-2.5 px-4 pr-10 rounded-xl cursor-pointer shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="relevant">Sort by: Most Relevant</option>
+                            <option value="newest">Sort by: Newest First</option>
+                        </select>
+                        <div
+                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-slate-500">
+                            <i class="fa-solid fa-chevron-down text-xs"></i>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Internship Card 1: Google -->
+                <div
+                    class="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-sm transition-all  hover:shadow-[0_0_16px_rgba(10,100,246,0.5)]">
+                    <div class="flex items-start justify-between">
+                        <div class="flex items-center space-x-4">
+                            <!-- Custom Stylized SVG Google Logo -->
+                            <div
+                                class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center p-2.5 shadow-xs">
+                                <svg viewBox="0 0 24 24" class="w-full h-full">
+                                    <path fill="#4285F4"
+                                        d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                                    <path fill="#34A853"
+                                        d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                                    <path fill="#FBBC05"
+                                        d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" />
+                                    <path fill="#EA4335"
+                                        d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="font-bold text-slate-900 text-base">Google</span>
+                                    <i class="fa-solid fa-circle-check text-blue-500 text-sm"></i>
+                                    <span
+                                        class="bg-blue-50 text-blue-600 text-xs font-semibold px-2.5 py-0.5 rounded-full border border-blue-100">Active
+                                        Hiring</span>
+                                </div>
+                                <h2
+                                    class="text-lg font-bold text-slate-900 mt-1 hover:text-blue-600 cursor-pointer transition-colors">
+                                    Software Engineering Intern</h2>
+                            </div>
+                        </div>
+                        <!-- Bookmark Icon Button -->
+                        <button
+                            class="w-9 h-9 rounded-full bg-slate-50 hover:bg-slate-100 border border-slate-200/60 flex items-center justify-center text-slate-400 hover:text-slate-600 transition-colors">
+                            <i class="fa-regular fa-bookmark text-sm"><img
+                                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMxMDE0MTAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1ib29rbWFyayBwcmV2aWV3LWljb24iPjxwYXRoIGQ9Ik0xNyAzYTIgMiAwIDAgMSAyIDJ2MTVhMSAxIDAgMCAxLTEuNDk2Ljg2OGwtNC41MTItMi41NzhhMiAyIDAgMCAwLTEuOTg0IDBsLTQuNTEyIDIuNTc4QTEgMSAwIDAgMSA1IDIwVjVhMiAyIDAgMCAxIDItMnoiLz48L3N2Zz4="
+                                    alt=""></i>
+                        </button>
+                    </div>
+
+                    <!-- Meta Details -->
+                    <div class="flex flex-wrap items-center gap-y-2 gap-x-4 text-xs font-medium text-slate-500 mt-4">
+                        <div class="flex items-center space-x-1.5">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMyMzI3MzQiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1tYXAtcGluIHByZXZpZXctaWNvbiI+PHBhdGggZD0iTTIwIDEwYzAgNC45OTMtNS41MzkgMTAuMTkzLTcuMzk5IDExLjc5OWExIDEgMCAwIDEtMS4yMDIgMEM5LjUzOSAyMC4xOTMgNCAxNC45OTMgNCAxMGE4IDggMCAwIDEgMTYgMCIvPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTAiIHI9IjMiLz48L3N2Zz4="
+                                alt="" class="w-4 h-4 opacity-70">
+                            <span>Kuala Lumpur, Malaysia</span>
+                        </div>
+                        <span class="text-slate-300">•</span>
+                        <div class="flex items-center space-x-1.5 text-slate-500 text-sm">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiLz48cGF0aCBkPSJNMTIgNnY2bC00IDIiLz48L3N2Zz4="
+                                alt="" class="w-4 h-4 opacity-70">
+                            <span>3 months</span>
+                        </div>
+                        <span class="text-slate-300">•</span>
+                        <div class="flex items-center space-x-1.5">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwNTA1MDUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1idWlsZGluZy1jb21wbGV4IHByZXZpZXctaWNvbiI+PHBhdGggZD0iTTEwIDEyaDQiLz48cGF0aCBkPSJNMTAgOGg0Ii8+PHBhdGggZD0iTTE0IDIxdi0zYTIgMiAwIDAgMC00IDB2MyIvPjxwYXRoIGQ9Ik02IDEwSDRhMiAyIDAgMCAwLTIgMnY3YTIgMiAwIDAgMCAyIDJoMTZhMiAyIDAgMCAwIDItMlY5YTIgMiAwIDAgMC0yLTJoLTIiLz48cGF0aCBkPSJNNiAyMVY1YTIgMiAwIDAgMSAyLTJoOGEyIDIgMCAwIDEgMiAydjE2Ii8+PC9zdmc+"
+                                alt="" class="w-4 h-4 opacity-70">
+                            <span>On-site</span>
+                        </div>
+                        <span class="text-slate-300">•</span>
+                        <div
+                            class="flex items-center space-x-1.5 bg-emerald-50 text-emerald-700 font-bold px-2.5 py-1 rounded-md border border-emerald-200/60">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMzOGZmN2UiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1jaXJjbGUtZG9sbGFyLXNpZ24gcHJldmlldy1pY29uIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMCIvPjxwYXRoIGQ9Ik0xNiA4aC02YTIgMiAwIDEgMCAwIDRoNGEyIDIgMCAxIDEgMCA0SDgiLz48cGF0aCBkPSJNMTIgMThWNiIvPjwvc3ZnPg=="
+                                alt="" class="w-4 h-4 opacity-70">
+                            <span>$1,200/mo</span>
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <p class="text-sm text-slate-600 mt-4 leading-relaxed">
+                        Work with an engineering team to build and improve web applications while gaining practical
+                        software development experience.
+                    </p>
+
+                    <!-- Skill Tags -->
+                    <div class="flex flex-wrap gap-2 mt-1">
+                        <span
+                            class="bg-slate-100/80 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full border transition-shadow duration-200 hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">JavaScript</span>
+                        <span
+                            class="bg-slate-100/80 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full border transition-shadow duration-200 hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">React</span>
+                        <span
+                            class="bg-slate-100/80 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full border transition-shadow duration-200 hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Web
+                            Development</span>
+                        <span
+                            class="bg-slate-100/80 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full border transition-shadow duration-200 hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Frontend</span>
+                    </div>
+
+                    <!-- Footer Divider & Actions -->
+                    <div
+                        class="pt-2 mt-2 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <span class="text-xs font-medium text-slate-400">Applied 2 days ago • 14 applicants</span>
+                        <button
+                            class="inline-flex items-center justify-center space-x-2 text-blue-600 hover:text-white hover:bg-blue-600 border border-blue-200 text-xs font-bold px-5 py-2.5 rounded-full transition-all">
+                            <span>View Details</span>
+                            <i class="fa-solid fa-arrow-right text-[11px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Internship Card 2: Microsoft -->
+                <div
+                    class="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-sm transition-all  hover:shadow-[0_0_16px_rgba(10,100,246,0.5)]">
+                    <div class="flex items-start justify-between">
+                        <div class="flex items-center space-x-4">
+                            <!-- Custom SVG Microsoft Logo -->
+                            <div
+                                class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center p-2.5 shadow-xs">
+                                <div class="grid grid-cols-2 gap-1 w-6 h-6">
+                                    <div class="bg-[#F25022] rounded-xs"></div>
+                                    <div class="bg-[#7FBA00] rounded-xs"></div>
+                                    <div class="bg-[#00A4EF] rounded-xs"></div>
+                                    <div class="bg-[#FFB900] rounded-xs"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="font-bold text-slate-900 text-base">Microsoft</span>
+                                    <i class="fa-solid fa-circle-check text-blue-500 text-sm"></i>
+                                </div>
+                                <h2
+                                    class="text-lg font-bold text-slate-900 mt-1 hover:text-blue-600 cursor-pointer transition-colors">
+                                    Product Design Intern</h2>
+                            </div>
+                        </div>
+                        <!-- Bookmark Icon Button -->
+                        <button
+                            class="w-9 h-9 rounded-full bg-slate-50 hover:bg-slate-100 border border-slate-200/60 flex items-center justify-center text-slate-400 hover:text-slate-600 transition-colors">
+                            <i class="fa-regular fa-bookmark text-sm"><img
+                                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMxMDE0MTAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1ib29rbWFyayBwcmV2aWV3LWljb24iPjxwYXRoIGQ9Ik0xNyAzYTIgMiAwIDAgMSAyIDJ2MTVhMSAxIDAgMCAxLTEuNDk2Ljg2OGwtNC41MTItMi41NzhhMiAyIDAgMCAwLTEuOTg0IDBsLTQuNTEyIDIuNTc4QTEgMSAwIDAgMSA1IDIwVjVhMiAyIDAgMCAxIDItMnoiLz48L3N2Zz4="
+                                    alt=""></i>
+                        </button>
+                    </div>
+
+                    <!-- Meta Details -->
+                    <div class="flex flex-wrap items-center gap-y-2 gap-x-4 text-xs font-medium text-slate-500 mt-4">
+                        <div class="flex items-center space-x-1.5">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMyMzI3MzQiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1tYXAtcGluIHByZXZpZXctaWNvbiI+PHBhdGggZD0iTTIwIDEwYzAgNC45OTMtNS41MzkgMTAuMTkzLTcuMzk5IDExLjc5OWExIDEgMCAwIDEtMS4yMDIgMEM5LjUzOSAyMC4xOTMgNCAxNC45OTMgNCAxMGE4IDggMCAwIDEgMTYgMCIvPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTAiIHI9IjMiLz48L3N2Zz4="
+                                alt="" class="w-4 h-4 opacity-70">
+                            <span>Remote</span>
+                        </div>
+                        <span class="text-slate-300">•</span>
+                        <div class="flex items-center space-x-1.5 text-slate-500 text-sm">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiLz48cGF0aCBkPSJNMTIgNnY2bC00IDIiLz48L3N2Zz4="
+                                alt="" class="w-4 h-4 opacity-70">
+                            <span>3 months</span>
+                        </div>
+                        <span class="text-slate-300">•</span>
+                        <div class="flex items-center space-x-1.5">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMzMDJjMmMiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1sYXB0b3AtbWluaW1hbCBwcmV2aWV3LWljb24iPjxyZWN0IHdpZHRoPSIxOCIgaGVpZ2h0PSIxMiIgeD0iMyIgeT0iNCIgcng9IjIiIHJ5PSIyIi8+PGxpbmUgeDE9IjIiIHgyPSIyMiIgeTE9IjIwIiB5Mj0iMjAiLz48L3N2Zz4="
+                                alt="" class="w-4 h-4 opacity-70">
+                            <span>Remote</span>
+                        </div>
+                        <span class="text-slate-300">•</span>
+                        <div
+                            class="flex items-center space-x-1.5 bg-emerald-50 text-emerald-700 font-bold px-2.5 py-1 rounded-md border border-emerald-200/60">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMzOGZmN2UiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1jaXJjbGUtZG9sbGFyLXNpZ24gcHJldmlldy1pY29uIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMCIvPjxwYXRoIGQ9Ik0xNiA4aC02YTIgMiAwIDEgMCAwIDRoNGEyIDIgMCAxIDEgMCA0SDgiLz48cGF0aCBkPSJNMTIgMThWNiIvPjwvc3ZnPg=="
+                                alt="" class="w-4 h-4 opacity-70">
+                            <span>$1,400/mo</span>
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <p class="text-sm text-slate-600 mt-4 leading-relaxed">
+                        Support product design projects and learn how research, interface design, and prototyping are
+                        used to create better digital products.
+                    </p>
+
+                    <!-- Skill Tags -->
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span
+                            class="bg-slate-100/80 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full border hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">UI/UX</span>
+                        <span
+                            class="bg-slate-100/80 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full border hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Figma</span>
+                        <span
+                            class="bg-slate-100/80 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full border hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Prototyping</span>
+                        <span
+                            class="bg-slate-100/80 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full border hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Design
+                            Systems</span>
+                    </div>
+
+                    <!-- Footer Divider & Actions -->
+                    <div
+                        class="pt-2 mt-2 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <span class="text-xs font-medium text-slate-400">Deadline: 2 weeks left</span>
+                        <button
+                            class="inline-flex items-center justify-center space-x-2 text-blue-600 hover:text-white hover:bg-blue-600 border border-blue-200 text-xs font-bold px-5 py-2.5 rounded-full transition-all">
+                            <span>View Details</span>
+                            <i class="fa-solid fa-arrow-right text-[11px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Internship Card 3: Shopee -->
+                <div
+                    class="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-sm transition-all  hover:shadow-[0_0_16px_rgba(10,100,246,0.5)]">
+                    <div class="flex items-start justify-between">
+                        <div class="flex items-center space-x-4">
+                            <!-- Custom SVG Shopee Bag Logo -->
+                            <div
+                                class="w-12 h-12 rounded-xl bg-orange-50/50 border border-orange-100 flex items-center justify-center p-2.5 shadow-xs">
+                                <svg class="w-7 h-7 text-orange-500" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M19 6h-3c0-2.21-1.79-4-4-4S8 3.79 8 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-2c1.1 0 2 .9 2 2h-4c0-1.1.9-2 2-2zm0 10c-2.21 0-4-1.79-4-4h2c0 1.1.9 2 2 2s2-.9 2-2h2c0 2.21-1.79 4-4 4z"
+                                        fill="#ee4d2d" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="font-bold text-slate-900 text-base">Shopee</span>
+                                    <i class="fa-solid fa-circle-check text-blue-500 text-sm"></i>
+                                </div>
+                                <h2
+                                    class="text-lg font-bold text-slate-900 mt-1 hover:text-blue-600 cursor-pointer transition-colors">
+                                    Digital Marketing Intern</h2>
+                            </div>
+                        </div>
+                        <!-- Bookmark Icon Button -->
+                        <button
+                            class="w-9 h-9 rounded-full bg-slate-50 hover:bg-slate-100 border border-slate-200/60 flex items-center justify-center text-slate-400 hover:text-slate-600 transition-colors">
+                            <i class="fa-regular fa-bookmark text-sm"><img
+                                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMxMDE0MTAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1ib29rbWFyayBwcmV2aWV3LWljb24iPjxwYXRoIGQ9Ik0xNyAzYTIgMiAwIDAgMSAyIDJ2MTVhMSAxIDAgMCAxLTEuNDk2Ljg2OGwtNC41MTItMi41NzhhMiAyIDAgMCAwLTEuOTg0IDBsLTQuNTEyIDIuNTc4QTEgMSAwIDAgMSA1IDIwVjVhMiAyIDAgMCAxIDItMnoiLz48L3N2Zz4="
+                                    alt=""></i>
+                        </button>
+                    </div>
+
+                    <!-- Meta Details -->
+                    <div class="flex flex-wrap items-center gap-y-2 gap-x-4 text-xs font-medium text-slate-500 mt-4">
+                        <div class="flex items-center space-x-1.5">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMyMzI3MzQiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1tYXAtcGluIHByZXZpZXctaWNvbiI+PHBhdGggZD0iTTIwIDEwYzAgNC45OTMtNS41MzkgMTAuMTkzLTcuMzk5IDExLjc5OWExIDEgMCAwIDEtMS4yMDIgMEM5LjUzOSAyMC4xOTMgNCAxNC45OTMgNCAxMGE4IDggMCAwIDEgMTYgMCIvPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTAiIHI9IjMiLz48L3N2Zz4="
+                                alt="" class="w-4 h-4 opacity-70">
+                            <span>Kuala Lumpur, Malaysia</span>
+                        </div>
+                        <span class="text-slate-300">•</span>
+                        <div class="flex items-center space-x-1.5 text-slate-500 text-sm">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiLz48cGF0aCBkPSJNMTIgNnY2bC00IDIiLz48L3N2Zz4="
+                                alt="" class="w-4 h-4 opacity-70">
+                            <span>6 months</span>
+                        </div>
+                        <span class="text-slate-300">•</span>
+                        <div class="flex items-center space-x-1.5">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMzMDJjMmMiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1hcnJvdy1yaWdodC1sZWZ0IHByZXZpZXctaWNvbiI+PHBhdGggZD0ibTE2IDMgNCA0LTQgNCIvPjxwYXRoIGQ9Ik0yMCA3SDQiLz48cGF0aCBkPSJtOCAyMS00LTQgNC00Ii8+PHBhdGggZD0iTTQgMTdoMTYiLz48L3N2Zz4="
+                                alt="" class="w-4 h-4 opacity-70">
+                            <span>Hybrid</span>
+                        </div>
+                        <span class="text-slate-300">•</span>
+                        <div
+                            class="flex items-center space-x-1.5 bg-emerald-50 text-emerald-700 font-bold px-2.5 py-1 rounded-md border border-emerald-200/60">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMzOGZmN2UiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1jaXJjbGUtZG9sbGFyLXNpZ24gcHJldmlldy1pY29uIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMCIvPjxwYXRoIGQ9Ik0xNiA4aC02YTIgMiAwIDEgMCAwIDRoNGEyIDIgMCAxIDEgMCA0SDgiLz48cGF0aCBkPSJNMTIgMThWNiIvPjwvc3ZnPg=="
+                                alt="" class="w-4 h-4 opacity-70">
+                            <span>$850/mo</span>
+                        </div>
+
+                    </div>
+                    <!-- Description -->
+                    <p class="text-sm text-slate-600 mt-4 leading-relaxed">
+                        Gain practical experience in digital marketing, content creation, campaign planning, and social
+                        media analytics.
+                    </p>
+
+                    <!-- Skill Tags -->
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span
+                            class="bg-slate-100/80 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full border hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Marketing</span>
+                        <span
+                            class="bg-slate-100/80 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full border hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">SEO</span>
+                        <span
+                            class="bg-slate-100/80 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full border hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Social
+                            Media</span>
+                        <span
+                            class="bg-slate-100/80 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full border hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Content
+                            Strategy</span>
+                    </div>
+
+                    <!-- Footer Divider & Actions -->
+                    <div
+                        class="pt-2 mt-2 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <span class="text-xs font-medium text-slate-400">Deadline: 2 weeks left</span>
+                        <button
+                            class="inline-flex items-center justify-center space-x-2 text-blue-600 hover:text-white hover:bg-blue-600 border border-blue-200 text-xs font-bold px-5 py-2.5 rounded-full transition-all">
+                            <span>View Details</span>
+                            <i class="fa-solid fa-arrow-right text-[11px]"></i>
+                        </button>
+                    </div>
+
+                </div>
+                <div
+                    class="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-sm transition-all hover:shadow-[0_0_16px_rgba(10,100,246,0.5)]">
+                    <div class="flex items-start justify-between">
+                        <div class="flex items-center space-x-4">
+                            <!-- Custom SVG Shopee Bag Logo -->
+                            <div
+                                class="w-12 h-12 rounded-xl bg-orange-50/50 border border-orange-100 flex items-center justify-center p-2.5 shadow-xs">
+                                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMxZGNiMDYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1jYXItZnJvbnQgcHJldmlldy1pY29uIj48cGF0aCBkPSJtMjEgOC0yIDItMS41LTMuN0EyIDIgMCAwIDAgMTUuNjQ2IDVIOC40YTIgMiAwIDAgMC0xLjkwMyAxLjI1N0w1IDEwIDMgOCIvPjxwYXRoIGQ9Ik03IDE0aC4wMSIvPjxwYXRoIGQ9Ik0xNyAxNGguMDEiLz48cmVjdCB3aWR0aD0iMTgiIGhlaWdodD0iOCIgeD0iMyIgeT0iMTAiIHJ4PSIyIi8+PHBhdGggZD0iTTUgMTh2MiIvPjxwYXRoIGQ9Ik0xOSAxOHYyIi8+PC9zdmc+"
+                                    alt="">
+                            </div>
+                            <div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="font-bold text-slate-900 text-base">Grap</span>
+                                    <i class="fa-solid fa-circle-check text-blue-500 text-sm"></i>
+                                </div>
+                                <h2
+                                    class="text-lg font-bold text-slate-900 mt-1 hover:text-blue-600 cursor-pointer transition-colors">
+                                    Data Analyst Intern</h2>
+                            </div>
+                        </div>
+                        <!-- Bookmark Icon Button -->
+                        <button
+                            class="w-9 h-9 rounded-full bg-slate-50 hover:bg-slate-100 border border-slate-200/60 flex items-center justify-center text-slate-400 hover:text-slate-600 transition-colors">
+                            <i class="fa-regular fa-bookmark text-sm"><img
+                                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMxMDE0MTAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1ib29rbWFyayBwcmV2aWV3LWljb24iPjxwYXRoIGQ9Ik0xNyAzYTIgMiAwIDAgMSAyIDJ2MTVhMSAxIDAgMCAxLTEuNDk2Ljg2OGwtNC41MTItMi41NzhhMiAyIDAgMCAwLTEuOTg0IDBsLTQuNTEyIDIuNTc4QTEgMSAwIDAgMSA1IDIwVjVhMiAyIDAgMCAxIDItMnoiLz48L3N2Zz4="
+                                    alt=""></i>
+                        </button>
+                    </div>
+
+                    <!-- Meta Details -->
+                    <div class="flex flex-wrap items-center gap-y-2 gap-x-4 text-xs font-medium text-slate-500 mt-4">
+                        <div class="flex items-center space-x-1.5">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMyMzI3MzQiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1tYXAtcGluIHByZXZpZXctaWNvbiI+PHBhdGggZD0iTTIwIDEwYzAgNC45OTMtNS41MzkgMTAuMTkzLTcuMzk5IDExLjc5OWExIDEgMCAwIDEtMS4yMDIgMEM5LjUzOSAyMC4xOTMgNCAxNC45OTMgNCAxMGE4IDggMCAwIDEgMTYgMCIvPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTAiIHI9IjMiLz48L3N2Zz4="
+                                alt="" class="w-4 h-4 opacity-70">
+                            <span>Remote</span>
+                        </div>
+                        <span class="text-slate-300">•</span>
+                        <div class="flex items-center space-x-1.5 text-slate-500 text-sm">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiLz48cGF0aCBkPSJNMTIgNnY2bC00IDIiLz48L3N2Zz4="
+                                alt="" class="w-4 h-4 opacity-70">
+                            <span>3 months</span>
+                        </div>
+                        <span class="text-slate-300">•</span>
+                        <div class="flex items-center space-x-1.5">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMzMDJjMmMiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1hcnJvdy1yaWdodC1sZWZ0IHByZXZpZXctaWNvbiI+PHBhdGggZD0ibTE2IDMgNCA0LTQgNCIvPjxwYXRoIGQ9Ik0yMCA3SDQiLz48cGF0aCBkPSJtOCAyMS00LTQgNC00Ii8+PHBhdGggZD0iTTQgMTdoMTYiLz48L3N2Zz4="
+                                alt="" class="w-4 h-4 opacity-70">
+                            <span>Hybrid</span>
+                        </div>
+                        <span class="text-slate-300">•</span>
+                        <div
+                            class="flex items-center space-x-1.5 bg-emerald-50 text-emerald-700 font-bold px-2.5 py-1 rounded-md border border-emerald-200/60">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMzOGZmN2UiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1jaXJjbGUtZG9sbGFyLXNpZ24gcHJldmlldy1pY29uIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMCIvPjxwYXRoIGQ9Ik0xNiA4aC02YTIgMiAwIDEgMCAwIDRoNGEyIDIgMCAxIDEgMCA0SDgiLz48cGF0aCBkPSJNMTIgMThWNiIvPjwvc3ZnPg=="
+                                alt="" class="w-4 h-4 opacity-70">
+                            <span>$1100/mo</span>
+                        </div>
+
+                    </div>
+                    <!-- Description -->
+                    <p class="text-sm text-slate-600 mt-4 leading-relaxed">
+                        Analyze data and create useful insights while working with a professional analytics and mobility
+                        intelligence team.
+                    </p>
+
+                    <!-- Skill Tags -->
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span
+                            class="bg-slate-100/80 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full border hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Excel</span>
+                        <span
+                            class="bg-slate-100/80 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full border hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">SQL</span>
+                        <span
+                            class="bg-slate-100/80 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full border hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Analytics</span>
+                        <span
+                            class="bg-slate-100/80 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full border hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Phython</span>
+                    </div>
+
+                    <!-- Footer Divider & Actions -->
+                    <div
+                        class="pt-2 mt-2 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <span class="text-xs font-medium text-slate-400">Deadline: 2 weeks left</span>
+                        <button
+                            class="inline-flex items-center justify-center space-x-2 text-blue-600 hover:text-white hover:bg-blue-600 border border-blue-200 text-xs font-bold px-5 py-2.5 rounded-full transition-all">
+                            <span>View Details</span>
+                            <i class="fa-solid fa-arrow-right text-[11px]"></i>
+                        </button>
+                    </div>
+
+                </div>
+                <div
+                    class="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-sm transition-all  hover:shadow-[0_0_16px_rgba(10,100,246,0.5)]">
+                    <div class="flex items-start justify-between">
+                        <div class="flex items-center space-x-4">
+                            <!-- Custom SVG Shopee Bag Logo -->
+                            <div
+                                class="w-12 h-12 rounded-xl bg-orange-50/50 border border-orange-100 flex items-center justify-center p-2.5 shadow-xs">
+                                <img src="https://1000logos.net/wp-content/uploads/2020/03/Canva-icon.png " alt="">
+                            </div>
+                            <div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="font-bold text-slate-900 text-base">Canva</span>
+                                    <i class="fa-solid fa-circle-check text-blue-500 text-sm"></i>
+                                </div>
+                                <h2
+                                    class="text-lg font-bold text-slate-900 mt-1 hover:text-blue-600 cursor-pointer transition-colors">
+                                    UI/UX Design Intern</h2>
+                            </div>
+                        </div>
+                        <!-- Bookmark Icon Button -->
+                        <button
+                            class="w-9 h-9 rounded-full bg-slate-50 hover:bg-slate-100 border border-slate-200/60 flex items-center justify-center text-slate-400 hover:text-slate-600 transition-colors">
+                            <i class="fa-regular fa-bookmark text-sm"><img
+                                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMxMDE0MTAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1ib29rbWFyayBwcmV2aWV3LWljb24iPjxwYXRoIGQ9Ik0xNyAzYTIgMiAwIDAgMSAyIDJ2MTVhMSAxIDAgMCAxLTEuNDk2Ljg2OGwtNC41MTItMi41NzhhMiAyIDAgMCAwLTEuOTg0IDBsLTQuNTEyIDIuNTc4QTEgMSAwIDAgMSA1IDIwVjVhMiAyIDAgMCAxIDItMnoiLz48L3N2Zz4="
+                                    alt=""></i>
+                        </button>
+                    </div>
+
+                    <!-- Meta Details -->
+                    <div class="flex flex-wrap items-center gap-y-2 gap-x-4 text-xs font-medium text-slate-500 mt-4">
+                        <div class="flex items-center space-x-1.5">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMyMzI3MzQiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1tYXAtcGluIHByZXZpZXctaWNvbiI+PHBhdGggZD0iTTIwIDEwYzAgNC45OTMtNS41MzkgMTAuMTkzLTcuMzk5IDExLjc5OWExIDEgMCAwIDEtMS4yMDIgMEM5LjUzOSAyMC4xOTMgNCAxNC45OTMgNCAxMGE4IDggMCAwIDEgMTYgMCIvPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTAiIHI9IjMiLz48L3N2Zz4="
+                                alt="" class="w-4 h-4 opacity-70">
+                            <span>Remote</span>
+                        </div>
+                        <span class="text-slate-300">•</span>
+                        <div class="flex items-center space-x-1.5 text-slate-500 text-sm">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiLz48cGF0aCBkPSJNMTIgNnY2bC00IDIiLz48L3N2Zz4="
+                                alt="" class="w-4 h-4 opacity-70">
+                            <span>3 months</span>
+                        </div>
+                        <span class="text-slate-300">•</span>
+                        <div class="flex items-center space-x-1.5">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMzMDJjMmMiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1sYXB0b3AtbWluaW1hbCBwcmV2aWV3LWljb24iPjxyZWN0IHdpZHRoPSIxOCIgaGVpZ2h0PSIxMiIgeD0iMyIgeT0iNCIgcng9IjIiIHJ5PSIyIi8+PGxpbmUgeDE9IjIiIHgyPSIyMiIgeTE9IjIwIiB5Mj0iMjAiLz48L3N2Zz4="
+                                alt="" class="w-4 h-4 opacity-70">
+                            <span>Remote</span>
+                        </div>
+                        <span class="text-slate-300">•</span>
+                        <div
+                            class="flex items-center space-x-1.5 bg-emerald-50 text-emerald-700 font-bold px-2.5 py-1 rounded-md border border-emerald-200/60">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMzOGZmN2UiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1jaXJjbGUtZG9sbGFyLXNpZ24gcHJldmlldy1pY29uIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMCIvPjxwYXRoIGQ9Ik0xNiA4aC02YTIgMiAwIDEgMCAwIDRoNGEyIDIgMCAxIDEgMCA0SDgiLz48cGF0aCBkPSJNMTIgMThWNiIvPjwvc3ZnPg=="
+                                alt="" class="w-4 h-4 opacity-70">
+                            <span>$1350/mo</span>
+                        </div>
+
+                    </div>
+                    <!-- Description -->
+                    <p class="text-sm text-slate-600 mt-4 leading-relaxed">
+                        Collaborate with global design squads to iterate on intuitive user-facing features and empower
+                        millions of creators
+                        worldwide.
+                    </p>
+
+                    <!-- Skill Tags -->
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span
+                            class="bg-slate-100/80 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full border hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">User
+                            Research</span>
+                        <span
+                            class="bg-slate-100/80 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full border hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Figma</span>
+                        <span
+                            class="bg-slate-100/80 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full border hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Design
+                            Systems</span>
+                        <span
+                            class="bg-slate-100/80 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full border hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Visual
+                            Design</span>
+                    </div>
+
+                    <!-- Footer Divider & Actions -->
+                    <div
+                        class="pt-2 mt-2 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <span class="text-xs font-medium text-slate-400">Deadline: 2 weeks left</span>
+                        <button
+                            class="inline-flex items-center justify-center space-x-2 text-blue-600 hover:text-white hover:bg-blue-600 border border-blue-200 text-xs font-bold px-5 py-2.5 rounded-full transition-all">
+                            <span>View Details</span>
+                            <i class="fa-solid fa-arrow-right text-[11px]"></i>
+                        </button>
+                    </div>
+
+                </div>
+                <div
+                    class="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-sm transition-all  hover:shadow-[0_0_16px_rgba(10,100,246,0.5)]">
+                    <div class="flex items-start justify-between">
+                        <div class="flex items-center space-x-4">
+                            <!-- Custom SVG Shopee Bag Logo -->
+                            <div
+                                class="w-12 h-12 rounded-xl bg-orange-50/50 border border-orange-100 flex items-center justify-center p-2.5 shadow-xs">
+                                <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Samsung_icon.svg/960px-Samsung_icon.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail"
+                                    alt="">
+                            </div>
+                            <div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="font-bold text-slate-900 text-base">Samsung</span>
+                                    <i class="fa-solid fa-circle-check text-blue-500 text-sm"></i>
+                                </div>
+                                <h2
+                                    class="text-lg font-bold text-slate-900 mt-1 hover:text-blue-600 cursor-pointer transition-colors">
+                                    Software Engineering Intern</h2>
+                            </div>
+                        </div>
+                        <!-- Bookmark Icon Button -->
+                        <button
+                            class="w-9 h-9 rounded-full bg-slate-50 hover:bg-slate-100 border border-slate-200/60 flex items-center justify-center text-slate-400 hover:text-slate-600 transition-colors">
+                            <i class="fa-regular fa-bookmark text-sm"><img
+                                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMxMDE0MTAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1ib29rbWFyayBwcmV2aWV3LWljb24iPjxwYXRoIGQ9Ik0xNyAzYTIgMiAwIDAgMSAyIDJ2MTVhMSAxIDAgMCAxLTEuNDk2Ljg2OGwtNC41MTItMi41NzhhMiAyIDAgMCAwLTEuOTg0IDBsLTQuNTEyIDIuNTc4QTEgMSAwIDAgMSA1IDIwVjVhMiAyIDAgMCAxIDItMnoiLz48L3N2Zz4="
+                                    alt=""></i>
+                        </button>
+                    </div>
+
+                    <!-- Meta Details -->
+                    <div class="flex flex-wrap items-center gap-y-2 gap-x-4 text-xs font-medium text-slate-500 mt-4">
+                        <div class="flex items-center space-x-1.5">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMyMzI3MzQiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1tYXAtcGluIHByZXZpZXctaWNvbiI+PHBhdGggZD0iTTIwIDEwYzAgNC45OTMtNS41MzkgMTAuMTkzLTcuMzk5IDExLjc5OWExIDEgMCAwIDEtMS4yMDIgMEM5LjUzOSAyMC4xOTMgNCAxNC45OTMgNCAxMGE4IDggMCAwIDEgMTYgMCIvPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTAiIHI9IjMiLz48L3N2Zz4="
+                                alt="" class="w-4 h-4 opacity-70">
+                            <span>Kuala Lumpur, Malaysia</span>
+                        </div>
+                        <span class="text-slate-300">•</span>
+                        <div class="flex items-center space-x-1.5 text-slate-500 text-sm">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiLz48cGF0aCBkPSJNMTIgNnY2bC00IDIiLz48L3N2Zz4="
+                                alt="" class="w-4 h-4 opacity-70">
+                            <span>3 months</span>
+                        </div>
+                        <span class="text-slate-300">•</span>
+                        <div class="flex items-center space-x-1.5">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwNTA1MDUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1idWlsZGluZy1jb21wbGV4IHByZXZpZXctaWNvbiI+PHBhdGggZD0iTTEwIDEyaDQiLz48cGF0aCBkPSJNMTAgOGg0Ii8+PHBhdGggZD0iTTE0IDIxdi0zYTIgMiAwIDAgMC00IDB2MyIvPjxwYXRoIGQ9Ik02IDEwSDRhMiAyIDAgMCAwLTIgMnY3YTIgMiAwIDAgMCAyIDJoMTZhMiAyIDAgMCAwIDItMlY5YTIgMiAwIDAgMC0yLTJoLTIiLz48cGF0aCBkPSJNNiAyMVY1YTIgMiAwIDAgMSAyLTJoOGEyIDIgMCAwIDEgMiAydjE2Ii8+PC9zdmc+"
+                                alt="" class="w-4 h-4 opacity-70">
+                            <span>On-site</span>
+                        </div>
+                        <span class="text-slate-300">•</span>
+                        <div
+                            class="flex items-center space-x-1.5 bg-emerald-50 text-emerald-700 font-bold px-2.5 py-1 rounded-md border border-emerald-200/60">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMzOGZmN2UiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1jaXJjbGUtZG9sbGFyLXNpZ24gcHJldmlldy1pY29uIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMCIvPjxwYXRoIGQ9Ik0xNiA4aC02YTIgMiAwIDEgMCAwIDRoNGEyIDIgMCAxIDEgMCA0SDgiLz48cGF0aCBkPSJNMTIgMThWNiIvPjwvc3ZnPg=="
+                                alt="" class="w-4 h-4 opacity-70">
+                            <span>$1,250/mo</span>
+                        </div>
+
+                    </div>
+                    <!-- Description -->
+                    <p class="text-sm text-slate-600 mt-4 leading-relaxed">
+                        Develop scalable mobile and IoT application frameworks alongside senior engineers in
+                        next-generation consumer tech.
+                    </p>
+
+                    <!-- Skill Tags -->
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span
+                            class="bg-slate-100/80 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full border hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Java</span>
+                        <span
+                            class="bg-slate-100/80 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full border hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Android</span>
+                        <span
+                            class="bg-slate-100/80 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full border hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">C++</span>
+                        <span
+                            class="bg-slate-100/80 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full border hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Embedded
+                            Systems</span>
+                    </div>
+
+                    <!-- Footer Divider & Actions -->
+                    <div
+                        class="pt-2 mt-2 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <span class="text-xs font-medium text-slate-400">Deadline: 2 weeks left</span>
+                        <button
+                            class="inline-flex items-center justify-center space-x-2 text-blue-600 hover:text-white hover:bg-blue-600 border border-blue-200 text-xs font-bold px-5 py-2.5 rounded-full transition-all">
+                            <span>View Details</span>
+                            <i class="fa-solid fa-arrow-right text-[11px]"></i>
+                        </button>
+                    </div>
+
+                </div>
+                <div
+                    class="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-sm transition-all hover:shadow-[0_0_16px_rgba(10,100,246,0.5)]">
+                    <div class="flex items-start justify-between">
+                        <div class="flex items-center space-x-4">
+                            <!-- Custom SVG Shopee Bag Logo -->
+                            <div
+                                class="w-12 h-12 rounded-xl bg-orange-50/50 border border-orange-100 flex items-center justify-center p-2.5 shadow-xs">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/7/72/DeloitteNewLogo.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original"
+                                    alt="">
+                            </div>
+                            <div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="font-bold text-slate-900 text-base">Deloitte</span>
+                                    <i class="fa-solid fa-circle-check text-blue-500 text-sm"></i>
+                                </div>
+                                <h2
+                                    class="text-lg font-bold text-slate-900 mt-1 hover:text-blue-600 cursor-pointer transition-colors">
+                                    Business Analyst Intern</h2>
+                            </div>
+                        </div>
+                        <!-- Bookmark Icon Button -->
+                        <button
+                            class="w-9 h-9 rounded-full bg-slate-50 hover:bg-slate-100 border border-slate-200/60 flex items-center justify-center text-slate-400 hover:text-slate-600 transition-colors">
+                            <i class="fa-regular fa-bookmark text-sm"><img
+                                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMxMDE0MTAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1ib29rbWFyayBwcmV2aWV3LWljb24iPjxwYXRoIGQ9Ik0xNyAzYTIgMiAwIDAgMSAyIDJ2MTVhMSAxIDAgMCAxLTEuNDk2Ljg2OGwtNC41MTItMi41NzhhMiAyIDAgMCAwLTEuOTg0IDBsLTQuNTEyIDIuNTc4QTEgMSAwIDAgMSA1IDIwVjVhMiAyIDAgMCAxIDItMnoiLz48L3N2Zz4="
+                                    alt=""></i>
+                        </button>
+                    </div>
+
+                    <!-- Meta Details -->
+                    <div class="flex flex-wrap items-center gap-y-2 gap-x-4 text-xs font-medium text-slate-500 mt-4">
+                        <div class="flex items-center space-x-1.5">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMyMzI3MzQiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1tYXAtcGluIHByZXZpZXctaWNvbiI+PHBhdGggZD0iTTIwIDEwYzAgNC45OTMtNS41MzkgMTAuMTkzLTcuMzk5IDExLjc5OWExIDEgMCAwIDEtMS4yMDIgMEM5LjUzOSAyMC4xOTMgNCAxNC45OTMgNCAxMGE4IDggMCAwIDEgMTYgMCIvPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTAiIHI9IjMiLz48L3N2Zz4="
+                                alt="" class="w-4 h-4 opacity-70">
+                            <span>Singapore / Remote</span>
+                        </div>
+                        <span class="text-slate-300">•</span>
+                        <div class="flex items-center space-x-1.5 text-slate-500 text-sm">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiLz48cGF0aCBkPSJNMTIgNnY2bC00IDIiLz48L3N2Zz4="
+                                alt="" class="w-4 h-4 opacity-70">
+                            <span>3 months</span>
+                        </div>
+                        <span class="text-slate-300">•</span>
+                        <div class="flex items-center space-x-1.5">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMzMDJjMmMiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1hcnJvdy1yaWdodC1sZWZ0IHByZXZpZXctaWNvbiI+PHBhdGggZD0ibTE2IDMgNCA0LTQgNCIvPjxwYXRoIGQ9Ik0yMCA3SDQiLz48cGF0aCBkPSJtOCAyMS00LTQgNC00Ii8+PHBhdGggZD0iTTQgMTdoMTYiLz48L3N2Zz4="
+                                alt="" class="w-4 h-4 opacity-70">
+                            <span>Hybrid</span>
+                        </div>
+                        <span class="text-slate-300">•</span>
+                        <div
+                            class="flex items-center space-x-1.5 bg-emerald-50 text-emerald-700 font-bold px-2.5 py-1 rounded-md border border-emerald-200/60">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMzOGZmN2UiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1jaXJjbGUtZG9sbGFyLXNpZ24gcHJldmlldy1pY29uIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMCIvPjxwYXRoIGQ9Ik0xNiA4aC02YTIgMiAwIDEgMCAwIDRoNGEyIDIgMCAxIDEgMCA0SDgiLz48cGF0aCBkPSJNMTIgMThWNiIvPjwvc3ZnPg=="
+                                alt="" class="w-4 h-4 opacity-70">
+                            <span>$1,300/mo</span>
+                        </div>
+
+                    </div>
+                    <!-- Description -->
+                    <p class="text-sm text-slate-600 mt-4 leading-relaxed">
+                        Assist client transformation engagements, conduct market viability research, and craft executive
+                        client presentations.
+                    </p>
+
+                    <!-- Skill Tags -->
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span
+                            class="bg-slate-100/80 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full border hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">UI/UX</span>
+                        <span
+                            class="bg-slate-100/80 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full  border hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Figma</span>
+                        <span
+                            class="bg-slate-100/80 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full  border hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Prototyping</span>
+                        <span
+                            class="bg-slate-100/80 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full  border hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Design
+                            Systems</span>
+                    </div>
+
+                    <!-- Footer Divider & Actions -->
+                    <div
+                        class="pt-2 mt-2 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <span class="text-xs font-medium text-slate-400">Deadline: 2 weeks left</span>
+                        <button
+                            class="inline-flex items-center justify-center space-x-2 text-blue-600 hover:text-white hover:bg-blue-600 border border-blue-200 text-xs font-bold px-5 py-2.5 rounded-full transition-all">
+                            <span>View Details</span>
+                            <i class="fa-solid fa-arrow-right text-[11px]"></i>
+                        </button>
+                    </div>
+
+                </div>
+                <div
+                    class="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-sm transition-all  hover:shadow-[0_0_16px_rgba(10,100,246,0.5)]">
+                    <div class="flex items-start justify-between">
+                        <div class="flex items-center space-x-4">
+                            <!-- Custom SVG Shopee Bag Logo -->
+                            <div
+                                class="w-12 h-12 rounded-xl bg-orange-50/50 border border-orange-100 flex items-center justify-center p-2.5 shadow-xs">
+                                <img src="https://www.airasia.com/aa/images/web-apps/content-pages/library/PH-FlySAFE-Icon-1.png"
+                                    alt="">
+                            </div>
+                            <div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="font-bold text-slate-900 text-base">AirAsia</span>
+                                    <i class="fa-solid fa-circle-check text-blue-500 text-sm"></i>
+                                </div>
+                                <h2
+                                    class="text-lg font-bold text-slate-900 mt-1 hover:text-blue-600 cursor-pointer transition-colors">
+                                    Marketing & Brand Intern</h2>
+                            </div>
+                        </div>
+                        <!-- Bookmark Icon Button -->
+                        <button
+                            class="w-9 h-9 rounded-full bg-slate-50 hover:bg-slate-100 border border-slate-200/60 flex items-center justify-center text-slate-400 hover:text-slate-600 transition-colors">
+                            <i class="fa-regular fa-bookmark text-sm"><img
+                                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMxMDE0MTAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1ib29rbWFyayBwcmV2aWV3LWljb24iPjxwYXRoIGQ9Ik0xNyAzYTIgMiAwIDAgMSAyIDJ2MTVhMSAxIDAgMCAxLTEuNDk2Ljg2OGwtNC41MTItMi41NzhhMiAyIDAgMCAwLTEuOTg0IDBsLTQuNTEyIDIuNTc4QTEgMSAwIDAgMSA1IDIwVjVhMiAyIDAgMCAxIDItMnoiLz48L3N2Zz4="
+                                    alt=""></i>
+                        </button>
+                    </div>
+
+                    <!-- Meta Details -->
+                    <div class="flex flex-wrap items-center gap-y-2 gap-x-4 text-xs font-medium text-slate-500 mt-4">
+                        <div class="flex items-center space-x-1.5">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMyMzI3MzQiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1tYXAtcGluIHByZXZpZXctaWNvbiI+PHBhdGggZD0iTTIwIDEwYzAgNC45OTMtNS41MzkgMTAuMTkzLTcuMzk5IDExLjc5OWExIDEgMCAwIDEtMS4yMDIgMEM5LjUzOSAyMC4xOTMgNCAxNC45OTMgNCAxMGE4IDggMCAwIDEgMTYgMCIvPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTAiIHI9IjMiLz48L3N2Zz4="
+                                alt="" class="w-4 h-4 opacity-70">
+                            <span>Kuala Lumpur, Malaysia</span>
+                        </div>
+                        <span class="text-slate-300">•</span>
+                        <div class="flex items-center space-x-1.5 text-slate-500 text-sm">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiLz48cGF0aCBkPSJNMTIgNnY2bC00IDIiLz48L3N2Zz4="
+                                alt="" class="w-4 h-4 opacity-70">
+                            <span>3 months</span>
+                        </div>
+                        <span class="text-slate-300">•</span>
+                        <div class="flex items-center space-x-1.5">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwNTA1MDUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1idWlsZGluZy1jb21wbGV4IHByZXZpZXctaWNvbiI+PHBhdGggZD0iTTEwIDEyaDQiLz48cGF0aCBkPSJNMTAgOGg0Ii8+PHBhdGggZD0iTTE0IDIxdi0zYTIgMiAwIDAgMC00IDB2MyIvPjxwYXRoIGQ9Ik02IDEwSDRhMiAyIDAgMCAwLTIgMnY3YTIgMiAwIDAgMCAyIDJoMTZhMiAyIDAgMCAwIDItMlY5YTIgMiAwIDAgMC0yLTJoLTIiLz48cGF0aCBkPSJNNiAyMVY1YTIgMiAwIDAgMSAyLTJoOGEyIDIgMCAwIDEgMiAydjE2Ii8+PC9zdmc+"
+                                alt="" class="w-4 h-4 opacity-70">
+                            <span>On-site</span>
+                        </div>
+                        <span class="text-slate-300">•</span>
+                        <div
+                            class="flex items-center space-x-1.5 bg-emerald-50 text-emerald-700 font-bold px-2.5 py-1 rounded-md border border-emerald-200/60">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMzOGZmN2UiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1jaXJjbGUtZG9sbGFyLXNpZ24gcHJldmlldy1pY29uIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMCIvPjxwYXRoIGQ9Ik0xNiA4aC02YTIgMiAwIDEgMCAwIDRoNGEyIDIgMCAxIDEgMCA0SDgiLz48cGF0aCBkPSJNMTIgMThWNiIvPjwvc3ZnPg=="
+                                alt="" class="w-4 h-4 opacity-70">
+                            <span>$800/mo</span>
+                        </div>
+
+                    </div>
+                    <!-- Description -->
+                    <p class="text-sm text-slate-600 mt-4 leading-relaxed">
+                        Drive youth aviation and travel promotions, coordinate digital campaigns, and produce engaging
+                        localized storytelling.
+                    </p>
+
+                    <!-- Skill Tags -->
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span
+                            class="bg-slate-100/80 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full  border hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">UI/UX</span>
+                        <span
+                            class="bg-slate-100/80 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full  border hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Figma</span>
+                        <span
+                            class="bg-slate-100/80 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full border hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Prototyping</span>
+                        <span
+                            class="bg-slate-100/80 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full border hover:shadow-[0_0_8px_rgba(10,100,246,0.5)]">Design
+                            Systems</span>
+                    </div>
+
+                    <!-- Footer Divider & Actions -->
+                    <div
+                        class="pt-2 mt-2 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <span class="text-xs font-medium text-slate-400">Deadline: 2 weeks left</span>
+                        <button
+                            class="inline-flex items-center justify-center space-x-2 text-blue-600 hover:text-white hover:bg-blue-600 border border-blue-200 text-xs font-bold px-5 py-2.5 rounded-full transition-all">
+                            <span>View Details</span>
+                            <i class="fa-solid fa-arrow-right text-[11px]"></i>
+                        </button>
+                    </div>
+
+                </div>
+                <nav aria-label="Pagination" class="flex items-center gap-2 font-medium text-sm text-slate-700 mb-5">
+                    <!-- Previous Button -->
+                    <a href="#"
+                        class="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 bg-white border border-slate-200 rounded-xl hover:bg-blue-600 hover:text-white transition-colors shadow-sm">
+                        <span>Previous</span>
+                    </a>
+                    <a href="#"
+                        class="inline-flex items-center justify-center w-10 h-10 bg-indigo-600 text-white rounded-xl font-semibold shadow-sm">
+                        1
+                    </a>
+
+                    <!-- Page Numbers -->
+                    <a href="#"
+                        class="inline-flex items-center justify-center w-10 h-10 bg-white border border-slate-200 rounded-xl hover:bg-blue-600 hover:text-white transition-colors shadow-sm ">
+                        2
+                    </a>
+                    <a href="#"
+                        class="inline-flex items-center justify-center w-10 h-10 bg-white border border-slate-200 rounded-xl hover:bg-blue-600 hover:text-white transition-colors shadow-sm">
+                        3
+                    </a>
+                    <a href="#"
+                        class="inline-flex items-center justify-center w-10 h-10 bg-white border border-slate-200 rounded-xl hover:bg-blue-600 hover:text-white transition-colors shadow-sm">
+                        4
+                    </a>
+                    <a href="#"
+                        class="inline-flex items-center justify-center w-10 h-10 bg-white border border-slate-200 rounded-xl  hover:bg-blue-600 hover:text-white transition-colors shadow-sm">
+                        5
+                    </a>
+
+                    <!-- Next Button -->
+                    <a href="#"
+                        class="inline-flex items-center gap-1.5 px-4 py-2.5 bg-white border border-slate-200 rounded-xl hover:bg-blue-600 hover:text-white transition-colors shadow-sm">
+                        <span>Next</span>
+                    </a>
+                </nav>
+
+            </main>
+        </div>
+    </section>
+    <section>
+        <div class="site-container py-4">
+            <div
+                class="relative overflow-hidden rounded-3xl bg-blue-100 from-[#eff3ff] via-[#f4f7ff] to-[#eef2fe] border border-blue-100/60 p-8 sm:p-12 md:p-16 text-center shadow-sm">
+                <div class="relative z-10 max-w-2xl mx-auto flex flex-col items-center">
+                    <div
+                        class="mb-6 flex items-center justify-center w-12 h-12 rounded-xl bg-white shadow-sm border border-slate-100 text-blue-600">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMyYjNmZGEiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1jb21wYXNzIHByZXZpZXctaWNvbiI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiLz48cGF0aCBkPSJtMTYuMjQgNy43Ni0xLjgwNCA1LjQxMWEyIDIgMCAwIDEtMS4yNjUgMS4yNjVMNy43NiAxNi4yNGwxLjgwNC01LjQxMWEyIDIgMCAwIDEgMS4yNjUtMS4yNjV6Ii8+PC9zdmc+"
+                            alt="">
+                    </div>
+                    <h2
+                        class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                        Not Sure Which Internship Is Right for You?</h2>
+                    <p class="mt-4 text-sm sm:text-base text-slate-600 font-normal leading-relaxed max-w-xl"> Explore
+                        our Work with an engineering team to build and improve web applications while gaining practical
+                        software development experience</p>
+                    <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto">
+                        <button class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-blue-600 text-white hover:text-blue-600 hover:bg-white font-semibold text-sm shadow-md shadow-blue-500/20 duration-200">Explore Career Guide</button>
+                        <a href="profile/cv-builder.html" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-white text-blue-600 hover:bg-blue-600 hover:text-white border border-slate-200/80 text-slate-800 font-semibold text-sm shadow-sm hover:shadow transition-all duration-200">
+                            Learn To Create CV</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+     <footer class="site-footer footer py-8" id="about">
+        <div class="site-container flex flex-col justify-between">
+            <div class="footer-top flex flex-col lg:flex-row items-center justify-between mb-8 border-b-2 pb-4">
+                <a href="../index.html" class="footer-logo">
+                    <img class="logo" src="../src/assets/images/logo.png" alt="InternGuide Logo">
+                </a>
+                <nav class="footer-nav lg:flex items-center gap-8 text-gray-500 hidden">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="internships.html" class="nav-link active ">Internships</a>
+                    <a href="career-guide.html" class="nav-link hover:text-gray-700">Career Guide</a>
+                    <a href="cv-interview.html" class="nav-link hover:text-gray-700">CV & Interview</a>
+                    <a href="about-contact.html" class="nav-link hover:text-gray-700">About</a>
+                </nav>
+                <div class="social-links flex items-center gap-4 my-8 lg:my-0 text-3xl lg:text-xl text-blue-600 ">
+                    <a class="hover:text-blue-300" href="#" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a class="hover:text-blue-300" href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a class="hover:text-blue-300" href="#" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a class="hover:text-blue-300" href="#" aria-label="Github">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a class="hover:text-blue-300" href="#" aria-label="Telegram">
+                        <i class="fa-brands fa-telegram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom flex flex-col lg:flex-row justify-between">
+                <p class="text-gray-400 lg:justify-start justify-center flex">
+                    © 2026 InternGuide. All rights reserved.
+                </p>
+                <div class="footer-legal flex  lg:flex-row items-center justify-center gap-8 text-gray-400">
+                    <a href="#">
+                        Privacy Policy
+                    </a>
+                    <a href="#">
+                        Terms of Service
+                    </a>
+                    <a href="#">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div id="applicationDialog" class="fixed inset-0 z-[100] hidden overflow-y-auto bg-slate-950/55 p-3 sm:p-5" role="dialog" aria-modal="true" aria-labelledby="applicationDialogTitle" aria-hidden="true">
+        <div class="mx-auto my-3 w-full max-w-2xl rounded-xl bg-white shadow-2xl sm:my-8">
+            <div class="flex items-start justify-between gap-4 border-b border-slate-100 p-5 sm:p-6">
+                <div>
+                    <h2 id="applicationDialogTitle" class="text-xl font-bold text-slate-900" data-i18n="applications.formTitle">Application Form</h2>
+                    <p class="mt-1 text-sm text-slate-500" data-i18n="applications.formHint">Review the internship details and submit your application.</p>
+                </div>
+                <button id="closeApplicationDialog" type="button" class="grid h-9 w-9 shrink-0 place-items-center rounded-lg text-slate-500 hover:bg-slate-100" aria-label="Close application"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <div class="p-5 sm:p-6">
+                <div id="applicationLoginNotice" class="hidden rounded-lg border border-blue-100 bg-blue-50 p-4 text-sm text-slate-700" role="status">
+                    <p data-i18n="applications.loginRequired">Please log in to apply for this internship.</p>
+                    <a id="applicationLoginLink" href="auth/login.html" class="mt-3 inline-flex min-h-10 items-center justify-center rounded-lg bg-blue-600 px-4 py-2 font-semibold text-white hover:bg-blue-700" data-i18n="nav.login">Log In</a>
+                </div>
+
+                <p id="applicationLoading" class="hidden py-6 text-center text-sm text-slate-500" role="status" data-i18n="applications.loading">Loading application information...</p>
+
+                <form id="applicationForm" class="hidden space-y-5">
+                    <section class="rounded-lg bg-slate-50 p-4" aria-labelledby="applicationInternshipHeading">
+                        <h3 id="applicationInternshipHeading" class="mb-3 text-sm font-bold text-slate-800" data-i18n="applications.internshipInfo">Internship Information</h3>
+                        <dl class="grid grid-cols-1 gap-x-5 gap-y-3 text-sm sm:grid-cols-2">
+                            <div><dt class="text-xs font-medium text-slate-500" data-i18n="applications.internshipTitle">Internship Title</dt><dd id="applicationInternshipTitle" class="mt-0.5 font-semibold text-slate-800"></dd></div>
+                            <div><dt class="text-xs font-medium text-slate-500" data-i18n="applications.company">Company</dt><dd id="applicationCompany" class="mt-0.5 font-semibold text-slate-800"></dd></div>
+                            <div><dt class="text-xs font-medium text-slate-500" data-i18n="applications.location">Location</dt><dd id="applicationLocation" class="mt-0.5 text-slate-700"></dd></div>
+                            <div><dt class="text-xs font-medium text-slate-500" data-i18n="applications.workType">Work Type</dt><dd id="applicationWorkType" class="mt-0.5 text-slate-700"></dd></div>
+                            <div><dt class="text-xs font-medium text-slate-500" data-i18n="applications.duration">Duration</dt><dd id="applicationDuration" class="mt-0.5 text-slate-700"></dd></div>
+                        </dl>
+                    </section>
+
+                    <section aria-labelledby="applicationApplicantHeading">
+                        <h3 id="applicationApplicantHeading" class="mb-3 text-sm font-bold text-slate-800" data-i18n="applications.applicantInfo">Applicant Information</h3>
+                        <dl class="grid grid-cols-1 gap-x-5 gap-y-3 text-sm sm:grid-cols-2">
+                            <div><dt class="text-xs font-medium text-slate-500" data-i18n="applications.fullName">Full Name</dt><dd id="applicationApplicantName" class="mt-0.5 font-medium text-slate-800"></dd></div>
+                            <div><dt class="text-xs font-medium text-slate-500" data-i18n="applications.email">Email</dt><dd id="applicationApplicantEmail" class="mt-0.5 break-all text-slate-700"></dd></div>
+                            <div><dt class="text-xs font-medium text-slate-500" data-i18n="applications.phone">Phone</dt><dd id="applicationApplicantPhone" class="mt-0.5 text-slate-700"></dd></div>
+                            <div><dt class="text-xs font-medium text-slate-500" data-i18n="applications.university">University</dt><dd id="applicationApplicantUniversity" class="mt-0.5 text-slate-700"></dd></div>
+                            <div><dt class="text-xs font-medium text-slate-500" data-i18n="applications.major">Major</dt><dd id="applicationApplicantMajor" class="mt-0.5 text-slate-700"></dd></div>
+                        </dl>
+                    </section>
+
+                    <label class="block space-y-1.5">
+                        <span class="text-sm font-semibold text-slate-700" data-i18n="applications.selectCv">Select CV</span>
+                        <select id="applicationCv" required class="h-11 w-full rounded-lg border border-slate-200 bg-white px-3 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"><option value="" data-i18n="applications.chooseCv">Choose a CV</option></select>
+                        <span id="applicationNoCv" class="hidden text-sm text-amber-700"><span data-i18n="applications.noCv">You don't have a CV yet.</span> <a href="profile/cv-builder.html" class="font-semibold text-blue-700 underline" data-i18n="applications.createCv">Create CV</a></span>
+                        <a id="applicationCvPreview" class="hidden text-sm font-medium text-blue-700 underline" target="_blank" rel="noopener noreferrer" data-i18n="applications.previewCv">Preview selected CV</a>
+                    </label>
+
+                    <label class="block space-y-1.5">
+                        <span class="text-sm font-semibold text-slate-700" data-i18n="applications.coverLetter">Cover Letter</span>
+                        <textarea id="applicationCoverLetter" rows="5" maxlength="3000" required placeholder="Tell the employer why you're a good fit..." data-i18n-placeholder="applications.coverLetterPlaceholder" class="w-full resize-y rounded-lg border border-slate-200 px-3 py-2.5 text-sm leading-6 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"></textarea>
+                        <span class="block text-right text-xs text-slate-400"><span id="applicationCoverLetterCount">0</span> / 3000</span>
+                    </label>
+
+                    <p id="applicationFormMessage" class="hidden rounded-lg p-3 text-sm" role="status" aria-live="polite"></p>
+                    <div class="flex flex-col-reverse gap-2 border-t border-slate-100 pt-4 sm:flex-row sm:justify-end">
+                        <button id="cancelApplication" type="button" class="min-h-11 rounded-lg border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50" data-i18n="common.cancel">Cancel</button>
+                        <button id="submitApplication" type="submit" class="min-h-11 rounded-lg bg-blue-600 px-5 py-2 text-sm font-semibold text-white hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60" data-i18n="applications.submit">Submit Application</button>
+                    </div>
+                </form>
+
+                <section id="applicationSuccess" class="hidden py-5 text-center" aria-live="polite">
+                    <span class="mx-auto grid h-14 w-14 place-items-center rounded-full bg-emerald-50 text-emerald-600"><i class="fa-solid fa-check text-xl"></i></span>
+                    <h3 class="mt-4 text-xl font-bold text-slate-900" data-i18n="applications.submittedTitle">Application Submitted</h3>
+                    <p class="mt-2 text-sm text-slate-600"><span data-i18n="applications.submittedFor">Your application for</span> <strong id="applicationSuccessTitle"></strong> <span data-i18n="applications.submittedSuccessfully">has been submitted successfully.</span></p>
+                    <div class="mt-6 flex flex-col justify-center gap-2 sm:flex-row">
+                        <a href="profile/applications.html" class="inline-flex min-h-11 items-center justify-center rounded-lg bg-blue-600 px-5 py-2 text-sm font-semibold text-white hover:bg-blue-700" data-i18n="applications.myApplications">View My Applications</a>
+                        <button id="closeApplicationSuccess" type="button" class="min-h-11 rounded-lg border border-slate-200 px-5 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50" data-i18n="common.close">Close</button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/page-chrome.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/internships-page.js"></script>
+    <script type="module" src="../js/application-flow.js"></script>
+</body>
+
+</html>

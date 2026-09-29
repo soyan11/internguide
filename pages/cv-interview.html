@@ -1,0 +1,1308 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CV-Interview | InternGuide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../src/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="px-5 py-2 lg:px-12 sticky top-0 z-50 bg-white">
+        <div class="flex justify-between items-center">
+            <a href="../index.html" class="logo">
+                <img src="../src/assets/images/logo.png" alt="InternGuide Logo">
+            </a>
+            <nav class="gap-8 items-center hidden lg:flex text-gray-500 ">
+                <a href="../index.html" class="nav-link hover:text-gray-700">Home</a>
+                <a href="internships.html" class="hover:text-gray-700">Internships</a>
+                <a href="career-guide.html" class="nav-link hover:text-gray-700 ">Career Guide</a>
+                <a href="cv-interview.html" class="nav-link active hover:text-[#F8F9FF]">CV & Interview</a>
+                <a href="about-contact.html" class="nav-link hover:text-gray-700">About</a>
+            </nav>
+
+            <div class="header-actions hidden md:flex flex-none items-center gap-4">
+                <a href="auth/login.html" class="btn-login bg-white border rounded-xl p-3 px-4">Log In</a>
+
+                <a href="auth/signup.html" class="btn-primary btn-color-switch btn-primary-switch p-3 px-4 rounded-xl">
+                    Sign Up
+                </a>
+            </div>
+
+            <div class="flex md:hidden ">
+                <button id="toggle-btn"
+                    class="h-10 w-10 items-center justify-center rounded-full text-xl text-gray-800 transition hover:bg-gray-100"
+                    aria-label="Toggle menu">
+                    ☰
+                </button>
+
+                <div id="mobile-menu" class="absolute left-0 top-full hidden w-full flex-col bg-[#f8f9ff] shadow-lg">
+
+                    <a href="../index.html"
+                        class="flex h-10 items-center justify-center gap-2 border-b border-gray-200 text-sm font-medium text-[#3f5ddd] hover:bg-gray-100">
+                        Home
+                    </a>
+
+                    <a href="internships.html"
+                        class="flex h-10 items-center justify-center gap-2 border-b border-gray-200 text-sm font-medium text-[#3f5ddd] hover:bg-gray-100">
+                        Internship
+                    </a>
+
+                    <a href="career-guide.html"
+                        class="flex h-10 items-center justify-center gap-2 border-b border-gray-200 text-sm font-medium text-[#3f5ddd] hover:bg-gray-100">
+                        Career Guide
+                    </a>
+
+                            <a href="cv-interview.html"
+                                class="active-mobile flex h-10 items-center justify-center gap-2 border-b border-gray-200 text-sm font-medium">
+                        CV & Interview
+                    </a>
+
+                    <a href="about-contact.html"
+                        class="flex h-10 items-center justify-center gap-2 border-b border-gray-200 text-sm font-medium text-[#3f5ddd] hover:bg-gray-100">
+                        About & Contact
+                    </a>
+
+                    <a href="auth/login.html"
+                        class="flex h-10 items-center justify-center gap-2 rounded-b-xl bg-[#3f5ddd] text-sm font-semibold text-white hover:bg-[#304fc8]">
+                        Register or Login
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+        <nav class="gap-12 py-4 items-center lg:hidden md:flex hidden text-gray-500 justify-center">
+            <a href="../index.html" class="nav-link hover:text-gray-700">Home</a>
+            <a href="internships.html" class="hover:text-gray-700">Internships</a>
+            <a href="career-guide.html" class="nav-link hover:text-gray-700 ">Career Guide</a>
+            <a href="cv-interview.html" class="nav-link active hover:text-[#F8F9FF]">CV & Interview</a>
+            <a href="about-contact.html" class="nav-link hover:text-gray-700">About</a>
+        </nav>
+    </header>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+            <div class="flex flex-col items-start space-y-6">
+
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 text-blue-600 text-xs font-semibold uppercase tracking-wider">
+
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+
+                    Career Preparation
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                    Build a CV. Prepare for Interviews. Get Ready for Your
+                    <span class="text-blue-600">Future</span>.
+                </h1>
+
+                <p class="text-gray-500 text-base sm:text-lg max-w-xl">
+                    Learn how to create a professional CV, describe your skills, and prepare confidently for
+                    internship interviews.
+                </p>
+
+                <div class="flex flex-wrap gap-4 pt-2 w-full sm:w-auto">
+
+                    <a href="profile/cv-builder.html"
+                        class="inline-flex items-center justify-center px-6 py-3.5 font-medium rounded-xl shadow-sm text-base border border-[#3B5BDB] bg-[#3B5BDB] text-[#F8F9FF] transition-all duration-[180ms] ease-in-out hover:bg-[#F8F9FF] hover:text-[#3B5BDB] hover:border-[#3B5BDB] hover:shadow-[0_4px_10px_rgba(59,91,219,0.12)] hover:-translate-y-px focus-visible:bg-[#F8F9FF] focus-visible:text-[#3B5BDB] focus-visible:border-[#3B5BDB] focus-visible:shadow-[0_4px_10px_rgba(59,91,219,0.12)] focus-visible:-translate-y-px">
+                        Create Your CV <span class="ml-2">→</span>
+                    </a>
+
+                    <a href="#interview-guide"
+                        class="inline-flex items-center justify-center px-6 py-3.5 font-medium rounded-xl shadow-sm text-base border border-[#3B5BDB] bg-[#F8F9FF] text-[#3B5BDB] transition-all duration-[180ms] ease-in-out hover:bg-[#3B5BDB] hover:text-[#F8F9FF] hover:border-[#3B5BDB] hover:shadow-[0_4px_10px_rgba(59,91,219,0.12)] hover:-translate-y-px focus-visible:bg-[#3B5BDB] focus-visible:text-[#F8F9FF] focus-visible:border-[#3B5BDB] focus-visible:shadow-[0_4px_10px_rgba(59,91,219,0.12)] focus-visible:-translate-y-px">
+                        Prepare for Interview <span class="ml-2">→</span>
+                    </a>
+
+                </div>
+
+                <div class="w-full pt-8 mt-4 border-t border-gray-200/60">
+
+                    <div class="grid grid-cols-3 gap-4">
+
+                        <div class="border-r border-gray-200 pr-2">
+                            <div class="text-2xl sm:text-3xl font-extrabold text-gray-900">94.8%</div>
+                            <div class="text-xs text-gray-500 font-medium mt-1">ATS Pass Rate</div>
+                        </div>
+
+                        <div class="border-r border-gray-200 pr-2">
+                            <div class="text-2xl sm:text-3xl font-extrabold text-gray-900">12,000+</div>
+                            <div class="text-xs text-gray-500 font-medium mt-1">Interviews Aced</div>
+                        </div>
+
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-gray-900">50+</div>
+                            <div class="text-xs text-gray-500 font-medium mt-1">Verified Templates</div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="relative flex justify-center lg:justify-end">
+
+                <div
+                    class="relative rounded-3xl overflow-hidden bg-gray-900 shadow-2xl max-w-lg w-full transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                    <img src="/src/assets/images/cv-interview.png" alt="CV & Interview Preparation"
+                        class="w-full h-auto object-cover opacity-95">
+
+                    <div
+                        class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-lg flex items-center justify-between border border-white/40">
+
+                        <div class="flex items-center gap-3">
+
+                            <div
+                                class="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center text-blue-600">
+
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+
+                            </div>
+
+                            <div>
+                                <h4 class="text-sm font-bold text-gray-900 leading-tight">
+                                    ATS-Friendly & Mock Prep
+                                </h4>
+
+                                <p class="text-xs text-gray-500">
+                                    Reviewed by top enterprise recruiters
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div
+                            class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-600 text-xs font-semibold">
+
+                            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+
+                            Active
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="border-t border-gray-200/60 pt-16">
+
+            <div class="mb-10">
+
+                <h2 id="cv-guide" class="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
+                    Create a Professional CV
+                </h2>
+
+                <p class="text-gray-500 mt-2 text-base sm:text-lg">
+                    Build a CV that clearly presents your education, skills, experience, and achievements.
+                </p>
+
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-10 items-start">
+
+                <div
+                    class="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-gray-100/80 transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                    <div class="bg-[#f3f6ff] rounded-2xl p-6 border border-blue-100/60">
+
+                        <div class="flex justify-between items-start mb-4">
+
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900">Alex Chen</h3>
+                                <p class="text-xs font-semibold text-blue-600">
+                                    Computer Science Undergraduate
+                                </p>
+                            </div>
+
+                            <div
+                                class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 text-xs font-bold flex items-center justify-center">
+                                AC
+                            </div>
+
+                        </div>
+
+                        <div class="text-[11px] text-gray-500 space-y-0.5 mb-5">
+
+                            <p class="flex items-center gap-1">
+                                <span>&#9993;</span>
+                                alex.chen@university.edu
+                                <span class="ml-2">&#128222; +1 (555) 432-8921</span>
+                            </p>
+
+                            <p class="flex items-center gap-1">
+                                <span>&#128205;</span>
+                                Seattle, WA
+                            </p>
+
+                        </div>
+
+                        <div class="mb-4">
+
+                            <h4 class="text-[10px] font-bold text-gray-900 uppercase tracking-wider mb-1">
+                                EDUCATION
+                            </h4>
+
+                            <div class="flex justify-between text-xs font-semibold text-gray-800">
+                                <span>State Tech University</span>
+                                <span class="text-gray-400 font-normal">2023 – 2027</span>
+                            </div>
+
+                            <p class="text-[11px] text-gray-500">
+                                B.S. in Computer Science • GPA: 3.82/4.0
+                            </p>
+
+                        </div>
+
+                        <div class="mb-4">
+
+                            <h4 class="text-[10px] font-bold text-gray-900 uppercase tracking-wider mb-1.5">
+                                TECHNICAL SKILLS
+                            </h4>
+
+                            <div class="flex flex-wrap gap-1.5">
+
+                                <span
+                                    class="px-2 py-0.5 bg-white border border-gray-200 text-gray-700 text-[10px] font-medium rounded">
+                                    Python
+                                </span>
+
+                                <span
+                                    class="px-2 py-0.5 bg-white border border-gray-200 text-gray-700 text-[10px] font-medium rounded">
+                                    TypeScript
+                                </span>
+
+                                <span
+                                    class="px-2 py-0.5 bg-white border border-gray-200 text-gray-700 text-[10px] font-medium rounded">
+                                    React
+                                </span>
+
+                                <span
+                                    class="px-2 py-0.5 bg-white border border-gray-200 text-gray-700 text-[10px] font-medium rounded">
+                                    PostgreSQL
+                                </span>
+
+                                <span
+                                    class="px-2 py-0.5 bg-white border border-gray-200 text-gray-700 text-[10px] font-medium rounded">
+                                    Git / Docker
+                                </span>
+
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+
+                            <h4 class="text-[10px] font-bold text-gray-900 uppercase tracking-wider mb-1">
+                                FEATURED PROJECTS
+                            </h4>
+
+                            <div class="flex justify-between text-xs font-semibold text-gray-800">
+                                <span>SmartScheduler App</span>
+                                <span class="text-gray-400 font-normal text-[10px]">
+                                    React / Node
+                                </span>
+                            </div>
+
+                            <p class="text-[10px] text-gray-500">
+                                Built automated course calendar with 1,200 active campus users.
+                            </p>
+
+                        </div>
+
+                        <div>
+
+                            <h4 class="text-[10px] font-bold text-gray-900 uppercase tracking-wider mb-1">
+                                LEADERSHIP & CAMPUS
+                            </h4>
+
+                            <p class="text-[11px] font-semibold text-gray-800">
+                                Peer Tutor • Association for Computing Machinery (ACM)
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="flex justify-between items-center mt-4 text-xs">
+
+                        <div class="flex items-center gap-1.5 text-emerald-600 font-semibold">
+
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+
+                            ATS Grade: 98% Optimal
+                        </div>
+
+                        <span class="text-blue-600 font-medium">
+                            Single Page • Standard Letter
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="space-y-3.5">
+
+                    <div
+                        class="bg-white p-4 sm:p-5 rounded-2xl shadow-sm border border-gray-100 flex items-start gap-4 transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                        <span
+                            class="w-9 h-9 rounded-full bg-blue-100 text-blue-600 text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
+                            01
+                        </span>
+
+                        <div>
+                            <h3 class="text-base font-bold text-gray-900">
+                                Personal Information
+                            </h3>
+
+                            <p class="text-xs sm:text-sm text-gray-500 mt-1 leading-relaxed">
+                                Include your name, professional email, phone number, and links to your GitHub or
+                                LinkedIn profile. Keep it concise.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div
+                        class="bg-white p-4 sm:p-5 rounded-2xl shadow-sm border border-gray-100 flex items-start gap-4 transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                        <span
+                            class="w-9 h-9 rounded-full bg-blue-100 text-blue-600 text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
+                            02
+                        </span>
+
+                        <div>
+                            <h3 class="text-base font-bold text-gray-900">
+                                Education
+                            </h3>
+
+                            <p class="text-xs sm:text-sm text-gray-500 mt-1 leading-relaxed">
+                                Show your university, degree program, expected graduation year, and academic
+                                achievements or honors.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div
+                        class="bg-white p-4 sm:p-5 rounded-2xl shadow-sm border border-gray-100 flex items-start gap-4 transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                        <span
+                            class="w-9 h-9 rounded-full bg-blue-100 text-blue-600 text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
+                            03
+                        </span>
+
+                        <div>
+                            <h3 class="text-base font-bold text-gray-900">
+                                Skills
+                            </h3>
+
+                            <p class="text-xs sm:text-sm text-gray-500 mt-1 leading-relaxed">
+                                Highlight technical competencies (software, coding languages, tools) alongside
+                                verified soft skills like communication and problem-solving.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div
+                        class="bg-white p-4 sm:p-5 rounded-2xl shadow-sm border border-gray-100 flex items-start gap-4 transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                        <span
+                            class="w-9 h-9 rounded-full bg-blue-100 text-blue-600 text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
+                            04
+                        </span>
+
+                        <div>
+                            <h3 class="text-base font-bold text-gray-900">
+                                Experience
+                            </h3>
+
+                            <p class="text-xs sm:text-sm text-gray-500 mt-1 leading-relaxed">
+                                Include prior internships, academic capstones, volunteer initiatives, and part-time
+                                responsibilities with tangible results.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div
+                        class="bg-white p-4 sm:p-5 rounded-2xl shadow-sm border border-gray-100 flex items-start gap-4 transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                        <span
+                            class="w-9 h-9 rounded-full bg-blue-100 text-blue-600 text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
+                            05
+                        </span>
+
+                        <div>
+                            <h3 class="text-base font-bold text-gray-900">
+                                Achievements
+                            </h3>
+
+                            <p class="text-xs sm:text-sm text-gray-500 mt-1 leading-relaxed">
+                                Show certifications, competitions, awards, and open-source contributions to
+                                illustrate your initiative.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="pt-3">
+
+                        <a href="#"
+                            class="inline-flex items-center justify-center px-6 py-3 font-medium rounded-xl text-sm shadow-sm border border-[#3B5BDB] bg-[#3B5BDB] text-[#F8F9FF] transition-all duration-[180ms] ease-in-out hover:bg-[#F8F9FF] hover:text-[#3B5BDB] hover:border-[#3B5BDB] hover:shadow-[0_4px_10px_rgba(59,91,219,0.12)] hover:-translate-y-px focus-visible:bg-[#F8F9FF] focus-visible:text-[#3B5BDB] focus-visible:border-[#3B5BDB] focus-visible:shadow-[0_4px_10px_rgba(59,91,219,0.12)] focus-visible:-translate-y-px">
+                            Learn How to Write Your CV <span class="ml-2">→</span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+
+        <div
+            class="bg-white p-8 sm:p-10 rounded-3xl shadow-sm border border-gray-100/80 transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+            <div class="mb-8">
+
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">
+                    CV Checklist
+                </h2>
+
+                <p class="text-gray-500 mt-1 text-sm sm:text-base">
+                    Make sure your CV includes the information employers expect.
+                </p>
+
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                <div
+                    class="flex items-center gap-3 p-3.5 rounded-2xl bg-[#f8fafc] text-gray-800 text-sm font-medium transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                    <span
+                        class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 text-xs">
+                        <i class="fa-solid fa-check"></i>
+                    </span>
+
+                    <span>Clear contact information</span>
+                </div>
+
+
+                <div
+                    class="flex items-center gap-3 p-3.5 rounded-2xl bg-[#f8fafc] text-gray-800 text-sm font-medium transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                    <span
+                        class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 text-xs">
+                        <i class="fa-solid fa-check"></i>
+                    </span>
+
+                    <span>Professional profile</span>
+                </div>
+
+
+                <div
+                    class="flex items-center gap-3 p-3.5 rounded-2xl bg-[#f8fafc] text-gray-800 text-sm font-medium transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                    <span
+                        class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 text-xs">
+                        <i class="fa-solid fa-check"></i>
+                    </span>
+
+                    <span>Education</span>
+                </div>
+
+
+                <div
+                    class="flex items-center gap-3 p-3.5 rounded-2xl bg-[#f8fafc] text-gray-800 text-sm font-medium transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                    <span
+                        class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 text-xs">
+                        <i class="fa-solid fa-check"></i>
+                    </span>
+
+                    <span>Relevant skills</span>
+                </div>
+
+
+                <div
+                    class="flex items-center gap-3 p-3.5 rounded-2xl bg-[#f8fafc] text-gray-800 text-sm font-medium transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                    <span
+                        class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 text-xs">
+                        <i class="fa-solid fa-check"></i>
+                    </span>
+
+                    <span>Experience or projects</span>
+                </div>
+
+
+                <div
+                    class="flex items-center gap-3 p-3.5 rounded-2xl bg-[#f8fafc] text-gray-800 text-sm font-medium transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                    <span
+                        class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 text-xs">
+                        <i class="fa-solid fa-check"></i>
+                    </span>
+
+                    <span>Achievements</span>
+                </div>
+
+
+                <div
+                    class="flex items-center gap-3 p-3.5 rounded-2xl bg-[#f8fafc] text-gray-800 text-sm font-medium transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                    <span
+                        class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 text-xs">
+                        <i class="fa-solid fa-check"></i>
+                    </span>
+
+                    <span>Correct formatting</span>
+                </div>
+
+                <div
+                    class="flex items-center gap-3 p-3.5 rounded-2xl bg-[#f8fafc] text-gray-800 text-sm font-medium transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                    <span
+                        class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 text-xs">
+                        <i class="fa-solid fa-check"></i>
+                    </span>
+
+                    <span>No unnecessary info</span>
+                </div>
+
+            </div>
+
+            <div
+                class="flex items-start sm:items-center gap-3 p-4 rounded-2xl bg-[#eef2ff] border-l-4 border-blue-600 text-gray-800 text-xs sm:text-sm transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                <span class="text-blue-600 text-base shrink-0 mt-0.5 sm:mt-0">
+                    <i class="fa-regular fa-lightbulb"></i>
+                </span>
+
+                <p>
+                    <strong class="text-blue-600 font-semibold">Tip:</strong>
+                    Keep your CV clear, organized, and easy to read. Recruiters spend an average of 6 seconds on
+                    first passes.
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 mb-16">
+
+        <div class="bg-[#f0f4ff] p-8 sm:p-12 rounded-[2.5rem]">
+
+            <div class="mb-10">
+
+                <h2 id="interview-guide" class="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
+                    Prepare for Your Internship Interview
+                </h2>
+
+                <p class="text-gray-500 mt-2 text-base sm:text-lg">
+                    Build confidence by understanding what to expect and practicing your answers.
+                </p>
+
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <div
+                    class="bg-white p-7 rounded-2xl flex flex-col justify-between shadow-sm transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                    <div>
+
+                        <div
+                            class="w-11 h-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6">
+                            <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                        </div>
+
+                        <h3 class="text-lg font-bold text-gray-900 mb-3">
+                            Before the Interview
+                        </h3>
+
+                        <p class="text-xs text-gray-500 leading-relaxed">
+                            Research the company, read recent news, study the mission statement, and understand the
+                            core internship role requirements.
+                        </p>
+
+                    </div>
+
+                    <div class="mt-8 pt-2">
+                        <span class="text-[11px] font-bold text-blue-600 tracking-wider uppercase">
+                            STEP 1 • RESEARCH
+                        </span>
+                    </div>
+
+                </div>
+
+                <div
+                    class="bg-white p-7 rounded-2xl flex flex-col justify-between shadow-sm transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                    <div>
+
+                        <div
+                            class="w-11 h-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6">
+                            <i class="fa-solid fa-user-group text-lg"></i>
+                        </div>
+
+                        <h3 class="text-lg font-bold text-gray-900 mb-3">
+                            Common Questions
+                        </h3>
+
+                        <p class="text-xs text-gray-500 leading-relaxed">
+                            Practice questions about your background, personal skills, academic projects, team
+                            experiences, and long-term career goals.
+                        </p>
+
+                    </div>
+
+                    <div class="mt-8 pt-2">
+                        <span class="text-[11px] font-bold text-blue-600 tracking-wider uppercase">
+                            STEP 2 • PRACTICE
+                        </span>
+                    </div>
+
+                </div>
+
+                <div
+                    class="bg-white p-7 rounded-2xl flex flex-col justify-between shadow-sm transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                    <div>
+
+                        <div
+                            class="w-11 h-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6">
+                            <i class="fa-solid fa-brain text-lg"></i>
+                        </div>
+
+                        <h3 class="text-lg font-bold text-gray-900 mb-3">
+                            Answer Clearly
+                        </h3>
+
+                        <p class="text-xs text-gray-500 leading-relaxed">
+                            Use specific examples when explaining your skills and experience. Structure answers with
+                            Situation, Task, Action, and Result (STAR).
+                        </p>
+
+                    </div>
+
+                    <div class="mt-8 pt-2">
+                        <span class="text-[11px] font-bold text-blue-600 tracking-wider uppercase">
+                            STEP 3 • STRUCTURE
+                        </span>
+                    </div>
+
+                </div>
+
+                <div
+                    class="bg-white p-7 rounded-2xl flex flex-col justify-between shadow-sm transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                    <div>
+
+                        <div
+                            class="w-11 h-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6">
+                            <i class="fa-regular fa-comments text-lg"></i>
+                        </div>
+
+                        <h3 class="text-lg font-bold text-gray-900 mb-3">
+                            Ask Questions
+                        </h3>
+
+                        <p class="text-xs text-gray-500 leading-relaxed">
+                            Prepare thoughtful questions to ask the interviewer regarding team culture, mentorship
+                            models, and upcoming project cycles.
+                        </p>
+
+                    </div>
+
+                    <div class="mt-8 pt-2">
+                        <span class="text-[11px] font-bold text-blue-600 tracking-wider uppercase">
+                            STEP 4 • ENGAGE
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 mb-16">
+
+        <div class="mb-8">
+
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">
+                Common Interview Questions
+            </h2>
+
+            <p class="text-gray-500 mt-1.5 text-sm sm:text-base">
+                Practice answering questions you may be asked during an internship interview.
+            </p>
+
+        </div>
+
+        <div class="space-y-3.5 max-w-4xl">
+
+            <div
+                class="bg-white rounded-2xl p-4 sm:p-5 flex items-center justify-between shadow-xs border border-gray-100/60 cursor-pointer transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                <div class="flex items-center gap-4">
+
+                    <span
+                        class="w-7 h-7 rounded-full bg-blue-100/70 text-blue-600 font-semibold text-xs flex items-center justify-center shrink-0">
+                        1
+                    </span>
+
+                    <span class="text-gray-900 font-bold text-sm sm:text-base">
+                        Tell me about yourself.
+                    </span>
+
+                </div>
+
+                <span class="text-blue-600 text-lg sm:text-xl font-light px-1">
+                    <i class="fa-solid fa-plus"></i>
+                </span>
+
+            </div>
+
+            <div
+                class="bg-white rounded-2xl p-4 sm:p-5 flex items-center justify-between shadow-xs border border-gray-100/60 cursor-pointer transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                <div class="flex items-center gap-4">
+
+                    <span
+                        class="w-7 h-7 rounded-full bg-blue-100/70 text-blue-600 font-semibold text-xs flex items-center justify-center shrink-0">
+                        2
+                    </span>
+
+                    <span class="text-gray-900 font-bold text-sm sm:text-base">
+                        Why are you interested in this internship?
+                    </span>
+
+                </div>
+
+                <span class="text-blue-600 text-lg sm:text-xl font-light px-1">
+                    <i class="fa-solid fa-plus"></i>
+                </span>
+
+            </div>
+
+            <div
+                class="bg-white rounded-2xl p-4 sm:p-5 flex items-center justify-between shadow-xs border border-gray-100/60 cursor-pointer transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                <div class="flex items-center gap-4">
+
+                    <span
+                        class="w-7 h-7 rounded-full bg-blue-100/70 text-blue-600 font-semibold text-xs flex items-center justify-center shrink-0">
+                        3
+                    </span>
+
+                    <span class="text-gray-900 font-bold text-sm sm:text-base">
+                        Why did you choose your field of study?
+                    </span>
+
+                </div>
+
+                <span class="text-blue-600 text-lg sm:text-xl font-light px-1">
+                    <i class="fa-solid fa-plus"></i>
+                </span>
+
+            </div>
+
+            <div
+                class="bg-white rounded-2xl p-4 sm:p-5 flex items-center justify-between shadow-xs border border-gray-100/60 cursor-pointer transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                <div class="flex items-center gap-4">
+
+                    <span
+                        class="w-7 h-7 rounded-full bg-blue-100/70 text-blue-600 font-semibold text-xs flex items-center justify-center shrink-0">
+                        4
+                    </span>
+
+                    <span class="text-gray-900 font-bold text-sm sm:text-base">
+                        What skills can you bring to this internship?
+                    </span>
+
+                </div>
+
+                <span class="text-blue-600 text-lg sm:text-xl font-light px-1">
+                    <i class="fa-solid fa-plus"></i>
+                </span>
+
+            </div>
+
+            <div
+                class="bg-white rounded-2xl p-4 sm:p-5 flex items-center justify-between shadow-xs border border-gray-100/60 cursor-pointer transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                <div class="flex items-center gap-4">
+
+                    <span
+                        class="w-7 h-7 rounded-full bg-blue-100/70 text-blue-600 font-semibold text-xs flex items-center justify-center shrink-0">
+                        5
+                    </span>
+
+                    <span class="text-gray-900 font-bold text-sm sm:text-base">
+                        Tell me about a project you worked on.
+                    </span>
+
+                </div>
+
+                <span class="text-blue-600 text-lg sm:text-xl font-light px-1">
+                    <i class="fa-solid fa-plus"></i>
+                </span>
+
+            </div>
+
+            <div
+                class="bg-white rounded-2xl p-4 sm:p-5 flex items-center justify-between shadow-xs border border-gray-100/60 cursor-pointer transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                <div class="flex items-center gap-4">
+
+                    <span
+                        class="w-7 h-7 rounded-full bg-blue-100/70 text-blue-600 font-semibold text-xs flex items-center justify-center shrink-0">
+                        6
+                    </span>
+
+                    <span class="text-gray-900 font-bold text-sm sm:text-base">
+                        What is one challenge you have faced and how did you solve it?
+                    </span>
+
+                </div>
+
+                <span class="text-blue-600 text-lg sm:text-xl font-light px-1">
+                    <i class="fa-solid fa-plus"></i>
+                </span>
+
+            </div>
+
+            <div
+                class="bg-white rounded-2xl p-4 sm:p-5 flex items-center justify-between shadow-xs border border-gray-100/60 cursor-pointer transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                <div class="flex items-center gap-4">
+
+                    <span
+                        class="w-7 h-7 rounded-full bg-blue-100/70 text-blue-600 font-semibold text-xs flex items-center justify-center shrink-0">
+                        7
+                    </span>
+
+                    <span class="text-gray-900 font-bold text-sm sm:text-base">
+                        What do you hope to learn from this internship?
+                    </span>
+
+                </div>
+
+                <span class="text-blue-600 text-lg sm:text-xl font-light px-1">
+                    <i class="fa-solid fa-plus"></i>
+                </span>
+
+            </div>
+
+            <div
+                class="bg-white rounded-2xl p-4 sm:p-5 flex items-center justify-between shadow-xs border border-gray-100/60 cursor-pointer transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                <div class="flex items-center gap-4">
+
+                    <span
+                        class="w-7 h-7 rounded-full bg-blue-100/70 text-blue-600 font-semibold text-xs flex items-center justify-center shrink-0">
+                        8
+                    </span>
+
+                    <span class="text-gray-900 font-bold text-sm sm:text-base">
+                        Do you have any questions for us?
+                    </span>
+
+                </div>
+
+                <span class="text-blue-600 text-lg sm:text-xl font-light px-1">
+                    <i class="fa-solid fa-plus"></i>
+                </span>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 mb-16">
+
+        <div class="mb-8">
+
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">
+                Simple Tips for a Better Interview
+            </h2>
+
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-5">
+
+            <div
+                class="bg-white p-5 rounded-2xl flex flex-col justify-between shadow-xs border border-gray-100/60 min-h-[160px] transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                <div>
+
+                    <span class="text-blue-600 font-bold text-xs block mb-3">
+                        01
+                    </span>
+
+                    <div class="text-blue-600 text-xl mb-3">
+                        <i class="fa-solid fa-city"></i>
+                    </div>
+
+                </div>
+
+                <h3 class="text-xs sm:text-sm font-bold text-gray-900 leading-snug">
+                    Research the Company
+                </h3>
+
+            </div>
+
+            <div
+                class="bg-white p-5 rounded-2xl flex flex-col justify-between shadow-xs border border-gray-100/60 min-h-[160px] transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                <div>
+
+                    <span class="text-blue-600 font-bold text-xs block mb-3">
+                        02
+                    </span>
+
+                    <div class="text-blue-600 text-xl mb-3">
+                        <i class="fa-regular fa-file-lines"></i>
+                    </div>
+
+                </div>
+
+                <h3 class="text-xs sm:text-sm font-bold text-gray-900 leading-snug">
+                    Review Job Description
+                </h3>
+
+            </div>
+
+            <div
+                class="bg-white p-5 rounded-2xl flex flex-col justify-between shadow-xs border border-gray-100/60 min-h-[160px] transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                <div>
+
+                    <span class="text-blue-600 font-bold text-xs block mb-3">
+                        03
+                    </span>
+
+                    <div class="text-blue-600 text-xl mb-3">
+                        <i class="fa-solid fa-microphone"></i>
+                    </div>
+
+                </div>
+
+                <h3 class="text-xs sm:text-sm font-bold text-gray-900 leading-snug">
+                    Practice Your Answers
+                </h3>
+
+            </div>
+
+            <div
+                class="bg-white p-5 rounded-2xl flex flex-col justify-between shadow-xs border border-gray-100/60 min-h-[160px] transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                <div>
+                    <span class="text-blue-600 font-bold text-xs block mb-3">
+                        04
+                    </span>
+
+                    <div class="text-blue-600 text-xl mb-3">
+                        <i class="fa-solid fa-shirt"></i>
+                    </div>
+
+                </div>
+
+                <h3 class="text-xs sm:text-sm font-bold text-gray-900 leading-snug">
+                    Dress Appropriately
+                </h3>
+
+            </div>
+
+            <div
+                class="bg-white p-5 rounded-2xl flex flex-col justify-between shadow-xs border border-gray-100/60 min-h-[160px] transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                <div>
+
+                    <span class="text-blue-600 font-bold text-xs block mb-3">
+                        05
+                    </span>
+
+                    <div class="text-blue-600 text-xl mb-3">
+                        <i class="fa-regular fa-clock"></i>
+                    </div>
+
+                </div>
+
+                <h3 class="text-xs sm:text-sm font-bold text-gray-900 leading-snug">
+                    Arrive on Time
+                </h3>
+
+            </div>
+
+            <div
+                class="bg-white p-5 rounded-2xl flex flex-col justify-between shadow-xs border border-gray-100/60 min-h-[160px] transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                <div>
+
+                    <span class="text-blue-600 font-bold text-xs block mb-3">
+                        06
+                    </span>
+
+                    <div class="text-blue-600 text-xl mb-3">
+                        <i class="fa-regular fa-circle-question"></i>
+                    </div>
+
+                </div>
+
+                <h3 class="text-xs sm:text-sm font-bold text-gray-900 leading-snug">
+                    Ask Questions
+                </h3>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 mb-16">
+
+        <div class="mb-8">
+
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">
+                Don't Have Much Experience Yet?
+            </h2>
+
+            <p class="text-gray-500 mt-2 text-sm sm:text-base max-w-3xl leading-relaxed">
+                That's okay. Your university projects, coursework, volunteer activities, clubs, and personal projects
+                can help demonstrate your skills.
+            </p>
+
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <div
+                class="bg-white p-6 sm:p-7 rounded-2xl border border-gray-100/80 shadow-xs flex flex-col justify-between transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                <div>
+                    <div
+                        class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-base mb-6">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+
+                    <h3 class="text-base font-bold text-gray-900 mb-3">
+                        University Projects
+                    </h3>
+
+                    <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                        Class deliverables, capstones, and lab reports demonstrate problem formulation, teamwork,
+                        execution, and presentation skills.
+                    </p>
+
+                </div>
+
+                <div class="mt-8 pt-4 border-t border-gray-50">
+
+                    <span class="text-xs font-semibold text-blue-600">
+                        Include tech stack &amp; your role
+                    </span>
+                </div>
+            </div>
+
+            <div
+                class="bg-white p-6 sm:p-7 rounded-2xl border border-gray-100/80 shadow-xs flex flex-col justify-between transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                <div>
+
+                    <div
+                        class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-base mb-6">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+
+                    <h3 class="text-base font-bold text-gray-900 mb-3">
+                        Coursework
+                    </h3>
+
+                    <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                        Specialized upper-division subjects, lab modules, and academic focus areas prove baseline
+                        domain knowledge to recruiters.
+                    </p>
+
+                </div>
+
+                <div class="mt-8 pt-4 border-t border-gray-50">
+
+                    <span class="text-xs font-semibold text-blue-600">
+                        List 4-6 most relevant modules
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div
+                class="bg-white p-6 sm:p-7 rounded-2xl border border-gray-100/80 shadow-xs flex flex-col justify-between transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                <div>
+                    <div
+                        class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-base mb-6">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
+
+                    <h3 class="text-base font-bold text-gray-900 mb-3">
+                        Volunteer Experience
+                    </h3>
+                    <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                        Community outreach, campus societies, event organization, and student leadership show
+                        character, initiative, and responsibility.
+                    </p>
+
+                </div>
+
+                <div class="mt-8 pt-4 border-t border-gray-50">
+
+                    <span class="text-xs font-semibold text-blue-600">
+                        Focus on leadership &amp; coordination
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div
+                class="bg-white p-6 sm:p-7 rounded-2xl border border-gray-100/80 shadow-xs flex flex-col justify-between transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+                <div>
+                    <div
+                        class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-base mb-6">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-gray-900 mb-3">
+                        Personal Projects
+                    </h3>
+                    <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                        Independent coding applications, design portfolios, research essays, or case studies
+                        demonstrate genuine intrinsic motivation.
+                    </p>
+
+                </div>
+
+                <div class="mt-8 pt-4 border-t border-gray-50">
+
+                    <span class="text-xs font-semibold text-blue-600">
+                        Provide working links / demos
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 mb-20">
+
+        <div
+            class="bg-blue-50/60 rounded-3xl p-8 sm:p-12 md:p-16 text-center transition-[transform,box-shadow,border-color] duration-[180ms] ease-in-out hover:-translate-y-[3px] hover:border-[rgba(59,91,219,0.20)] hover:shadow-[0_7px_18px_rgba(59,91,219,0.14)]">
+
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-3">
+                Ready to Take the Next Step?
+            </h2>
+            <p class="text-gray-500 text-sm sm:text-base max-w-2xl mx-auto mb-8 leading-relaxed">
+                Create your CV, prepare for interviews, and start applying for internship opportunities today.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+
+                <a href="#"
+                    class="w-full sm:w-auto px-6 py-3.5 font-medium text-xs sm:text-sm rounded-xl shadow-sm flex items-center justify-center gap-1.5 border border-[#3B5BDB] bg-[#3B5BDB] text-[#F8F9FF] transition-all duration-[180ms] ease-in-out hover:bg-[#F8F9FF] hover:text-[#3B5BDB] hover:border-[#3B5BDB] hover:shadow-[0_4px_10px_rgba(59,91,219,0.12)] hover:-translate-y-px focus-visible:bg-[#F8F9FF] focus-visible:text-[#3B5BDB] focus-visible:border-[#3B5BDB] focus-visible:shadow-[0_4px_10px_rgba(59,91,219,0.12)] focus-visible:-translate-y-px">
+
+                    <span>Find Internships</span>
+                    <span>&rarr;</span>
+
+                </a>
+
+                <a href="#"
+                    class="w-full sm:w-auto px-6 py-3.5 font-medium text-xs sm:text-sm rounded-xl shadow-xs flex items-center justify-center border border-[#3B5BDB] bg-[#F8F9FF] text-[#3B5BDB] transition-all duration-[180ms] ease-in-out hover:bg-[#3B5BDB] hover:text-[#F8F9FF] hover:border-[#3B5BDB] hover:shadow-[0_4px_10px_rgba(59,91,219,0.12)] hover:-translate-y-px focus-visible:bg-[#3B5BDB] focus-visible:text-[#F8F9FF] focus-visible:border-[#3B5BDB] focus-visible:shadow-[0_4px_10px_rgba(59,91,219,0.12)] focus-visible:-translate-y-px">
+
+                    Explore Career Guide
+
+                </a>
+
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer px-3 lg:px-12 py-8" id="about">
+        <div class="flex flex-col justify-between">
+            <div class="footer-top flex flex-col lg:flex-row items-center justify-between mb-8 border-b-2 pb-4">
+                <a href="../index.html" class="footer-logo">
+                    <img class="logo" src="../src/assets/images/logo.png" alt="InternGuide Logo">
+                </a>
+                <nav class="footer-nav lg:flex items-center gap-8 text-gray-500 hidden">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="internships.html" class="nav-link hover:text-gray-700">Internships</a>
+                    <a href="career-guide.html" class="nav-link hover:text-gray-700">Career Guide</a>
+                    <a href="cv-interview.html" class="nav-link active">CV & Interview</a>
+                    <a href="about-contact.html" class="nav-link hover:text-gray-700">About</a>
+                </nav>
+                <div class="social-links flex items-center gap-4 my-8 lg:my-0 text-3xl lg:text-xl text-blue-600">
+                    <a class="hover:text-blue-300" href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a class="hover:text-blue-300" href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a class="hover:text-blue-300" href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a class="hover:text-blue-300" href="#" aria-label="Github"><i class="fa-brands fa-github"></i></a>
+                    <a class="hover:text-blue-300" href="#" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom flex flex-col lg:flex-row justify-between">
+                <p class="text-gray-400 lg:justify-start justify-center flex">© 2026 InternGuide. All rights reserved.</p>
+                <div class="footer-legal flex lg:flex-row items-center justify-center gap-8 text-gray-400">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="about-contact.html">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/i18n.js"></script>
+    <script src="../js/page-chrome.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/auth.js"></script>
+
+</body>
+
+</html>

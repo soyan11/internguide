@@ -1,0 +1,687 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Home | InternGuide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="src/style.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ec8f2e5552.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="site-header px-5 py-2 lg:px-12 sticky top-0 z-50">
+        <div class="site-header-inner flex items-center justify-between gap-4">
+            <a href="index.html" class="logo flex-shrink-0">
+                <img src="src/assets/images/logo.png" alt="InternGuide Logo">
+            </a>
+
+            <nav class="site-nav hidden items-center justify-center gap-1.5 lg:flex">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="pages/internships.html" class="nav-link hover:text-gray-700">Internships</a>
+                <a href="pages/career-guide.html" class="nav-link hover:text-gray-700">Career Guide</a>
+                <a href="pages/cv-interview.html" class="nav-link hover:text-gray-700">CV & Interview</a>
+                <a href="pages/about-contact.html" class="nav-link hover:text-gray-700">About</a>
+            </nav>
+
+            <div class="site-header-actions flex items-center justify-end gap-3">
+                <div id="authGuestActions" class="site-auth flex items-center gap-3">
+                    <a href="pages/auth/login.html" class="site-login border border-[#DEE2E6] rounded-xl">
+                        Log In
+                    </a>
+
+                    <a href="pages/auth/signup.html" class="site-signup bg-[#3B5BDB] text-white rounded-xl">
+                        Sign Up
+                    </a>
+                </div>
+
+                <div id="authUserActions" class="site-auth hidden items-center gap-3">
+                    <a href="pages/profile/profile.html" class="text-gray-600 hover:text-gray-800">
+                        My Profile
+                    </a>
+
+                    <a href="pages/profile/profile.html" id="homeNavbarAvatar"
+                        class="w-11 h-11 rounded-full bg-[#EDF2FF] flex items-center justify-center overflow-hidden">
+                        <span id="homeNavbarAvatarInitials" class="text-[#3B5BDB] font-semibold">
+                            IG
+                        </span>
+
+                        <img id="homeNavbarAvatarImage" src="" alt="Profile" class="hidden w-full h-full object-cover">
+                    </a>
+
+                    <button id="homeLogoutBtn" type="button"
+                        class="site-logout border border-red-200 text-red-600 hover:bg-red-50 rounded-xl">
+                        Logout
+                    </button>
+                </div>
+            </div>
+
+            <div class="site-mobile-wrap">
+                <button id="toggle-btn"
+                    class="site-mobile-toggle"
+                    aria-label="Toggle menu" aria-expanded="false">
+                    ☰
+                </button>
+                <div id="mobile-menu"
+                    class="site-mobile-menu hidden flex-col">
+                    <a href="index.html"
+                        class="active-mobile flex h-10 items-center justify-center gap-2 border-b border-gray-200 text-sm font-medium">
+                        Home
+                    </a>
+                    <a href="pages/internships.html"
+                        class="flex h-10 items-center justify-center gap-2 border-b border-gray-200 text-sm font-medium text-[#3f5ddd] hover:bg-gray-100">
+                        Internship
+                    </a>
+                    <a href="pages/career-guide.html"
+                        class="flex h-10 items-center justify-center gap-2 border-b border-gray-200 text-sm font-medium text-[#3f5ddd] hover:bg-gray-100">
+                        Career Guide
+                    </a>
+                    <a href="pages/cv-interview.html"
+                        class="flex h-10 items-center justify-center gap-2 border-b border-gray-200 text-sm font-medium text-[#3f5ddd] hover:bg-gray-100">
+                        CV & Interview
+                    </a>
+                    <a href="pages/about-contact.html"
+                        class="flex h-10 items-center justify-center gap-2 border-b border-gray-200 text-sm font-medium text-[#3f5ddd] hover:bg-gray-100">
+                        About & Contact
+                    </a>
+                    <div class="site-mobile-auth">
+                        <a href="pages/auth/login.html" class="border border-slate-200 text-slate-700">Log In</a>
+                        <a href="pages/auth/signup.html" class="bg-blue-600 text-white">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="gap-12 py-4 items-center lg:hidden md:flex hidden text-gray-500 justify-center">
+            <a href="index.html" class="nav-link active">Home</a>
+            <a href="pages/internships.html" class="nav-link hover:text-gray-700">Internships</a>
+            <a href="pages/career-guide.html" class="nav-link hover:text-gray-700">Career Guide</a>
+            <a href="pages/cv-interview.html" class="nav-link hover:text-gray-700">CV & Interview</a>
+            <a href="pages/about-contact.html" class="nav-link hover:text-gray-700">About</a>
+        </nav>
+    </header>
+    <main>
+        <section class="px-5 lg:px-12 py-12 bg-blue-50">
+            <div class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 lg:grid-cols-2 md:gap-8 lg:gap-14">
+                <div class="flex flex-col justify-center">
+                    <span
+                        class="flex w-fit items-center gap-2 rounded-full bg-blue-100 px-4 py-1.5 text-xs font-semibold tracking-wide text-blue-700"
+                        data-i18n="home.heroBadge">
+                        <span class="h-2 w-2 rounded-full bg-blue-600"></span>
+                        YOUR CAREER START HERE
+                    </span>
+                    <h1
+                        class="mt-5 max-w-2xl text-4xl font-extrabold leading-[1.05] tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+                        <span data-i18n="home.heroTitleLine1">Find Your Dream</span>
+                        <span class="block text-blue-600" data-i18n="home.heroTitleLine2">
+                            Internship Today
+                        </span>
+                    </h1>
+                    <p class="mt-5 max-w-xl text-base leading-7 text-slate-600 sm:text-lg" data-i18n="home.heroText">
+                        Discover internship opportunities, get career guidance,
+                        and build the skills you need for a brighter future.
+                    </p>
+                    <form id="home-search-form" class="mt-7 w-full max-w-2xl">
+                        <div
+                            class="flex items-center gap-2 rounded-xl border border-slate-200 bg-white p-1.5 shadow-sm transition focus-within:ring-2 focus-within:ring-blue-200">
+                            <span class="pl-3 text-lg text-slate-400">
+                                <i data-lucide="search"></i>
+                            </span>
+                            <input id="home-search-input" type="text"
+                                placeholder="Search internships, companies, or skills..."
+                                data-i18n-placeholder="home.searchPlaceholder"
+                                class="min-w-0 flex-1 bg-transparent px-2 py-3 text-sm text-slate-700 outline-none placeholder:text-slate-400">
+                            <button type="submit"
+                                class="rounded-lg bg-blue-600 px-7 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
+                                data-i18n="home.search">
+                                Search
+                            </button>
+                        </div>
+                    </form>
+                    <div class="mt-3 flex max-w-2xl flex-wrap gap-2">
+                        <a href="#internships" data-category="Technology"
+                            class="category-filter inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-600 shadow-sm transition hover:border-blue-200 hover:text-blue-600">
+                            <span><i class="w-4" data-lucide="cpu"></i></span>
+                            Technology
+                        </a>
+                        <a href="#internships" data-category="Business"
+                            class="category-filter inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-600 shadow-sm transition hover:border-blue-200 hover:text-blue-600">
+                            <span><i class="w-4" data-lucide="briefcase-business"></i></span>
+                            Business
+                        </a>
+                        <a href="#internships" data-category="Design"
+                            class="category-filter inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-600 shadow-sm transition hover:border-blue-200 hover:text-blue-600">
+                            <span><i class="w-4" data-lucide="paintbrush"></i></span>
+                            Design
+                        </a>
+                        <a href="#internships" data-category="Engineering"
+                            class="category-filter inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-600 shadow-sm transition hover:border-blue-200 hover:text-blue-600">
+                            <span><i class="w-4" data-lucide="toolbox"></i></span>
+                            Engineering
+                        </a>
+                        <a href="#internships" data-category="Science"
+                            class="category-filter inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-600 shadow-sm transition hover:border-blue-200 hover:text-blue-600">
+                            <span><i class="w-4" data-lucide="flask-conical"></i></span>
+                            Science
+                        </a>
+                        <a href="#internships" data-category="Marketing"
+                            class="category-filter inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-600 shadow-sm transition hover:border-blue-200 hover:text-blue-600">
+                            <span><i class="w-4" data-lucide="ad"></i></span>
+                            Marketing
+                        </a>
+                    </div>
+                </div>
+                <div class="relative mx-auto w-full max-w-md md:max-w-lg hidden lg:flex">
+                    <div class="overflow-hidden rounded-3xl shadow-xl">
+                        <img src="https://studienkolleg-duesseldorf.de/wp-content/uploads/2024/12/h-1-1.png"
+                            alt="Students walking together" class="h-auto w-full object-cover">
+                    </div>
+                    <div
+                        class="absolute -left-3 top-4 z-10 flex animate-float-slow items-center gap-3 rounded-2xl bg-white px-4 py-3 shadow-xl ring-1 ring-slate-100 sm:-left-6">
+                        <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-100 text-blue-600">
+                            <i data-lucide="briefcase"></i>
+                        </div>
+                        <div>
+                            <small class="block text-[9px] font-bold tracking-wide text-blue-600">
+                                GAIN
+                            </small>
+
+                            <strong class="block whitespace-nowrap text-lg font-bold text-slate-900">
+                                Real Experience
+                            </strong>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute -right-3 top-1/4 z-10 flex animate-float-medium -translate-y-1/2 items-center gap-3 rounded-2xl bg-white px-4 py-3 shadow-xl ring-1 ring-slate-100 sm:-right-6">
+                        <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-100 text-blue-600">
+                            <i data-lucide="users"></i>
+                        </div>
+                        <div>
+                            <small class="block text-[9px] font-bold tracking-wide text-blue-600">
+                                BUILD
+                            </small>
+                            <strong class="block whitespace-nowrap text-lg font-bold text-slate-900">
+                                Your Network
+                            </strong>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute -bottom-4 right-3 z-10 hidden animate-float-fast items-center gap-3 rounded-2xl bg-white px-4 py-3 shadow-xl ring-1 ring-slate-100 sm:flex">
+                        <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-100 text-blue-600">
+                            <i data-lucide="MoveUpRight"></i>
+                        </div>
+                        <div>
+                            <small class="block text-[9px] font-bold tracking-wide text-blue-600">
+                                A BRIGHTER
+                            </small>
+                            <strong class="block whitespace-nowrap text-lg font-bold text-slate-900">
+                                Future Awaits
+                            </strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section bg-slate-50 px-3 py-12 lg:px-12 lg:py-14" id="internships">
+            <div class="mx-auto w-full max-w-7xl">
+                <div class="mb-7 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                    <div>
+                        <h2 class="text-2xl font-bold tracking-tight text-slate-900" data-i18n="home.featuredTitle">Featured Internship Opportunities
+                        </h2>
+                        <p data-i18n="home.featuredText">
+                            Explore handpicked internships from top companies.
+                        </p>
+                    </div>
+                    <a href="pages/internships.html" class="text-sm font-semibold text-blue-600 transition hover:text-blue-800" data-i18n="common.viewAll">
+                        View All →
+                    </a>
+                </div>
+                <div
+    id="internship-list"
+    class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4"
+></div>
+                <nav id="featured-internship-pagination" class="mt-6 hidden flex w-full flex-wrap items-center justify-center gap-2" aria-label="Featured internship pagination"></nav>
+                <div id="internship-empty-state"
+                    class="hidden mt-6 rounded-2xl border border-dashed border-slate-300 bg-white p-8 text-center">
+                    <div class="mb-2"><i class="text-center m-auto" data-lucide="search"></i></div>
+                    <h3 class="text-lg font-bold text-slate-800" data-i18n="home.noInternships">No internships found</h3>
+                    <p class="mt-1 text-sm text-slate-500" data-i18n="home.noInternshipsHint">Try another keyword or choose a different category.</p>
+                </div>
+            </div>
+        </section>
+        <section class="section career-path-section px-3 py-12 lg:px-12 lg:py-14">
+            <div class="mx-auto w-full max-w-7xl">
+                <div class="mb-7 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                    <div>
+                        <h2 class="text-2xl font-bold tracking-tight text-slate-900" data-i18n="home.careerPathsTitle">Explore Career Paths</h2>
+                        <p data-i18n="home.careerPathsText">
+                            Discover career options based on your interests.
+                        </p>
+                    </div>
+                    <a href="pages/career-guide.html#careerGuidesGrid" class="text-sm font-semibold text-blue-600 transition hover:text-blue-800" data-i18n="common.viewAll">
+                        View All →
+                    </a>
+                </div>
+                <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+                    <a href="#internships" data-category="Technology"
+                        class="flex flex-col items-center justify-center rounded-2xl border border-slate-200 bg-white px-3 py-6 text-center shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-md">
+                        <div
+                            class="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+                            <i data-lucide="cpu"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-slate-800">Technology</h3>
+                    </a>
+                    <a href="#internships" data-category="Business"
+                        class="flex flex-col items-center justify-center rounded-2xl border border-slate-200 bg-white px-3 py-6 text-center shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-md">
+                        <div
+                            class="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+                            <i data-lucide="briefcase-business"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-slate-800">Business</h3>
+                    </a>
+                    <a href="#internships" data-category="Design"
+                        class="flex flex-col items-center justify-center rounded-2xl border border-slate-200 bg-white px-3 py-6 text-center shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-md">
+                        <div
+                            class="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+                            <i data-lucide="paintbrush"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-slate-800">Design</h3>
+                    </a>
+                    <a href="#internships" data-category="Engineering"
+                        class="flex flex-col items-center justify-center rounded-2xl border border-slate-200 bg-white px-3 py-6 text-center shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-md">
+                        <div
+                            class="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+                            <i data-lucide="toolbox"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-slate-800">Engineering</h3>
+                    </a>
+                    <a href="#internships" data-category="Science"
+                        class="flex flex-col items-center justify-center rounded-2xl border border-slate-200 bg-white px-3 py-6 text-center shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-md">
+                        <div
+                            class="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+                            <i data-lucide="flask-conical"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-slate-800">Science</h3>
+                    </a>
+                    <a href="#internships" data-category="Marketing"
+                        class="flex flex-col items-center justify-center rounded-2xl border border-slate-200 bg-white px-3 py-6 text-center shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-md">
+                        <div
+                            class="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+                            <i data-lucide="store"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-slate-800">Marketing</h3>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="section resources-section px-3 py-12 lg:px-12 lg:py-14" id="career-guide">
+            <div class="mx-auto w-full max-w-7xl">
+                <div class="mb-7 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                    <div>
+                        <h2 class="text-2xl font-bold tracking-tight text-slate-900">Career Preparation Resources</h2>
+                        <p>
+                            Get ready for your future with expert guides and tools.
+                        </p>
+                    </div>
+                    <a href="pages/cv-interview.html" class="text-sm font-semibold text-blue-600 transition hover:text-blue-800" data-i18n="common.viewAll">
+                        View All
+                    </a>
+                </div>
+                <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+                    <article
+                        class="flex gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+                        <div
+                            class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+                            <i data-lucide="file-text"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-base font-bold text-slate-800">CV Guide</h3>
+                            <p>
+                                Learn how to create a professional and ATS-friendly CV.
+                            </p>
+                            <a href="pages/cv-interview.html#cv-guide" class="mt-3 inline-flex min-h-10 items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2">
+                                Read Guide →
+                            </a>
+                        </div>
+                    </article>
+                    <article
+                        class="flex gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+                        <div
+                            class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+                            <i data-lucide="messages-circle"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-base font-bold text-slate-800">Interview Guide</h3>
+                            <p>
+                                Prepare for interviews with tips and common questions.
+                            </p>
+                            <a href="pages/cv-interview.html#interview-guide" class="mt-3 inline-flex min-h-10 items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2">
+                                Read Guide →
+                            </a>
+                        </div>
+                    </article>
+                    <article
+                        class="flex gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+                        <div
+                            class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+                            <i data-lucide="arrow-up-right"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-base font-bold text-slate-800">Skills Development</h3>
+                            <p>
+                                Discover in-demand skills and how to learn them.
+                            </p>
+                            <a href="pages/career-guide.html#careerGuidesGrid" class="mt-3 inline-flex min-h-10 items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2">
+                                Read Guide →
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="section testimonials-section px-3 py-12 lg:px-12 lg:py-14">
+            <div class="mx-auto w-full max-w-7xl">
+                <div class="mb-7 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                    <div>
+                        <h2 class="text-2xl font-bold tracking-tight text-slate-900" data-i18n="testimonials.title">What Students Say</h2>
+                        <p data-i18n="testimonials.subtitle">Student experiences with InternGuide.</p>
+                    </div>
+                    <a href="pages/testimonials.html" class="text-sm font-semibold text-blue-600 transition hover:text-blue-800">
+                        <span data-i18n="testimonials.viewAll">View All Testimonials</span> →
+                    </a>
+                </div>
+                <p id="homeTestimonialsStatus" class="mb-4 text-sm text-slate-500" role="status" aria-live="polite" data-i18n="testimonials.loading">Loading testimonials...</p>
+                <div id="homeTestimonials" class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"></div>
+            </div>
+        </section>
+        <section class="bg-white px-3 py-10 lg:px-12 lg:py-14">
+
+            <div class="mx-auto w-full max-w-7xl">
+
+                <div
+                    class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-7 rounded-3xl bg-blue-50 p-7 sm:p-10 lg:flex-row lg:items-center">
+
+                    <div class="max-w-2xl">
+
+                        <h2 class="text-2xl font-bold tracking-tight text-slate-900">
+                            Ready to Start Your Career Journey?
+                        </h2>
+
+                        <p>
+                            Join InternGuide today and take the first step
+                            towards a brighter future.
+                        </p>
+
+                    </div>
+
+                    <div class="flex flex-col items-start gap-2 sm:items-end">
+
+                        <a href="pages/internships.html"
+                            class="inline-flex items-center rounded-xl bg-blue-600 px-7 py-3.5 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700">
+                            Explore Internships →
+                        </a>
+
+                        <small class="block text-[9px] font-semibold text-blue-600">
+                            It's free and always will be.
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+    <footer class="site-footer border-t border-slate-200 bg-slate-50/90 py-12 md:py-14" id="about">
+        <div class="site-container">
+            <div class="grid gap-10 lg:grid-cols-[1.35fr_0.8fr_0.8fr_0.8fr]">
+                <div class="max-w-sm space-y-5">
+                    <a href="index.html" class="footer-logo inline-flex items-center" aria-label="InternGuide home">
+                        <img class="logo" src="src/assets/images/logo.png" alt="InternGuide Logo">
+                    </a>
+                    <p class="text-sm leading-7 text-slate-600">
+                        InternGuide helps students and young professionals discover internships, build career skills,
+                        and prepare for the next step in their future.
+                    </p>
+                    <div class="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-3 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-blue-700">
+                        Career-ready opportunities
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-sm font-bold uppercase tracking-[0.12em] text-slate-900">Explore</h3>
+                    <ul class="mt-4 space-y-3 text-sm text-slate-600">
+                        <li><a class="transition hover:text-blue-700 hover:underline hover:underline-offset-4" href="index.html">Home</a></li>
+                        <li><a class="transition hover:text-blue-700 hover:underline hover:underline-offset-4" href="pages/internships.html">Internships</a></li>
+                        <li><a class="transition hover:text-blue-700 hover:underline hover:underline-offset-4" href="pages/career-guide.html">Career Guide</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-sm font-bold uppercase tracking-[0.12em] text-slate-900">Resources</h3>
+                    <ul class="mt-4 space-y-3 text-sm text-slate-600">
+                        <li><a class="transition hover:text-blue-700 hover:underline hover:underline-offset-4" href="pages/cv-interview.html">CV &amp; Interview</a></li>
+                        <li><a class="transition hover:text-blue-700 hover:underline hover:underline-offset-4" href="pages/about-contact.html">About</a></li>
+                        <li><a class="transition hover:text-blue-700 hover:underline hover:underline-offset-4" href="pages/about-contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-sm font-bold uppercase tracking-[0.12em] text-slate-900">Follow us</h3>
+                    <div class="mt-4 flex items-center gap-3">
+                        <a class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-lg text-blue-600 transition hover:-translate-y-0.5 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700" href="#" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-lg text-blue-600 transition hover:-translate-y-0.5 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700" href="#" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-lg text-blue-600 transition hover:-translate-y-0.5 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700" href="#" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-lg text-blue-600 transition hover:-translate-y-0.5 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700" href="#" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-lg text-blue-600 transition hover:-translate-y-0.5 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700" href="#" aria-label="Telegram">
+                            <i class="fa-brands fa-telegram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-10 border-t border-slate-200 pt-6">
+                <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+                    <div class="flex flex-wrap items-center gap-3 text-sm text-slate-500">
+                        <span>© <span id="footerYear">2026</span> InternGuide. All rights reserved.</span>
+                    </div>
+
+                    <div class="flex flex-wrap items-center gap-4 text-sm text-slate-600">
+                        <a class="transition hover:text-blue-700" href="index.html">Home</a>
+                        <a class="transition hover:text-blue-700" href="pages/internships.html">Internships</a>
+                        <a class="transition hover:text-blue-700" href="pages/career-guide.html">Career Guide</a>
+                        <a class="transition hover:text-blue-700" href="pages/about-contact.html">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('footerYear').textContent = new Date().getFullYear();
+    </script>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const searchForm = document.getElementById("home-search-form");
+    const searchInput = document.getElementById("home-search-input");
+    const internshipList = document.getElementById("internship-list");
+    const emptyState = document.getElementById("internship-empty-state");
+    const pagination = document.getElementById("featured-internship-pagination");
+    const categoryButtons = document.querySelectorAll("[data-category]");
+
+    const pageSize = 4;
+    let activeCategory = "";
+    let currentPage = 1;
+
+    function renderFeaturedPagination(totalItems) {
+        if (!pagination) return;
+
+        const pageCount = Math.ceil(totalItems / pageSize);
+        if (pageCount <= 1) {
+            pagination.innerHTML = "";
+            pagination.classList.add("hidden");
+            return;
+        }
+
+        pagination.classList.remove("hidden");
+        const firstPage = Math.max(1, Math.min(currentPage - 2, pageCount - 4));
+        const lastPage = Math.min(pageCount, firstPage + 4);
+        const pageButtons = Array.from({ length: lastPage - firstPage + 1 }, (_, index) => {
+            const page = firstPage + index;
+            const active = page === currentPage;
+            return `
+                <button type="button" data-featured-page="${page}" ${active ? 'aria-current="page"' : ""}
+                    class="inline-flex h-10 min-w-10 items-center justify-center rounded-lg border px-3 text-sm font-medium transition-colors ${active ? "border-blue-600 bg-blue-600 text-white" : "border-slate-200 bg-white text-slate-700 hover:bg-blue-50"}">
+                    ${page}
+                </button>
+            `;
+        }).join("");
+
+        pagination.innerHTML = `
+            <button type="button" data-featured-page="${currentPage - 1}" ${currentPage === 1 ? "disabled" : ""}
+                class="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-700 hover:bg-blue-50 disabled:cursor-not-allowed disabled:opacity-40" data-i18n="common.previous">Previous</button>
+            ${pageButtons}
+            <button type="button" data-featured-page="${currentPage + 1}" ${currentPage === pageCount ? "disabled" : ""}
+                class="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-700 hover:bg-blue-50 disabled:cursor-not-allowed disabled:opacity-40" data-i18n="common.next">Next</button>
+            <span class="ml-2 text-sm text-slate-500"><span data-i18n="common.page">Page</span> ${currentPage} <span data-i18n="common.of">of</span> ${pageCount}</span>
+        `;
+        window.InternGuideI18n?.applyTranslations?.();
+    }
+
+    function filterFeaturedInternships() {
+        if (!internshipList) return;
+
+        const search = (searchInput?.value || "").trim().toLowerCase();
+        const cards = Array.from(
+            internshipList.querySelectorAll("[data-internship-card]")
+        );
+        if (!cards.length) {
+            pagination?.classList.add("hidden");
+            return;
+        }
+
+        const matchingCards = [];
+
+        cards.forEach((card) => {
+            const text = (card.getAttribute("data-search") || "").toLowerCase();
+            const category = (card.getAttribute("data-category") || "").toLowerCase();
+
+            const matchesSearch = !search || text.includes(search);
+            const matchesCategory =
+                !activeCategory ||
+                category === activeCategory.toLowerCase();
+
+            if (matchesSearch && matchesCategory) matchingCards.push(card);
+            else card.classList.add("hidden");
+        });
+
+        const pageCount = Math.max(1, Math.ceil(matchingCards.length / pageSize));
+        currentPage = Math.min(currentPage, pageCount);
+        const firstVisibleIndex = (currentPage - 1) * pageSize;
+        matchingCards.forEach((card, index) => {
+            card.classList.toggle("hidden", index < firstVisibleIndex || index >= firstVisibleIndex + pageSize);
+        });
+
+        if (emptyState) {
+            emptyState.classList.toggle("hidden", matchingCards.length > 0);
+        }
+
+        renderFeaturedPagination(matchingCards.length);
+    }
+
+    pagination?.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-featured-page]");
+        if (!button || button.disabled) return;
+
+        const page = Number(button.dataset.featuredPage);
+        if (!Number.isInteger(page)) return;
+
+        currentPage = page;
+        filterFeaturedInternships();
+        document.getElementById("internships")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    searchForm?.addEventListener("submit", (event) => {
+        event.preventDefault();
+        currentPage = 1;
+        filterFeaturedInternships();
+
+        document.getElementById("internships")?.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    });
+
+    searchInput?.addEventListener("input", () => {
+        currentPage = 1;
+        filterFeaturedInternships();
+    });
+
+    categoryButtons.forEach((button) => {
+        button.addEventListener("click", (event) => {
+            event.preventDefault();
+
+            const category = button.getAttribute("data-category") || "";
+
+            if (activeCategory === category) {
+                activeCategory = "";
+                categoryButtons.forEach((item) => {
+                    item.classList.remove("border-blue-400", "bg-blue-50", "text-blue-700");
+                });
+            } else {
+                activeCategory = category;
+
+                categoryButtons.forEach((item) => {
+                    const selected =
+                        item.getAttribute("data-category") === activeCategory;
+
+                    item.classList.toggle("border-blue-400", selected);
+                    item.classList.toggle("bg-blue-50", selected);
+                    item.classList.toggle("text-blue-700", selected);
+                });
+            }
+
+            currentPage = 1;
+            filterFeaturedInternships();
+
+            document.getElementById("internships")?.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        });
+    });
+
+    // main.ts loads the cards asynchronously, so observe the list and
+    // apply the current filter as soon as cards appear.
+    if (internshipList) {
+        const observer = new MutationObserver(() => {
+            filterFeaturedInternships();
+        });
+
+        observer.observe(internshipList, { childList: true });
+    }
+});
+</script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/i18n.js"></script>
+<script src="js/script.js"></script>
+<script src="js/auth.js"></script>
+<script type="module" src="js/testimonials.js"></script>
+<script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>

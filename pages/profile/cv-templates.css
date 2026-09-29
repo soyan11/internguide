@@ -1,0 +1,1460 @@
+#cvPreviewViewport {
+  position: relative;
+  width: 794px;
+  height: 1123px;
+  max-width: 100%;
+  margin-inline: auto;
+  overflow: visible;
+}
+
+#cvPreview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: top left;
+  margin: 0;
+}
+
+.cv-section-choices {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .55rem 1rem;
+  margin-top: .85rem;
+}
+
+.cv-section-choice {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: .5rem;
+  color: #475569;
+  font-size: .78rem;
+  cursor: pointer;
+}
+
+.cv-section-choice input {
+  accent-color: var(--cv-accent, #3B5BDB);
+}
+
+.cv-template-thumb[data-template="professional-sidebar"] .cv-thumb-body {
+  grid-template-columns: 32% 1fr;
+}
+
+.cv-template-thumb[data-template="professional-sidebar"] .cv-thumb-sidebar {
+  display: block;
+  padding: .4rem;
+  background: #173B55;
+}
+
+.cv-template-thumb[data-template="professional-sidebar"] .cv-thumb-sidebar::before {
+  display: block;
+  width: 13px;
+  height: 13px;
+  margin: 0 auto .45rem;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  content: "";
+}
+
+.cv-template-thumb[data-template="professional-sidebar"] .cv-thumb-sidebar i {
+  width: 90%;
+  height: 3px;
+  margin-bottom: 6px;
+  background: #D9E2EA;
+}
+
+.cv-paper[data-template="professional-sidebar"] .cv-page {
+  position: relative;
+  display: grid;
+  grid-template-columns: 34% minmax(0, 66%);
+  grid-auto-flow: row dense;
+  align-content: start;
+  column-gap: 0;
+  min-height: 297mm;
+  padding: 0;
+}
+
+.cv-paper[data-template="professional-sidebar"] .cv-page::before {
+  position: absolute;
+  z-index: 0;
+  inset: 0 auto 0 0;
+  width: 34%;
+  background: var(--cv-sidebar, #173B55);
+  content: "";
+}
+
+.cv-paper[data-template="professional-sidebar"] .pro-header,
+.cv-paper[data-template="professional-sidebar"] .pro-header-content,
+.cv-paper[data-template="professional-sidebar"] .pro-header-text,
+.cv-paper[data-template="professional-sidebar"] .pro-content {
+  display: contents !important;
+}
+
+.cv-paper[data-template="professional-sidebar"] .pro-photo-wrap,
+.cv-paper[data-template="professional-sidebar"] .pro-contact,
+.cv-paper[data-template="professional-sidebar"] .pro-section,
+.cv-paper[data-template="professional-sidebar"] #pName,
+.cv-paper[data-template="professional-sidebar"] #pTitle {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.cv-paper[data-template="professional-sidebar"] .pro-photo-wrap {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: center;
+  align-self: center;
+  width: 28mm;
+  height: 28mm;
+  margin: 8mm 0 4mm;
+  border: 1.2mm solid #fff;
+  border-radius: 50%;
+  background: #244A62;
+}
+
+.cv-paper[data-template="professional-sidebar"] .pro-photo {
+  border-radius: 50%;
+}
+
+.cv-paper[data-template="professional-sidebar"] #pName,
+.cv-paper[data-template="professional-sidebar"] #pTitle,
+.cv-paper[data-template="professional-sidebar"] #pContact,
+.cv-paper[data-template="professional-sidebar"] #pLinks,
+.cv-paper[data-template="professional-sidebar"] #educationSection,
+.cv-paper[data-template="professional-sidebar"] #skillsSection,
+.cv-paper[data-template="professional-sidebar"] #languagesSection,
+.cv-paper[data-template="professional-sidebar"] #certificatesSection {
+  grid-column: 1;
+  padding-right: 7mm;
+  padding-left: 7mm;
+}
+
+.cv-paper[data-template="professional-sidebar"] #pContact {
+  grid-row: 2;
+  align-self: start;
+  margin-top: 5mm;
+  color: #F1F5F9;
+  font-size: 9.5px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.cv-paper[data-template="professional-sidebar"] .cv-page:has(#cvPhotoWrap.hidden) #pContact {
+  grid-row: 1;
+  margin-top: 8mm;
+}
+
+.cv-paper[data-template="professional-sidebar"] #pContact::before {
+  display: block;
+  margin-bottom: 2.5mm;
+  color: #fff;
+  content: "CONTACT";
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+
+.cv-sidebar-contact-row {
+  display: grid;
+  grid-template-columns: 1.2em minmax(0, 1fr);
+  gap: .35em;
+  margin-bottom: 1.5mm;
+}
+
+.cv-sidebar-contact-row > :first-child {
+  color: #D8E6EF;
+}
+
+.cv-paper[data-template="professional-sidebar"] #pLinks {
+  grid-row: 3;
+  margin: 0;
+  color: #F1F5F9;
+  font-size: 9px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.cv-paper[data-template="professional-sidebar"] .cv-page:has(#cvPhotoWrap.hidden) #pLinks {
+  grid-row: 2;
+}
+
+.cv-paper[data-template="professional-sidebar"] #pLinks a {
+  display: block;
+  margin-bottom: 1.5mm;
+  color: #F1F5F9;
+  overflow-wrap: anywhere;
+}
+
+.cv-paper:not([data-template="professional-sidebar"]) #contactSection {
+  display: contents;
+}
+
+.cv-paper:not([data-template="professional-sidebar"]) #contactSection .pro-heading {
+  display: none;
+}
+
+.cv-paper[data-template="professional-sidebar"] #educationSection { order: 4 !important; }
+.cv-paper[data-template="professional-sidebar"] #skillsSection { order: 5 !important; }
+.cv-paper[data-template="professional-sidebar"] #languagesSection { order: 6 !important; }
+.cv-paper[data-template="professional-sidebar"] #certificatesSection { order: 7 !important; }
+.cv-paper[data-template="professional-sidebar"] #pName { order: 1; }
+.cv-paper[data-template="professional-sidebar"] #pTitle { order: 2; }
+.cv-paper[data-template="professional-sidebar"] #profileSection { order: 3 !important; }
+.cv-paper[data-template="professional-sidebar"] #experienceSection { order: 4 !important; }
+.cv-paper[data-template="professional-sidebar"] #projectsSection { order: 5 !important; }
+.cv-paper[data-template="professional-sidebar"] #leadershipSection { order: 6 !important; }
+.cv-paper[data-template="professional-sidebar"] #referencesSection { order: 7 !important; }
+
+.cv-paper[data-template="professional-sidebar"] #pName,
+.cv-paper[data-template="professional-sidebar"] #pTitle,
+.cv-paper[data-template="professional-sidebar"] #profileSection,
+.cv-paper[data-template="professional-sidebar"] #experienceSection,
+.cv-paper[data-template="professional-sidebar"] #projectsSection,
+.cv-paper[data-template="professional-sidebar"] #leadershipSection,
+.cv-paper[data-template="professional-sidebar"] #referencesSection {
+  padding-right: 11mm;
+  padding-left: 10mm;
+  grid-column: 2;
+}
+
+.cv-paper[data-template="professional-sidebar"] #pName {
+  align-self: end;
+  margin-top: 14mm;
+  color: #17212B;
+  font-size: 28px;
+  line-height: 1.05;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.cv-paper[data-template="professional-sidebar"] #pTitle {
+  align-self: start;
+  margin: 2mm 0 6mm;
+  color: #526170;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.cv-paper[data-template="professional-sidebar"] .pro-section {
+  margin: 0;
+  padding-top: 4mm;
+  padding-bottom: 2mm;
+  break-inside: avoid;
+}
+
+.cv-paper[data-template="professional-sidebar"] #educationSection,
+.cv-paper[data-template="professional-sidebar"] #skillsSection,
+.cv-paper[data-template="professional-sidebar"] #languagesSection,
+.cv-paper[data-template="professional-sidebar"] #certificatesSection {
+  color: #F1F5F9;
+}
+
+.cv-paper[data-template="professional-sidebar"] #educationSection .pro-heading,
+.cv-paper[data-template="professional-sidebar"] #skillsSection .pro-heading,
+.cv-paper[data-template="professional-sidebar"] #languagesSection .pro-heading,
+.cv-paper[data-template="professional-sidebar"] #certificatesSection .pro-heading {
+  color: #fff;
+  border-bottom-color: rgb(255 255 255 / 30%);
+  font-size: 10.5px;
+}
+
+.cv-paper[data-template="professional-sidebar"] #educationSection .pro-entries,
+.cv-paper[data-template="professional-sidebar"] #skillsSection .pro-skills,
+.cv-paper[data-template="professional-sidebar"] #languagesSection .pro-languages,
+.cv-paper[data-template="professional-sidebar"] #certificatesSection .pro-entries,
+.cv-paper[data-template="professional-sidebar"] #educationSection .pro-entry-title,
+.cv-paper[data-template="professional-sidebar"] #educationSection .pro-entry-subtitle,
+.cv-paper[data-template="professional-sidebar"] #certificatesSection .pro-entry-title {
+  color: #E4EDF3;
+  font-size: 9.5px;
+  line-height: 1.4;
+}
+
+.cv-paper[data-template="professional-sidebar"] #skillsSection .pro-skills {
+  display: block;
+}
+
+.cv-paper[data-template="professional-sidebar"] #skillsSection .pro-skill-label {
+  margin-top: 2mm;
+  color: #fff;
+  font-size: 9px;
+  text-transform: uppercase;
+}
+
+.cv-paper[data-template="professional-sidebar"] #skillsSection .pro-skill-value {
+  color: #E4EDF3;
+  overflow-wrap: anywhere;
+}
+
+.cv-sidebar-skill-list {
+  margin: 0;
+  padding-left: 4mm;
+  color: #E4EDF3;
+  font-size: 9.5px;
+  line-height: 1.45;
+}
+
+.cv-sidebar-skill-list li {
+  margin-bottom: .5mm;
+  break-inside: avoid;
+}
+
+.cv-paper[data-template="professional-sidebar"] #languagesSection .pro-languages {
+  display: block;
+  color: #E4EDF3;
+  font-size: 9.5px;
+}
+
+.cv-paper[data-template="professional-sidebar"] #languagesSection .pro-language {
+  margin-bottom: 1mm;
+  color: #E4EDF3;
+}
+
+.cv-paper[data-template="professional-sidebar"] #profileSection .pro-heading,
+.cv-paper[data-template="professional-sidebar"] #experienceSection .pro-heading,
+.cv-paper[data-template="professional-sidebar"] #projectsSection .pro-heading,
+.cv-paper[data-template="professional-sidebar"] #leadershipSection .pro-heading,
+.cv-paper[data-template="professional-sidebar"] #referencesSection .pro-heading {
+  color: var(--cv-accent);
+  border-bottom-color: #D6DDE7;
+  font-size: 12px;
+  letter-spacing: .08em;
+}
+
+.cv-paper[data-template="professional-sidebar"] #experienceSection .pro-entry-date {
+  white-space: normal;
+}
+
+.cv-paper[data-template="professional-sidebar"] #projectsSection .pro-entry-title {
+  color: var(--cv-accent);
+}
+
+.cv-paper[data-template="professional-sidebar"] #pContact:empty,
+.cv-paper[data-template="professional-sidebar"] #pLinks:empty {
+  display: none;
+}
+
+@media (max-width: 639px) {
+  .cv-section-choices { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  body #cvPreviewViewport {
+    position: static !important;
+    width: 210mm !important;
+    max-width: none !important;
+    height: auto !important;
+    min-height: 297mm !important;
+    margin: 0 !important;
+    overflow: visible !important;
+  }
+
+  body #cvPreview.cv-paper {
+    position: static !important;
+    width: 210mm !important;
+    max-width: none !important;
+    position: static !important;
+    height: auto !important;
+    min-height: 297mm !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    transform: none !important;
+  }
+
+  body #previewPanel { position: static !important; }
+
+  body #cvPreview .cv-page {
+    width: 210mm !important;
+    height: auto !important;
+    min-height: 297mm !important;
+  }
+
+  body #cvPreview .cv-template-photo-hidden,
+  body #cvPreview .pro-photo-wrap.cv-template-photo-hidden,
+  body #cvPreview[data-template="minimal-professional"] .pro-photo-wrap,
+  body #cvPreview[data-template="creative-it"] .pro-photo-wrap {
+    display: none !important;
+  }
+
+  body #cvPreview[data-template="minimal-professional"] .pro-header-content,
+  body #cvPreview[data-template="creative-it"] .pro-header-content {
+    display: block !important;
+  }
+
+  body #cvPreview[data-template="creative-it"] .cv-page {
+    display: grid !important;
+    grid-template-columns: 32% minmax(0, 1fr) !important;
+  }
+
+  body #cvPreview[data-template="creative-it"] .pro-content {
+    display: contents !important;
+  }
+
+  body #cvPreview[data-template="premium-one-page"] .pro-section {
+    margin-bottom: 3mm !important;
+  }
+}
+
+@media print {
+  body #cvPreview[data-template="professional-sidebar"] .cv-page {
+    display: grid !important;
+    grid-template-columns: 34% minmax(0, 66%) !important;
+    min-height: 297mm !important;
+    padding: 0 !important;
+  }
+
+  body #cvPreview[data-template="professional-sidebar"] .cv-page::before {
+    position: absolute !important;
+    inset: 0 auto 0 0 !important;
+    width: 34% !important;
+  }
+
+  body #cvPreview[data-template="professional-sidebar"] .pro-header,
+  body #cvPreview[data-template="professional-sidebar"] .pro-header-content,
+  body #cvPreview[data-template="professional-sidebar"] .pro-header-text,
+  body #cvPreview[data-template="professional-sidebar"] .pro-content {
+    display: contents !important;
+  }
+
+  body #cvPreview[data-template="professional-sidebar"] .pro-photo-wrap:not(.hidden):not(.cv-template-photo-hidden) {
+    display: block !important;
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    width: 28mm !important;
+    height: 28mm !important;
+    border-radius: 50% !important;
+  }
+
+  body #cvPreview[data-template="professional-sidebar"] .pro-photo {
+    border-radius: 50% !important;
+  }
+
+  body #cvPreview[data-template="professional-sidebar"] .pro-section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
+/* Final layout pass for the Professional Sidebar template. */
+.cv-paper[data-template="professional-sidebar"] .cv-page {
+  grid-template-columns: 32% minmax(0, 68%);
+  grid-template-rows: repeat(7, min-content);
+  grid-auto-flow: row;
+  grid-auto-rows: min-content;
+  align-content: start;
+  align-items: start;
+  height: auto;
+  min-height: 297mm;
+  padding: 0;
+}
+
+.cv-paper[data-template="professional-sidebar"] .cv-page::before {
+  width: 32%;
+  background: var(--cv-sidebar, #173B55);
+}
+
+.cv-paper[data-template="professional-sidebar"] #cvPhotoWrap {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  align-self: start;
+  width: 27mm;
+  height: 27mm;
+  margin: 8mm auto 0;
+  border-width: .6mm;
+}
+
+.cv-paper[data-template="professional-sidebar"] #cvPhotoWrap.hidden,
+.cv-paper[data-template="professional-sidebar"] #cvPhotoWrap.cv-template-photo-hidden {
+  display: none !important;
+}
+
+.cv-paper[data-template="professional-sidebar"] #pName {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+  align-self: start;
+  margin: 9mm 0 0;
+  padding: 0 10mm 0 9mm;
+  color: #17212B;
+  font-size: 30px;
+  line-height: 1.08;
+  font-weight: 750;
+  letter-spacing: 0;
+}
+
+.cv-paper[data-template="professional-sidebar"] #pTitle {
+  grid-column: 2 !important;
+  grid-row: 2 !important;
+  align-self: start;
+  margin: 1.5mm 0 2mm;
+  padding: 0 10mm 0 9mm;
+  color: #526170;
+  font-size: 12.5px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.cv-paper[data-template="professional-sidebar"] #pContact {
+  grid-column: 1 !important;
+  grid-row: 2 !important;
+  align-self: start;
+  margin: 5mm 0 0;
+  padding: 0 5mm 0 6mm;
+  color: #F1F5F9;
+  font-size: 10px;
+  line-height: 1.42;
+  overflow-wrap: anywhere;
+}
+
+.cv-paper[data-template="professional-sidebar"] .cv-page:has(#cvPhotoWrap.hidden) #pContact,
+.cv-paper[data-template="professional-sidebar"] .cv-page:has(#cvPhotoWrap.cv-template-photo-hidden) #pContact {
+  grid-row: 1 !important;
+  margin-top: 8mm;
+}
+
+.cv-paper[data-template="professional-sidebar"] #pContact::before {
+  margin-bottom: 2mm;
+  font-size: 10.5px;
+  letter-spacing: .08em;
+}
+
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar-contact-row {
+  grid-template-columns: 1.25em minmax(0, 1fr);
+  gap: .4em;
+  margin-bottom: 1.2mm;
+  line-height: 1.4;
+}
+
+.cv-paper[data-template="professional-sidebar"] #pLinks {
+  grid-column: 1 !important;
+  grid-row: 3 !important;
+  align-self: start;
+  margin: 1mm 0 0;
+  padding: 0 5mm 0 6mm;
+  color: #F1F5F9;
+  font-size: 9.5px;
+  line-height: 1.42;
+  overflow-wrap: anywhere;
+}
+
+.cv-paper[data-template="professional-sidebar"] .cv-page:has(#cvPhotoWrap.hidden) #pLinks,
+.cv-paper[data-template="professional-sidebar"] .cv-page:has(#cvPhotoWrap.cv-template-photo-hidden) #pLinks {
+  grid-row: 2 !important;
+}
+
+.cv-paper[data-template="professional-sidebar"] #educationSection {
+  grid-column: 1 !important;
+  grid-row: 4 !important;
+}
+
+.cv-paper[data-template="professional-sidebar"] #skillsSection {
+  grid-column: 1 !important;
+  grid-row: 5 !important;
+}
+
+.cv-paper[data-template="professional-sidebar"] #languagesSection {
+  grid-column: 1 !important;
+  grid-row: 6 !important;
+}
+
+.cv-paper[data-template="professional-sidebar"] #certificatesSection {
+  grid-column: 1 !important;
+  grid-row: 7 !important;
+}
+
+.cv-paper[data-template="professional-sidebar"] #profileSection {
+  grid-column: 2 !important;
+  grid-row: 3 !important;
+}
+
+.cv-paper[data-template="professional-sidebar"] #experienceSection {
+  grid-column: 2 !important;
+  grid-row: 4 !important;
+}
+
+.cv-paper[data-template="professional-sidebar"] #projectsSection {
+  grid-column: 2 !important;
+  grid-row: 5 !important;
+}
+
+.cv-paper[data-template="professional-sidebar"] #leadershipSection {
+  grid-column: 2 !important;
+  grid-row: 6 !important;
+}
+
+.cv-paper[data-template="professional-sidebar"] #referencesSection {
+  grid-column: 2 !important;
+  grid-row: 7 !important;
+}
+
+.cv-paper[data-template="professional-sidebar"] .pro-section {
+  align-self: start;
+  min-width: 0;
+  margin: 0;
+  padding: 3mm 5mm 1mm 6mm;
+  break-inside: auto;
+  page-break-inside: auto;
+}
+
+.cv-paper[data-template="professional-sidebar"] #educationSection,
+.cv-paper[data-template="professional-sidebar"] #skillsSection,
+.cv-paper[data-template="professional-sidebar"] #languagesSection,
+.cv-paper[data-template="professional-sidebar"] #certificatesSection {
+  padding-right: 5mm;
+}
+
+.cv-paper[data-template="professional-sidebar"] #profileSection,
+.cv-paper[data-template="professional-sidebar"] #experienceSection,
+.cv-paper[data-template="professional-sidebar"] #projectsSection,
+.cv-paper[data-template="professional-sidebar"] #leadershipSection,
+.cv-paper[data-template="professional-sidebar"] #referencesSection {
+  padding-right: 10mm;
+  padding-left: 9mm;
+}
+
+.cv-paper[data-template="professional-sidebar"] .pro-heading {
+  margin: 0 0 1.8mm;
+  padding: 0 0 1mm;
+  font-size: 11px;
+  line-height: 1.2;
+  letter-spacing: .07em;
+}
+
+.cv-paper[data-template="professional-sidebar"] .pro-summary,
+.cv-paper[data-template="professional-sidebar"] .pro-entries,
+.cv-paper[data-template="professional-sidebar"] .pro-skills,
+.cv-paper[data-template="professional-sidebar"] .pro-languages {
+  min-width: 0;
+  font-size: 10.2px;
+  line-height: 1.42;
+  overflow-wrap: anywhere;
+}
+
+.cv-paper[data-template="professional-sidebar"] .pro-entry {
+  margin: 0 0 2.5mm;
+  break-inside: auto;
+  page-break-inside: auto;
+}
+
+.cv-paper[data-template="professional-sidebar"] .pro-entry:last-child {
+  margin-bottom: 0;
+}
+
+.cv-paper[data-template="professional-sidebar"] .pro-entry-head {
+  align-items: baseline;
+  gap: 2mm;
+}
+
+.cv-paper[data-template="professional-sidebar"] .pro-entry-title {
+  min-width: 0;
+  font-size: 10.5px;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.cv-paper[data-template="professional-sidebar"] .pro-entry-subtitle,
+.cv-paper[data-template="professional-sidebar"] .pro-entry-date {
+  font-size: 9.8px;
+  line-height: 1.35;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.cv-paper[data-template="professional-sidebar"] .pro-entry-description,
+.cv-paper[data-template="professional-sidebar"] .pro-bullets {
+  margin-top: 1mm;
+  font-size: 10px;
+  line-height: 1.42;
+}
+
+.cv-paper[data-template="professional-sidebar"] .pro-bullets {
+  padding-left: 4mm !important;
+}
+
+.cv-paper[data-template="professional-sidebar"] #skillsSection .cv-sidebar-skill-list {
+  padding-left: 4mm;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.cv-paper[data-template="professional-sidebar"] #skillsSection .cv-sidebar-skill-list li {
+  margin-bottom: .4mm;
+}
+
+.cv-paper[data-template="professional-sidebar"] #skillsSection .pro-skill-label {
+  margin-top: 1mm;
+  font-size: 9.5px;
+}
+
+.cv-paper[data-template="professional-sidebar"] #languagesSection .pro-languages {
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.cv-paper[data-template="professional-sidebar"] #languagesSection .pro-language {
+  margin-bottom: .7mm;
+}
+
+.cv-paper[data-template="professional-sidebar"] #educationSection .pro-entry-title,
+.cv-paper[data-template="professional-sidebar"] #educationSection .pro-entry-subtitle,
+.cv-paper[data-template="professional-sidebar"] #certificatesSection .pro-entry-title {
+  font-size: 9.8px;
+  line-height: 1.4;
+}
+
+.cv-paper[data-template="professional-sidebar"] #pContact:empty,
+.cv-paper[data-template="professional-sidebar"] #pLinks:empty,
+.cv-paper[data-template="professional-sidebar"] .pro-section.hidden {
+  display: none !important;
+}
+
+@media print {
+  body #cvPreview[data-template="professional-sidebar"] .cv-page {
+    grid-template-columns: 32% minmax(0, 68%) !important;
+    grid-template-rows: repeat(7, min-content) !important;
+    grid-auto-flow: row !important;
+    grid-auto-rows: min-content !important;
+    align-items: start !important;
+    align-content: start !important;
+    min-height: 297mm !important;
+  }
+
+  body #cvPreview[data-template="professional-sidebar"] .cv-page::before {
+    width: 32% !important;
+  }
+
+  body #cvPreview[data-template="professional-sidebar"] #cvPhotoWrap {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    width: 27mm !important;
+    height: 27mm !important;
+    margin: 8mm auto 0 !important;
+  }
+
+  body #cvPreview[data-template="professional-sidebar"] #cvPhotoWrap.hidden,
+  body #cvPreview[data-template="professional-sidebar"] #cvPhotoWrap.cv-template-photo-hidden {
+    display: none !important;
+  }
+
+  body #cvPreview[data-template="professional-sidebar"] #pName { grid-column: 2 !important; grid-row: 1 !important; margin-top: 9mm !important; }
+  body #cvPreview[data-template="professional-sidebar"] #pTitle { grid-column: 2 !important; grid-row: 2 !important; }
+  body #cvPreview[data-template="professional-sidebar"] #pContact { grid-column: 1 !important; grid-row: 2 !important; }
+  body #cvPreview[data-template="professional-sidebar"] #educationSection { grid-column: 1 !important; grid-row: 4 !important; }
+  body #cvPreview[data-template="professional-sidebar"] #skillsSection { grid-column: 1 !important; grid-row: 5 !important; }
+  body #cvPreview[data-template="professional-sidebar"] #languagesSection { grid-column: 1 !important; grid-row: 6 !important; }
+  body #cvPreview[data-template="professional-sidebar"] #certificatesSection { grid-column: 1 !important; grid-row: 7 !important; }
+  body #cvPreview[data-template="professional-sidebar"] #profileSection { grid-column: 2 !important; grid-row: 3 !important; }
+  body #cvPreview[data-template="professional-sidebar"] #experienceSection { grid-column: 2 !important; grid-row: 4 !important; }
+  body #cvPreview[data-template="professional-sidebar"] #projectsSection { grid-column: 2 !important; grid-row: 5 !important; }
+  body #cvPreview[data-template="professional-sidebar"] #leadershipSection { grid-column: 2 !important; grid-row: 6 !important; }
+  body #cvPreview[data-template="professional-sidebar"] #referencesSection { grid-column: 2 !important; grid-row: 7 !important; }
+  body #cvPreview[data-template="professional-sidebar"] .pro-section { break-inside: auto !important; page-break-inside: auto !important; }
+}
+
+.cv-paper[data-template="professional-sidebar"] .cv-page {
+  grid-template-rows: repeat(7, min-content);
+}
+
+.cv-paper[data-template="professional-sidebar"] .pro-header-text {
+  display: contents !important;
+}
+
+.cv-paper[data-template="professional-sidebar"] #pName {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+  align-self: end;
+  margin: 0;
+  padding: 0 10mm 0 9mm;
+}
+
+.cv-paper[data-template="professional-sidebar"] #pTitle {
+  grid-column: 2 !important;
+  grid-row: 2 !important;
+  margin: 1.5mm 0 2mm;
+  padding: 0 10mm 0 9mm;
+}
+
+.cv-paper[data-template="professional-sidebar"] #educationSection { grid-row: 4 !important; }
+.cv-paper[data-template="professional-sidebar"] #skillsSection { grid-row: 5 !important; }
+.cv-paper[data-template="professional-sidebar"] #languagesSection { grid-row: 6 !important; }
+.cv-paper[data-template="professional-sidebar"] #certificatesSection { grid-row: 7 !important; }
+.cv-paper[data-template="professional-sidebar"] #profileSection { grid-row: 3 !important; }
+.cv-paper[data-template="professional-sidebar"] #experienceSection { grid-row: 4 !important; }
+.cv-paper[data-template="professional-sidebar"] #projectsSection { grid-row: 5 !important; }
+.cv-paper[data-template="professional-sidebar"] #leadershipSection { grid-row: 6 !important; }
+.cv-paper[data-template="professional-sidebar"] #referencesSection { grid-row: 7 !important; }
+
+.cv-paper[data-template="professional-sidebar"] .cv-page:has(#cvPhotoWrap.hidden) #pContact,
+.cv-paper[data-template="professional-sidebar"] .cv-page:has(#cvPhotoWrap.cv-template-photo-hidden) #pContact {
+  grid-row: 1 !important;
+  margin-top: 0;
+}
+
+.cv-paper[data-template="professional-sidebar"] #educationSection { grid-row: 3 !important; }
+.cv-paper[data-template="professional-sidebar"] #skillsSection { grid-row: 4 !important; }
+.cv-paper[data-template="professional-sidebar"] #languagesSection { grid-row: 5 !important; }
+.cv-paper[data-template="professional-sidebar"] #certificatesSection { grid-row: 6 !important; }
+.cv-paper[data-template="professional-sidebar"] #profileSection { grid-row: 2 !important; }
+.cv-paper[data-template="professional-sidebar"] #experienceSection { grid-row: 3 !important; }
+.cv-paper[data-template="professional-sidebar"] #projectsSection { grid-row: 4 !important; }
+.cv-paper[data-template="professional-sidebar"] #leadershipSection { grid-row: 5 !important; }
+.cv-paper[data-template="professional-sidebar"] #referencesSection { grid-row: 6 !important; }
+
+@media print {
+  body #cvPreview[data-template="professional-sidebar"] .cv-page {
+    grid-template-rows: repeat(7, min-content) !important;
+  }
+
+  body #cvPreview[data-template="professional-sidebar"] .pro-header-text {
+    display: contents !important;
+  }
+
+  body #cvPreview[data-template="professional-sidebar"] #pName { grid-column: 2 !important; grid-row: 1 !important; align-self: end !important; padding: 0 10mm 0 9mm !important; }
+  body #cvPreview[data-template="professional-sidebar"] #pTitle { grid-column: 2 !important; grid-row: 2 !important; padding: 0 10mm 0 9mm !important; }
+  body #cvPreview[data-template="professional-sidebar"] #educationSection { grid-row: 4 !important; }
+  body #cvPreview[data-template="professional-sidebar"] #skillsSection { grid-row: 5 !important; }
+  body #cvPreview[data-template="professional-sidebar"] #languagesSection { grid-row: 6 !important; }
+  body #cvPreview[data-template="professional-sidebar"] #certificatesSection { grid-row: 7 !important; }
+  body #cvPreview[data-template="professional-sidebar"] #profileSection { grid-row: 3 !important; }
+  body #cvPreview[data-template="professional-sidebar"] #experienceSection { grid-row: 4 !important; }
+  body #cvPreview[data-template="professional-sidebar"] #projectsSection { grid-row: 5 !important; }
+  body #cvPreview[data-template="professional-sidebar"] #leadershipSection { grid-row: 6 !important; }
+  body #cvPreview[data-template="professional-sidebar"] #referencesSection { grid-row: 7 !important; }
+}
+
+.cv-sidebar,
+.cv-main,
+.cv-main-header {
+  display: contents;
+}
+
+.cv-paper[data-template="professional-sidebar"] .cv-page {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 210mm;
+  min-height: 297mm;
+  height: auto;
+  padding: 0;
+  overflow: visible;
+  background: #fff;
+}
+
+.cv-paper[data-template="professional-sidebar"] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6mm;
+  height: auto;
+  min-height: 297mm;
+  overflow: visible;
+}
+
+.cv-paper[data-template="professional-sidebar"] > .cv-page {
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  box-shadow: 0 2px 12px rgb(15 23 42 / 8%);
+}
+
+.cv-paper[data-template="professional-sidebar"] .cv-page::before,
+.cv-paper[data-template="professional-sidebar"] .pro-header {
+  display: none !important;
+}
+
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar {
+  display: flex;
+  flex: 0 0 32%;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 0;
+  width: 32%;
+  height: 297mm;
+  min-height: 0;
+  box-sizing: border-box;
+  padding: 8mm 6mm;
+  overflow: visible;
+  background: var(--cv-sidebar, #173B55);
+  color: #F1F5F9;
+}
+
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar > .pro-section {
+  order: 0 !important;
+}
+
+.cv-paper[data-template="professional-sidebar"] .cv-main {
+  display: block;
+  flex: 1 1 68%;
+  width: 68%;
+  min-width: 0;
+  min-height: 297mm;
+  height: auto;
+  box-sizing: border-box;
+  padding: 9mm 10mm 8mm;
+  overflow: visible;
+  background: #fff;
+}
+
+.cv-paper[data-template="professional-sidebar"] .cv-main-header {
+  display: block;
+  min-width: 0;
+  margin: 0 0 5mm;
+}
+
+.cv-paper[data-template="professional-sidebar"] #pName {
+  display: block;
+  margin: 0 0 1.2mm;
+  padding: 0;
+  color: #17212B;
+  font-size: 30px;
+  line-height: 1.1;
+  font-weight: 750;
+  overflow-wrap: anywhere;
+}
+
+.cv-paper[data-template="professional-sidebar"] #pTitle {
+  display: block;
+  margin: 0;
+  padding: 0;
+  color: #526170;
+  font-size: 12px;
+  line-height: 1.35;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.cv-paper[data-template="professional-sidebar"] .pro-content {
+  display: block !important;
+  min-width: 0;
+  padding: 0;
+}
+
+.cv-paper[data-template="professional-sidebar"] .pro-section,
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar .pro-section {
+  display: block;
+  position: static;
+  min-width: 0;
+  height: auto;
+  min-height: 0;
+  margin: 0 0 4mm;
+  padding: 0;
+  break-inside: auto;
+  page-break-inside: auto;
+}
+
+.cv-paper[data-template="professional-sidebar"] .pro-section:last-child {
+  margin-bottom: 0;
+}
+
+.cv-paper[data-template="professional-sidebar"] .pro-heading {
+  margin: 0 0 1.8mm;
+  padding: 0 0 1mm;
+  font-size: 11px;
+  line-height: 1.2;
+  letter-spacing: .07em;
+}
+
+.cv-paper[data-template="professional-sidebar"] .pro-summary,
+.cv-paper[data-template="professional-sidebar"] .pro-entries,
+.cv-paper[data-template="professional-sidebar"] .pro-skills,
+.cv-paper[data-template="professional-sidebar"] .pro-languages {
+  min-width: 0;
+  font-size: 10px;
+  line-height: 1.42;
+  overflow-wrap: anywhere;
+}
+
+.cv-paper[data-template="professional-sidebar"] .pro-entry {
+  height: auto;
+  min-height: 0;
+  margin: 0 0 2.5mm;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.cv-paper[data-template="professional-sidebar"] .pro-entry:last-child {
+  margin-bottom: 0;
+}
+
+.cv-paper[data-template="professional-sidebar"] .pro-entry-title {
+  min-width: 0;
+  font-size: 10.5px;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.cv-paper[data-template="professional-sidebar"] .pro-entry-subtitle,
+.cv-paper[data-template="professional-sidebar"] .pro-entry-date {
+  font-size: 9.8px;
+  line-height: 1.35;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.cv-paper[data-template="professional-sidebar"] .pro-entry-description,
+.cv-paper[data-template="professional-sidebar"] .pro-bullets {
+  margin-top: 1mm;
+  font-size: 10px;
+  line-height: 1.42;
+}
+
+.cv-paper[data-template="professional-sidebar"] #cvPhotoWrap {
+  display: block;
+  position: static;
+  width: 27mm;
+  height: 27mm;
+  flex: 0 0 27mm;
+  margin: 0 auto 6mm;
+  border: .6mm solid #fff;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.cv-paper[data-template="professional-sidebar"] #cvPhotoWrap.hidden,
+.cv-paper[data-template="professional-sidebar"] #cvPhotoWrap.cv-template-photo-hidden {
+  display: none !important;
+}
+
+.cv-paper[data-template="professional-sidebar"] #cvPhotoWrap img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.cv-paper[data-template="professional-sidebar"] #pContact,
+.cv-paper[data-template="professional-sidebar"] #pLinks {
+  display: block;
+  position: static;
+  width: 100%;
+  margin: 0 0 4mm;
+  padding: 0;
+  color: #F1F5F9;
+  font-size: 9.5px;
+  line-height: 1.42;
+  overflow-wrap: anywhere;
+}
+
+.cv-paper[data-template="professional-sidebar"] #pContact::before {
+  display: block;
+  margin: 0 0 2mm;
+  color: #fff;
+  content: "CONTACT";
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .7px;
+}
+
+.cv-paper[data-template="professional-sidebar"] #pLinks a {
+  display: block;
+  margin: 0 0 1.2mm;
+  color: #F1F5F9;
+  overflow-wrap: anywhere;
+}
+
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar-contact-row {
+  display: grid;
+  grid-template-columns: 1.25em minmax(0, 1fr);
+  gap: .4em;
+  margin-bottom: 1.2mm;
+}
+
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar .pro-heading {
+  color: #fff;
+  border-bottom-color: rgb(255 255 255 / 35%);
+  font-size: 10px;
+  letter-spacing: .7px;
+}
+
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar .pro-entries,
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar .pro-skills,
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar .pro-languages {
+  color: #E4EDF3;
+  font-size: 9.5px;
+  line-height: 1.4;
+}
+
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar .pro-entry-title,
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar .pro-entry-subtitle {
+  color: #E4EDF3;
+  font-size: 9.5px;
+}
+
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar .pro-skill-label {
+  margin-top: 1mm;
+  color: #fff;
+  font-size: 9px;
+}
+
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar-skill-list {
+  margin: 0;
+  padding-left: 4mm;
+  color: #E4EDF3;
+  font-size: 9.5px;
+  line-height: 1.4;
+}
+
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar-skill-list li {
+  margin-bottom: .4mm;
+  break-inside: avoid;
+}
+
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar .pro-language {
+  margin-bottom: .7mm;
+  color: #E4EDF3;
+}
+
+.cv-paper[data-template="professional-sidebar"] .cv-main .pro-heading {
+  color: var(--cv-accent);
+  border-bottom-color: #CFD8DF;
+}
+
+.cv-paper[data-template="professional-sidebar"] #educationSection.cv-sidebar-overflow .pro-heading,
+.cv-paper[data-template="professional-sidebar"] #skillsSection.cv-sidebar-overflow .pro-heading,
+.cv-paper[data-template="professional-sidebar"] #languagesSection.cv-sidebar-overflow .pro-heading,
+.cv-paper[data-template="professional-sidebar"] #certificatesSection.cv-sidebar-overflow .pro-heading {
+  color: var(--cv-accent);
+  border-bottom-color: #CFD8DF;
+}
+
+.cv-paper[data-template="professional-sidebar"] #educationSection.cv-sidebar-overflow .pro-entries,
+.cv-paper[data-template="professional-sidebar"] #skillsSection.cv-sidebar-overflow .pro-skills,
+.cv-paper[data-template="professional-sidebar"] #languagesSection.cv-sidebar-overflow .pro-languages,
+.cv-paper[data-template="professional-sidebar"] #certificatesSection.cv-sidebar-overflow .pro-entries,
+.cv-paper[data-template="professional-sidebar"] #educationSection.cv-sidebar-overflow .pro-entry-title,
+.cv-paper[data-template="professional-sidebar"] #educationSection.cv-sidebar-overflow .pro-entry-subtitle,
+.cv-paper[data-template="professional-sidebar"] #certificatesSection.cv-sidebar-overflow .pro-entry-title {
+  color: #303945;
+  font-size: 10px;
+}
+
+.cv-paper[data-template="professional-sidebar"] #pContact:empty,
+.cv-paper[data-template="professional-sidebar"] #pLinks:empty,
+.cv-paper[data-template="professional-sidebar"] .pro-section.hidden {
+  display: none !important;
+}
+
+@media print {
+  body #cvPreview[data-template="professional-sidebar"] .cv-page {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    width: 210mm !important;
+    min-height: 297mm !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+
+  body #cvPreview[data-template="professional-sidebar"] {
+    display: block !important;
+    gap: 0 !important;
+    width: 210mm !important;
+  }
+
+  body #cvPreview[data-template="professional-sidebar"] > .cv-page {
+    flex: none !important;
+    box-shadow: none !important;
+    break-after: page;
+    page-break-after: always;
+  }
+
+  body #cvPreview[data-template="professional-sidebar"] > .cv-page:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+
+  body #cvPreview[data-template="professional-sidebar"] .cv-sidebar {
+    display: flex !important;
+    flex: 0 0 32% !important;
+    width: 32% !important;
+    height: 297mm !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    background: var(--cv-sidebar, #173B55) !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  body #cvPreview[data-template="professional-sidebar"] .cv-main {
+    display: block !important;
+    flex: 1 1 68% !important;
+    width: 68% !important;
+    min-width: 0 !important;
+    min-height: 297mm !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  body #cvPreview[data-template="professional-sidebar"] .cv-main-header,
+  body #cvPreview[data-template="professional-sidebar"] .pro-content {
+    display: block !important;
+  }
+
+  body #cvPreview[data-template="professional-sidebar"] .pro-section,
+  body #cvPreview[data-template="professional-sidebar"] .pro-entry {
+    break-inside: auto;
+    page-break-inside: auto;
+  }
+
+  body #cvPreview[data-template="professional-sidebar"] .pro-entry {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  html,
+  body {
+    width: 210mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+  }
+
+  body main > .grid {
+    display: block !important;
+    width: 210mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  body #templateChooser {
+    display: none !important;
+  }
+
+  body #previewPanel {
+    position: static !important;
+    width: 210mm !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  body #previewPanel > .no-print {
+    display: none !important;
+  }
+
+  body #cvPreviewViewport {
+    position: static !important;
+    width: 210mm !important;
+    max-width: none !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  body #cvPreview[data-template="professional-sidebar"] {
+    display: block !important;
+    position: static !important;
+    width: 210mm !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  body #cvPreview[data-template="professional-sidebar"] > .cv-page {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: stretch !important;
+    width: 210mm !important;
+    height: 297mm !important;
+    min-height: 297mm !important;
+    max-height: 297mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+    break-before: avoid !important;
+    page-break-before: avoid !important;
+  }
+
+  body #cvPreview[data-template="professional-sidebar"] > .cv-page:not(:last-child) {
+    break-after: page !important;
+    page-break-after: always !important;
+  }
+
+  body #cvPreview[data-template="professional-sidebar"] > .cv-page.cv-page-continuation {
+    break-before: page !important;
+    page-break-before: always !important;
+  }
+
+  body #cvPreview[data-template="professional-sidebar"] > .cv-page:last-child {
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+
+  body #cvPreview[data-template="professional-sidebar"] .cv-sidebar {
+    flex: 0 0 32% !important;
+    width: 32% !important;
+    height: 297mm !important;
+    min-height: 0 !important;
+    max-height: 297mm !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body #cvPreview[data-template="professional-sidebar"] .cv-main {
+    flex: 0 0 68% !important;
+    width: 68% !important;
+    height: 297mm !important;
+    min-height: 0 !important;
+    max-height: 297mm !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  body #cvPreview[data-template="professional-sidebar"] .cv-sidebar-overflow {
+    display: block !important;
+  }
+}
+
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar .cv-sidebar-section {
+  width: 100%;
+  margin: 0 0 4mm;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar #educationSection,
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar #skillsSection,
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar #languagesSection,
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar #certificatesSection {
+  width: 100%;
+  margin: 0 0 4mm;
+  padding: 0 !important;
+}
+
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar .cv-sidebar-section .pro-heading {
+  margin: 0 0 1.8mm;
+  padding: 0 0 1mm;
+  color: #fff;
+  border-bottom: 1px solid rgb(255 255 255 / 35%);
+  font-size: 10px;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+}
+
+.cv-paper[data-template="professional-sidebar"] #pContact,
+.cv-paper[data-template="professional-sidebar"] #pLinks {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: rgb(255 255 255 / 95%);
+  font-size: 9.5px;
+  line-height: 1.4;
+}
+
+.cv-paper[data-template="professional-sidebar"] #pLinks {
+  padding-left: 4.4mm;
+}
+
+.cv-paper[data-template="professional-sidebar"] #pContact::before {
+  display: none;
+  content: none;
+}
+
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar-contact-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5mm;
+  width: 100%;
+  margin: 0;
+}
+
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar-contact-row + .cv-sidebar-contact-row {
+  margin-top: 1mm;
+}
+
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar-contact-row > :first-child {
+  width: 2.9mm;
+  min-width: 2.9mm;
+  flex: 0 0 2.9mm;
+  font-size: 8px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar-contact-row > :last-child {
+  flex: 1 1 auto;
+  min-width: 0;
+  color: rgb(255 255 255 / 95%);
+  font-size: 9.5px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar #educationSection .pro-entries,
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar #skillsSection .pro-skills,
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar #languagesSection .pro-languages,
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar #certificatesSection .pro-entries {
+  padding-left: 4.4mm;
+}
+
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar .cv-sidebar-skill-list {
+  padding-left: 0;
+}
+
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar #skillsSection .cv-sidebar-skill-list {
+  padding-left: 0 !important;
+}
+
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar .cv-sidebar-section .pro-heading,
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar #educationSection .pro-heading,
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar #skillsSection .pro-heading,
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar #languagesSection .pro-heading,
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar #certificatesSection .pro-heading {
+  margin: 0 0 1.8mm;
+  padding: 0 0 1mm;
+  color: #fff;
+  border-bottom: 1px solid rgb(255 255 255 / 35%);
+  font-size: 10px;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+}
+
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar #educationSection .pro-entries,
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar #skillsSection .pro-skills,
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar #languagesSection .pro-languages,
+.cv-paper[data-template="professional-sidebar"] .cv-sidebar #certificatesSection .pro-entries {
+  font-size: 9.5px;
+  line-height: 1.4;
+}
+
+.cv-paper[data-template="professional-sidebar"] #pLinks a {
+  display: block;
+  margin: 1mm 0 0;
+  color: #F1F5F9;
+  font-size: 9.5px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}

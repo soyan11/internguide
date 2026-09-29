@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Guides - InternGuide Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/admin.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ig: {
+                            primary: "#3B5BDB",
+                            secondary: "#748FFC",
+                            dark: "#1C1F26",
+                            body: "#343A40",
+                            light: "#EDF2FF",
+                            bg: "#F8F9FF",
+                            border: "#DEE2E6"
+                        }
+                    },
+                    fontFamily: {
+                        poppins: ["Poppins", "sans-serif"]
+                    },
+                    boxShadow: {
+                        card: "0 2px 10px rgba(28,31,38,.04)"
+                    }
+                }
+            }
+        };
+    </script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="min-h-screen bg-ig-bg font-poppins text-ig-dark antialiased">
+
+<div class="admin-layout min-h-screen lg:flex">
+
+<aside id="sidebar" class="admin-sidebar" aria-label="Admin navigation">
+    <div class="sidebar-brand">
+        <a href="../index.html" class="brand-link" aria-label="InternGuide home">
+            <span class="brand-logo-wrap"><img src="../src/assets/images/logo.png" alt="InternGuide" class="brand-logo"></span>
+        </a>
+        <div class="sidebar-brand-copy">
+            <span class="sidebar-brand-name">InternGuide</span>
+            <span class="sidebar-subtitle">Admin Panel</span>
+        </div>
+    </div>
+
+    <nav class="sidebar-nav" aria-label="Admin navigation">
+        <a href="./dashboard.html" class="sidebar-item flex min-h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium transition text-slate-300 hover:bg-white/10 hover:text-white"><i data-lucide="layout-dashboard" class="h-5 w-5 shrink-0"></i><span data-i18n="admin.dashboard">Dashboard</span></a>
+        <a href="./users.html" class="sidebar-item flex min-h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium transition text-slate-300 hover:bg-white/10 hover:text-white"><i data-lucide="users" class="h-5 w-5 shrink-0"></i><span data-i18n="admin.users">Users</span></a>
+        <a href="./internships.html" class="sidebar-item flex min-h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium transition text-slate-300 hover:bg-white/10 hover:text-white"><i data-lucide="briefcase-business" class="h-5 w-5 shrink-0"></i><span data-i18n="admin.internships">Internships</span></a>
+        <a href="./applications.html" class="sidebar-item flex min-h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium transition text-slate-300 hover:bg-white/10 hover:text-white"><i data-lucide="file-text" class="h-5 w-5 shrink-0"></i><span data-i18n="applications.adminTitle">Applications</span></a>
+        <a href="./testimonials.html" class="sidebar-item flex min-h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium transition text-slate-300 hover:bg-white/10 hover:text-white"><i data-lucide="message-square-quote" class="h-5 w-5 shrink-0"></i><span data-i18n="testimonials.adminTitle">Testimonials</span></a>
+        <a href="./career-guides.html" class="sidebar-item flex min-h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium transition sidebar-item-active bg-ig-primary/20 text-white" aria-current="page"><i data-lucide="book-open" class="h-5 w-5 shrink-0"></i><span data-i18n="admin.careerGuides">Career Guides</span></a>
+        <a href="./messages.html" class="sidebar-item flex min-h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium text-slate-300 transition hover:bg-white/10 hover:text-white"><i data-lucide="mail" class="h-5 w-5 shrink-0"></i><span>Messages</span><span id="messagesSidebarBadge" class="ml-auto hidden min-w-5 rounded-full bg-red-500 px-1.5 py-0.5 text-center text-[10px] font-semibold text-white">0</span></a>
+    </nav>
+
+    <div class="sidebar-bottom">
+        <a href="../index.html" class="sidebar-item flex min-h-10 items-center gap-3 rounded-lg px-3 text-sm text-slate-300 transition hover:bg-white/10 hover:text-white">
+            <i data-lucide="circle-arrow-left" class="h-5 w-5 shrink-0"></i><span>Back to Website</span><i data-lucide="external-link" class="ml-auto h-4 w-4"></i>
+        </a>
+        <button id="logoutBtn" type="button" class="sidebar-item logout-button flex min-h-10 w-full items-center gap-3 rounded-lg px-3 text-sm text-slate-300 transition hover:bg-red-500/15 hover:text-red-300">
+            <i data-lucide="log-out" class="h-5 w-5 shrink-0"></i><span data-i18n="admin.logout">Logout</span>
+        </button>
+    </div>
+</aside>
+
+<div id="sidebarOverlay" class="admin-sidebar-overlay"></div>
+<main class="admin-main min-h-screen min-w-0 lg:ml-64">
+
+<header class="admin-header sticky top-0 z-30 flex min-h-[72px] items-center justify-between gap-3 border-b border-ig-border bg-white/95 px-3 shadow-sm backdrop-blur sm:px-5 lg:px-6">
+    <div class="header-left flex min-w-0 flex-1 items-center gap-3">
+        <button id="mobileMenuBtn" type="button" class="mobile-menu-button grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-ig-border bg-white text-ig-dark hover:bg-ig-bg lg:hidden" aria-label="Open menu">
+            <i data-lucide="menu" class="h-5 w-5"></i>
+        </button>
+        <div class="admin-search flex h-10 w-full max-w-md items-center gap-2 rounded-lg border border-ig-border bg-ig-bg px-3 text-slate-400">
+            <i data-lucide="search" class="h-4 w-4 shrink-0"></i>
+            <input id="adminGlobalSearch" type="search" placeholder="Search anything..." class="w-full bg-transparent text-sm text-ig-dark outline-none placeholder:text-slate-400">
+        </div>
+    </div>
+    <div class="header-right flex shrink-0 items-center gap-1.5 sm:gap-2">
+        <div class="language-switcher" data-admin-language>
+            <button type="button" class="language-trigger" aria-haspopup="menu" aria-expanded="false" aria-label="Change language">
+                <span class="language-current-flag" aria-hidden="true">🇺🇸</span>
+                <span class="language-current-label">English</span>
+                <i data-lucide="chevron-down" class="language-chevron h-3.5 w-3.5"></i>
+            </button>
+            <div class="language-menu" role="menu" hidden>
+                <button type="button" class="language-option" role="menuitem" data-language-option="en"><span aria-hidden="true">🇺🇸</span><span>English</span></button>
+                <button type="button" class="language-option" role="menuitem" data-language-option="km"><span aria-hidden="true">🇰🇭</span><span>ខ្មែរ</span></button>
+            </div>
+        </div>
+        <div class="notification-wrap relative">
+            <button type="button" class="notification-button admin-icon-btn" aria-label="Notifications" aria-haspopup="dialog" aria-expanded="false">
+                <i data-lucide="bell" class="h-5 w-5"></i>
+                <span class="notification-count" hidden>0</span>
+            </button>
+            <div class="notification-popover" hidden>
+                <div class="notification-popover-header">
+                    <div><strong>Notifications</strong><span class="notification-popover-subtitle">Messages from your users</span></div>
+                    <span class="notification-popover-count">0</span>
+                </div>
+                <div class="notification-list"></div>
+            </div>
+        </div>
+        <button type="button" class="admin-profile flex items-center gap-2 rounded-xl px-2 py-1.5 hover:bg-ig-bg" aria-label="Admin profile">
+            <span class="admin-avatar-wrap"><span class="admin-avatar"><span class="admin-avatar-fallback">A</span><img class="admin-avatar-image" alt="Admin profile photo" hidden></span></span>
+            <span class="admin-profile-text hidden text-left sm:block"><strong class="admin-name block text-xs font-semibold text-ig-dark">Admin</strong><small class="admin-role block text-[10px] text-slate-500">Administrator</small></span>
+            <i data-lucide="chevron-down" class="h-4 w-4 text-slate-500"></i>
+        </button>
+    </div>
+</header>
+
+
+<section class="admin-content mx-auto w-full max-w-[1600px] px-4 py-6 sm:px-6 lg:px-8">
+    <div class="mb-5 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div><h1 class="text-2xl font-bold text-ig-dark">Career Guides</h1><p class="mt-1 text-xs text-slate-500">Manage career guidance and learning resources.</p></div>
+        <button id="addGuideBtn" class="admin-primary-btn inline-flex h-10 items-center justify-center gap-2 rounded-lg bg-ig-primary px-4 text-xs font-medium text-white hover:bg-blue-700"><i data-lucide="plus" class="h-4 w-4"></i>Add Career Guide</button>
+    </div>
+
+    <div class="stat-grid mb-5 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        <div class="stat-card flex items-center gap-4 rounded-xl border border-ig-border bg-white p-5 shadow-card"><div class="grid h-11 w-11 place-items-center rounded-lg bg-ig-light text-ig-primary"><i data-lucide="book-open" class="h-5 w-5"></i></div><div><span class="block text-xs text-slate-500">Total Guides</span><strong id="totalCount" class="text-2xl font-bold">0</strong></div></div>
+        <div class="stat-card flex items-center gap-4 rounded-xl border border-ig-border bg-white p-5 shadow-card"><div class="grid h-11 w-11 place-items-center rounded-lg bg-emerald-50 text-emerald-600"><i data-lucide="circle-check" class="h-5 w-5"></i></div><div><span class="block text-xs text-slate-500">Published</span><strong id="publishedCount" class="text-2xl font-bold">0</strong></div></div>
+        <div class="stat-card flex items-center gap-4 rounded-xl border border-ig-border bg-white p-5 shadow-card"><div class="grid h-11 w-11 place-items-center rounded-lg bg-amber-50 text-amber-600"><i data-lucide="file-edit" class="h-5 w-5"></i></div><div><span class="block text-xs text-slate-500">Drafts</span><strong id="draftCount" class="text-2xl font-bold">0</strong></div></div>
+        <div class="stat-card flex items-center gap-4 rounded-xl border border-ig-border bg-white p-5 shadow-card"><div class="grid h-11 w-11 place-items-center rounded-lg bg-purple-50 text-purple-600"><i data-lucide="layers" class="h-5 w-5"></i></div><div><span class="block text-xs text-slate-500">Categories</span><strong id="categoryCount" class="text-2xl font-bold">0</strong></div></div>
+    </div>
+
+    <div class="admin-panel overflow-hidden rounded-xl border border-ig-border bg-white shadow-card">
+        <div class="panel-toolbar flex flex-col gap-3 border-b border-slate-100 p-4 lg:flex-row lg:items-center">
+            <div class="search-box flex h-10 w-full max-w-md items-center gap-2 rounded-lg border border-ig-border bg-ig-bg px-3"><i data-lucide="search" class="h-4 w-4 text-slate-400"></i><input id="searchInput" type="search" placeholder="Search career guides..." class="w-full bg-transparent text-xs outline-none"></div>
+            <select id="statusFilter" class="admin-select h-10 rounded-lg border border-ig-border bg-white px-3 text-xs text-slate-600 outline-none"><option value="all">All Status</option><option value="published">Published</option><option value="draft">Draft</option></select>
+            <select id="categoryFilter" class="admin-select h-10 rounded-lg border border-ig-border bg-white px-3 text-xs text-slate-600 outline-none"><option value="all">All Categories</option></select>
+        </div>
+        <div class="table-wrap overflow-x-auto">
+            <table class="admin-table w-full min-w-[900px] text-left">
+                <thead class="bg-slate-50 text-[10px] font-semibold text-slate-500"><tr><th class="px-4 py-3">Career Guide</th><th class="px-4 py-3">Category</th><th class="px-4 py-3">Skills</th><th class="px-4 py-3">Career Path</th><th class="px-4 py-3">Status</th><th class="px-4 py-3">Created</th><th class="px-4 py-3">Actions</th></tr></thead>
+                <tbody id="guideTableBody"><tr><td colspan="7" class="empty-state p-12 text-center text-xs text-slate-400">Loading career guides...</td></tr></tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<div class="admin-modal-backdrop fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/50 p-4" id="guideModal">
+    <div class="admin-modal max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-2xl bg-white shadow-2xl">
+        <div class="modal-header sticky top-0 z-10 flex items-center justify-between border-b border-slate-100 bg-white p-5">
+            <div><h2 id="modalTitle" class="text-lg font-semibold">Add Career Guide</h2><p class="mt-1 text-xs text-slate-500">Create or update a career guide.</p></div>
+            <button class="modal-close grid h-9 w-9 place-items-center rounded-lg text-slate-500 hover:bg-slate-100" id="closeModalBtn" type="button"><i data-lucide="x" class="h-5 w-5"></i></button>
+        </div>
+        <form id="guideForm" class="space-y-5 p-5">
+            <input type="hidden" id="guideId">
+            <div class="form-grid grid grid-cols-1 gap-4 md:grid-cols-2">
+                <label class="space-y-1.5"><span class="text-xs font-medium">Title *</span><input id="title" required placeholder="e.g. Software Engineer" class="h-10 w-full rounded-lg border border-ig-border px-3 text-xs outline-none focus:border-ig-primary"></label>
+                <label class="space-y-1.5"><span class="text-xs font-medium">Category</span><input id="category" placeholder="e.g. Technology" class="h-10 w-full rounded-lg border border-ig-border px-3 text-xs outline-none focus:border-ig-primary"></label>
+                <label class="space-y-1.5"><span class="text-xs font-medium">Status</span><select id="status" class="h-10 w-full rounded-lg border border-ig-border px-3 text-xs outline-none"><option value="draft">Draft</option><option value="published">Published</option></select></label>
+                <label class="space-y-1.5"><span class="text-xs font-medium">Skills</span><input id="skills" placeholder="JavaScript, SQL, Communication..." class="h-10 w-full rounded-lg border border-ig-border px-3 text-xs outline-none focus:border-ig-primary"></label>
+            </div>
+            <label class="full-field block space-y-1.5"><span class="text-xs font-medium">Description</span><textarea id="description" rows="4" placeholder="Describe this career..." class="w-full resize-y rounded-lg border border-ig-border p-3 text-xs outline-none focus:border-ig-primary"></textarea></label>
+            <label class="full-field block space-y-1.5"><span class="text-xs font-medium">Qualifications</span><textarea id="qualifications" rows="4" placeholder="Degree, education, certifications..." class="w-full resize-y rounded-lg border border-ig-border p-3 text-xs outline-none focus:border-ig-primary"></textarea></label>
+            <label class="full-field block space-y-1.5"><span class="text-xs font-medium">Career Path</span><textarea id="careerPath" rows="3" placeholder="Junior → Mid-Level → Senior → Lead" class="w-full resize-y rounded-lg border border-ig-border p-3 text-xs outline-none focus:border-ig-primary"></textarea></label>
+            <label class="full-field block space-y-1.5"><span class="text-xs font-medium">Related Internships</span><textarea id="relatedInternships" rows="3" placeholder="Internship roles related to this career..." class="w-full resize-y rounded-lg border border-ig-border p-3 text-xs outline-none focus:border-ig-primary"></textarea></label>
+            <label class="full-field block space-y-1.5"><span class="text-xs font-medium">Guide Content</span><textarea id="content" rows="6" placeholder="Detailed career guide content..." class="w-full resize-y rounded-lg border border-ig-border p-3 text-xs outline-none focus:border-ig-primary"></textarea></label>
+            <div id="formMessage" class="form-message text-xs"></div>
+            <div class="modal-actions flex justify-end gap-2 border-t border-slate-100 pt-4"><button type="button" class="admin-secondary-btn rounded-lg border border-ig-border px-4 py-2 text-xs font-medium text-slate-600 hover:bg-slate-50" id="cancelBtn">Cancel</button><button type="submit" class="admin-primary-btn inline-flex items-center gap-2 rounded-lg bg-ig-primary px-4 py-2 text-xs font-medium text-white hover:bg-blue-700" id="saveBtn"><i data-lucide="save" class="h-4 w-4"></i>Save Career Guide</button></div>
+        </form>
+    </div>
+</div>
+
+</main>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/i18n.js"></script>
+<script src="./js/admin-auth.js"></script>
+<script src="./js/admin-header.js"></script>
+<script src="./js/career-guides.js"></script>
+<script>lucide.createIcons();</script>
+<script>
+(function(){
+ const sidebar=document.getElementById('sidebar'), overlay=document.getElementById('sidebarOverlay'), menu=document.getElementById('mobileMenuBtn');
+ const close=()=>{sidebar?.classList.add('-translate-x-full'); sidebar?.classList.remove('translate-x-0'); overlay?.classList.add('hidden'); document.body.classList.remove('overflow-hidden');};
+ const open=()=>{sidebar?.classList.remove('-translate-x-full'); sidebar?.classList.add('translate-x-0'); overlay?.classList.remove('hidden'); document.body.classList.add('overflow-hidden');};
+ menu?.addEventListener('click',open); overlay?.addEventListener('click',close); window.addEventListener('resize',()=>{if(innerWidth>=1024)close();});
+ sidebar?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{if(innerWidth<1024)close();}));
+ sidebar?.querySelectorAll('[data-dropdown]').forEach(button=>button.addEventListener('click',()=>{const target=document.getElementById(button.dataset.dropdown);const arrow=button.querySelector('.dropdown-arrow');target?.classList.toggle('hidden');arrow?.classList.toggle('rotate-180');}));
+})();
+</script>
+</body>
+</html>

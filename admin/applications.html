@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Applications | InternGuide Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/admin.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{colors:{ig:{primary:'#3B5BDB',secondary:'#748FFC',dark:'#1C1F26',bg:'#F8F9FF',border:'#DEE2E6',light:'#EDF2FF'}},fontFamily:{poppins:['Poppins','sans-serif']},boxShadow:{card:'0 2px 10px rgba(28,31,38,.04)'}}}};</script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body class="min-h-screen bg-ig-bg font-poppins text-ig-dark antialiased">
+<div class="admin-layout min-h-screen lg:flex">
+    <aside id="sidebar" class="admin-sidebar" aria-label="Admin navigation">
+    <div class="sidebar-brand">
+        <a href="../index.html" class="brand-link" aria-label="InternGuide home">
+            <span class="brand-logo-wrap"><img src="../src/assets/images/logo.png" alt="InternGuide" class="brand-logo"></span>
+        </a>
+        <div class="sidebar-brand-copy">
+            <span class="sidebar-brand-name">InternGuide</span>
+            <span class="sidebar-subtitle">Admin Panel</span>
+        </div>
+    </div>
+
+    <nav class="sidebar-nav" aria-label="Admin navigation">
+        <a href="./dashboard.html" class="sidebar-item flex min-h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium transition text-slate-300 hover:bg-white/10 hover:text-white"><i data-lucide="layout-dashboard" class="h-5 w-5 shrink-0"></i><span data-i18n="admin.dashboard">Dashboard</span></a>
+        <a href="./users.html" class="sidebar-item flex min-h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium transition text-slate-300 hover:bg-white/10 hover:text-white"><i data-lucide="users" class="h-5 w-5 shrink-0"></i><span data-i18n="admin.users">Users</span></a>
+        <a href="./internships.html" class="sidebar-item flex min-h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium transition text-slate-300 hover:bg-white/10 hover:text-white"><i data-lucide="briefcase-business" class="h-5 w-5 shrink-0"></i><span data-i18n="admin.internships">Internships</span></a>
+        <a href="./applications.html" class="sidebar-item flex min-h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium transition sidebar-item-active bg-ig-primary/20 text-white" aria-current="page"><i data-lucide="file-text" class="h-5 w-5 shrink-0"></i><span data-i18n="applications.adminTitle">Applications</span></a>
+        <a href="./testimonials.html" class="sidebar-item flex min-h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium transition text-slate-300 hover:bg-white/10 hover:text-white"><i data-lucide="message-square-quote" class="h-5 w-5 shrink-0"></i><span data-i18n="testimonials.adminTitle">Testimonials</span></a>
+        <a href="./career-guides.html" class="sidebar-item flex min-h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium transition text-slate-300 hover:bg-white/10 hover:text-white"><i data-lucide="book-open" class="h-5 w-5 shrink-0"></i><span data-i18n="admin.careerGuides">Career Guides</span></a>
+        <a href="./messages.html" class="sidebar-item flex min-h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium text-slate-300 transition hover:bg-white/10 hover:text-white"><i data-lucide="mail" class="h-5 w-5 shrink-0"></i><span>Messages</span><span id="messagesSidebarBadge" class="ml-auto hidden min-w-5 rounded-full bg-red-500 px-1.5 py-0.5 text-center text-[10px] font-semibold text-white">0</span></a>
+    </nav>
+
+    <div class="sidebar-bottom">
+        <a href="../index.html" class="sidebar-item flex min-h-10 items-center gap-3 rounded-lg px-3 text-sm text-slate-300 transition hover:bg-white/10 hover:text-white">
+            <i data-lucide="circle-arrow-left" class="h-5 w-5 shrink-0"></i><span>Back to Website</span><i data-lucide="external-link" class="ml-auto h-4 w-4"></i>
+        </a>
+        <button id="logoutBtn" type="button" class="sidebar-item logout-button flex min-h-10 w-full items-center gap-3 rounded-lg px-3 text-sm text-slate-300 transition hover:bg-red-500/15 hover:text-red-300">
+            <i data-lucide="log-out" class="h-5 w-5 shrink-0"></i><span data-i18n="admin.logout">Logout</span>
+        </button>
+    </div>
+</aside>
+
+<div id="sidebarOverlay" class="admin-sidebar-overlay"></div>
+
+    <main class="admin-main min-h-screen min-w-0 lg:ml-64">
+        <header class="admin-header sticky top-0 z-30 flex min-h-[72px] items-center justify-between gap-3 border-b border-ig-border bg-white/95 px-3 shadow-sm backdrop-blur sm:px-5 lg:px-6">
+    <div class="header-left flex min-w-0 flex-1 items-center gap-3">
+        <button id="mobileMenuBtn" type="button" class="mobile-menu-button grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-ig-border bg-white text-ig-dark hover:bg-ig-bg lg:hidden" aria-label="Open menu">
+            <i data-lucide="menu" class="h-5 w-5"></i>
+        </button>
+        <div class="admin-search flex h-10 w-full max-w-md items-center gap-2 rounded-lg border border-ig-border bg-ig-bg px-3 text-slate-400">
+            <i data-lucide="search" class="h-4 w-4 shrink-0"></i>
+            <input id="adminGlobalSearch" type="search" placeholder="Search anything..." class="w-full bg-transparent text-sm text-ig-dark outline-none placeholder:text-slate-400">
+        </div>
+    </div>
+    <div class="header-right flex shrink-0 items-center gap-1.5 sm:gap-2">
+        <div class="language-switcher" data-admin-language>
+            <button type="button" class="language-trigger" aria-haspopup="menu" aria-expanded="false" aria-label="Change language">
+                <span class="language-current-flag" aria-hidden="true">🇺🇸</span>
+                <span class="language-current-label">English</span>
+                <i data-lucide="chevron-down" class="language-chevron h-3.5 w-3.5"></i>
+            </button>
+            <div class="language-menu" role="menu" hidden>
+                <button type="button" class="language-option" role="menuitem" data-language-option="en"><span aria-hidden="true">🇺🇸</span><span>English</span></button>
+                <button type="button" class="language-option" role="menuitem" data-language-option="km"><span aria-hidden="true">🇰🇭</span><span>ខ្មែរ</span></button>
+            </div>
+        </div>
+        <div class="notification-wrap relative">
+            <button type="button" class="notification-button admin-icon-btn" aria-label="Notifications" aria-haspopup="dialog" aria-expanded="false">
+                <i data-lucide="bell" class="h-5 w-5"></i>
+                <span class="notification-count" hidden>0</span>
+            </button>
+            <div class="notification-popover" hidden>
+                <div class="notification-popover-header">
+                    <div><strong>Notifications</strong><span class="notification-popover-subtitle">Messages from your users</span></div>
+                    <span class="notification-popover-count">0</span>
+                </div>
+                <div class="notification-list"></div>
+            </div>
+        </div>
+        <button type="button" class="admin-profile flex items-center gap-2 rounded-xl px-2 py-1.5 hover:bg-ig-bg" aria-label="Admin profile">
+            <span class="admin-avatar-wrap"><span class="admin-avatar"><span class="admin-avatar-fallback">A</span><img class="admin-avatar-image" alt="Admin profile photo" hidden></span></span>
+            <span class="admin-profile-text hidden text-left sm:block"><strong class="admin-name block text-xs font-semibold text-ig-dark">Admin</strong><small class="admin-role block text-[10px] text-slate-500">Administrator</small></span>
+            <i data-lucide="chevron-down" class="h-4 w-4 text-slate-500"></i>
+        </button>
+    </div>
+</header>
+        <section class="mx-auto w-full max-w-[1600px] px-4 py-6 sm:px-6 lg:px-8">
+            <p id="adminApplicationMessage" class="mb-4 hidden rounded-lg p-3 text-sm" role="status" aria-live="polite"></p>
+            <div class="mb-4 flex flex-col gap-3 rounded-xl border border-ig-border bg-white p-4 shadow-card md:flex-row md:items-center md:justify-between">
+                <label class="flex h-10 w-full max-w-md items-center gap-2 rounded-lg border border-ig-border bg-ig-bg px-3"><i data-lucide="search" class="h-4 w-4 text-slate-400"></i><input id="adminApplicationSearch" type="search" class="w-full bg-transparent text-sm outline-none" placeholder="Search applicant, internship, or company..." data-i18n-placeholder="applications.adminSearchPlaceholder"></label>
+                <label class="flex items-center gap-2 text-xs font-semibold text-slate-600"><span data-i18n="applications.status">Status</span><select id="adminApplicationStatus" class="h-10 min-w-44 rounded-lg border border-ig-border bg-white px-3 text-sm outline-none"><option value="all" data-i18n="applications.allStatuses">All Statuses</option><option value="submitted" data-i18n="applications.statusLabels.submitted">Submitted</option><option value="reviewing" data-i18n="applications.statusLabels.reviewing">Under Review</option><option value="shortlisted" data-i18n="applications.statusLabels.shortlisted">Shortlisted</option><option value="interview" data-i18n="applications.statusLabels.interview">Interview</option><option value="accepted" data-i18n="applications.statusLabels.accepted">Accepted</option><option value="rejected" data-i18n="applications.statusLabels.rejected">Rejected</option><option value="withdrawn" data-i18n="applications.statusLabels.withdrawn">Withdrawn</option></select></label>
+            </div>
+            <p id="adminApplicationsStatus" class="mb-3 text-sm text-slate-500" role="status" aria-live="polite" data-i18n="applications.loadingApplications">Loading applications...</p>
+            <div id="adminApplicationsTableWrap" class="admin-applications-table-wrap hidden overflow-x-auto rounded-2xl border border-ig-border bg-white shadow-card md:block">
+                <table class="admin-applications-table w-full text-left text-sm">
+                    <thead class="bg-slate-50 text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-500"><tr><th class="px-4 py-3" data-i18n="applications.applicant">Applicant</th><th class="px-4 py-3" data-i18n="applications.internship">Internship</th><th class="px-4 py-3" data-i18n="applications.company">Company</th><th class="px-4 py-3" data-i18n="applications.appliedDate">Applied Date</th><th class="px-4 py-3" data-i18n="applications.cvColumn">CV</th><th class="px-4 py-3" data-i18n="applications.status">Status</th><th class="px-4 py-3" data-i18n="applications.action">Action</th></tr></thead>
+                    <tbody id="adminApplicationsTable"></tbody>
+                </table>
+            </div>
+            <div id="adminApplicationsCards" class="admin-applications-cards hidden space-y-3 md:hidden"></div>
+        </section>
+    </main>
+</div>
+
+<dialog id="adminApplicationDialog" class="admin-application-dialog" aria-labelledby="adminApplicationDialogTitle">
+    <div class="admin-application-dialog-shell">
+        <header class="admin-application-dialog-header">
+            <div class="flex min-w-0 items-start gap-3">
+                <div class="admin-application-dialog-icon"><i data-lucide="file-check-2" class="h-5 w-5"></i></div>
+                <div class="min-w-0">
+                    <div class="flex flex-wrap items-center gap-2">
+                        <h2 id="adminApplicationDialogTitle" class="truncate text-xl font-bold text-slate-900" data-i18n="applications.applicationDetails">Application Details</h2>
+                        <span id="adminApplicationDialogStatusBadge" class="rounded-full bg-blue-50 px-2.5 py-1 text-[11px] font-semibold text-blue-700">Submitted</span>
+                    </div>
+                    <p id="adminApplicationDialogSubtitle" class="mt-1 truncate text-sm text-slate-500"></p>
+                </div>
+            </div>
+            <button id="closeAdminApplicationDialog" type="button" class="admin-application-dialog-close" aria-label="Close"><i data-lucide="x" class="h-5 w-5"></i></button>
+        </header>
+
+        <div class="admin-application-dialog-body">
+            <section class="admin-application-section">
+                <div class="admin-application-section-heading"><span class="admin-application-section-icon"><i data-lucide="user-round" class="h-4 w-4"></i></span><div><h3 data-i18n="applications.applicantDetails">Applicant Details</h3><p>Applicant information</p></div></div>
+                <div class="admin-application-info-grid">
+                    <div><dt data-i18n="applications.fullName">Full Name</dt><dd id="adminApplicantName"></dd></div>
+                    <div><dt data-i18n="applications.email">Email</dt><dd id="adminApplicantEmail" class="break-all"></dd></div>
+                    <div><dt data-i18n="applications.phone">Phone</dt><dd id="adminApplicantPhone"></dd></div>
+                    <div><dt data-i18n="applications.university">University</dt><dd id="adminApplicantUniversity"></dd></div>
+                    <div><dt data-i18n="applications.major">Major</dt><dd id="adminApplicantMajor"></dd></div>
+                </div>
+            </section>
+
+            <section class="admin-application-section">
+                <div class="admin-application-section-heading"><span class="admin-application-section-icon"><i data-lucide="briefcase-business" class="h-4 w-4"></i></span><div><h3 data-i18n="applications.internshipDetails">Internship Details</h3><p>Position and application information</p></div></div>
+                <div class="admin-application-info-grid">
+                    <div><dt data-i18n="applications.internshipTitle">Internship Title</dt><dd id="adminApplicationInternship"></dd></div>
+                    <div><dt data-i18n="applications.company">Company</dt><dd id="adminApplicationCompany"></dd></div>
+                    <div><dt data-i18n="applications.location">Location</dt><dd id="adminApplicationLocation"></dd></div>
+                    <div><dt data-i18n="applications.workType">Work Type</dt><dd id="adminApplicationWorkType"></dd></div>
+                    <div><dt data-i18n="applications.duration">Duration</dt><dd id="adminApplicationDuration"></dd></div>
+                    <div><dt data-i18n="applications.appliedDate">Applied Date</dt><dd id="adminApplicationDate"></dd></div>
+                </div>
+            </section>
+
+            <section class="admin-application-section admin-application-cv-section">
+                <div class="admin-application-section-heading"><span class="admin-application-section-icon"><i data-lucide="file-text" class="h-4 w-4"></i></span><div><h3 data-i18n="applications.selectedCv">Selected CV</h3><p>Review the applicant's uploaded CV</p></div></div>
+                <div class="admin-cv-card">
+                    <div class="admin-cv-file-icon"><i data-lucide="file" class="h-5 w-5"></i></div>
+                    <div class="min-w-0 flex-1"><p id="adminApplicationCvName" class="truncate text-sm font-semibold text-slate-900"></p><p id="adminApplicationCvMeta" class="mt-0.5 text-xs text-slate-500">Uploaded CV</p></div>
+                    <div class="flex flex-wrap items-center justify-end gap-2">
+                        <button id="adminApplicationCvView" type="button" class="admin-cv-action hidden"><i data-lucide="eye" class="h-4 w-4"></i><span data-i18n="applications.previewCv">View CV</span></button>
+                        <a id="adminApplicationCvLink" href="#" target="_blank" rel="noopener noreferrer" class="admin-cv-action hidden"><i data-lucide="external-link" class="h-4 w-4"></i><span>Open</span></a>
+                        <a id="adminApplicationCvDownload" href="#" class="admin-cv-action admin-cv-action-primary hidden" download><i data-lucide="download" class="h-4 w-4"></i><span>Download</span></a>
+                    </div>
+                </div>
+                <p id="adminApplicationCvMessage" class="mt-2 hidden rounded-lg bg-rose-50 p-3 text-sm text-rose-700"></p>
+                <div id="adminApplicationCvPreview" class="admin-cv-preview hidden" aria-label="CV preview"><div class="admin-cv-preview-toolbar"><span class="text-xs font-semibold text-slate-600">CV Preview</span><button id="adminApplicationCvClosePreview" type="button" class="text-xs font-semibold text-slate-500 hover:text-slate-900">Close preview</button></div><iframe id="adminApplicationCvFrame" title="Applicant CV preview" loading="lazy"></iframe></div>
+            </section>
+
+            <section class="admin-application-section">
+                <div class="admin-application-section-heading"><span class="admin-application-section-icon"><i data-lucide="notebook-text" class="h-4 w-4"></i></span><div><h3 data-i18n="applications.coverLetter">Cover Letter</h3><p>Applicant's message</p></div></div>
+                <div id="adminApplicationCoverLetter" class="admin-cover-letter"></div>
+            </section>
+
+            <section class="admin-application-section">
+                <div class="admin-application-section-heading"><span class="admin-application-section-icon"><i data-lucide="workflow" class="h-4 w-4"></i></span><div><h3 data-i18n="applications.updateStatus">Update Status</h3><p>Keep the application progress up to date</p></div></div>
+                <div class="flex flex-col gap-2 sm:flex-row"><select id="adminApplicationStatusEdit" class="admin-status-select"><option value="submitted" data-i18n="applications.statusLabels.submitted">Submitted</option><option value="reviewing" data-i18n="applications.statusLabels.reviewing">Under Review</option><option value="shortlisted" data-i18n="applications.statusLabels.shortlisted">Shortlisted</option><option value="interview" data-i18n="applications.statusLabels.interview">Interview</option><option value="accepted" data-i18n="applications.statusLabels.accepted">Accepted</option><option value="rejected" data-i18n="applications.statusLabels.rejected">Rejected</option><option value="withdrawn" data-i18n="applications.statusLabels.withdrawn">Withdrawn</option></select><button id="saveAdminApplicationStatus" type="button" class="admin-status-save" data-i18n="applications.saveStatus">Save Status</button></div>
+                <p id="adminApplicationDetailMessage" class="mt-3 hidden rounded-lg p-3 text-sm" role="status" aria-live="polite"></p>
+            </section>
+        </div>
+
+        <footer class="admin-application-dialog-footer"><button id="deleteAdminApplication" type="button" class="mr-auto rounded-lg border border-rose-200 bg-rose-50 px-4 py-2 text-sm font-semibold text-rose-700 hover:bg-rose-100">Delete Application</button><button id="closeAdminApplicationDialogFooter" type="button" class="admin-dialog-secondary" data-i18n="applications.close">Close</button></footer>
+    </div>
+</dialog>
+<script src="../js/i18n.js"></script>
+<script src="./js/admin-auth.js"></script>
+<script src="./js/admin-header.js"></script>
+<script src="./js/applications.js"></script>
+<script>window.lucide?.createIcons();</script>
+</body>
+</html>

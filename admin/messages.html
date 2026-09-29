@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Messages | InternGuide Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/admin.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{colors:{ig:{primary:'#3B5BDB',secondary:'#748FFC',dark:'#1C1F26',bg:'#F8F9FF',border:'#DEE2E6',light:'#EDF2FF'}},fontFamily:{poppins:['Poppins','sans-serif']},boxShadow:{card:'0 2px 10px rgba(28,31,38,.04)'}}}};</script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body class="min-h-screen bg-ig-bg font-poppins text-ig-dark antialiased">
+<div class="admin-layout min-h-screen lg:flex">
+    <aside id="sidebar" class="admin-sidebar" aria-label="Admin navigation">
+        <div class="sidebar-brand">
+            <a href="../index.html" class="brand-link" aria-label="InternGuide home"><span class="brand-logo-wrap"><img src="../src/assets/images/logo.png" alt="InternGuide" class="brand-logo"></span></a>
+            <div class="sidebar-brand-copy"><span class="sidebar-brand-name">InternGuide</span><span class="sidebar-subtitle">Admin Panel</span></div>
+        </div>
+        <nav class="sidebar-nav" aria-label="Admin navigation">
+            <a href="./dashboard.html" class="sidebar-item flex min-h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium text-slate-300 transition hover:bg-white/10 hover:text-white"><i data-lucide="layout-dashboard" class="h-5 w-5 shrink-0"></i><span data-i18n="admin.dashboard">Dashboard</span></a>
+            <a href="./users.html" class="sidebar-item flex min-h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium text-slate-300 transition hover:bg-white/10 hover:text-white"><i data-lucide="users" class="h-5 w-5 shrink-0"></i><span data-i18n="admin.users">Users</span></a>
+            <a href="./internships.html" class="sidebar-item flex min-h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium text-slate-300 transition hover:bg-white/10 hover:text-white"><i data-lucide="briefcase-business" class="h-5 w-5 shrink-0"></i><span data-i18n="admin.internships">Internships</span></a>
+            <a href="./applications.html" class="sidebar-item flex min-h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium text-slate-300 transition hover:bg-white/10 hover:text-white"><i data-lucide="file-text" class="h-5 w-5 shrink-0"></i><span data-i18n="applications.adminTitle">Applications</span></a>
+            <a href="./testimonials.html" class="sidebar-item flex min-h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium text-slate-300 transition hover:bg-white/10 hover:text-white"><i data-lucide="message-square-quote" class="h-5 w-5 shrink-0"></i><span data-i18n="testimonials.adminTitle">Testimonials</span></a>
+            <a href="./career-guides.html" class="sidebar-item flex min-h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium text-slate-300 transition hover:bg-white/10 hover:text-white"><i data-lucide="book-open" class="h-5 w-5 shrink-0"></i><span data-i18n="admin.careerGuides">Career Guides</span></a>
+            <a href="./messages.html" class="sidebar-item flex min-h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium transition sidebar-item-active bg-ig-primary/20 text-white" aria-current="page"><i data-lucide="mail" class="h-5 w-5 shrink-0"></i><span>Messages</span><span id="messagesSidebarBadge" class="ml-auto hidden min-w-5 rounded-full bg-red-500 px-1.5 py-0.5 text-center text-[10px] font-semibold text-white">0</span></a>
+        </nav>
+        <div class="sidebar-bottom">
+            <a href="../index.html" class="sidebar-item flex min-h-10 items-center gap-3 rounded-lg px-3 text-sm text-slate-300 transition hover:bg-white/10 hover:text-white"><i data-lucide="circle-arrow-left" class="h-5 w-5 shrink-0"></i><span>Back to Website</span><i data-lucide="external-link" class="ml-auto h-4 w-4"></i></a>
+            <button id="logoutBtn" type="button" class="sidebar-item logout-button flex min-h-10 w-full items-center gap-3 rounded-lg px-3 text-sm text-slate-300 transition hover:bg-red-500/15 hover:text-red-300"><i data-lucide="log-out" class="h-5 w-5 shrink-0"></i><span data-i18n="admin.logout">Logout</span></button>
+        </div>
+    </aside>
+    <div id="sidebarOverlay" class="admin-sidebar-overlay"></div>
+    <main class="admin-main min-h-screen min-w-0 lg:ml-64">
+        <header class="admin-header sticky top-0 z-30 flex min-h-[72px] items-center justify-between gap-3 border-b border-ig-border bg-white/95 px-3 shadow-sm backdrop-blur sm:px-5 lg:px-6">
+            <div class="header-left flex min-w-0 flex-1 items-center gap-3">
+                <button id="mobileMenuBtn" type="button" class="mobile-menu-button grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-ig-border bg-white text-ig-dark hover:bg-ig-bg lg:hidden" aria-label="Open menu"><i data-lucide="menu" class="h-5 w-5"></i></button>
+                <div class="admin-search flex h-10 w-full max-w-md items-center gap-2 rounded-lg border border-ig-border bg-ig-bg px-3 text-slate-400"><i data-lucide="search" class="h-4 w-4 shrink-0"></i><input id="adminGlobalSearch" type="search" placeholder="Search messages..." class="w-full bg-transparent text-sm text-ig-dark outline-none placeholder:text-slate-400"></div>
+            </div>
+            <div class="header-right flex shrink-0 items-center gap-1.5 sm:gap-2">
+                <div class="language-switcher" data-admin-language>
+                    <button type="button" class="language-trigger" aria-haspopup="menu" aria-expanded="false" aria-label="Change language"><span class="language-current-flag" aria-hidden="true">🇺🇸</span><span class="language-current-label">English</span><i data-lucide="chevron-down" class="language-chevron h-3.5 w-3.5"></i></button>
+                    <div class="language-menu" role="menu" hidden><button type="button" class="language-option" role="menuitem" data-language-option="en"><span aria-hidden="true">🇺🇸</span><span>English</span></button><button type="button" class="language-option" role="menuitem" data-language-option="km"><span aria-hidden="true">🇰🇭</span><span>ខ្មែរ</span></button></div>
+                </div>
+                <div class="notification-wrap relative">
+                    <button type="button" class="notification-button admin-icon-btn" aria-label="Notifications" aria-haspopup="dialog" aria-expanded="false"><i data-lucide="bell" class="h-5 w-5"></i><span class="notification-count" hidden>0</span></button>
+                    <div class="notification-popover" hidden><div class="notification-popover-header"><div><strong>Notifications</strong><span class="notification-popover-subtitle">Messages from your users</span></div><span class="notification-popover-count">0</span></div><div class="notification-list"></div></div>
+                </div>
+                <button type="button" class="admin-profile flex items-center gap-2 rounded-xl px-2 py-1.5 hover:bg-ig-bg" aria-label="Admin profile"><span class="admin-avatar-wrap"><span class="admin-avatar"><span class="admin-avatar-fallback">A</span><img class="admin-avatar-image" alt="Admin profile photo" hidden></span></span><span class="admin-profile-text hidden text-left sm:block"><strong class="admin-name block text-xs font-semibold text-ig-dark">Admin</strong><small class="admin-role block text-[10px] text-slate-500">Administrator</small></span><i data-lucide="chevron-down" class="h-4 w-4 text-slate-500"></i></button>
+            </div>
+        </header>
+        <section class="mx-auto w-full max-w-[1600px] px-4 py-6 sm:px-6 lg:px-8">
+            <div class="mb-5 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                <div><h1 class="text-2xl font-bold tracking-tight text-ig-dark sm:text-3xl">Messages</h1><p class="mt-1 text-xs text-slate-500 sm:text-sm">Contact enquiries submitted through the website.</p></div>
+                <div class="flex items-center gap-3"><span id="contactMessagesConnectionStatus" class="text-xs font-semibold text-emerald-600">Connected</span><span id="contactMessagesSummary" class="rounded-full bg-ig-light px-3 py-1.5 text-xs font-medium text-ig-primary">Checking inbox...</span></div>
+            </div>
+            <div id="contactMessagesList" class="divide-y divide-slate-100 overflow-hidden rounded-xl border border-ig-border bg-white shadow-card"><div class="px-5 py-8 text-center text-sm text-slate-400">Loading contact messages...</div></div>
+        </section>
+    </main>
+</div>
+<div id="messageDetailModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/40 p-4">
+    <div class="max-h-[85vh] w-full max-w-2xl overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl">
+        <div class="flex items-center justify-between border-b border-slate-100 px-5 py-4"><div><p class="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-400">Message Details</p><h2 id="messageDetailTitle" class="mt-1 text-lg font-semibold text-slate-800">Message</h2></div><button type="button" id="closeMessageModal" class="rounded-lg border border-slate-200 px-2.5 py-1.5 text-sm text-slate-500 hover:bg-slate-50">Close</button></div>
+        <div class="max-h-[calc(85vh-120px)] space-y-4 overflow-y-auto p-5">
+            <div class="grid gap-3 sm:grid-cols-2"><div class="rounded-xl bg-slate-50 p-3"><p class="text-[10px] font-semibold uppercase tracking-wide text-slate-500">Full name</p><p id="messageDetailName" class="mt-1 text-sm font-medium text-slate-800">—</p></div><div class="rounded-xl bg-slate-50 p-3"><p class="text-[10px] font-semibold uppercase tracking-wide text-slate-500">Email</p><p id="messageDetailEmail" class="mt-1 break-all text-sm font-medium text-slate-800">—</p></div></div>
+            <div class="rounded-xl bg-slate-50 p-3"><p class="text-[10px] font-semibold uppercase tracking-wide text-slate-500">Subject</p><p id="messageDetailSubject" class="mt-1 text-sm font-medium text-slate-800">—</p></div>
+            <div class="grid gap-3 sm:grid-cols-2"><div class="rounded-xl bg-slate-50 p-3"><p class="text-[10px] font-semibold uppercase tracking-wide text-slate-500">Submitted</p><p id="messageDetailDate" class="mt-1 text-sm text-slate-700">—</p></div><div class="rounded-xl bg-slate-50 p-3"><p class="text-[10px] font-semibold uppercase tracking-wide text-slate-500">Status</p><p id="messageDetailStatus" class="mt-1 text-sm font-medium text-slate-800">—</p></div></div>
+            <div class="rounded-xl border border-slate-200 bg-white p-3"><p class="text-[10px] font-semibold uppercase tracking-wide text-slate-500">Message</p><div id="messageDetailBody" class="mt-2 whitespace-pre-wrap text-sm leading-6 text-slate-700">—</div></div>
+        </div>
+        <div class="flex flex-wrap gap-2 border-t border-slate-100 px-5 py-4"><button type="button" id="deleteContactMessage" class="mr-auto rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-xs font-medium text-red-700 hover:bg-red-100">Delete Message</button><button type="button" data-message-status-action="read" class="message-status-button rounded-lg bg-blue-600 px-3 py-2 text-xs font-medium text-white hover:bg-blue-700">Mark as Read</button><button type="button" data-message-status-action="unread" class="message-status-button rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50">Mark as Unread</button><button type="button" data-message-status-action="replied" class="message-status-button rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50">Mark as Replied</button><button type="button" data-message-status-action="archive" class="message-status-button rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-xs font-medium text-red-700 hover:bg-red-100">Archive</button></div>
+    </div>
+</div>
+<script src="../js/i18n.js"></script>
+<script src="./js/admin-auth.js"></script>
+<script src="./js/admin-header.js"></script>
+<script src="./js/admin.js"></script>
+<script>lucide.createIcons();</script>
+<script>
+(function(){
+ const sidebar=document.getElementById('sidebar'), overlay=document.getElementById('sidebarOverlay'), menu=document.getElementById('mobileMenuBtn');
+ const close=()=>{sidebar?.classList.add('-translate-x-full'); sidebar?.classList.remove('translate-x-0'); overlay?.classList.add('hidden'); document.body.classList.remove('overflow-hidden');};
+ const open=()=>{sidebar?.classList.remove('-translate-x-full'); sidebar?.classList.add('translate-x-0'); overlay?.classList.remove('hidden'); document.body.classList.add('overflow-hidden');};
+ menu?.addEventListener('click',open); overlay?.addEventListener('click',close); window.addEventListener('resize',()=>{if(innerWidth>=1024)close();});
+ sidebar?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{if(innerWidth<1024)close();}));
+})();
+</script>
+</body>
+</html>

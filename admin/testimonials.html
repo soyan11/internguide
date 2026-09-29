@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Testimonials | InternGuide Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/admin.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{colors:{ig:{primary:'#3B5BDB',secondary:'#748FFC',dark:'#1C1F26',bg:'#F8F9FF',border:'#DEE2E6',light:'#EDF2FF'}},fontFamily:{poppins:['Poppins','sans-serif']},boxShadow:{card:'0 2px 10px rgba(28,31,38,.04)'}}}};</script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body class="min-h-screen bg-ig-bg font-poppins text-ig-dark antialiased">
+<div class="admin-layout min-h-screen lg:flex">
+    <aside id="sidebar" class="admin-sidebar" aria-label="Admin navigation">
+    <div class="sidebar-brand">
+        <a href="../index.html" class="brand-link" aria-label="InternGuide home">
+            <span class="brand-logo-wrap"><img src="../src/assets/images/logo.png" alt="InternGuide" class="brand-logo"></span>
+        </a>
+        <div class="sidebar-brand-copy">
+            <span class="sidebar-brand-name">InternGuide</span>
+            <span class="sidebar-subtitle">Admin Panel</span>
+        </div>
+    </div>
+
+    <nav class="sidebar-nav" aria-label="Admin navigation">
+        <a href="./dashboard.html" class="sidebar-item flex min-h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium transition text-slate-300 hover:bg-white/10 hover:text-white"><i data-lucide="layout-dashboard" class="h-5 w-5 shrink-0"></i><span data-i18n="admin.dashboard">Dashboard</span></a>
+        <a href="./users.html" class="sidebar-item flex min-h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium transition text-slate-300 hover:bg-white/10 hover:text-white"><i data-lucide="users" class="h-5 w-5 shrink-0"></i><span data-i18n="admin.users">Users</span></a>
+        <a href="./internships.html" class="sidebar-item flex min-h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium transition text-slate-300 hover:bg-white/10 hover:text-white"><i data-lucide="briefcase-business" class="h-5 w-5 shrink-0"></i><span data-i18n="admin.internships">Internships</span></a>
+        <a href="./applications.html" class="sidebar-item flex min-h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium transition text-slate-300 hover:bg-white/10 hover:text-white"><i data-lucide="file-text" class="h-5 w-5 shrink-0"></i><span data-i18n="applications.adminTitle">Applications</span></a>
+        <a href="./testimonials.html" class="sidebar-item flex min-h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium transition sidebar-item-active bg-ig-primary/20 text-white" aria-current="page"><i data-lucide="message-square-quote" class="h-5 w-5 shrink-0"></i><span data-i18n="testimonials.adminTitle">Testimonials</span></a>
+        <a href="./career-guides.html" class="sidebar-item flex min-h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium transition text-slate-300 hover:bg-white/10 hover:text-white"><i data-lucide="book-open" class="h-5 w-5 shrink-0"></i><span data-i18n="admin.careerGuides">Career Guides</span></a>
+        <a href="./messages.html" class="sidebar-item flex min-h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium text-slate-300 transition hover:bg-white/10 hover:text-white"><i data-lucide="mail" class="h-5 w-5 shrink-0"></i><span>Messages</span><span id="messagesSidebarBadge" class="ml-auto hidden min-w-5 rounded-full bg-red-500 px-1.5 py-0.5 text-center text-[10px] font-semibold text-white">0</span></a>
+    </nav>
+
+    <div class="sidebar-bottom">
+        <a href="../index.html" class="sidebar-item flex min-h-10 items-center gap-3 rounded-lg px-3 text-sm text-slate-300 transition hover:bg-white/10 hover:text-white">
+            <i data-lucide="circle-arrow-left" class="h-5 w-5 shrink-0"></i><span>Back to Website</span><i data-lucide="external-link" class="ml-auto h-4 w-4"></i>
+        </a>
+        <button id="logoutBtn" type="button" class="sidebar-item logout-button flex min-h-10 w-full items-center gap-3 rounded-lg px-3 text-sm text-slate-300 transition hover:bg-red-500/15 hover:text-red-300">
+            <i data-lucide="log-out" class="h-5 w-5 shrink-0"></i><span data-i18n="admin.logout">Logout</span>
+        </button>
+    </div>
+</aside>
+
+<div id="sidebarOverlay" class="admin-sidebar-overlay"></div>
+
+    <main class="admin-main min-h-screen min-w-0 lg:ml-64">
+        <header class="admin-header sticky top-0 z-30 flex min-h-[72px] items-center justify-between gap-3 border-b border-ig-border bg-white/95 px-3 shadow-sm backdrop-blur sm:px-5 lg:px-6">
+    <div class="header-left flex min-w-0 flex-1 items-center gap-3">
+        <button id="mobileMenuBtn" type="button" class="mobile-menu-button grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-ig-border bg-white text-ig-dark hover:bg-ig-bg lg:hidden" aria-label="Open menu">
+            <i data-lucide="menu" class="h-5 w-5"></i>
+        </button>
+        <div class="admin-search flex h-10 w-full max-w-md items-center gap-2 rounded-lg border border-ig-border bg-ig-bg px-3 text-slate-400">
+            <i data-lucide="search" class="h-4 w-4 shrink-0"></i>
+            <input id="adminGlobalSearch" type="search" placeholder="Search anything..." class="w-full bg-transparent text-sm text-ig-dark outline-none placeholder:text-slate-400">
+        </div>
+    </div>
+    <div class="header-right flex shrink-0 items-center gap-1.5 sm:gap-2">
+        <div class="language-switcher" data-admin-language>
+            <button type="button" class="language-trigger" aria-haspopup="menu" aria-expanded="false" aria-label="Change language">
+                <span class="language-current-flag" aria-hidden="true">🇺🇸</span>
+                <span class="language-current-label">English</span>
+                <i data-lucide="chevron-down" class="language-chevron h-3.5 w-3.5"></i>
+            </button>
+            <div class="language-menu" role="menu" hidden>
+                <button type="button" class="language-option" role="menuitem" data-language-option="en"><span aria-hidden="true">🇺🇸</span><span>English</span></button>
+                <button type="button" class="language-option" role="menuitem" data-language-option="km"><span aria-hidden="true">🇰🇭</span><span>ខ្មែរ</span></button>
+            </div>
+        </div>
+        <div class="notification-wrap relative">
+            <button type="button" class="notification-button admin-icon-btn" aria-label="Notifications" aria-haspopup="dialog" aria-expanded="false">
+                <i data-lucide="bell" class="h-5 w-5"></i>
+                <span class="notification-count" hidden>0</span>
+            </button>
+            <div class="notification-popover" hidden>
+                <div class="notification-popover-header">
+                    <div><strong>Notifications</strong><span class="notification-popover-subtitle">Messages from your users</span></div>
+                    <span class="notification-popover-count">0</span>
+                </div>
+                <div class="notification-list"></div>
+            </div>
+        </div>
+        <button type="button" class="admin-profile flex items-center gap-2 rounded-xl px-2 py-1.5 hover:bg-ig-bg" aria-label="Admin profile">
+            <span class="admin-avatar-wrap"><span class="admin-avatar"><span class="admin-avatar-fallback">A</span><img class="admin-avatar-image" alt="Admin profile photo" hidden></span></span>
+            <span class="admin-profile-text hidden text-left sm:block"><strong class="admin-name block text-xs font-semibold text-ig-dark">Admin</strong><small class="admin-role block text-[10px] text-slate-500">Administrator</small></span>
+            <i data-lucide="chevron-down" class="h-4 w-4 text-slate-500"></i>
+        </button>
+    </div>
+</header>
+
+        <section class="mx-auto w-full max-w-[1600px] px-4 py-6 sm:px-6 lg:px-8">
+            <div class="mb-5">
+                <p id="testimonialAdminMessage" class="hidden rounded-lg p-3 text-sm" role="status" aria-live="polite"></p>
+                <div id="testimonialAdminError" class="hidden rounded-lg border border-rose-200 bg-rose-50 p-4 text-sm text-rose-700" role="alert"></div>
+            </div>
+
+            <div class="mb-5 grid grid-cols-2 gap-3 xl:grid-cols-4">
+                <div class="rounded-xl border border-ig-border bg-white p-4 shadow-card"><span class="block text-xs text-slate-500" data-i18n="testimonials.total">Total Testimonials</span><strong id="testimonialTotalCount" class="mt-1 block text-2xl font-bold">—</strong></div>
+                <div class="rounded-xl border border-ig-border bg-white p-4 shadow-card"><span class="block text-xs text-slate-500" data-i18n="testimonials.pending">Pending</span><strong id="testimonialPendingCount" class="mt-1 block text-2xl font-bold text-blue-700">—</strong></div>
+                <div class="rounded-xl border border-ig-border bg-white p-4 shadow-card"><span class="block text-xs text-slate-500" data-i18n="testimonials.approved">Approved</span><strong id="testimonialApprovedCount" class="mt-1 block text-2xl font-bold text-emerald-700">—</strong></div>
+                <div class="rounded-xl border border-ig-border bg-white p-4 shadow-card"><span class="block text-xs text-slate-500" data-i18n="testimonials.rejected">Rejected</span><strong id="testimonialRejectedCount" class="mt-1 block text-2xl font-bold text-rose-700">—</strong></div>
+            </div>
+
+            <div class="overflow-hidden rounded-xl border border-ig-border bg-white shadow-card">
+                <div class="flex flex-col gap-3 border-b border-slate-100 p-4 xl:flex-row xl:items-center xl:justify-between">
+                    <label class="flex h-10 w-full max-w-md items-center gap-2 rounded-lg border border-ig-border bg-ig-bg px-3">
+                        <i data-lucide="search" class="h-4 w-4 shrink-0 text-slate-400"></i>
+                        <input id="testimonialAdminSearch" type="search" class="w-full bg-transparent text-sm outline-none" placeholder="Search name, role, or content..." data-i18n-placeholder="testimonials.searchPlaceholder">
+                    </label>
+                    <div class="flex flex-wrap gap-2" role="group" aria-label="Testimonial status filters">
+                        <button type="button" data-testimonial-status="all" aria-pressed="true" class="testimonial-status-filter rounded-lg bg-blue-600 px-3 py-2 text-xs font-semibold text-white" data-i18n="testimonials.all">All</button>
+                        <button type="button" data-testimonial-status="pending" aria-pressed="false" class="testimonial-status-filter rounded-lg border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-50" data-i18n="testimonials.pending">Pending</button>
+                        <button type="button" data-testimonial-status="approved" aria-pressed="false" class="testimonial-status-filter rounded-lg border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-50" data-i18n="testimonials.approved">Approved</button>
+                        <button type="button" data-testimonial-status="rejected" aria-pressed="false" class="testimonial-status-filter rounded-lg border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-50" data-i18n="testimonials.rejected">Rejected</button>
+                    </div>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full min-w-262.5 text-left text-sm">
+                        <thead class="bg-slate-50 text-[10px] font-semibold uppercase text-slate-500">
+                            <tr><th class="px-4 py-3" data-i18n="testimonials.columnAuthor">Student</th><th class="px-4 py-3" data-i18n="testimonials.columnRole">Role / Study</th><th class="px-4 py-3" data-i18n="testimonials.columnContent">Experience</th><th class="px-4 py-3" data-i18n="testimonials.columnRating">Rating</th><th class="px-4 py-3" data-i18n="testimonials.columnStatus">Status</th><th class="px-4 py-3" data-i18n="testimonials.columnSubmitted">Submitted</th><th class="px-4 py-3" data-i18n="testimonials.columnActions">Actions</th></tr>
+                        </thead>
+                        <tbody id="testimonialAdminTableBody"><tr><td colspan="7" class="p-12 text-center text-sm text-slate-500" data-i18n="testimonials.loading">Loading testimonials...</td></tr></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+
+<div id="editTestimonialModal" class="admin-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="editTestimonialTitle" aria-hidden="true">
+    <div class="admin-modal w-full max-w-2xl">
+        <div class="modal-header">
+            <div><h2 id="editTestimonialTitle" data-i18n="testimonials.editTitle">Edit Testimonial</h2><p data-i18n="testimonials.editSubtitle">Update the testimonial details and review status.</p></div>
+            <button type="button" id="closeTestimonialModal" class="grid h-9 w-9 place-items-center rounded-lg text-slate-500 hover:bg-slate-100" aria-label="Close"><i data-lucide="x" class="h-5 w-5"></i></button>
+        </div>
+        <form id="editTestimonialForm" class="space-y-4">
+            <input type="hidden" id="editTestimonialId">
+            <label class="block space-y-1.5"><span class="text-xs font-semibold" data-i18n="testimonials.name">Name</span><input id="editTestimonialName" required class="h-10 w-full rounded-lg border border-ig-border px-3 text-sm outline-none focus:border-ig-primary"></label>
+            <label class="block space-y-1.5"><span class="text-xs font-semibold" data-i18n="testimonials.role">Role / Study</span><input id="editTestimonialRole" class="h-10 w-full rounded-lg border border-ig-border px-3 text-sm outline-none focus:border-ig-primary"></label>
+            <label class="block space-y-1.5"><span class="text-xs font-semibold" data-i18n="testimonials.experience">Your Experience</span><textarea id="editTestimonialContent" rows="5" required class="w-full resize-y rounded-lg border border-ig-border p-3 text-sm leading-6 outline-none focus:border-ig-primary"></textarea></label>
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <label class="block space-y-1.5"><span class="text-xs font-semibold" data-i18n="testimonials.rating">Rating</span><select id="editTestimonialRating" required class="h-10 w-full rounded-lg border border-ig-border bg-white px-3 text-sm outline-none focus:border-ig-primary"><option value="1">1 / 5</option><option value="2">2 / 5</option><option value="3">3 / 5</option><option value="4">4 / 5</option><option value="5">5 / 5</option></select></label>
+                <label class="block space-y-1.5"><span class="text-xs font-semibold" data-i18n="testimonials.columnStatus">Status</span><select id="editTestimonialStatus" required class="h-10 w-full rounded-lg border border-ig-border bg-white px-3 text-sm outline-none focus:border-ig-primary"><option value="pending" data-i18n="testimonials.pending">Pending</option><option value="approved" data-i18n="testimonials.approved">Approved</option><option value="rejected" data-i18n="testimonials.rejected">Rejected</option></select></label>
+            </div>
+            <div class="flex justify-end gap-2 border-t border-slate-100 pt-4">
+                <button type="button" id="cancelTestimonialEdit" class="admin-secondary-btn" data-i18n="testimonials.cancel">Cancel</button>
+                <button type="submit" id="saveTestimonialEdit" class="admin-primary-btn" data-i18n="testimonials.save">Save Changes</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="../js/i18n.js"></script>
+<script src="./js/admin-auth.js"></script>
+<<<<<<< HEAD
+<script src="./js/admin-header.js"></script>
+=======
+>>>>>>> 31b45d783b97192851bab2e8c67df848d0300bff
+<script src="./js/testimonials.js"></script>
+<script>window.lucide?.createIcons();</script>
+</body>
+</html>

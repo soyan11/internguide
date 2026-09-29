@@ -1,0 +1,8 @@
+# Replace example.com with the production domain before deployment.
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /pages/auth/
+Disallow: /pages/profile/
+
+Sitemap: https://example.com/sitemap.xml

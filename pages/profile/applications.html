@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>My Applications | InternGuide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/src/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-900">
+<header class="site-header sticky top-0 z-50 border-b border-slate-200 bg-white/95 px-4 py-3 backdrop-blur sm:px-6 lg:px-12">
+    <div class="mx-auto flex max-w-7xl items-center justify-between gap-4">
+        <a href="../../index.html" class="logo shrink-0" aria-label="InternGuide home"><img src="../../src/assets/images/logo.png" alt="InternGuide Logo"></a>
+        <nav class="site-nav hidden items-center gap-2 lg:flex" aria-label="Main navigation">
+            <a href="../../index.html" class="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-blue-50 hover:text-blue-700" data-i18n="nav.home">Home</a>
+            <a href="../internships.html" class="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-blue-50 hover:text-blue-700" data-i18n="nav.internships">Internships</a>
+            <a href="../career-guide.html" class="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-blue-50 hover:text-blue-700" data-i18n="nav.careerGuide">Career Guide</a>
+            <a href="../cv-interview.html" class="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-blue-50 hover:text-blue-700" data-i18n="nav.cvInterview">CV &amp; Interview</a>
+            <a href="../about-contact.html" class="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-blue-50 hover:text-blue-700" data-i18n="nav.about">About</a>
+        </nav>
+        <div class="header-actions site-auth hidden items-center gap-2 lg:flex">
+            <a href="profile.html" class="rounded-lg border border-slate-200 px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50" data-i18n="nav.profile">My Profile</a>
+            <button id="applicationsLogout" data-applications-logout type="button" class="rounded-lg border border-rose-200 px-3 py-2 text-sm font-medium text-rose-700 hover:bg-rose-50" data-i18n="admin.logout">Logout</button>
+        </div>
+        <div class="site-mobile-wrap">
+            <button id="toggle-btn" class="site-mobile-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+            <div id="mobile-menu" class="site-mobile-menu hidden flex-col">
+                <a href="../../index.html" data-i18n="nav.home">Home</a>
+                <a href="../internships.html" data-i18n="nav.internships">Internships</a>
+                <a href="../career-guide.html" data-i18n="nav.careerGuide">Career Guide</a>
+                <a href="../cv-interview.html" data-i18n="nav.cvInterview">CV &amp; Interview</a>
+                <a href="../about-contact.html" data-i18n="nav.about">About</a>
+                <a href="applications.html" class="active-mobile" data-i18n="applications.pageTitle">My Applications</a>
+                <div class="site-mobile-auth">
+                    <a href="profile.html" class="border border-slate-200 text-slate-700" data-i18n="nav.profile">My Profile</a>
+                    <button id="applicationsLogoutMobile" data-applications-logout type="button" class="border border-red-200 bg-white text-red-600" data-i18n="admin.logout">Logout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<main class="mx-auto max-w-7xl px-4 py-9 sm:px-6 sm:py-12 lg:px-8">
+    <div class="mb-7 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+            <p class="text-sm font-semibold text-blue-700" data-i18n="nav.profile">My Profile</p>
+            <h1 class="mt-1 text-3xl font-bold tracking-tight text-slate-900" data-i18n="applications.pageTitle">My Applications</h1>
+            <p class="mt-2 text-sm leading-6 text-slate-600" data-i18n="applications.pageIntro">Track your applications and review their current status.</p>
+        </div>
+        <a href="../internships.html" class="inline-flex min-h-10 items-center justify-center gap-2 self-start rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700 sm:self-auto"><i data-lucide="search" class="h-4 w-4"></i><span data-i18n="applications.findInternships">Find Internships</span></a>
+    </div>
+    <p id="myApplicationsStatus" class="mb-4 text-sm text-slate-500" role="status" aria-live="polite" data-i18n="applications.loadingApplications">Loading applications...</p>
+    <div id="myApplicationsList" class="grid grid-cols-1 gap-4 lg:grid-cols-2"></div>
+</main>
+<dialog id="studentApplicationDetails" class="w-[min(92vw,40rem)] max-h-[90vh] overflow-y-auto rounded-xl border-0 p-0 shadow-2xl backdrop:bg-slate-950/50" aria-labelledby="studentApplicationDetailsTitle">
+    <div class="flex items-start justify-between gap-4 border-b border-slate-100 p-5 sm:p-6">
+        <div><h2 id="studentApplicationDetailsTitle" class="text-xl font-bold text-slate-900" data-i18n="applications.applicationDetails">Application Details</h2><p id="studentApplicationDetailsSubtitle" class="mt-1 text-sm text-slate-500"></p></div>
+        <button id="closeStudentApplicationDetails" type="button" class="grid h-9 w-9 shrink-0 place-items-center rounded-lg text-slate-500 hover:bg-slate-100" aria-label="Close"><i data-lucide="x" class="h-5 w-5"></i></button>
+    </div>
+    <div class="space-y-5 p-5 sm:p-6">
+        <div class="grid grid-cols-1 gap-4 text-sm sm:grid-cols-2">
+            <div><p class="text-xs font-semibold text-slate-500" data-i18n="applications.company">Company</p><p id="studentApplicationCompany" class="mt-1 font-medium text-slate-800"></p></div>
+            <div><p class="text-xs font-semibold text-slate-500" data-i18n="applications.location">Location</p><p id="studentApplicationLocation" class="mt-1 text-slate-700"></p></div>
+            <div><p class="text-xs font-semibold text-slate-500" data-i18n="applications.workType">Work Type</p><p id="studentApplicationWorkType" class="mt-1 text-slate-700"></p></div>
+            <div><p class="text-xs font-semibold text-slate-500" data-i18n="applications.duration">Duration</p><p id="studentApplicationDuration" class="mt-1 text-slate-700"></p></div>
+            <div><p class="text-xs font-semibold text-slate-500" data-i18n="applications.appliedOn">Applied</p><p id="studentApplicationDate" class="mt-1 text-slate-700"></p></div>
+            <div><p class="text-xs font-semibold text-slate-500" data-i18n="applications.status">Status</p><p id="studentApplicationStatus" class="mt-1"></p></div>
+            <div class="sm:col-span-2"><p class="text-xs font-semibold text-slate-500" data-i18n="applications.selectedCv">Selected CV</p><p id="studentApplicationCv" class="mt-1 text-slate-700"></p></div>
+        </div>
+        <section class="border-t border-slate-100 pt-4">
+            <h3 class="text-sm font-bold text-slate-800" data-i18n="applications.coverLetter">Cover Letter</h3>
+            <p id="studentApplicationCoverLetter" class="mt-2 whitespace-pre-line text-sm leading-6 text-slate-600"></p>
+        </section>
+    </div>
+    <div class="flex justify-end border-t border-slate-100 p-4"><button id="closeStudentApplicationDetailsFooter" type="button" class="min-h-10 rounded-lg border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50" data-i18n="applications.close">Close</button></div>
+</dialog>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../../js/i18n.js"></script>
+<script src="../../js/script.js"></script>
+<script src="../../js/auth.js"></script>
+<script type="module" src="../../js/applications.js"></script>
+</body>
+</html>
