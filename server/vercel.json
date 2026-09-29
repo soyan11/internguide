@@ -1,0 +1,10 @@
+{
+  "rewrites": [
+    { "source": "/pages/internships", "destination": "/pages/internships.html" },
+    { "source": "/pages/career-guide", "destination": "/pages/career-guide.html" },
+    { "source": "/pages/cv", "destination": "/pages/cv.html" },
+    { "source": "/pages/about", "destination": "/pages/about.html" },
+    { "source": "/pages/auth/login", "destination": "/pages/auth/login.html" },
+    { "source": "/pages/auth/signup", "destination": "/pages/auth/signup.html" }
+  ]
+}

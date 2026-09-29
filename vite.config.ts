@@ -9,16 +9,11 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        // Root / Home
         main: 'index.html',
-        
-        // Pages ក្នុង folder pages/
         internships: 'pages/internships.html',
         careerGuide: 'pages/career-guide.html',
-        about: 'pages/about.html',           // ថែម About Page
-        cv: 'pages/cv.html',                 // ថែម CV & Interview Page
-        
-        // Auth Pages ក្នុង folder pages/auth/
+        cvInterview: 'pages/cv-interview.html',     // កែតម្រូវឈ្មោះ file
+        aboutContact: 'pages/about-contact.html',   // កែតម្រូវឈ្មោះ file
         login: 'pages/auth/login.html',
         signup: 'pages/auth/signup.html',
       },

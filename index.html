@@ -19,15 +19,14 @@
     <header class="site-header px-5 py-2 lg:px-12 sticky top-0 z-50">
         <div class="site-header-inner flex items-center justify-between gap-4">
             <a href="index.html" class="logo flex-shrink-0">
-                <img src="src/assets/images/logo.png" alt="InternGuide Logo">
+                <img src="/src/assets/images/logo.png" alt="InternGuide Logo">
             </a>
-
             <nav class="site-nav hidden items-center justify-center gap-1.5 lg:flex">
-                <a href="index.html" class="nav-link active">Home</a>
-                <a href="pages/internships.html" class="nav-link hover:text-gray-700">Internships</a>
-                <a href="pages/career-guide.html" class="nav-link hover:text-gray-700">Career Guide</a>
-                <a href="pages/cv-interview.html" class="nav-link hover:text-gray-700">CV & Interview</a>
-                <a href="pages/about-contact.html" class="nav-link hover:text-gray-700">About</a>
+                <a href="/" class="nav-link active">Home</a>
+                <a href="/pages/internships.html" class="nav-link hover:text-gray-700">Internships</a>
+                <a href="/pages/career-guide.html" class="nav-link hover:text-gray-700">Career Guide</a>
+                <a href="/pages/cv-interview.html" class="nav-link hover:text-gray-700">CV & Interview</a>
+                <a href="/pages/about-contact.html" class="nav-link hover:text-gray-700">About</a>
             </nav>
 
             <div class="site-header-actions flex items-center justify-end gap-3">
@@ -63,13 +62,10 @@
             </div>
 
             <div class="site-mobile-wrap">
-                <button id="toggle-btn"
-                    class="site-mobile-toggle"
-                    aria-label="Toggle menu" aria-expanded="false">
+                <button id="toggle-btn" class="site-mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
                     ☰
                 </button>
-                <div id="mobile-menu"
-                    class="site-mobile-menu hidden flex-col">
+                <div id="mobile-menu" class="site-mobile-menu hidden flex-col">
                     <a href="index.html"
                         class="active-mobile flex h-10 items-center justify-center gap-2 border-b border-gray-200 text-sm font-medium">
                         Home
@@ -231,26 +227,30 @@
             <div class="mx-auto w-full max-w-7xl">
                 <div class="mb-7 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
                     <div>
-                        <h2 class="text-2xl font-bold tracking-tight text-slate-900" data-i18n="home.featuredTitle">Featured Internship Opportunities
+                        <h2 class="text-2xl font-bold tracking-tight text-slate-900" data-i18n="home.featuredTitle">
+                            Featured Internship Opportunities
                         </h2>
                         <p data-i18n="home.featuredText">
                             Explore handpicked internships from top companies.
                         </p>
                     </div>
-                    <a href="pages/internships.html" class="text-sm font-semibold text-blue-600 transition hover:text-blue-800" data-i18n="common.viewAll">
+                    <a href="pages/internships.html"
+                        class="text-sm font-semibold text-blue-600 transition hover:text-blue-800"
+                        data-i18n="common.viewAll">
                         View All →
                     </a>
                 </div>
-                <div
-    id="internship-list"
-    class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4"
-></div>
-                <nav id="featured-internship-pagination" class="mt-6 hidden flex w-full flex-wrap items-center justify-center gap-2" aria-label="Featured internship pagination"></nav>
+                <div id="internship-list" class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4"></div>
+                <nav id="featured-internship-pagination"
+                    class="mt-6 hidden flex w-full flex-wrap items-center justify-center gap-2"
+                    aria-label="Featured internship pagination"></nav>
                 <div id="internship-empty-state"
                     class="hidden mt-6 rounded-2xl border border-dashed border-slate-300 bg-white p-8 text-center">
                     <div class="mb-2"><i class="text-center m-auto" data-lucide="search"></i></div>
-                    <h3 class="text-lg font-bold text-slate-800" data-i18n="home.noInternships">No internships found</h3>
-                    <p class="mt-1 text-sm text-slate-500" data-i18n="home.noInternshipsHint">Try another keyword or choose a different category.</p>
+                    <h3 class="text-lg font-bold text-slate-800" data-i18n="home.noInternships">No internships found
+                    </h3>
+                    <p class="mt-1 text-sm text-slate-500" data-i18n="home.noInternshipsHint">Try another keyword or
+                        choose a different category.</p>
                 </div>
             </div>
         </section>
@@ -258,12 +258,15 @@
             <div class="mx-auto w-full max-w-7xl">
                 <div class="mb-7 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
                     <div>
-                        <h2 class="text-2xl font-bold tracking-tight text-slate-900" data-i18n="home.careerPathsTitle">Explore Career Paths</h2>
+                        <h2 class="text-2xl font-bold tracking-tight text-slate-900" data-i18n="home.careerPathsTitle">
+                            Explore Career Paths</h2>
                         <p data-i18n="home.careerPathsText">
                             Discover career options based on your interests.
                         </p>
                     </div>
-                    <a href="pages/career-guide.html#careerGuidesGrid" class="text-sm font-semibold text-blue-600 transition hover:text-blue-800" data-i18n="common.viewAll">
+                    <a href="pages/career-guide.html#careerGuidesGrid"
+                        class="text-sm font-semibold text-blue-600 transition hover:text-blue-800"
+                        data-i18n="common.viewAll">
                         View All →
                     </a>
                 </div>
@@ -328,7 +331,9 @@
                             Get ready for your future with expert guides and tools.
                         </p>
                     </div>
-                    <a href="pages/cv-interview.html" class="text-sm font-semibold text-blue-600 transition hover:text-blue-800" data-i18n="common.viewAll">
+                    <a href="pages/cv-interview.html"
+                        class="text-sm font-semibold text-blue-600 transition hover:text-blue-800"
+                        data-i18n="common.viewAll">
                         View All
                     </a>
                 </div>
@@ -344,7 +349,8 @@
                             <p>
                                 Learn how to create a professional and ATS-friendly CV.
                             </p>
-                            <a href="pages/cv-interview.html#cv-guide" class="mt-3 inline-flex min-h-10 items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2">
+                            <a href="pages/cv-interview.html#cv-guide"
+                                class="mt-3 inline-flex min-h-10 items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2">
                                 Read Guide →
                             </a>
                         </div>
@@ -360,7 +366,8 @@
                             <p>
                                 Prepare for interviews with tips and common questions.
                             </p>
-                            <a href="pages/cv-interview.html#interview-guide" class="mt-3 inline-flex min-h-10 items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2">
+                            <a href="pages/cv-interview.html#interview-guide"
+                                class="mt-3 inline-flex min-h-10 items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2">
                                 Read Guide →
                             </a>
                         </div>
@@ -376,7 +383,8 @@
                             <p>
                                 Discover in-demand skills and how to learn them.
                             </p>
-                            <a href="pages/career-guide.html#careerGuidesGrid" class="mt-3 inline-flex min-h-10 items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2">
+                            <a href="pages/career-guide.html#careerGuidesGrid"
+                                class="mt-3 inline-flex min-h-10 items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2">
                                 Read Guide →
                             </a>
                         </div>
@@ -388,14 +396,17 @@
             <div class="mx-auto w-full max-w-7xl">
                 <div class="mb-7 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
                     <div>
-                        <h2 class="text-2xl font-bold tracking-tight text-slate-900" data-i18n="testimonials.title">What Students Say</h2>
+                        <h2 class="text-2xl font-bold tracking-tight text-slate-900" data-i18n="testimonials.title">What
+                            Students Say</h2>
                         <p data-i18n="testimonials.subtitle">Student experiences with InternGuide.</p>
                     </div>
-                    <a href="pages/testimonials.html" class="text-sm font-semibold text-blue-600 transition hover:text-blue-800">
+                    <a href="pages/testimonials.html"
+                        class="text-sm font-semibold text-blue-600 transition hover:text-blue-800">
                         <span data-i18n="testimonials.viewAll">View All Testimonials</span> →
                     </a>
                 </div>
-                <p id="homeTestimonialsStatus" class="mb-4 text-sm text-slate-500" role="status" aria-live="polite" data-i18n="testimonials.loading">Loading testimonials...</p>
+                <p id="homeTestimonialsStatus" class="mb-4 text-sm text-slate-500" role="status" aria-live="polite"
+                    data-i18n="testimonials.loading">Loading testimonials...</p>
                 <div id="homeTestimonials" class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"></div>
             </div>
         </section>
@@ -450,7 +461,8 @@
                         InternGuide helps students and young professionals discover internships, build career skills,
                         and prepare for the next step in their future.
                     </p>
-                    <div class="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-3 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-blue-700">
+                    <div
+                        class="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-3 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-blue-700">
                         Career-ready opportunities
                     </div>
                 </div>
@@ -458,37 +470,48 @@
                 <div>
                     <h3 class="text-sm font-bold uppercase tracking-[0.12em] text-slate-900">Explore</h3>
                     <ul class="mt-4 space-y-3 text-sm text-slate-600">
-                        <li><a class="transition hover:text-blue-700 hover:underline hover:underline-offset-4" href="index.html">Home</a></li>
-                        <li><a class="transition hover:text-blue-700 hover:underline hover:underline-offset-4" href="pages/internships.html">Internships</a></li>
-                        <li><a class="transition hover:text-blue-700 hover:underline hover:underline-offset-4" href="pages/career-guide.html">Career Guide</a></li>
+                        <li><a class="transition hover:text-blue-700 hover:underline hover:underline-offset-4"
+                                href="index.html">Home</a></li>
+                        <li><a class="transition hover:text-blue-700 hover:underline hover:underline-offset-4"
+                                href="pages/internships.html">Internships</a></li>
+                        <li><a class="transition hover:text-blue-700 hover:underline hover:underline-offset-4"
+                                href="pages/career-guide.html">Career Guide</a></li>
                     </ul>
                 </div>
 
                 <div>
                     <h3 class="text-sm font-bold uppercase tracking-[0.12em] text-slate-900">Resources</h3>
                     <ul class="mt-4 space-y-3 text-sm text-slate-600">
-                        <li><a class="transition hover:text-blue-700 hover:underline hover:underline-offset-4" href="pages/cv-interview.html">CV &amp; Interview</a></li>
-                        <li><a class="transition hover:text-blue-700 hover:underline hover:underline-offset-4" href="pages/about-contact.html">About</a></li>
-                        <li><a class="transition hover:text-blue-700 hover:underline hover:underline-offset-4" href="pages/about-contact.html">Contact</a></li>
+                        <li><a class="transition hover:text-blue-700 hover:underline hover:underline-offset-4"
+                                href="pages/cv-interview.html">CV &amp; Interview</a></li>
+                        <li><a class="transition hover:text-blue-700 hover:underline hover:underline-offset-4"
+                                href="pages/about-contact.html">About</a></li>
+                        <li><a class="transition hover:text-blue-700 hover:underline hover:underline-offset-4"
+                                href="pages/about-contact.html">Contact</a></li>
                     </ul>
                 </div>
 
                 <div>
                     <h3 class="text-sm font-bold uppercase tracking-[0.12em] text-slate-900">Follow us</h3>
                     <div class="mt-4 flex items-center gap-3">
-                        <a class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-lg text-blue-600 transition hover:-translate-y-0.5 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700" href="#" aria-label="Facebook">
+                        <a class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-lg text-blue-600 transition hover:-translate-y-0.5 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
+                            href="#" aria-label="Facebook">
                             <i class="fa-brands fa-facebook-f"></i>
                         </a>
-                        <a class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-lg text-blue-600 transition hover:-translate-y-0.5 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700" href="#" aria-label="Instagram">
+                        <a class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-lg text-blue-600 transition hover:-translate-y-0.5 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
+                            href="#" aria-label="Instagram">
                             <i class="fa-brands fa-instagram"></i>
                         </a>
-                        <a class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-lg text-blue-600 transition hover:-translate-y-0.5 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700" href="#" aria-label="LinkedIn">
+                        <a class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-lg text-blue-600 transition hover:-translate-y-0.5 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
+                            href="#" aria-label="LinkedIn">
                             <i class="fa-brands fa-linkedin-in"></i>
                         </a>
-                        <a class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-lg text-blue-600 transition hover:-translate-y-0.5 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700" href="#" aria-label="GitHub">
+                        <a class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-lg text-blue-600 transition hover:-translate-y-0.5 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
+                            href="#" aria-label="GitHub">
                             <i class="fa-brands fa-github"></i>
                         </a>
-                        <a class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-lg text-blue-600 transition hover:-translate-y-0.5 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700" href="#" aria-label="Telegram">
+                        <a class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-lg text-blue-600 transition hover:-translate-y-0.5 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
+                            href="#" aria-label="Telegram">
                             <i class="fa-brands fa-telegram"></i>
                         </a>
                     </div>
@@ -515,43 +538,43 @@
         document.getElementById('footerYear').textContent = new Date().getFullYear();
     </script>
     <script>
-document.addEventListener("DOMContentLoaded", () => {
-    const searchForm = document.getElementById("home-search-form");
-    const searchInput = document.getElementById("home-search-input");
-    const internshipList = document.getElementById("internship-list");
-    const emptyState = document.getElementById("internship-empty-state");
-    const pagination = document.getElementById("featured-internship-pagination");
-    const categoryButtons = document.querySelectorAll("[data-category]");
+        document.addEventListener("DOMContentLoaded", () => {
+            const searchForm = document.getElementById("home-search-form");
+            const searchInput = document.getElementById("home-search-input");
+            const internshipList = document.getElementById("internship-list");
+            const emptyState = document.getElementById("internship-empty-state");
+            const pagination = document.getElementById("featured-internship-pagination");
+            const categoryButtons = document.querySelectorAll("[data-category]");
 
-    const pageSize = 4;
-    let activeCategory = "";
-    let currentPage = 1;
+            const pageSize = 4;
+            let activeCategory = "";
+            let currentPage = 1;
 
-    function renderFeaturedPagination(totalItems) {
-        if (!pagination) return;
+            function renderFeaturedPagination(totalItems) {
+                if (!pagination) return;
 
-        const pageCount = Math.ceil(totalItems / pageSize);
-        if (pageCount <= 1) {
-            pagination.innerHTML = "";
-            pagination.classList.add("hidden");
-            return;
-        }
+                const pageCount = Math.ceil(totalItems / pageSize);
+                if (pageCount <= 1) {
+                    pagination.innerHTML = "";
+                    pagination.classList.add("hidden");
+                    return;
+                }
 
-        pagination.classList.remove("hidden");
-        const firstPage = Math.max(1, Math.min(currentPage - 2, pageCount - 4));
-        const lastPage = Math.min(pageCount, firstPage + 4);
-        const pageButtons = Array.from({ length: lastPage - firstPage + 1 }, (_, index) => {
-            const page = firstPage + index;
-            const active = page === currentPage;
-            return `
+                pagination.classList.remove("hidden");
+                const firstPage = Math.max(1, Math.min(currentPage - 2, pageCount - 4));
+                const lastPage = Math.min(pageCount, firstPage + 4);
+                const pageButtons = Array.from({ length: lastPage - firstPage + 1 }, (_, index) => {
+                    const page = firstPage + index;
+                    const active = page === currentPage;
+                    return `
                 <button type="button" data-featured-page="${page}" ${active ? 'aria-current="page"' : ""}
                     class="inline-flex h-10 min-w-10 items-center justify-center rounded-lg border px-3 text-sm font-medium transition-colors ${active ? "border-blue-600 bg-blue-600 text-white" : "border-slate-200 bg-white text-slate-700 hover:bg-blue-50"}">
                     ${page}
                 </button>
             `;
-        }).join("");
+                }).join("");
 
-        pagination.innerHTML = `
+                pagination.innerHTML = `
             <button type="button" data-featured-page="${currentPage - 1}" ${currentPage === 1 ? "disabled" : ""}
                 class="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-700 hover:bg-blue-50 disabled:cursor-not-allowed disabled:opacity-40" data-i18n="common.previous">Previous</button>
             ${pageButtons}
@@ -559,131 +582,131 @@ document.addEventListener("DOMContentLoaded", () => {
                 class="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-700 hover:bg-blue-50 disabled:cursor-not-allowed disabled:opacity-40" data-i18n="common.next">Next</button>
             <span class="ml-2 text-sm text-slate-500"><span data-i18n="common.page">Page</span> ${currentPage} <span data-i18n="common.of">of</span> ${pageCount}</span>
         `;
-        window.InternGuideI18n?.applyTranslations?.();
-    }
-
-    function filterFeaturedInternships() {
-        if (!internshipList) return;
-
-        const search = (searchInput?.value || "").trim().toLowerCase();
-        const cards = Array.from(
-            internshipList.querySelectorAll("[data-internship-card]")
-        );
-        if (!cards.length) {
-            pagination?.classList.add("hidden");
-            return;
-        }
-
-        const matchingCards = [];
-
-        cards.forEach((card) => {
-            const text = (card.getAttribute("data-search") || "").toLowerCase();
-            const category = (card.getAttribute("data-category") || "").toLowerCase();
-
-            const matchesSearch = !search || text.includes(search);
-            const matchesCategory =
-                !activeCategory ||
-                category === activeCategory.toLowerCase();
-
-            if (matchesSearch && matchesCategory) matchingCards.push(card);
-            else card.classList.add("hidden");
-        });
-
-        const pageCount = Math.max(1, Math.ceil(matchingCards.length / pageSize));
-        currentPage = Math.min(currentPage, pageCount);
-        const firstVisibleIndex = (currentPage - 1) * pageSize;
-        matchingCards.forEach((card, index) => {
-            card.classList.toggle("hidden", index < firstVisibleIndex || index >= firstVisibleIndex + pageSize);
-        });
-
-        if (emptyState) {
-            emptyState.classList.toggle("hidden", matchingCards.length > 0);
-        }
-
-        renderFeaturedPagination(matchingCards.length);
-    }
-
-    pagination?.addEventListener("click", (event) => {
-        const button = event.target.closest("[data-featured-page]");
-        if (!button || button.disabled) return;
-
-        const page = Number(button.dataset.featuredPage);
-        if (!Number.isInteger(page)) return;
-
-        currentPage = page;
-        filterFeaturedInternships();
-        document.getElementById("internships")?.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
-
-    searchForm?.addEventListener("submit", (event) => {
-        event.preventDefault();
-        currentPage = 1;
-        filterFeaturedInternships();
-
-        document.getElementById("internships")?.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
-    });
-
-    searchInput?.addEventListener("input", () => {
-        currentPage = 1;
-        filterFeaturedInternships();
-    });
-
-    categoryButtons.forEach((button) => {
-        button.addEventListener("click", (event) => {
-            event.preventDefault();
-
-            const category = button.getAttribute("data-category") || "";
-
-            if (activeCategory === category) {
-                activeCategory = "";
-                categoryButtons.forEach((item) => {
-                    item.classList.remove("border-blue-400", "bg-blue-50", "text-blue-700");
-                });
-            } else {
-                activeCategory = category;
-
-                categoryButtons.forEach((item) => {
-                    const selected =
-                        item.getAttribute("data-category") === activeCategory;
-
-                    item.classList.toggle("border-blue-400", selected);
-                    item.classList.toggle("bg-blue-50", selected);
-                    item.classList.toggle("text-blue-700", selected);
-                });
+                window.InternGuideI18n?.applyTranslations?.();
             }
 
-            currentPage = 1;
-            filterFeaturedInternships();
+            function filterFeaturedInternships() {
+                if (!internshipList) return;
 
-            document.getElementById("internships")?.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
+                const search = (searchInput?.value || "").trim().toLowerCase();
+                const cards = Array.from(
+                    internshipList.querySelectorAll("[data-internship-card]")
+                );
+                if (!cards.length) {
+                    pagination?.classList.add("hidden");
+                    return;
+                }
+
+                const matchingCards = [];
+
+                cards.forEach((card) => {
+                    const text = (card.getAttribute("data-search") || "").toLowerCase();
+                    const category = (card.getAttribute("data-category") || "").toLowerCase();
+
+                    const matchesSearch = !search || text.includes(search);
+                    const matchesCategory =
+                        !activeCategory ||
+                        category === activeCategory.toLowerCase();
+
+                    if (matchesSearch && matchesCategory) matchingCards.push(card);
+                    else card.classList.add("hidden");
+                });
+
+                const pageCount = Math.max(1, Math.ceil(matchingCards.length / pageSize));
+                currentPage = Math.min(currentPage, pageCount);
+                const firstVisibleIndex = (currentPage - 1) * pageSize;
+                matchingCards.forEach((card, index) => {
+                    card.classList.toggle("hidden", index < firstVisibleIndex || index >= firstVisibleIndex + pageSize);
+                });
+
+                if (emptyState) {
+                    emptyState.classList.toggle("hidden", matchingCards.length > 0);
+                }
+
+                renderFeaturedPagination(matchingCards.length);
+            }
+
+            pagination?.addEventListener("click", (event) => {
+                const button = event.target.closest("[data-featured-page]");
+                if (!button || button.disabled) return;
+
+                const page = Number(button.dataset.featuredPage);
+                if (!Number.isInteger(page)) return;
+
+                currentPage = page;
+                filterFeaturedInternships();
+                document.getElementById("internships")?.scrollIntoView({ behavior: "smooth", block: "start" });
             });
-        });
-    });
 
-    // main.ts loads the cards asynchronously, so observe the list and
-    // apply the current filter as soon as cards appear.
-    if (internshipList) {
-        const observer = new MutationObserver(() => {
-            filterFeaturedInternships();
-        });
+            searchForm?.addEventListener("submit", (event) => {
+                event.preventDefault();
+                currentPage = 1;
+                filterFeaturedInternships();
 
-        observer.observe(internshipList, { childList: true });
-    }
-});
-</script>
+                document.getElementById("internships")?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            });
+
+            searchInput?.addEventListener("input", () => {
+                currentPage = 1;
+                filterFeaturedInternships();
+            });
+
+            categoryButtons.forEach((button) => {
+                button.addEventListener("click", (event) => {
+                    event.preventDefault();
+
+                    const category = button.getAttribute("data-category") || "";
+
+                    if (activeCategory === category) {
+                        activeCategory = "";
+                        categoryButtons.forEach((item) => {
+                            item.classList.remove("border-blue-400", "bg-blue-50", "text-blue-700");
+                        });
+                    } else {
+                        activeCategory = category;
+
+                        categoryButtons.forEach((item) => {
+                            const selected =
+                                item.getAttribute("data-category") === activeCategory;
+
+                            item.classList.toggle("border-blue-400", selected);
+                            item.classList.toggle("bg-blue-50", selected);
+                            item.classList.toggle("text-blue-700", selected);
+                        });
+                    }
+
+                    currentPage = 1;
+                    filterFeaturedInternships();
+
+                    document.getElementById("internships")?.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+                });
+            });
+
+            // main.ts loads the cards asynchronously, so observe the list and
+            // apply the current filter as soon as cards appear.
+            if (internshipList) {
+                const observer = new MutationObserver(() => {
+                    filterFeaturedInternships();
+                });
+
+                observer.observe(internshipList, { childList: true });
+            }
+        });
+    </script>
     <script src="https://unpkg.com/lucide@latest"></script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script type="module" src="js/i18n.js"></script>
-<script type="module" src="js/script.js"></script>
-<script type="module" src="js/auth.js"></script>
-<script type="module" src="js/testimonials.js"></script>
-<script type="module" src="/src/main.ts"></script>
-<script> lucide.createIcons();</script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script type="module" src="js/i18n.js"></script>
+    <script type="module" src="js/script.js"></script>
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/testimonials.js"></script>
+    <script type="module" src="/src/main.ts"></script>
+    <script> lucide.createIcons();</script>
 </body>
 
 </html>
