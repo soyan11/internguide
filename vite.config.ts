@@ -1,22 +1,16 @@
-import { defineConfig } from 'vite'
-import tailwindcss from '@tailwindcss/vite'
+import { defineConfig } from 'vite';
+import { fileURLToPath } from 'url';
 
 export default defineConfig({
-  plugins: [
-    tailwindcss(),
-  ],
-  base: '/',
   build: {
     rollupOptions: {
       input: {
-        main: 'index.html',
-        internships: 'pages/internships.html',
-        careerGuide: 'pages/career-guide.html',
-        cvInterview: 'pages/cv-interview.html',     // កែតម្រូវឈ្មោះ file
-        aboutContact: 'pages/about-contact.html',   // កែតម្រូវឈ្មោះ file
-        login: 'pages/auth/login.html',
-        signup: 'pages/auth/signup.html',
+        main: fileURLToPath(new URL('./index.html', import.meta.url)),
+        internships: fileURLToPath(new URL('./pages/internships.html', import.meta.url)),
+        careerGuide: fileURLToPath(new URL('./pages/career-guide.html', import.meta.url)),
+        cvInterview: fileURLToPath(new URL('./pages/cv-interview.html', import.meta.url)),
+        aboutContact: fileURLToPath(new URL('./pages/about-contact.html', import.meta.url)),
       },
     },
   },
-})
+});
